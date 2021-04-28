@@ -39,7 +39,7 @@ body
 .home-background{
   height: 80vh;
   width: 100% ;
-  background-image:url('/Ressources/Images/background-1.jpg');
+  background-image:url('Ressources/Images/background-1.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
