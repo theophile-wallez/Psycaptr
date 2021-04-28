@@ -1,10 +1,7 @@
 {
-    "environments": {
-      "test": {
-        "scripts": {
-          "test-setup": "gem install rubocop",
-          "test": "rubocop ."
-        }
+    "buildpacks": [
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-pgbouncer"
       }
-    }
+    ]
   }
