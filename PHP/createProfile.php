@@ -33,6 +33,10 @@ if($result = $bdd -> query($sql)){
     if($Id == $row[0]){
       $Id = Password(5);
     }
+    if($Mail == $row[1]) {
+      header('Location:../connexion.html');
+      exit();
+    }
   }
 }
 
@@ -41,17 +45,18 @@ $result -> free_result();
 
 $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Mdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$Mdp','$Date','$Nom','$Prenom')";
 
-if (!mysqli_query($sql,$bdd)) {
-	die('impossible d’ajouter cet enregistrement : ' . mysql_error());
-}
 
+$bdd -> query($sql);
 
 
 $bdd -> close();
 
 
 
-
+$_SESSION['login'] = 0;
+$_SESSION['lastActivity'] = time();
+$_SESSION["Nom"] = $Nom;
+$_SESSION["Prenom"] = $Prenom;
 
 header("Location:../dashboard.php");
 exit();
