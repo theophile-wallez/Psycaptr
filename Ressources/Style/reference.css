@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+::selection {
+  color: #fff;
+  background: #ff589e;;
+}
+
+.container {
+  text-align: center;
+  overflow: hidden;
+  padding: 0 3vh 0 3vh;
+  border-radius: 3%;
+  background: white;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  height: 60vh;
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container header {
+  font-size: 4vh;
+  font-weight: 600;
+  margin: 3% 0 3% 0;
+  color: #0A5687;
+}
+
+.form-outer .title {
+  color: #0A5687;
+}
+
+.container .form-outer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container .form-outer form {
+  display: flex;
+  width: 400%;
+}
+
+.form-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.form-outer form .page .title {
+  text-align: left;
+  font-size: 2.75vh;
+  font-weight: 500;
+}
+
+.form-outer form .page .field {
+  width: 100%;
+  height: 5vh;
+  margin-top: 12.5%;
+  display: flex;
+  position: relative;
+}
+
+form .page .field .label {
+  position: absolute;
+  top: -50%;
+  font-size: 1.75vh;
+  font-weight: 500;
+}
+
+form .page .field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 2%;
+  font-size: 2vh;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  transition: all 0.3s ease;
+}
+
+form .page .field input:focus {
+  border-bottom-width: 2px;
+  border-color:#0A5687;
+}
+
+form .page .field input::placeholder{
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+form .page .field input:focus::placeholder{
+  color: #b3b3b3;
+}
+
+form .page .field select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 2%;
+  font-size: 2vh;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+form .page .field select:focus {
+  border-bottom-width: 2px;
+  border-color: #0A5687;
+}
+
+form .page .field button {
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #ff589e;;
+  margin-top: -6%;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2vh;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+form .page .field button:hover {
+  transform: scale(1.05);
+}
+
+form .page .btns button {
+  margin-top: -6% !important;
+}
+
+form .page .btns button.prev {
+  margin-right: 1%;
+}
+
+form .page .btns button.next {
+  margin-left: 1%;
+}
+
+.container .progress-bar {
+  display: flex;
+
+
+  margin: 10% 0;
+  user-select: none;
+}
+
+.container .progress-bar .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .progress-bar .step p {
+  font-weight: 500;
+  font-size: 2vh;
+  color: #000;
+  margin-bottom: 5%;
+}
+
+.progress-bar .step .bullet {
+  height: 2.7vh;
+  width: 2.7vh;
+  border: 2px solid #000;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 2vh;
+}
+
+.progress-bar .step .bullet.active {
+  border-color: #ff589e;;
+  background: #ff589e;;
+}
+
+.progress-bar .step .bullet span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-bar .step .bullet.active span {
+  display: none;
+}
+
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after {
+  position: absolute;
+  content: '';
+  bottom: 50%;
+  right: -300%;
+  height: 10%;
+  width: 210%;
+  background: #0A5687;
+}
+
+.progress-bar .step .bullet.active:after {
+  background: #ff589e;;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after {
+  display: none;
+}
+
+.progress-bar .step p.active {
+  color:#ff589e;;
+  transition: 0.3s linear;
+}
+
+.progress-bar .step .check {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.progress-bar .step .check.active {
+  display: block;
+  color: #fff;
+}
+
+.checkConditions {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-check-btn {
+  width: 2.5vh;
+  height: 2.5vh;
+  border: 2px solid #444;
+  border-radius: 50%;
+  border-color: black;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-check-btn .checkmark {
+  width: calc(100% - 0.85vh);
+  height: calc(100% - 0.85vh);
+  border-radius: 50%;
+  background-color: #F2954E;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.custom-check-btn input {
+  display: none;
+}
+
+.custom-check-btn input:checked + .checkmark {
+  display: inline-block;
+}
+
+.acceptConditions a {
+  text-decoration: none;
+  color: #023E8A;
+}
+
+.acceptConditions a:hover {
+  text-decoration: underline;
+}
+
+.loginRedirection {
+  text-decoration: none;
+  font-size: 2vh;
+
+}
+
+.loginRedirection a {
+  text-decoration: none;
+  color: #023E8A;
+}
+
+.loginRedirection a:hover {
+  text-decoration: underline;
+}

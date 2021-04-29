@@ -78,10 +78,6 @@ body{
 
 .form_container .forgot_container{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 .form_container a{
