@@ -26,9 +26,12 @@
 </header>
 
 <nav class="slide-menu">
-  <a><img src="Ressources/Images/User_icons/utilisateur.png"></a>
-  <a><img src="Ressources/Images/liste-de-controle.png"></a>
-  <a><img src="Ressources/Images/liste-de-taches.png"></a>
+  <div class="buttons">
+    <a><img src="Ressources/Images/User_icons/utilisateur.png"></a>
+    <a><img src="Ressources/Images/liste-de-controle.png"></a>
+    <a><img src="Ressources/Images/liste-de-taches.png"></a>
+  </div>
+
 </nav>
 
 <body>
