@@ -16,7 +16,7 @@
   </div>
   <div class="welcome-text">
     <?php
-      // session_start();
+      session_start();
       echo "<p>";
       echo "Bonjour, Théophile".$_SESSION["Prenom"];
       echo "</p>";
@@ -54,13 +54,13 @@
   </div>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
   new Chart(document.getElementById("line-chart"), {
   type: 'line',
   data: {
     labels: [1,2,3,4,5,6,7,8],
-    datasets: [{ 
+    datasets: [{
         data: [2,4,3,6,5,8,7,9],
         borderColor: "#FF589E",
         fill: true,
@@ -86,10 +86,10 @@
         yAxes: [{
             gridLines: {
                 display:false
-            }   
+            }
         }]
     }
-    
+
   }
 });
 </script>

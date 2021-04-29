@@ -33,6 +33,10 @@ if($result = $bdd -> query($sql)){
     if($Id == $row[0]){
       $Id = Password(5);
     }
+    if($Mail == $row[1]) {
+      header('Location:../connexion.html');
+      exit();
+    }
   }
 }
 
