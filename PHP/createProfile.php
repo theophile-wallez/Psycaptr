@@ -67,15 +67,15 @@ function Password($taille)
    {
      // Liste des caractères possibles
      $cars="0123456789";
-     $mdp='';
+     $dd='';
      $long=strlen($cars);
 
      srand((double)microtime()*1000000);
      //Initialise le générateur de nombres aléatoires
 
-     for($i=0;$i<$taille;$i++)$mdp=$mdp.substr($cars,rand(0,$long-1),1);
+     for($i=0;$i<$taille;$i++)$dd=$dd.substr($cars,rand(0,$long-1),1);
 
-     return $mdp;
+     return $dd;
    }
 
  ?>

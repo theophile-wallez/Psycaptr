@@ -32,7 +32,7 @@
 
         <div class="forgot_container">
           <a href="#">Mot de passe oublié</a>
-          <a href="inscription.html">Créer un compte</a>
+          <a href="inscription.html">Nous n'avez pas encore de compte ? Inscrivez-vous</a>
         </div>
       </div>
 
@@ -46,9 +46,9 @@
   <script src="./javascripts/rellax.js"></script>
   <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
 
-  <footer class="bottom" id="footer"></footer>
 </body>
 
+<footer class="bottom" id="footer"></footer>
 
 <script src="./javascripts/nav_bar.js"></script>
 <script>nav_function()</script>
@@ -63,5 +63,6 @@
   unset($_SESSION['lastActivity']);
   unset($_SESSION['Prenom']);
   unset($_SESSION['Nom']);
+
 
 ?>

@@ -18,7 +18,7 @@
     <?php
       session_start();
       echo "<p>";
-      echo "Bonjour, ".$_SESSION["Prenom"];
+      echo "Bonjour, Théophile".$_SESSION["Prenom"];
       echo "</p>";
      ?>
   </div>
