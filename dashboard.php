@@ -16,11 +16,9 @@
   </div>
   <div class="welcome-text">
     <?php
-
-      session_start();
-
+      // session_start();
       echo "<p>";
-      echo "Bonjour ".$_SESSION["Prenom"];
+      echo "Bonjour, Théophile".$_SESSION["Prenom"];
       echo "</p>";
      ?>
   </div>
@@ -33,7 +31,9 @@
     <h1 class="dashboard_title">Votre tableau de bord</h1>
     <div class="main_part_container">
         <div class="part_1_container ">
-          <div class="graph graph-1"></div>
+          <div class="graph graph-1">
+            <canvas id="myChart"></canvas>
+          </div>
         </div>
         <div class="part_2_container">
           <div class="graph graph-2"></div>
@@ -49,6 +49,41 @@
       </div>
   </div>
   </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const config = {
+      type: 'line',
+      data,
+      options: {}
+    };
+
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+</script>
+
 </body>
 
 </html>
