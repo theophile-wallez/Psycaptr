@@ -8,7 +8,7 @@
 
 	$servername = 'localhost';
 	$bddname = 'ttwawain_Psycaptr';
-	$username = ' theophile';
+	$username = 'theophile';
 	$password = 'psycaptrisep2023';
 
 	$bdd = new mysqli($servername, $username, $password, $bddname);
