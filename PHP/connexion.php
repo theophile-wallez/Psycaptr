@@ -51,13 +51,13 @@
 				exit();
 			}
 			else {
-				header('Location:../connexion.html');
+				header('Location:../connexion.php');
 				exit();
 			}
 		}
 	}
 
-	
+
 
 	$result -> free_result();
 
