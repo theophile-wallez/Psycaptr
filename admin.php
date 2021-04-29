@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="Ressources/Style/style.css"/>
   <link rel="stylesheet" href="Ressources/Style/admin.css"/>
-  <link rel="icon" href="Ressources/images/logo_simple.png" type="image/icon type">
+  <link rel="icon" href="Ressources/Images/logo_simple.png" type="image/icon type">
   <title>DashBoard • Psycaptr</title>
 </head>
 
 <header>
   <div class="home_logo">
     <a href="home.html" draggable="false">
-      <img src="Ressources/Images/Logo_simple.png" draggable="false" alt="logo">
+      <img src="Ressources/Images/logo_simple.png" draggable="false" alt="logo">
     </a>
   </div>
   <div class="welcome-text">
