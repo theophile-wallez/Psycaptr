@@ -14,6 +14,16 @@
       <img src="Ressources/images/logo_simple.png" draggable="false" alt="logo">
     </a>
   </div>
+  <div class="welcome-text">
+    <?php
+
+      session_start();
+
+      echo "<p>";
+      echo "Salut jlkdja ".$_SESSION["Prenom"]."\n".$_SESSION["Nom"];
+      echo "</p>";
+     ?>
+  </div>
 </header>
 
 <nav></nav>

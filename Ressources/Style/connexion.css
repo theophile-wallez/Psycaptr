@@ -118,6 +118,7 @@ body{
 }
 
 .connexion_button button:hover{
+    cursor: pointer;
     transform: scale(1.05);
     transform-origin: center;
     z-index: 10;
