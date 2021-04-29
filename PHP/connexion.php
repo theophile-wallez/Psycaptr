@@ -7,7 +7,7 @@
 
 
 	$servername = 'localhost';
-	$bddname = 'Psycaptr';
+	$bddname = 'ttwawain_Psycaptr';
 	$username = 'AD';
 	$password = 'Karma';
 
