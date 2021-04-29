@@ -52,3 +52,16 @@
 <script src="./javascripts/nav_bar.js"></script>
 <script>nav_function()</script>
 </html>
+
+
+<?php
+
+	session_start();
+
+	unset($_SESSION['login']);
+  unset($_SESSION['lastActivity']);
+  unset($_SESSION['Prenom']);
+  unset($_SESSION['Nom']);
+
+
+?>
