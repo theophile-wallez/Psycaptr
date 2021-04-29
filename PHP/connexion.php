@@ -7,9 +7,9 @@
 
 
 	$servername = 'localhost';
-	$bddname = 'Psycaptr';
-	$username = 'AD';
-	$password = 'Karma';
+	$bddname = 'ttwawain_Psycaptr';
+	$username = ' theophile';
+	$password = 'psycaptrisep2023';
 
 	$bdd = new mysqli($servername, $username, $password, $bddname);
 	if($bdd->connect_errno){
