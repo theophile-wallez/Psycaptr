@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="Ressources/Style/style.css"/>
   <link rel="stylesheet" href="Ressources/Style/dashboard.css"/>
-  <link rel="icon" href="Ressources/Images/logo_simple.png" type="image/icon type">
+  <link rel="icon" href="Ressources/Images/Logo_simple.png" type="image/icon type">
   <title>DashBoard • Psycaptr</title>
 </head>
 
