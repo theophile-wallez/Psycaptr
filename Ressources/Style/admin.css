@@ -26,7 +26,7 @@ nav{
 
 }
 
-a {
+.slide-menu .buttons a {
   width: 100%;
   height: 100%;
   display: flex;
@@ -34,7 +34,7 @@ a {
   align-items:center;
 }
 
-a img {
+.slide-menu .buttons a img {
   width: auto;
   height: auto;
   max-width: 50%;
