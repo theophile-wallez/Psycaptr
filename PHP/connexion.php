@@ -7,9 +7,9 @@
 
 
 	$servername = 'localhost';
-	$bddname = 'Psycaptr';
-	$username = 'AD';
-	$password = 'Karma';
+	$bddname = 'ttwawain_Psycaptr';
+	$username = 'theophile';
+	$password = 'psycaptrisep2023';
 
 	$bdd = new mysqli($servername, $username, $password, $bddname);
 	if($bdd->connect_errno){
@@ -47,7 +47,7 @@
 				$_SESSION['lastActivity'] = time();
 				$_SESSION["Nom"] = $row[4];
 			  $_SESSION["Prenom"] = $row[5];
-				header('Location:../dashboard.html');
+				header('Location:../dashboard.php');
 				exit();
 			}
 			else {

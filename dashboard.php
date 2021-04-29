@@ -20,7 +20,7 @@
       session_start();
 
       echo "<p>";
-      echo "Bonjour ".$_SESSION["Prenom"]."\n".$_SESSION["Nom"];
+      echo "Salut jlkdja ".$_SESSION["Prenom"]."\n".$_SESSION["Nom"];
       echo "</p>";
      ?>
   </div>

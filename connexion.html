@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="Ressources/Style/connexion.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900">
-  <link rel="icon" href="Ressources/images/logo_simple.png" type="image/icon type">
+
+  <link rel="icon" href="Ressources/images/logo_simple.png" size="32x32" type="image/icon type">
   <title>Connexion • Psycaptr</title>
 </head>
 
@@ -17,8 +18,8 @@
 </nav>
 
 <body>
-   
-  <form class="connect_container" action="dashboard.php" method="POST">
+
+  <form class="connect_container" action="PHP/connexion.php" method="POST">
       <!-- Titre -->
       <div class="title_container">
         <h3 draggable="false">Connectez-vous</h3>
@@ -26,9 +27,9 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-        <input name="id" type="email" placeholder="Adresse mail"/>
+        <input name="id" type="text" placeholder="Adresse mail"/>
         <input name="Mdp" type="password" placeholder="Mot de passe" />
-      
+
         <div class="forgot_container">
           <a href="#">Mot de passe oublié</a>
         </div>
@@ -40,7 +41,7 @@
           <button type="submit">Connexion</button>
       </div>
   </form>
-          
+
   <script src="./javascripts/rellax.js"></script>
   <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
 
