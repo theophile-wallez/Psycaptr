@@ -15,7 +15,7 @@ nav
   z-index: 2000;
   opacity: 0.9;
   backdrop-filter: blur(10px) saturate(300%);
-  transition: all 0.2s;
+  transition: box-shadow opacity 0.2s;
 }
 
 .nav_absolute{
