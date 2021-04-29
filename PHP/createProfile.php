@@ -7,7 +7,7 @@ $MdpBis = htmlspecialchars($_POST['MdpBis']);
 $Nom = htmlspecialchars($_POST['Nom']);
 $Prenom = htmlspecialchars($_POST['Prenom']);
 $Mail = htmlspecialchars($_POST['Mail']);
-$Date = date('j F Y');
+$Date = date('Y-m-d');
 
 if($MdpBis != $Mdp){
   header('Location:../inscription.html');
@@ -43,7 +43,7 @@ $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Mdp`, `Date_Inscription`, `No
 
 if (!mysql_query($sql,$bdd)) {
 	die('impossible d’ajouter cet enregistrement : ' . mysql_error());
-	}
+}
 
 
 
