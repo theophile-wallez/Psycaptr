@@ -32,7 +32,10 @@
     <div class="main_part_container">
         <div class="part_1_container ">
           <div class="graph graph-1">
-            <canvas id="myChart"></canvas>
+            <h4 class="canvas_title">Évolution de votre score</h4>
+            <div class="canvas_container">
+             <canvas id="line-chart"></canvas>
+            </div>
           </div>
         </div>
         <div class="part_2_container">
@@ -50,40 +53,44 @@
   </div>
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-  <script>
-    const config = {
-      type: 'line',
-      data,
-      options: {}
-    };
-
-    const labels = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
-
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
-    }]
-  };
-    var myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-</script>
-
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>  
+<script>
+  new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: [1,2,3,4,5,6,7,8],
+    datasets: [{ 
+        data: [2,4,3,6,5,8,7,9],
+        borderColor: "#FF589E",
+        fill: true,
+        backgroundColor	:"rgba(255, 88, 158,0.1)",
+        pointBackgroundColor: "#FF589E"
+      }
+    ]
+  },
 
+
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    legend: {
+    display: false,
+    },
+    scales: {
+        xAxes: [{
+            gridLines: {
+                display:false
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+                display:false
+            }   
+        }]
+    }
+    
+  }
+});
+</script>
 </html>
