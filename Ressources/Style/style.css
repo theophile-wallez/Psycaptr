@@ -39,6 +39,9 @@ p{
   -webkit-text-fill-color: transparent;
 }
 
+html{
+  margin: 0;
+}
 body{
   margin: 0;
 }
