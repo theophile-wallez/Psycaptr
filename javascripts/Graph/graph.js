@@ -38,3 +38,26 @@ function graph1() {
   });
 
 }
+
+
+function doughnut() {
+  new Chart(document.getElementById("doughnut-chart"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Médeçins", "Auto école", "Ecole d'aviation", 'Hopitaux'],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#c45850","#e8c3b9"],
+          data: [25, 15, 55, 10]
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+
+    }
+
+  });
+}
