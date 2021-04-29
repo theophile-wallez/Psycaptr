@@ -32,7 +32,7 @@
 
         <div class="forgot_container">
           <a href="#">Mot de passe oublié</a>
-          <a href="inscription.html">Nous n'avez pas encore de compte ? Inscrivez-vous</a>
+          <a href="inscription.html">Créer un compte</a>
         </div>
       </div>
 
