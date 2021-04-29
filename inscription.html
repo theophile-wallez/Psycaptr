@@ -2,15 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="Ressources/Style/style.css"/>
-  <link rel="stylesheet" href="Ressources/Style/nav_bar.css"/>
+  
   <link rel="stylesheet" href="Ressources/Style/footer.css"/>
   <link rel="stylesheet" href="Ressources/Style/inscription.css"/>
-  <link rel="stylesheet" href="Ressources/Style/reference.css"/>
+  <link rel="stylesheet" href="Ressources/Style/nav_bar.css"/>
+  <link rel="stylesheet" href="Ressources/Style/style.css"/>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900">
 
-  <link rel="icon" href="Ressources/images/logo_simple.png" size="32x32" type="image/icon type">
+  <link rel="icon" href="Ressources/Images/Logo_simple.png" size="32x32" type="image/icon type">
   <title>Inscription • Psycaptr</title>
 </head>
 
@@ -19,104 +20,38 @@
 </nav>
 
 <body>
-  <div class="container">
 
-    <header>Inscription</header>
-
-    <div class="progress-bar">
-      <div class="step">
-        <p>Nom</p>
-        <div class="bullet">
-          <span></span>
-        </div>
-        <div class="check"></div>
+  <div id="contact-container">
+    <form class="contact_form_container" action="PHP/createProfile.php" method="POST">
+      <div class="abstract_container" id="contact_link"></div>
+      <div class="title_container">
+        <h3 draggable="false">Créez votre compte</h3>
+      </div>
+      <div class="input_container input_container_1">
+        <input name="Prenom" type="text" placeholder="Prénom"/>
+        <input name="Nom" type="text" placeholder="Nom"/>
       </div>
 
-      <div class="step">
-        <p>Mail</p>
-        <div class="bullet">
-          <span></span>
-        </div>
-        <div class="check"></div>
+      <div class="input_container input_container_2">
+        <input name="Mail" type="email" placeholder="Votre mail"/>
       </div>
 
-      <div class="step">
-        <p>Mot de passe</p>
-        <div class="bullet">
-          <span></span>
-        </div>
-        <div class="check"></div>
+      <div class="input_container input_container_3">
+        <input name="Mdp" type="password" placeholder="Mot de passe"/>
+        <input name="MdpBis" type="password" placeholder="Confirmation"/>
       </div>
-    </div>
-
-    <div class="form-outer">
-
-      <form method="POST" action="PHP/createProfile.php">
-        <div class="page slide-page">
-          <div class="title">Nom</div>
-
-          <div class="field">
-            <div class="label">Nom</div>
-            <input type="text" name="Nom" placeholder="Nom" required>
-          </div>
-
-          <div class="field">
-            <div class="label">Prénom</div>
-            <input type="text" name="Prenom" placeholder="Prénom" required>
-          </div>
-
-          <div class="field">
-            <button class="firstNext next">Suivant</button>
-          </div>
-        </div>
-
-        <div class="page">
-          <div class="title">Mail</div>
-          <div class="field">
-            <div class="label">Adresse Mail</div>
-            <input type="text" name="Mail" placeholder="Adresse Mail" required>
-          </div>
-
-
-          <div class="field btns">
-            <button class="prev-1 prev">Précédent</button>
-            <button class="next-1 next">Suivant</button>
-          </div>
-        </div>
-
-
-        <div class="page">
-          <div class="title">Mot de passe</div>
-
-          <div class="field">
-            <div class="label" >Mot de passe</div>
-              <input type="number" name="Mdp" placeholder="Mot de passe" required>
-          </div>
-
-          <div class="field">
-            <div class="label">Confirmer le mot de passe</div>
-              <input type="number" name="MdpBis" placeholder="Confirmer le mot de passe" required>
-          </div>
-
-          <div class="field btns">
-            <button class="prev-2 prev">Précédent</button>
-            <button class="submit">Suivant</button>
-          </div>
-        </div>
-      </form>
-
-
-
-    </div>
+      <div class="envoyer_button">
+        <button type="submit">Valider</button>
+      </div>
+    </form>
   </div>
 
+  <footer class="bottom" id="footer"></footer>
+
   <script src="./javascripts/rellax.js"></script>
-  <script src="./javascripts/reference.js"></script>
   <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
 
 </body>
-
-<footer class="bottom" id="footer"></footer>
 
 <script src="./javascripts/nav_bar.js"></script>
 <script>nav_function()</script>
