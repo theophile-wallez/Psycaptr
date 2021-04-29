@@ -15,6 +15,7 @@
     </a>
 
   </div>
+  
   <div class="welcome-text">
     <?php
       session_start();
