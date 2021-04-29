@@ -14,7 +14,7 @@ background: #cabafe;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 20vh;
+      height: 15vh;
       background: none;
   }
 
@@ -52,6 +52,11 @@ background: #cabafe;
     height: 0.5px;
     width: 25%;
     background-color: #f0f0f0;;
+  }
+
+  .bottom .footer-line{
+    height: 0px;
+    visibility: hidden;
   }
   
   footer p{

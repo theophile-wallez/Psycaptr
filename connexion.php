@@ -46,9 +46,9 @@
   <script src="./javascripts/rellax.js"></script>
   <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
 
+  <footer class="bottom" id="footer"></footer>
 </body>
 
-<footer class="bottom" id="footer"></footer>
 
 <script src="./javascripts/nav_bar.js"></script>
 <script>nav_function()</script>
