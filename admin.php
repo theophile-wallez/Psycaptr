@@ -11,7 +11,7 @@
 <header>
   <div class="home_logo">
     <a href="home.html" draggable="false">
-      <img src="Ressources/images/logo_simple.png" draggable="false" alt="logo">
+      <img src="Ressources/Images/logo_simple.png" draggable="false" alt="logo">
     </a>
   </div>
   <div class="welcome-text">
