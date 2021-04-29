@@ -47,7 +47,7 @@
 				$_SESSION['lastActivity'] = time();
 				$_SESSION["Nom"] = $row[4];
 			  $_SESSION["Prenom"] = $row[5];
-				header('Location:../dashboard.html');
+				header('Location:../dashboard.php');
 				exit();
 			}
 			else {
