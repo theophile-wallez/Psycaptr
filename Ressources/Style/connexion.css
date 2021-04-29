@@ -26,7 +26,7 @@ body{
 }
 
 .connect_container:hover{
-    backdrop-filter: blur(0px) saturate(100%);    
+    backdrop-filter: blur(0px) saturate(100%);
 
 }
 
@@ -78,6 +78,10 @@ body{
 
 .form_container .forgot_container{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .form_container a{
@@ -105,7 +109,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     text-decoration: none;
     font-size: 1.4em;
     color: white;
