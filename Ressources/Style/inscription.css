@@ -51,8 +51,8 @@ body{
     align-items: center;
 }
 
-.form_container input{
-    width: 100%;
+input{
+    width: 80%;
     height: 7vh;
     border-style: none;
     box-shadow: 0px 0px 2px #bdc3c7;
@@ -64,14 +64,14 @@ body{
 }
 
 
-.form_container input:hover,.form_container input:focus{
+input:hover,:focus{
     border: none;
     border-style: none;
     outline: none;
     caret-color: #fbb5d2;
     box-shadow: 0px 0px 4px #bdc3c7;
 }
-.form_container input:focus{
+input:focus{
     transform: scale(1.03);
     transform-origin: center;
 }
