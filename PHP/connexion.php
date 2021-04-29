@@ -8,8 +8,8 @@
 
 	$servername = 'localhost';
 	$bddname = 'ttwawain_Psycaptr';
-	$username = 'AD';
-	$password = 'Karma';
+	$username = ' theophile';
+	$password = 'psycaptrisep2023';
 
 	$bdd = new mysqli($servername, $username, $password, $bddname);
 	if($bdd->connect_errno){
