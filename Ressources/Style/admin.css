@@ -10,6 +10,12 @@ nav{
     transition: width 0.5s;
 }
 
+.slide-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
 .slide-menu:hover {
   width: 15em;
 }
@@ -29,7 +35,7 @@ header{
 }
 
 header .home_logo{
-    position: relative;
+    position: absolute;
     left: 0;
     top: 0;
     width: 5em;
@@ -40,16 +46,21 @@ header .home_logo{
 }
 
 header .welcome-text {
-  position: relative;
-  width: 100%;
-  height: 5em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 4em;
+  align-self: flex-end;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 100%;
 }
 
-
+.welcome-text p{
+    font-size: 1.4em;
+    user-select: none;
+}
 
 .home_logo a{
     position: absolute;
@@ -143,10 +154,20 @@ body .dashboard_container{
     background: white;
     border-radius: 0.5em;
     transition: all 0.3s;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h2 {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
 }
 
 .graph a {
@@ -154,7 +175,7 @@ body .dashboard_container{
   height: 80%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
 }
 
 .graph a img {
@@ -162,18 +183,38 @@ body .dashboard_container{
   height: auto;
   max-width: 80%;
   max-height: 80%;
-  display:block;
 }
 
-h2 {
+a {
+  width: 100%;
+  height: 80%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
+}
+
+a img {
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .graph:hover{
     transform-origin: center;
     transform: scale(1.01);
+}
+
+.canvas_title{
+    width: 95%;
+    height: 15%;
+    font-size: 1.4em;
+    color:#695B72;
+}
+
+.canvas_container{
+    width: 95%;
+    height: 80% !important;
 }
 
 .graph-double{
@@ -182,4 +223,9 @@ h2 {
 .graph-3{
     width: 40%;
     margin-right: 1em;
+}
+
+#doughnut-char {
+  height: 80%;
+  width: 100%;
 }
