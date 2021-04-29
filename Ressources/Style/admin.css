@@ -13,11 +13,32 @@ nav{
 .slide-menu {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    justify-content: center;
+    align-items: center;
   }
 
 .slide-menu:hover {
   width: 15em;
+}
+
+.slide-menu .buttons {
+
+
+}
+
+a {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+a img {
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 header{
@@ -185,20 +206,7 @@ h2 {
   max-height: 80%;
 }
 
-a {
-  width: 100%;
-  height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-}
 
-a img {
-  width: auto;
-  height: auto;
-  max-width: 50%;
-  max-height: 50%;
-}
 
 .graph:hover{
     transform-origin: center;
