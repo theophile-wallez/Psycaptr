@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Avenir';
+  src: url('../Font/Avenir.ttc');
+}
+@font-face {
+  font-family: 'Nunito-Regular';
+  src: url('../Font/Nunito-Regular.ttf');
+}
+html{
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+  z-index: 10000000;
+}
+
+
+p{
+  font-size: 1.2em;
+  text-align: justify;
+  color: #2d3436;
+}
+
+*
+{
+  font-family:"Nunito-Regular";
+}
+*::selection
+{
+  color: white;
+  background-color: #ff589e;
+}
+
+.text-fade
+{
+  background: -webkit-linear-gradient(#ff589e, #8261ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html{
+  margin: 0;
+}
+body{
+  margin: 0;
+}
