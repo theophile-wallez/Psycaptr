@@ -165,6 +165,8 @@ body .dashboard_container{
     height: 15%;
     font-size: 1.4em;
     color:#695B72;
+    display: flex;
+    align-items: center;
 }
 
 .canvas_container{
