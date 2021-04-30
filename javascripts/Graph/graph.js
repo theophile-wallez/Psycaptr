@@ -87,19 +87,19 @@ function doughnut() {
 
 
 function graph2() {
-  var ctx = document.getElementById('doughnut-chart').getContext("2d");
+  var ctr = document.getElementById("doughnut-chart").getContext("2d");
 
-  var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-  gradientStroke.addColorStop(0, '#ffcfbe');
-  gradientStroke.addColorStop(1, '#fe6fbe');
+  var degrade1 = ctr.createLinearGradient(0, 100, 0, 0);
+  degrade1.addColorStop(0, '#fe6fbe');
+  degrade1.addColorStop(1, '#ffcfbe');
 
-  var gradientStroke2 = ctx.createLinearGradient(500, 0, 100, 0);
-  gradientStroke2.addColorStop(0, '#f451cd');
-  gradientStroke2.addColorStop(1, '#9877ff');
+  var degrade2 = ctr.createLinearGradient(0, 100, 100,0 );
+  degrade2.addColorStop(0, '#9877ff');
+  degrade2.addColorStop(1, '#f450cd');
 
-  var gradientStroke3 = ctx.createLinearGradient(500, 0, 100, 0);
-  gradientStroke3.addColorStop(0, '#61a7ff');
-  gradientStroke3.addColorStop(1, '#7cf4de');
+  var degrade3 = ctr.createLinearGradient(0, 100, 100, 0);
+  degrade3.addColorStop(0, '#7cf4df');
+  degrade3.addColorStop(1, '#62a9fe');
 
   new Chart(document.getElementById("doughnut-chart"), {
   type: 'doughnut',
@@ -107,9 +107,7 @@ function graph2() {
     labels: [25, 15, 35, 10],
     datasets: [{
         data: [25, 15, 15,20 ],
-        backgroundColor: [gradientStroke, gradientStroke2,gradientStroke3,"#f1f3f9"],
-        pointBackgroundColor: gradientStroke,
-        hoverBackgroundColor:[gradientStroke, gradientStroke2,gradientStroke3,"#f1f3f9"],
+        backgroundColor: [degrade1, degrade2,degrade3,"#f1f3f9"],
       }
     ]
   },

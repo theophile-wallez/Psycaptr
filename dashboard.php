@@ -61,9 +61,6 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="javascripts/Graph/graph.js"></script>
-<script src="https://d3js.org/d3-color.v1.min.js"></script>
-<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <script>
   graph1();
