@@ -15,7 +15,7 @@
     </a>
 
   </div>
-  
+
   <div class="welcome-text">
     <?php
       session_start();
@@ -32,7 +32,11 @@
     <a><img src="Ressources/Images/liste-de-controle.png"></a>
     <a><img src="Ressources/Images/liste-de-taches.png"></a>
   </div>
-
+  <div class="text">
+    <a><p>Profil</p></a>
+    <a><p>Liste Utilisateurs</p></a>
+    <a><p>Validations</p></a>
+  </div>
 </nav>
 
 <body>

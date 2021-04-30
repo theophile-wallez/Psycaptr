@@ -2,7 +2,8 @@ nav{
     width: 5em;
     background-color: white;
 
-    position: absolute;
+    position: fixed;
+    height: 100vh:
     left: 0;
     top: 0;
     bottom: 0;
@@ -12,9 +13,11 @@ nav{
 
 .slide-menu {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+
+    overflow-x: hidden;
   }
 
 .slide-menu:hover {
@@ -22,23 +25,43 @@ nav{
 }
 
 .slide-menu .buttons {
-
-
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 5em;
+  height: 40%;
 }
 
-.slide-menu .buttons a {
-  width: 100%;
-  height: 100%;
+.text {
+  position: absolute;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 10em;
+  height: 35%;
+  margin-left: 5.4em;
+  font-size: 0.9vw;
+}
+
+
+
+.slide-menu .buttons a {
+  width: 95%;
+  height: 95%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items:center;
 }
 
 .slide-menu .buttons a img {
-  width: auto;
+  width: 90%;
   height: auto;
-  max-width: 50%;
-  max-height: 50%;
+  margin: 2vh 0 2vh 0;
+}
+
+.slide-menu .buttons a p {
+
 }
 
 header{
