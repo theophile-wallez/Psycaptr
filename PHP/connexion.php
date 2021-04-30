@@ -51,10 +51,8 @@
 				exit();
 			}
 			else {
-				echo $id."\n".$Mdp;
-				echo $row[1]."\n".$row[2];
-				//header('Location:../connexion.php');
-				//exit();
+				header('Location:../connexion.php');
+				exit();
 			}
 		}
 	}
