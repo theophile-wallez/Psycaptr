@@ -27,6 +27,7 @@ body
 .fa-arrow-up{
   background: -webkit-linear-gradient(#fbb5d2, #cabafe);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

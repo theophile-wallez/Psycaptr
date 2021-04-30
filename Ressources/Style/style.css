@@ -32,10 +32,24 @@ p{
   background-color: #ff589e;
 }
 
+@-webkit-keyframes autofill {
+  0%,100% {
+      color: #666;
+      background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
 .text-fade
 {
   background: -webkit-linear-gradient(#ff589e, #8261ee);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
