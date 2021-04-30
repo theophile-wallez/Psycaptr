@@ -77,5 +77,4 @@ function Password($taille)
 
      return $dd;
    }
-
  ?>
