@@ -50,13 +50,11 @@
 				header('Location:../dashboard.php');
 				exit();
 			}
-			else {
-				header('Location:../connexion.php');
-				exit();
-			}
 		}
 	}
 
+	header('Location:../connexion.php');
+	exit();
 
 
 	$result -> free_result();
