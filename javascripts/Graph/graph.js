@@ -97,7 +97,7 @@ function graph2() {
   degrade2.addColorStop(0, '#9877ff');
   degrade2.addColorStop(1, '#f450cd');
 
-  var degrade3 = ctr.createLinearGradient(0, 100, 100, 0);
+  var degrade3 = ctr.createLinearGradient(100, 0,0 , 100);
   degrade3.addColorStop(0, '#7cf4df');
   degrade3.addColorStop(1, '#62a9fe');
 
