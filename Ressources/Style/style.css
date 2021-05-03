@@ -62,11 +62,10 @@ input:-webkit-autofill {
   -webkit-text-fill-color: transparent;
 }
 
-html{
-  margin: 0;
-}
+
 body{
-  margin: 0;
+  margin: 0 auto !important;
+  max-width: 1500px;
 }
 body > * {
   box-sizing: border-box;
