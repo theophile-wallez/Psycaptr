@@ -93,7 +93,7 @@ body{
 }
 
 body .content-container{
-    padding: 1em;
+    position: relative;
     margin-top: 8em;
     margin-left: 8em;
     margin-right: 3em;
@@ -101,8 +101,66 @@ body .content-container{
     border-radius: 1em;
 
     background-color: white;
+
+    overflow: hidden;
+}
+
+.content-container .profil-container{
+    position: absolute;
+    width: 30%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+}
+
+.profil-container .img-container{
+    margin-top: 2em;
+    width: 12em;
+    height: 12em;
+    background: linear-gradient(127deg, #fbb5d2 0%, #cabafe 91%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+.img-container .img2-container{
+    background: #f7f7f7;
+    border-radius: 50%;
+    position: absolute;
+    --border:0.2em;
+    top: var(--border);
+    left: var(--border);
+    right: var(--border);
+    bottom: var(--border);
+}
+
+.content-container .form-container{
+    margin: 1em;
+    margin-left: 35%;
+    width: 68%;
 }
 
 .categorie{
     display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.categorie h2{
+    margin-bottom: 1em;
+    font-size: 1.6em;
+}
+.categorie .item h4{
+    margin-bottom: 0.8em;
+    font-size: 1.3em;
+}
+input{
+    min-width: 6em;
+    max-width: 50%;
+    margin-bottom: 1em;
 }

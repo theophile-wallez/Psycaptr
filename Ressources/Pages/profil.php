@@ -30,20 +30,51 @@
 <nav></nav>
 
 <body>
-  <form class="content-container">
-    <h2>Mes informations</h2>
-    <div class="categorie name-container">
-      <div class="sub_name-container">
-        <h4>Prénom</h4>
-        <input name="Prenom" type="text" placeholder="Théophile"/>
+  <section class="content-container">
+
+    <div class="profil-container">
+      <div class="img-container">
+        <div class="img2-container">
+          <img src="" alt="">
+        </div>
       </div>
-      <div class="sub_name-container">
-        <h4>Nom</h4>
-        <input name="Nom" type="text" placeholder="Wallez"/>
-      </div>
+      <div class="nom-container"></div>
     </div>
-    
-  </form>
+
+    <form class="form-container">
+      <section class="categorie information-container">
+
+        <h2>Mes informations</h2>
+        <div class="item prénom-container">
+          <h4>Prénom</h4>
+          <input name="Prenom" type="text" placeholder="Théophile"/>
+        </div>
+
+        <div class="item nom-container">
+            <h4>Nom</h4>
+            <input name="Nom" type="text" placeholder="Wallez"/>
+        </div>
+
+      </section>
+
+      <section class="categorie information-container">
+
+        <h2>Mes coordonnées</h2>
+        <div class="item mail-container">
+          <h4>Votre adresse mail</h4>
+          <input name="Mail" type="mail" placeholder="Théophile"/>
+        </div>
+
+        <div class="item tel-container">
+            <h4>Votre numéro de téléphone</h4>
+            <input name="Tel" type="tel" placeholder="Wallez"/>
+        </div>
+
+      </section>
+      
+    </form>
+  </section>
+  
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
