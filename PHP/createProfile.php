@@ -42,7 +42,7 @@ if($result = $bdd -> query($sql)){
 
 $result -> free_result();
 
-$Mdp = password_hash($Mdp, PASSWORD_DEFAULT);
+
 
 $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Mdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail', $Mdp,'$Date','$Nom','$Prenom')";
 
