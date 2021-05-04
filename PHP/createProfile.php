@@ -44,7 +44,7 @@ $result -> free_result();
 
 
 
-$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Mdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail', $Mdp,'$Date','$Nom','$Prenom')";
+$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Mdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail', '$Mdp','$Date','$Nom','$Prenom')";
 
 
 $bdd -> query($sql);
