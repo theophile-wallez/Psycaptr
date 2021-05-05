@@ -1,6 +1,6 @@
 <?php
 
-$Id = Password(5);
+$Id = IdGenerator(5);
 $Mdp = htmlspecialchars($_POST['Mdp']);
 $MdpBis = htmlspecialchars($_POST['MdpBis']);
 $Nom = htmlspecialchars($_POST['Nom']);
@@ -12,6 +12,8 @@ if($MdpBis != $Mdp){
   header('Location:../inscription.html');
   exit();
 }
+
+$CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
 
 
 $servername = 'localhost';
@@ -29,12 +31,13 @@ $sql = 'SELECT * FROM Utilisateurs';
 
 if($result = $bdd -> query($sql)){
   while($row = $result -> fetch_row()) {
-    if($Id == $row[0]){
-      $Id = Password(5);
-    }
     if($Mail == $row[1]) {
       header('Location:../connexion.php');
       exit();
+    }
+    //Inversion de l'ordre des deux if pour la performance de l'algorithme
+    if($Id == $row[0]){
+      $Id = IdGenerator(5);
     }
   }
 }
@@ -42,7 +45,7 @@ if($result = $bdd -> query($sql)){
 $result -> free_result();
 
 
-$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Mdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$Mdp','$Date','$Nom','$Prenom')";
+$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
 
 
 $bdd -> query($sql);
@@ -62,7 +65,7 @@ exit();
 
 
 
-function Password($taille)
+function IdGenerator($taille)
    {
      // Liste des caractères possibles
      $cars="0123456789";
