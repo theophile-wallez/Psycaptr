@@ -20,7 +20,6 @@
 	if($result = $bdd -> query($sql)){
 		while($row = $result -> fetch_row()) {
 			if($Mail == $row[1] && $Mdp == $row[2]){
-				//printf("connexion administrateur réussi : Bonjour %s %s", $row[3], $row[2]);
 				$_SESSION['login'] = 0;
 				$_SESSION['lastActivity'] = time();
 				$_SESSION["Nom"] = $row[3];
