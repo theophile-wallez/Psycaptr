@@ -27,7 +27,7 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-        <input name="id" type="text" placeholder="Adresse mail"/>
+        <input name="Mail" type="email" placeholder="Adresse mail"/>
         <input name="Mdp" type="password" placeholder="Mot de passe" />
 
         <div class="forgot_container">
@@ -56,13 +56,9 @@
 
 
 <?php
-
 	session_start();
-
 	unset($_SESSION['login']);
   unset($_SESSION['lastActivity']);
   unset($_SESSION['Prenom']);
   unset($_SESSION['Nom']);
-
-
 ?>
