@@ -19,7 +19,7 @@
 
 	if($result = $bdd -> query($sql)){
 		while($row = $result -> fetch_row()) {
-			if($Mail == $row[1] && $Mdp == $row[2]){
+			if($Mail == $row[0] && $Mdp == $row[1]){
 				$_SESSION['login_Admin'] = 0;
 				$_SESSION['lastActivity'] = time();
 				$_SESSION["Nom"] = $row[3];
