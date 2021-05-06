@@ -52,6 +52,7 @@
 	header('Location:../Ressources/Pages/connexion.php');
 	exit();
 
+
 	$result -> free_result();
 
 	$bdd -> close();
