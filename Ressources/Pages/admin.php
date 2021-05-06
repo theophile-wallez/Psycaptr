@@ -91,7 +91,6 @@
 </html>
 
 <?php
-
 	session_start();
 	if($_SESSION['login_Admin'] != 0 | !isset($_SESSION['login_Admin'])) {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
