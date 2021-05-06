@@ -2,16 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="Ressources/Style/style.css"/>
-  <link rel="stylesheet" href="Ressources/Style/dashboard.css"/>
-  <link rel="icon" href="Ressources/Images/Logo_simple.png" type="image/icon type">
+  <link rel="stylesheet" href="../Style/style.css"/>
+  <link rel="stylesheet" href="../Style/dashboard.css"/>
+  <link rel="icon" href="../Images/Logo_simple.png" type="image/icon type">
   <title>DashBoard • Psycaptr</title>
 </head>
 
 <header>
   <div class="home_logo">
-    <a href="home.html" draggable="false">
-      <img src="Ressources/Images/Logo_simple.png" draggable="false" alt="logo">
+    <a href="../../index.php#" draggable="false">
+      <img src="../Images/Logo_simple.png" draggable="false" alt="logo">
     </a>
   </div>
   <div class="welcome-text">
@@ -39,7 +39,12 @@
           </div>
         </div>
         <div class="part_2_container">
-          <div class="graph graph-2"></div>
+          <div class="graph graph-2">
+            <h4 class="canvas_title">Tests par catégorie</h4>
+            <div class="canvas_container">
+             <canvas id="doughnut-chart"></canvas>
+            </div>
+          </div>
         </div>
     </div>
     <div class="main_part_container">
@@ -55,9 +60,11 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="javascripts/Graph/graph.js"></script>
+<script src="../../javascripts/Graph/graph.js"></script>
+
 <script>
   graph1();
+  graph2();
 </script>
 </html>
 
@@ -67,7 +74,7 @@
 	if($_SESSION['login'] != 0 | !isset($_SESSION['login'])) {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 			unset($_SESSION['login']);
-			header('Location:home.html');
+			header('Location:../../index.php#');
 			exit();
 		}
 	}

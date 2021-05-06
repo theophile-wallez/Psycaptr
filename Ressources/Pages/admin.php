@@ -2,16 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="Ressources/Style/style.css"/>
-  <link rel="stylesheet" href="Ressources/Style/admin.css"/>
-  <link rel="icon" href="Ressources/Images/Logo_simple.png" type="image/icon type">
+  <link rel="stylesheet" href="../Style/style.css"/>
+  <link rel="stylesheet" href="../Style/admin.css"/>
+  <link rel="icon" href="../Images/Logo_simple.png" type="image/icon type">
   <title>DashBoard • Psycaptr</title>
 </head>
 
 <header>
   <div class="home_logo">
-    <a href="home.html" draggable="false">
-      <img src="Ressources/Images/Logo_simple.png" draggable="false" alt="logo">
+    <a href="../../index.php#" draggable="false">
+      <img src="../Images/Logo_simple.png" draggable="false" alt="logo">
     </a>
 
   </div>
@@ -28,9 +28,9 @@
 
 <nav class="slide-menu">
   <div class="buttons">
-    <a><img src="Ressources/Images/User_icons/utilisateur.png"></a>
-    <a><img src="Ressources/Images/liste-de-controle.png"></a>
-    <a><img src="Ressources/Images/liste-de-taches.png"></a>
+    <a><img src="../Images/User_icons/utilisateur.png"></a>
+    <a><img src="../Images/liste-de-controle.png"></a>
+    <a><img src="../Images/liste-de-taches.png"></a>
   </div>
   <div class="text">
     <a><p>Profil</p></a>
@@ -54,7 +54,7 @@
         <div class="part_2_container">
           <div class="graph graph-2">
             <h2>Gestion des Utilisateurs</h2>
-            <a><img src="Ressources/Images/liste-de-controle.png"></a>
+            <a><img src="../Images/liste-de-controle.png"></a>
           </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
       <div class="part_1_container">
           <div class="graph graph-double graph-3">
             <h2>Mon Profil</h2>
-            <a><img src="Ressources/Images/User_icons/sharky.png"></a>
+            <a><img src="../Images/User_icons/sharky.png"></a>
           </div>
 
           <div class="graph graph-double graph-4">
@@ -75,7 +75,7 @@
       <div class="part_2_container">
         <div class="graph graph-5">
           <h2>Validations en attente</h2>
-          <a><img src="Ressources/Images/liste-de-taches.png"></a>
+          <a><img src="../Images/liste-de-taches.png"></a>
         </div>
       </div>
   </div>
@@ -83,7 +83,7 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="javascripts/Graph/graph.js"></script>
+<script src="../../javascripts/Graph/graph.js"></script>
 <script>
   graph1();
   doughnut();
@@ -96,7 +96,7 @@
 	if($_SESSION['login'] != 0 | !isset($_SESSION['login'])) {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 			unset($_SESSION['login']);
-			header('Location:home.html');
+			header('Location:../../index.php#');
 			exit();
 		}
 	}

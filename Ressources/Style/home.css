@@ -9,7 +9,7 @@ body
 .back-to-top{
   font-size: 2.7em;
   position: fixed;
-  z-index: 10000;
+  z-index: 10000000;
   right:  1em;
   bottom: 1em;
 
@@ -22,11 +22,14 @@ body
   border-radius: 10em;
   transition: all 0.3s;
   user-select: none;
+
+
 }
 
 .fa-arrow-up{
   background: -webkit-linear-gradient(#fbb5d2, #cabafe);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -191,7 +194,7 @@ body
   padding-bottom: 12em;
   background: linear-gradient(127deg, #fbb5d2 0%, #cabafe 91%);
   position: relative;
-  z-index: 2;
+  z-index: 40000;
 }
 
 .test-container{
@@ -607,7 +610,8 @@ body
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000000;
+  z-index: 10000;
+  position: relative;
 }
 .contact_form_container{
   position: relative;
@@ -625,6 +629,9 @@ body
   justify-content: space-between;
   overflow: hidden;
   transition: all 0.3s;
+
+  z-index: 10001;
+
 }
 
 .contact_form_container:hover{
