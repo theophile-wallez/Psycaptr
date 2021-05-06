@@ -22,8 +22,8 @@
 			if($Mail == $row[0] && $Mdp == $row[1]){
 				$_SESSION['login_Admin'] = 0;
 				$_SESSION['lastActivity'] = time();
-				$_SESSION['Nom'] = $row[3];
-			    $_SESSION['Prenom'] = $row[4];
+				$_SESSION['Nom'] = $row[2];
+			    $_SESSION['Prenom'] = $row[3];
 				header('Location:../Ressources/Pages/admin.php');
 				exit();
 			}
