@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	unset($_SESSION['login']);
+  unset($_SESSION['login_Admin']);
+  unset($_SESSION['lastActivity']);
+  unset($_SESSION['Prenom']);
+  unset($_SESSION['Nom']);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,12 +61,3 @@
 <script src="../../javascripts/nav_bar.js"></script>
 <script>nav_page_function()</script>
 </html>
-
-
-<?php
-	session_start();
-	unset($_SESSION['login']);
-  unset($_SESSION['lastActivity']);
-  unset($_SESSION['Prenom']);
-  unset($_SESSION['Nom']);
-?>
