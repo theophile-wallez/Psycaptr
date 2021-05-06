@@ -16,6 +16,7 @@ $Date = date('Y-m-d');
 
 if($MdpBis != $Mdp){
   header('Location:../Ressources/Pages/inscription.php');
+  
   exit();
 }
 
