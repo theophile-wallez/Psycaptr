@@ -9,7 +9,7 @@ $Mail = htmlspecialchars($_POST['Mail']);
 $Date = date('Y-m-d');
 
 if($MdpBis != $Mdp){
-  header('Location:../inscription.html');
+  header('Location:../Ressources/Pages/inscription.html');
   exit();
 }
 
@@ -32,7 +32,7 @@ $sql = 'SELECT * FROM Utilisateurs';
 if($result = $bdd -> query($sql)){
   while($row = $result -> fetch_row()) {
     if($Mail == $row[1]) {
-      header('Location:../connexion.php');
+      header('Location:../Ressources/Pages/connexion.php');
       exit();
     }
     //Inversion de l'ordre des deux if pour la performance de l'algorithme
@@ -60,7 +60,7 @@ $_SESSION['lastActivity'] = time();
 $_SESSION["Nom"] = $Nom;
 $_SESSION["Prenom"] = $Prenom;
 
-header("Location:../dashboard.php");
+header("Location:../Ressources/Pages/dashboard.php");
 exit();
 
 function IdGenerator($taille)

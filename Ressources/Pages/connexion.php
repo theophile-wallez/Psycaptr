@@ -2,24 +2,24 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="Ressources/Style/style.css"/>
-  <link rel="stylesheet" href="Ressources/Style/nav_bar.css"/>
-  <link rel="stylesheet" href="Ressources/Style/footer.css"/>
-  <link rel="stylesheet" href="Ressources/Style/connexion.css"/>
+  <link rel="stylesheet" href="../Style/style.css"/>
+  <link rel="stylesheet" href="../Style/nav_bar.css"/>
+  <link rel="stylesheet" href="../Style/footer.css"/>
+  <link rel="stylesheet" href="../Style/connexion.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900">
 
-  <link rel="icon" href="Ressources/Images/Logo_simple.png" size="32x32" type="image/icon type">
+  <link rel="icon" href="../Images/Logo_simple.png" size="32x32" type="image/icon type">
   <title>Connexion • Psycaptr</title>
 </head>
 
-<nav id="header" class="nav_absolute" >
+<nav id="navi" class="nav_absolute" >
 
 </nav>
 
 <body>
 
-  <form class="connect_container" action="PHP/connexion.php" method="POST">
+  <form class="connect_container" action="../../PHP/connexion.php" method="POST">
       <!-- Titre -->
       <div class="title_container">
         <h3 draggable="false">Connectez-vous</h3>
@@ -43,15 +43,14 @@
       </div>
   </form>
 
-  <script src="./javascripts/rellax.js"></script>
   <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
 
 </body>
 
 <footer class="bottom" id="footer"></footer>
 
-<script src="./javascripts/nav_bar.js"></script>
-<script>nav_function()</script>
+<script src="../../javascripts/nav_bar.js"></script>
+<script>nav_page_function()</script>
 </html>
 
 
