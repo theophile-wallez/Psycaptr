@@ -1,14 +1,10 @@
 <?php
-
-
 $Id = Password(5);
 $Nom = htmlspecialchars($_POST['Nom']);
 $Prenom = htmlspecialchars($_POST['Prenom']);
 $Mail = htmlspecialchars($_POST['Mail']);
 $Message = htmlspecialchars($_POST['Message']);
 $Date = date('j F Y');
-
-
 
 $servername = 'localhost';
 $bddname = 'ttwawain_Psycaptr';
@@ -67,5 +63,4 @@ function Password($taille)
 
      return $mdp;
    }
-
  ?>

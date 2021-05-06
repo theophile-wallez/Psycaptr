@@ -63,8 +63,6 @@ $_SESSION["Prenom"] = $Prenom;
 header("Location:../dashboard.php");
 exit();
 
-
-
 function IdGenerator($taille)
    {
      // Liste des caractères possibles
