@@ -1,6 +1,5 @@
 <?php
 
-
 $Id = Password(5);
 $Mdp = htmlspecialchars($_POST['Mdp']);
 $MdpBis = htmlspecialchars($_POST['MdpBis']);
@@ -78,5 +77,4 @@ function Password($taille)
 
      return $dd;
    }
-
  ?>

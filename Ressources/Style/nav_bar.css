@@ -2,10 +2,11 @@ nav
 {
   position: fixed;
   margin-top: 2em;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  
   height: 4em;
-  width: 90%;
+  width: 90vw;
   background-color: white;
   border-radius: 2em;
   align-items: center;

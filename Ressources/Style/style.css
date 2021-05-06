@@ -32,16 +32,41 @@ p{
   background-color: #ff589e;
 }
 
+@-webkit-keyframes autofill {
+  0%,100% {
+      color: #666;
+      background: transparent;
+  }
+}
+@keyframes autofill {
+  0%,100% {
+      color: #666;
+      background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s; /* Safari support - any positive time runs instantly */
+  -webkit-animation-name: autofill;
+  animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 .text-fade
 {
   background: -webkit-linear-gradient(#ff589e, #8261ee);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-html{
-  margin: 0;
-}
+
 body{
-  margin: 0;
+  margin: 0 auto !important;
+  max-width: 1500px;
+}
+body > * {
+  box-sizing: border-box;
 }
