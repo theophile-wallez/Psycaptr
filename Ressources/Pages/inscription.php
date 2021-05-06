@@ -22,7 +22,7 @@
 <body>
 
   <div id="contact-container">
-    <form class="contact_form_container" action="../../PHP/createProfile.php" method="POST">
+    <form class="contact_form_container" action="../../PHP/inscriptionAlgo.php" method="POST">
       <div class="abstract_container" id="contact_link"></div>
       <div class="title_container">
         <h3 draggable="false">Créez votre compte</h3>

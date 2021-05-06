@@ -19,7 +19,7 @@
 
 <body>
 
-  <form class="connect_container" action="../../PHP/connexion.php" method="POST">
+  <form class="connect_container" action="../../PHP/connexionAlgo.php" method="POST">
       <!-- Titre -->
       <div class="title_container">
         <h3 draggable="false">Connectez-vous</h3>
@@ -32,7 +32,7 @@
 
         <div class="forgot_container">
           <a href="#">Mot de passe oublié</a>
-          <a href="inscription.html">Créer un compte</a>
+          <a href="inscription.php">Créer un compte</a>
         </div>
       </div>
 

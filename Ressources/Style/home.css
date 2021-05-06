@@ -9,7 +9,7 @@ body
 .back-to-top{
   font-size: 2.7em;
   position: fixed;
-  z-index: 10000;
+  z-index: 10000000;
   right:  1em;
   bottom: 1em;
 
@@ -22,6 +22,8 @@ body
   border-radius: 10em;
   transition: all 0.3s;
   user-select: none;
+
+
 }
 
 .fa-arrow-up{
