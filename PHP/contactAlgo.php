@@ -1,32 +1,34 @@
 <?php
 
+$Id = IdGenerator(11); //Un Id est généré par une méthode
 
-$Id = Password(5);
+//On récupère les données rentrées par l'utilisateur
 $Nom = htmlspecialchars($_POST['Nom']);
 $Prenom = htmlspecialchars($_POST['Prenom']);
 $Mail = htmlspecialchars($_POST['Mail']);
 $Message = htmlspecialchars($_POST['Message']);
 $Date = date('j F Y');
 
-
-
+//Connexion à la database
 $servername = 'localhost';
 $bddname = 'ttwawain_Psycaptr';
 $username = 'theophile';
 $password = 'psycaptrisep2023';
 
+//Message d'erreur en cas d'accès impossible à la database
 $bdd = new mysqli($servername, $username, $password, $bddname);
 if($bdd->connect_errno){
   echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
   exit();
 }
 
+
 $sql = 'SELECT * FROM Message';
 
 if($result = $bdd -> query($sql)){
   while($row = $result -> fetch_row()) {
     if($Id == $row[0]){
-      $Id = Password(5);
+      $Id = IdGenerator(11);
     }
   }
 }
@@ -44,28 +46,21 @@ if (!mysql_query($sql,$bdd)) {
 
 $bdd -> close();
 
-
-
-
-
-header("Location:../connexion.php");
+header("Location:../Ressources/Pages/connexion.php");
 exit();
 
 
+function IdGenerator($taille){
+  // Liste des caractères possibles
+  $chars="0123456789";
+  $Id='';
+  $length=strlen($chars);
 
-function Password($taille)
-   {
-     // Liste des caractères possibles
-     $cars="0123456789";
-     $mdp='';
-     $long=strlen($cars);
+  srand((double)microtime()*1000000);
+  //Initialise le générateur de nombres aléatoires
 
-     srand((double)microtime()*1000000);
-     //Initialise le générateur de nombres aléatoires
+  for($i=0;$i<$taille;$i++)$Id=$Id.substr($chars,rand(0,$length-1),1);
 
-     for($i=0;$i<$taille;$i++)$mdp=$mdp.substr($cars,rand(0,$long-1),1);
-
-     return $mdp;
-   }
-
- ?>
+  return $Id;
+}
+?>

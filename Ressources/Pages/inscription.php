@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   
-  <link rel="stylesheet" href="Ressources/Style/footer.css"/>
-  <link rel="stylesheet" href="Ressources/Style/inscription.css"/>
-  <link rel="stylesheet" href="Ressources/Style/nav_bar.css"/>
-  <link rel="stylesheet" href="Ressources/Style/style.css"/>
+  <link rel="stylesheet" href="../Style/footer.css"/>
+  <link rel="stylesheet" href="../Style/inscription.css"/>
+  <link rel="stylesheet" href="../Style/nav_bar.css"/>
+  <link rel="stylesheet" href="../Style/style.css"/>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900">
@@ -15,14 +15,14 @@
   <title>Inscription • Psycaptr</title>
 </head>
 
-<nav id="header" class="nav_absolute" >
+<nav id="navi" class="nav_absolute" >
 
 </nav>
 
 <body>
 
   <div id="contact-container">
-    <form class="contact_form_container" action="PHP/createProfile.php" method="POST">
+    <form class="contact_form_container" action="../../PHP/inscriptionAlgo.php" method="POST">
       <div class="abstract_container" id="contact_link"></div>
       <div class="title_container">
         <h3 draggable="false">Créez votre compte</h3>
@@ -48,11 +48,8 @@
 
   <footer class="bottom" id="footer"></footer>
 
-  <script src="./javascripts/rellax.js"></script>
-  <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
-
 </body>
 
-<script src="./javascripts/nav_bar.js"></script>
-<script>nav_function()</script>
+<script src="../../javascripts/nav_bar.js"></script>
+<script>nav_page_function()</script>
 </html>
