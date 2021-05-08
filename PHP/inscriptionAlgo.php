@@ -2,6 +2,13 @@
 
 session_start();
 
+unset($_SESSION['login']);
+unset($_SESSION['login_Admin']);
+unset($_SESSION['lastActivity']);
+unset($_SESSION['Prenom']);
+unset($_SESSION['Nom']);
+unset($_SESSION['Mail']);
+
 $Id = IdGenerator(11); //Un Id est généré par une méthode
 
 //On récupère les données rentrées par l'utilisateur
