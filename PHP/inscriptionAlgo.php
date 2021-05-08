@@ -57,10 +57,10 @@ if($result = $bdd -> query($sql)){
       header('Location:../Ressources/Pages/connexion.php');
       exit();
     }
-    // On vérifie que l'Id généré n'existe pas déjà
+
     while($Id == $row[0]){
-      // On vérifie que l'Id généré n'existe pas déjà
       $Id = IdGenerator(11);
+      echo $Id."|";
     }
   }
 }
@@ -72,6 +72,7 @@ $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscriptio
 
 if(!$bdd -> query($sql)){
   echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+  echo $Id;
 }
 else {
   $_SESSION['login'] = 0;
