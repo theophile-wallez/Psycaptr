@@ -9,7 +9,7 @@ unset($_SESSION['Prenom']);
 unset($_SESSION['Nom']);
 unset($_SESSION['Mail']);
 
-$Id = IdGenerator(11); //Un Id est généré par une méthode
+$Id = IdGenerator(6); //Un Id est généré par une méthode
 //On récupère les données rentrées par l'utilisateur
 $Mdp = htmlspecialchars($_POST['Mdp']);
 $MdpBis = htmlspecialchars($_POST['MdpBis']);
@@ -62,7 +62,7 @@ else {
     }
 
     while($Id == $row[0]){
-      $Id = IdGenerator(11);
+      $Id = IdGenerator(6);
     }
   }
 }
