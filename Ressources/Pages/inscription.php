@@ -11,7 +11,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  
+
   <link rel="stylesheet" href="../Style/footer.css"/>
   <link rel="stylesheet" href="../Style/inscription.css"/>
   <link rel="stylesheet" href="../Style/nav_bar.css"/>
@@ -41,12 +41,12 @@
           if(isset($_SESSION['Prenom'])){
             echo $_SESSION['Prenom'];
           }
-        ?>"/>
+        ?>" required/>
         <input name="Nom" type="text" placeholder="Nom" value="<?php
           if(isset($_SESSION['Nom'])){
             echo $_SESSION['Nom'];
           }
-        ?>"/>
+        ?>" required/>
       </div>
 
       <div class="input_container input_container_2">
@@ -54,12 +54,12 @@
           if(isset($_SESSION['Mail'])){
             echo $_SESSION['Mail'];
           }
-        ?>"/>
+        ?>" required/>
       </div>
 
       <div class="input_container input_container_3">
-        <input name="Mdp" type="password" placeholder="Mot de passe"/>
-        <input name="MdpBis" type="password" placeholder="Confirmation"/>
+        <input name="Mdp" type="password" placeholder="Mot de passe" required/>
+        <input name="MdpBis" type="password" placeholder="Confirmation" required/>
       </div>
 
 
