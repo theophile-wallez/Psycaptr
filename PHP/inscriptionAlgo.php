@@ -26,7 +26,7 @@ $_SESSION['Prenom']= $Prenom;
 // On vérifie si le mot de passe est le même que celui de confirmation,
 // sinon on reviens vers la page d'inscription
 
-if($MdpBis != $Mdp || $Mdp == NULL && $MdpBis == NULL){
+if($MdpBis != $Mdp){
   header('Location:../Ressources/Pages/inscription.php');
   exit();
 }
