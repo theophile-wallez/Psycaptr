@@ -1,6 +1,6 @@
 <?php
 
-session();
+session_start();
 
 $Id = IdGenerator(11); //Un Id est généré par une méthode
 
