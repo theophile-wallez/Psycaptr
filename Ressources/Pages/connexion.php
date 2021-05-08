@@ -57,7 +57,6 @@
       </div>
   </form>
 
-  <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
 
 </body>
 
