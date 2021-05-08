@@ -4,6 +4,8 @@
 	$Mail = htmlspecialchars($_POST['Mail']);
 	$Mdp = htmlspecialchars($_POST['Mdp']);
 
+	$_SESSION['Mail']=$Mail;
+
 	$servername = 'localhost';
 	$bddname = 'ttwawain_Psycaptr';
 	$username = 'theophile';
