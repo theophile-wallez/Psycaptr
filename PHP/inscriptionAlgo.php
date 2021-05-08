@@ -91,14 +91,14 @@ $bdd -> close();
 function IdGenerator($taille){
   // Liste des caractères possibles
   $chars="0123456789";
-  $Id='';
+  $mdp='';
   $length=strlen($chars);
 
   srand((double)microtime()*1000000);
   //Initialise le générateur de nombres aléatoires
 
-  for($i=0;$i<$taille;$i++)$Id=$Id.substr($chars,rand(0,$length-1),1);
+  for($i=0;$i<$taille;$i++)$mdp=$dmp.substr($chars,rand(0,$length-1),1);
 
-  return $Id;
+  return $mdp;
 }
  ?>
