@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	unset($_SESSION['login']);
+  unset($_SESSION['login_Admin']);
+  unset($_SESSION['lastActivity']);
+  unset($_SESSION['Prenom']);
+  unset($_SESSION['Nom']);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,7 +96,6 @@
 </html>
 
 <?php
-
 	// session_start();
 	// if($_SESSION['login'] != 0 | !isset($_SESSION['login'])) {
 	// 	if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
@@ -97,5 +105,4 @@
 	// 	}
 	// }
 	// $_SESSION['lastActivity']= time();
-
 ?>

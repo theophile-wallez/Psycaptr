@@ -36,9 +36,13 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-        <input name="Mail" type="email" placeholder="Adresse mail"/>
+        <input name="Mail" type="email" placeholder="Adresse mail" value="<?php
+          if(isset($_SESSION['Mail'])){
+            echo $_SESSION['Mail'];
+          }
+        ?>"/>
         <input name="Mdp" type="password" placeholder="Mot de passe" />
-
+        <!-- isset($_SESSION['login'])||isset($_SESSION['login_Admin']) -->
         <div class="forgot_container">
           <a href="#">Mot de passe oublié</a>
           <a href="inscription.php">Créer un compte</a>

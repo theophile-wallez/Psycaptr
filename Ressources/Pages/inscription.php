@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	unset($_SESSION['login']);
+  unset($_SESSION['login_Admin']);
+  unset($_SESSION['lastActivity']);
+  // unset($_SESSION['Prenom']);
+  // unset($_SESSION['Nom']);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +37,24 @@
         <h3 draggable="false">Création de votre compte</h3>
       </div>
       <div class="input_container input_container_1">
-        <input name="Prenom" type="text" placeholder="Prénom"/>
-        <input name="Nom" type="text" placeholder="Nom"/>
+        <input name="Prenom" type="text" placeholder="Prénom" value="<?php
+          if(isset($_SESSION['Prenom'])){
+            echo $_SESSION['Prenom'];
+          }
+        ?>"/>
+        <input name="Nom" type="text" placeholder="Nom" value="<?php
+          if(isset($_SESSION['Nom'])){
+            echo $_SESSION['Nom'];
+          }
+        ?>"/>
       </div>
 
       <div class="input_container input_container_2">
-        <input name="Mail" type="email" placeholder="Votre mail"/>
+        <input name="Mail" type="email" placeholder="Votre mail" value="<?php
+          if(isset($_SESSION['Mail'])){
+            echo $_SESSION['Mail'];
+          }
+        ?>"/>
       </div>
 
       <div class="input_container input_container_3">
@@ -49,7 +70,6 @@
   </div>
 
   <footer class="bottom" id="footer"></footer>
-
 </body>
 
 <script src="../../javascripts/nav_bar.js"></script>
