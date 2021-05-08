@@ -70,20 +70,22 @@ $result -> free_result();
 
 $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
 
-$bdd -> query($sql);
+if(!$bdd -> query($sql)){
+  echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+}
+else {
+  $_SESSION['login'] = 0;
+  $_SESSION['lastActivity'] = time();
+  $_SESSION["Nom"] = $Nom;
+  $_SESSION["Prenom"] = $Prenom;
+
+  header("Location:../Ressources/Pages/dashboard.php");
+  exit();
+}
 
 
 $bdd -> close();
 
-echo $Mail."|".$Id."|".$CryptedMdp."|".$Date."|".$Nom."|".$Prenom;
-
-$_SESSION['login'] = 0;
-$_SESSION['lastActivity'] = time();
-$_SESSION["Nom"] = $Nom;
-$_SESSION["Prenom"] = $Prenom;
-
-//header("Location:../Ressources/Pages/dashboard.php");
-//exit();
 
 
 function IdGenerator($taille){
