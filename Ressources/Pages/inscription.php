@@ -58,8 +58,8 @@
       </div>
 
       <div class="input_container input_container_3">
-        <input name="Mdp" type="password" placeholder="Mot de passe"/>
-        <input name="MdpBis" type="password" placeholder="Confirmation"/>
+        <input name="Mdp" type="password" placeholder="Mot de passe" required/>
+        <input name="MdpBis" type="password" placeholder="Confirmation" required/>
       </div>
 
 
