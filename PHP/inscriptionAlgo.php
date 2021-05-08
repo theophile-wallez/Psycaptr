@@ -52,7 +52,10 @@ if($bdd->connect_errno){
 //On sélectionne la table Utilisateurs dans la database
 $sql = 'SELECT * FROM Utilisateurs';
 
-if($result = $bdd -> query($sql)){
+if(!$result = $bdd -> query($sql)){
+  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+}
+else {
   while($row = $result -> fetch_row()) {
     // On vérifie que le mail n'est pas déjà utilisé
     if($Mail == $row[1]) {
@@ -67,6 +70,8 @@ if($result = $bdd -> query($sql)){
   }
 }
 
+
+
 $result -> free_result();
 
 
@@ -74,7 +79,7 @@ $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscriptio
 
 if(!$bdd -> query($sql)){
   echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-  echo $Id;
+  echo " |".$Id;
 }
 else {
   $_SESSION['login'] = 0;
