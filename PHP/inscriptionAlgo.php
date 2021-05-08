@@ -10,7 +10,6 @@ unset($_SESSION['Nom']);
 unset($_SESSION['Mail']);
 
 $Id = IdGenerator(11); //Un Id est généré par une méthode
-
 //On récupère les données rentrées par l'utilisateur
 $Mdp = htmlspecialchars($_POST['Mdp']);
 $MdpBis = htmlspecialchars($_POST['MdpBis']);
@@ -44,7 +43,6 @@ $bdd = new mysqli($servername, $username, $password, $bddname);
 if($bdd->connect_errno){
 
 // Est-ce qu'on ne redirige pas l'utilisateur vers la page d'inscription ?
-
   echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
   exit();
 }
@@ -72,21 +70,21 @@ $result -> free_result();
 
 $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
 
-
 $bdd -> query($sql);
 
 
 $bdd -> close();
 
-
+echo $Mail."|".$Id."|".$CryptedMdp."|".$Date."|".$Nom."|".$Prenom;
 
 $_SESSION['login'] = 0;
 $_SESSION['lastActivity'] = time();
 $_SESSION["Nom"] = $Nom;
 $_SESSION["Prenom"] = $Prenom;
 
-header("Location:../Ressources/Pages/dashboard.php");
-exit();
+//header("Location:../Ressources/Pages/dashboard.php");
+//exit();
+
 
 function IdGenerator($taille){
   // Liste des caractères possibles
