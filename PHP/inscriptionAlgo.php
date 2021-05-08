@@ -58,7 +58,7 @@ if($result = $bdd -> query($sql)){
       exit();
     }
     // On vérifie que l'Id généré n'existe pas déjà
-    if($Id == $row[0]){
+    while($Id == $row[0]){
       // On vérifie que l'Id généré n'existe pas déjà
       $Id = IdGenerator(11);
     }
