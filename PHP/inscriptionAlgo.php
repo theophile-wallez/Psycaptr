@@ -97,7 +97,7 @@ function IdGenerator($taille){
   srand((double)microtime()*1000000);
   //Initialise le générateur de nombres aléatoires
 
-  for($i=0;$i<$taille;$i++)$mdp=$dmp.substr($chars,rand(0,$length-1),1);
+  for($i=0;$i<$taille;$i++)$mdp=$mdp.substr($chars,rand(0,$length-1),1);
 
   return $mdp;
 }
