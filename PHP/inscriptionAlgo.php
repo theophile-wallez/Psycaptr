@@ -63,18 +63,14 @@ else {
 
     while($Id == $row[0]){
       $Id = IdGenerator(11);
-      echo $Id."|";
     }
   }
 }
 
-
-
 $result -> free_result();
 
-echo " |".$Id;
-
 $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+
 
 if(!$bdd -> query($sql)){
   echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
