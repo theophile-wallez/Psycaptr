@@ -1,5 +1,7 @@
 <?php
 
+session();
+
 $Id = IdGenerator(11); //Un Id est généré par une méthode
 
 //On récupère les données rentrées par l'utilisateur
@@ -10,16 +12,16 @@ $Prenom = htmlspecialchars($_POST['Prenom']);
 $Mail = htmlspecialchars($_POST['Mail']);
 $Date = date('Y-m-d');
 
-$_SESSION['Mail']=$Mail;
-$_SESSION['Nom']=$Nom;
-$_SESSION['Prenom']=$Prenom;
+$_SESSION['Mail']= $Mail;
+$_SESSION['Nom']= $Nom;
+$_SESSION['Prenom']= $Prenom;
 
 // On vérifie si le mot de passe est le même que celui de confirmation,
 // sinon on reviens vers la page d'inscription
 
 if($MdpBis != $Mdp){
   header('Location:../Ressources/Pages/inscription.php');
-  
+
   exit();
 }
 
