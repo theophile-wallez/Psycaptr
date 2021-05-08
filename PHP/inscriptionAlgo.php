@@ -69,16 +69,11 @@ if($result = $bdd -> query($sql)){
 
 $result -> free_result();
 
-
 $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
-
 
 $bdd -> query($sql);
 
-
 $bdd -> close();
-
-
 
 $_SESSION['login'] = 0;
 $_SESSION['lastActivity'] = time();
