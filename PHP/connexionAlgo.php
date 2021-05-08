@@ -1,6 +1,13 @@
 <?php
 	session_start();
 
+	unset($_SESSION['login']);
+	unset($_SESSION['login_Admin']);
+	unset($_SESSION['lastActivity']);
+	unset($_SESSION['Prenom']);
+	unset($_SESSION['Nom']);
+	unset($_SESSION['Mail']);
+
 	$Mail = htmlspecialchars($_POST['Mail']);
 	$Mdp = htmlspecialchars($_POST['Mdp']);
 
