@@ -2,6 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <!-- Retire le cache -->
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+
   <link rel="stylesheet" href="Ressources/Style/style.css"/>
   <link rel="stylesheet" href="Ressources/Style/home.css"/>
   <link rel="stylesheet" href="Ressources/Style/nav_bar.css"/>
