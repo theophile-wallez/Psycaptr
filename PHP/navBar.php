@@ -8,14 +8,14 @@ echo '<a class="header-link Tests" href="index.php#test-section" draggable="fals
 echo '<a class="header-link FAQ" href="index.php#FAQ-link" draggable="false">FAQ</a>';
 echo '<a class="header-link Contact" href="index.php#contact_link" draggable="false">Contact</a>';
 echo '</div>';
-echo '<a class="header-connect-container" href="Ressources/Pages/connexion.php#" draggable="false">Connexion</a>';
 
-if($_SESSION['login'] == 1)) {
-    echo 'connecté!'
+if($_SESSION['login'] == 1) {
+    echo 'connecté!';
+    echo '<a class="header-connect-container" href="Ressources/Pages/dashboard.php#" draggable="false">Dashboard</a>';
 }
-// else{
-//     echo '<a class="header-connect-container" href="Ressources/Pages/dashboard.php#" draggable="false">Dashboard</a>';
-// }
+else{
+    echo '<a class="header-connect-container" href="Ressources/Pages/connexion.php#" draggable="false">Connexion</a>';
+}
 
 
 
