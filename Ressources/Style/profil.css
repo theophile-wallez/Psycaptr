@@ -120,7 +120,7 @@ body .content-container{
     margin-top: 2em;
     width: 12em;
     height: 12em;
-    background: linear-gradient(127deg, #fbb5d2 0%, #cabafe 91%);
+    background: var(--light_gradient);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -143,6 +143,7 @@ body .content-container{
     margin: 1em;
     margin-left: 35%;
     width: 68%;
+    position: relative;
 }
 
 .categorie{
@@ -159,6 +160,22 @@ body .content-container{
     margin-bottom: 0.8em;
     font-size: 1.3em;
 }
+
+.modif_button{
+    position: absolute;
+    top: 2;
+    right: 4em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: var(--light_pink);
+}
+
+.modif_button:hover{
+    background-color: ;
+}
+
 input{
     min-width: 6em;
     max-width: 50%;

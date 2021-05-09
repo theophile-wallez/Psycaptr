@@ -14,7 +14,7 @@ input:hover, input:focus, textarea:hover, textarea:focus{
     border: none;
     border-style: none;
     outline: none;
-    caret-color: #fbb5d2;
+    caret-color: var(--light_pink);
     box-shadow: 0px 0px 4px #bdc3c7;
   }
 

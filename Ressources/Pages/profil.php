@@ -22,7 +22,7 @@
 
 <header>
   <div class="home_logo">
-    <a href="../../home.html" draggable="false">
+    <a href="../../index.php" draggable="false">
       <img src="../Images/Logo_simple.png" draggable="false" alt="logo">
     </a>
   </div>
@@ -51,6 +51,8 @@
     </div>
 
     <form class="form-container">
+      <a class="modif_button" href="">Modifier votre profil</a>
+
       <section class="categorie information-container">
 
         <h2>Mes informations</h2>

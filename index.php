@@ -28,10 +28,7 @@
         </linearGradient>
     </svg>
 
-    <div class="home-background">
-        <div class="home-text rellax" data-rellax-speed="-5">
-        <p>Better health for<strong> future </strong> <br> with <strong>Infinite Measures<sup class="tm">&reg;</sup></strong></p>
-        </div>
+    <div class="home-background centered">
         <div class="fade-effect"></div>
 
         <div class="wave-container">
@@ -40,41 +37,48 @@
             </svg>
         </div>
 
-        <div class="menu-items">
-            <div class="item item-rapide">
-                <div class="item-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 98.92 122.88" style="enable-background:new 0 0 98.92 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M78.77,0c-3.29,39.36-48.34,13.5-65.45,46.28c-2.42,5.34-4.03,10.29-4.8,14.84c-1.26,1.55-2.42,3.22-3.45,5 c-5.22,9.05-6.28,19.35-3.78,28.71c2.51,9.35,8.58,17.75,17.63,22.97c9.05,5.22,19.35,6.28,28.71,3.78 c9.35-2.51,17.75-8.58,22.97-17.63c2.31-4,3.8-8.24,4.54-12.54c5.32-3.1,10.02-7.48,13.62-13.28c6.08-14.12-5.01-25.38,10.17-35.32 c-9.38-4.72-15.1,0.16-20.58,9.7c-5.93,12.88-28.14-2.37-7.32-10.29C88.92,35.42,87.29,14.45,78.77,0L78.77,0L78.77,0z M37.02,84.91c0.11,0,0.23,0,0.34,0.01l13.03-9.76c1.51-1.13,3.66-0.83,4.79,0.68c1.13,1.51,0.83,3.66-0.68,4.79L41.6,90.3 c-0.36,2.21-2.27,3.9-4.58,3.9c-2.56,0-4.64-2.08-4.64-4.64c0-0.49,0.08-0.96,0.22-1.41L19.33,77.89 c-0.84-0.65-0.99-1.85-0.35-2.69c0.65-0.84,1.85-0.99,2.69-0.35l13.5,10.44C35.74,85.05,36.36,84.91,37.02,84.91L37.02,84.91z M53.96,57.11c16.06,9.27,21.08,28,11.8,44.06c-9.27,16.06-28,21.08-44.06,11.81c-16.06-9.27-21.08-28-11.8-44.06 C19.18,52.86,37.9,47.84,53.96,57.11L53.96,57.11z"/></g></svg>
-                </div>
-                <div class="item-title text-fade">
-                    <p>Rapide</p>
-                </div>
-                <div class="item-text">
-                    <p>Nos tests ne prennent que quelques minutes à réaliser</p>
-                </div>
-            </div>
-            <div class="item item-precis">
-                <div class="item-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><g><path d="M862.2,477.6c0-18.7-15.2-33.8-33.8-33.8c-18.7,0-33.8,15.2-33.8,33.8c0,4.9,1,9.6,2.9,13.7c2.2,12.7,5.1,35.1,5.1,68.8c0,209-153.3,362.3-362.4,362.3C231,922.4,77.8,769.1,77.8,560.1c0-209,153.3-362.3,362.4-362.3c33.4,0,38-1.6,67.1,4.6l0.1-0.7c0.9,0.1,1.9,0.3,2.8,0.3c17.8,0,32.4-14.5,32.4-32.4c0-15.4-10.7-28.1-25-31.4l0.3-2c-36.7-6.5-38.4-6.1-77.7-6.1C202.6,130.1,10,322.6,10,560c0,237.5,192.6,430,430.1,430c237.5,0,430.1-192.5,430.1-430c0-37.3-3-54.8-8.2-81.4C862.1,478.4,862.2,477.9,862.2,477.6L862.2,477.6z M345.4,862.1c0.3,0.2,0.7,0.2,1,0.4c1.1,0.4,3.6,0.7,3.6,0.7c1.7,0.3,3.1,1,4.9,1c13.1,0,21.5-11,23.7-24.1c2.2-13.6-12.9-21.9-12.9-21.9c-49.9-15.5-94.3-43.3-130.3-79.8c0,0-13-12.2-22.2-12.2c-13.1,0-23.7,10.8-23.7,24.1c0,7.8,3.8,14.3,9.4,18.8l-0.2,0.1C239.1,811.3,289.2,843.5,345.4,862.1L345.4,862.1z M435.5,421.8c1.2,0.1,2.4,0.4,3.7,0.4c18.7,0,33.8-15.2,33.8-33.8c0-18.4-14.6-33.2-32.9-33.7v-0.9c-114,0-206.5,92.5-206.5,206.4c0,114,92.5,206.4,206.5,206.4c113.4,0,205.4-91.4,206.4-204.5c0.1-1.1,0.3-2.2,0.3-3.4c0-18.7-15.2-33.8-33.8-33.8c-18.7,0-33.8,15.2-33.8,33.8c0,0.5,0.1,1,0.1,1.6h-0.5c0,85.5-53.1,138.6-138.6,138.6c-85.5,0-138.6-53.1-138.6-138.6C301.5,476.2,352.9,423.8,435.5,421.8L435.5,421.8z M990,216l-189.6-16.2L784.2,9.9l-67.8,68.4v0.2L579.2,199.8h-0.3V369L389.5,542l36.3,52.4l205.5-189.2h169.1V405l0.2,0.2l137.5-137.4l-0.2-0.2h0.2L990,216L990,216z M764.6,353.6h-118V235.7l86-86v118h118L764.6,353.6L764.6,353.6z M176.3,661.2c-4.3-4.5-10.3-7.4-16.9-7.4c-13.1,0-23.7,10.8-23.7,24.1c0,7.3,11.8,24,13.7,27c0.2,0.6,0.7,1,1,1.7c2.2,3.5,8.3,9,8.3,9c3.7,2.4,7.8,4.2,12.6,4.2c13.1,0,23.7-10.8,23.7-24.1c0-2.6-0.7-5.1-1.5-7.5L176.3,661.2L176.3,661.2z"/></g></svg>
-                </div>
-                <div class="item-title text-fade">
-                    <p>Précis</p>
-                </div>
-                <div class="item-text">
-                    <p>Nos tests sont réalisés avec très grande précision</p>
-                </div>
-            </div>
-            <div class="item item-secure" >
-                <div class="item-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1""enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"><g><path style="fill:linear-gradient(127deg, #ff589e 0%, #8261ee 91%);" d="m459.669 82.906-196-81.377c-4.91-2.038-10.429-2.039-15.338 0l-196 81.377c-7.465 3.1-12.331 10.388-12.331 18.471v98.925c0 136.213 82.329 258.74 208.442 310.215 4.844 1.977 10.271 1.977 15.116 0 126.111-51.474 208.442-174.001 208.442-310.215v-98.925c0-8.083-4.865-15.371-12.331-18.471zm-27.669 117.396c0 115.795-68 222.392-176 269.974-105.114-46.311-176-151.041-176-269.974v-85.573l176-73.074 176 73.074zm-198.106 67.414 85.964-85.963c7.81-7.81 20.473-7.811 28.284 0s7.81 20.474-.001 28.284l-100.105 100.105c-7.812 7.812-20.475 7.809-28.284 0l-55.894-55.894c-7.811-7.811-7.811-20.474 0-28.284s20.474-7.811 28.284 0z"/></g></svg>
-                </div>
-                <div class="item-title text-fade">
-                    <p>Sécurisé</p>
-                </div>
-                <div class="item-text">
-                    <p>Vous seul pouvez accéder à vos résultats confidentiels</p>
-                </div>
+        <div class="inner">
+          <div class="home-text rellax" data-rellax-speed="-5">
+            <p>Better health for future <br>with Infinite Measures</p>
+          </div>
+          <div class="menu-items">
+              <div class="item item-rapide">
+                  <div class="item-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 98.92 122.88" style="enable-background:new 0 0 98.92 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M78.77,0c-3.29,39.36-48.34,13.5-65.45,46.28c-2.42,5.34-4.03,10.29-4.8,14.84c-1.26,1.55-2.42,3.22-3.45,5 c-5.22,9.05-6.28,19.35-3.78,28.71c2.51,9.35,8.58,17.75,17.63,22.97c9.05,5.22,19.35,6.28,28.71,3.78 c9.35-2.51,17.75-8.58,22.97-17.63c2.31-4,3.8-8.24,4.54-12.54c5.32-3.1,10.02-7.48,13.62-13.28c6.08-14.12-5.01-25.38,10.17-35.32 c-9.38-4.72-15.1,0.16-20.58,9.7c-5.93,12.88-28.14-2.37-7.32-10.29C88.92,35.42,87.29,14.45,78.77,0L78.77,0L78.77,0z M37.02,84.91c0.11,0,0.23,0,0.34,0.01l13.03-9.76c1.51-1.13,3.66-0.83,4.79,0.68c1.13,1.51,0.83,3.66-0.68,4.79L41.6,90.3 c-0.36,2.21-2.27,3.9-4.58,3.9c-2.56,0-4.64-2.08-4.64-4.64c0-0.49,0.08-0.96,0.22-1.41L19.33,77.89 c-0.84-0.65-0.99-1.85-0.35-2.69c0.65-0.84,1.85-0.99,2.69-0.35l13.5,10.44C35.74,85.05,36.36,84.91,37.02,84.91L37.02,84.91z M53.96,57.11c16.06,9.27,21.08,28,11.8,44.06c-9.27,16.06-28,21.08-44.06,11.81c-16.06-9.27-21.08-28-11.8-44.06 C19.18,52.86,37.9,47.84,53.96,57.11L53.96,57.11z"/></g></svg>
+                  </div>
+                  <div class="item-title text-fade">
+                      <p>Rapide</p>
+                  </div>
+                  <div class="item-text">
+                      <p>Nos tests ne prennent que quelques minutes à réaliser</p>
+                  </div>
+              </div>
+              <div class="item item-precis">
+                  <div class="item-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"><g><path d="M862.2,477.6c0-18.7-15.2-33.8-33.8-33.8c-18.7,0-33.8,15.2-33.8,33.8c0,4.9,1,9.6,2.9,13.7c2.2,12.7,5.1,35.1,5.1,68.8c0,209-153.3,362.3-362.4,362.3C231,922.4,77.8,769.1,77.8,560.1c0-209,153.3-362.3,362.4-362.3c33.4,0,38-1.6,67.1,4.6l0.1-0.7c0.9,0.1,1.9,0.3,2.8,0.3c17.8,0,32.4-14.5,32.4-32.4c0-15.4-10.7-28.1-25-31.4l0.3-2c-36.7-6.5-38.4-6.1-77.7-6.1C202.6,130.1,10,322.6,10,560c0,237.5,192.6,430,430.1,430c237.5,0,430.1-192.5,430.1-430c0-37.3-3-54.8-8.2-81.4C862.1,478.4,862.2,477.9,862.2,477.6L862.2,477.6z M345.4,862.1c0.3,0.2,0.7,0.2,1,0.4c1.1,0.4,3.6,0.7,3.6,0.7c1.7,0.3,3.1,1,4.9,1c13.1,0,21.5-11,23.7-24.1c2.2-13.6-12.9-21.9-12.9-21.9c-49.9-15.5-94.3-43.3-130.3-79.8c0,0-13-12.2-22.2-12.2c-13.1,0-23.7,10.8-23.7,24.1c0,7.8,3.8,14.3,9.4,18.8l-0.2,0.1C239.1,811.3,289.2,843.5,345.4,862.1L345.4,862.1z M435.5,421.8c1.2,0.1,2.4,0.4,3.7,0.4c18.7,0,33.8-15.2,33.8-33.8c0-18.4-14.6-33.2-32.9-33.7v-0.9c-114,0-206.5,92.5-206.5,206.4c0,114,92.5,206.4,206.5,206.4c113.4,0,205.4-91.4,206.4-204.5c0.1-1.1,0.3-2.2,0.3-3.4c0-18.7-15.2-33.8-33.8-33.8c-18.7,0-33.8,15.2-33.8,33.8c0,0.5,0.1,1,0.1,1.6h-0.5c0,85.5-53.1,138.6-138.6,138.6c-85.5,0-138.6-53.1-138.6-138.6C301.5,476.2,352.9,423.8,435.5,421.8L435.5,421.8z M990,216l-189.6-16.2L784.2,9.9l-67.8,68.4v0.2L579.2,199.8h-0.3V369L389.5,542l36.3,52.4l205.5-189.2h169.1V405l0.2,0.2l137.5-137.4l-0.2-0.2h0.2L990,216L990,216z M764.6,353.6h-118V235.7l86-86v118h118L764.6,353.6L764.6,353.6z M176.3,661.2c-4.3-4.5-10.3-7.4-16.9-7.4c-13.1,0-23.7,10.8-23.7,24.1c0,7.3,11.8,24,13.7,27c0.2,0.6,0.7,1,1,1.7c2.2,3.5,8.3,9,8.3,9c3.7,2.4,7.8,4.2,12.6,4.2c13.1,0,23.7-10.8,23.7-24.1c0-2.6-0.7-5.1-1.5-7.5L176.3,661.2L176.3,661.2z"/></g></svg>
+                  </div>
+                  <div class="item-title text-fade">
+                      <p>Précis</p>
+                  </div>
+                  <div class="item-text">
+                      <p>Nos tests sont réalisés avec très grande précision</p>
+                  </div>
+              </div>
+              <div class="item item-secure" >
+                  <div class="item-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1""enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"><g><path style="fill:linear-gradient(127deg, #ff589e 0%, #8261ee 91%);" d="m459.669 82.906-196-81.377c-4.91-2.038-10.429-2.039-15.338 0l-196 81.377c-7.465 3.1-12.331 10.388-12.331 18.471v98.925c0 136.213 82.329 258.74 208.442 310.215 4.844 1.977 10.271 1.977 15.116 0 126.111-51.474 208.442-174.001 208.442-310.215v-98.925c0-8.083-4.865-15.371-12.331-18.471zm-27.669 117.396c0 115.795-68 222.392-176 269.974-105.114-46.311-176-151.041-176-269.974v-85.573l176-73.074 176 73.074zm-198.106 67.414 85.964-85.963c7.81-7.81 20.473-7.811 28.284 0s7.81 20.474-.001 28.284l-100.105 100.105c-7.812 7.812-20.475 7.809-28.284 0l-55.894-55.894c-7.811-7.811-7.811-20.474 0-28.284s20.474-7.811 28.284 0z"/></g></svg>
+                  </div>
+                  <div class="item-title text-fade">
+                      <p>Sécurisé</p>
+                  </div>
+                  <div class="item-text">
+                      <p>Vous seul pouvez accéder à vos résultats confidentiels</p>
+                  </div>
+              </div>
             </div>
         </div>
+
+        
     </div>
 
     <section class="pourquoi-utiliser-container"></section>
@@ -85,7 +89,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#fff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
 
-    <div class="test-container">
+    <div class="inner test-container">
       <div class="nos-tests-presentation-text">
         <h2 class="presentation-title" draggable="false">En quoi consistent nos tests ?</h2>
         <p class="presentation-sub-title">Nos tests psychotechnique servent à vérifier les capacités psychotechnique d'un individu pour la conduite automobile, moto... <br> Ces tests peuvent s'avérer utiles pour les pilotes d'avion, autocar, course..., qui veulent vérifier leurs aptitudes au pilotage d'appareils transportant des vies.</p>
@@ -241,31 +245,33 @@
     </svg>
   </section>
 
-  <div id="contact-container">
-    <form class="contact_form_container" action="contact.php" method="POST">
-      <div class="abstract_container" id="contact_link"></div>
-      <div class="title_container">
-        <h3 draggable="false">Une autre question ?    Contactez-nous !</h3>
-      </div>
-      <div class="input_container input_container_1">
-        <input name="Prenom" type="text" placeholder="Prénom"/>
-        <input name="Nom" type="text" placeholder="Nom"/>
-      </div>
+  <div id="contact-container" class="centered">
+    <div class="inner">
+      <form class="contact_form_container" action="contact.php" method="POST">
+        <div class="abstract_container" id="contact_link"></div>
+        <div class="title_container">
+          <h3 draggable="false">Une autre question ?    Contactez-nous !</h3>
+        </div>
+        <div class="input_container input_container_1">
+          <input name="Prenom" type="text" placeholder="Prénom"/>
+          <input name="Nom" type="text" placeholder="Nom"/>
+        </div>
 
-      <div class="input_container input_container_2">
-        <input name="Mail" type="email" placeholder="Votre mail"/>
-      </div>
+        <div class="input_container input_container_2">
+          <input name="Mail" type="email" placeholder="Votre mail"/>
+        </div>
 
-      <div class="input_container input_container_3">
-        <textarea name="Message" placeholder="Votre message"></textarea>
-      </div>
-      <div class="envoyer_button">
-        <button type="submit">Envoyer le message</button>
-      </div>
-    </form>
+        <div class="input_container input_container_3">
+          <textarea name="Message" placeholder="Votre message"></textarea>
+        </div>
+        <div class="envoyer_button">
+          <button type="submit">Envoyer le message</button>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <footer id="footer">
+  <footer id="footer" class="centered" >
 
   </footer>
 

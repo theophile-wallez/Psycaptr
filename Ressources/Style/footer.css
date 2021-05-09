@@ -1,12 +1,9 @@
 footer{
-    width:  100%;
+    width: 100vw;
     height: 20vh;
-    
-background: #cabafe;    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    background: #cabafe;    
+    position: relative;
+    overflow: hidden;
   }
   
   .bottom{
@@ -18,25 +15,25 @@ background: #cabafe;
       background: none;
   }
 
-  footer .socials {
+  .socials {
     display: flex;
     margin-top: 1em;
-    width: 18%;
+    width: 20%;
     justify-content: space-between;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
   }
-
- 
   
-  footer .socials a {
-    color: #fbb5d2;
+  .socials a {
+    color: var(--light_pink);
     text-align: center;
     background-color: #f0f0f0;
-    width: 6vh;
-    height: 6vh;
-    line-height: 6vh;
+    width: 2.2em;
+    height: 2.2em;
+    line-height: 2.2em;
     border-radius: 50%;
     display: inline-block;
-    font-size: 3vh;
+    font-size: 1.5em;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -44,17 +41,18 @@ background: #cabafe;
     user-select: none;
   }
   
-  footer .socials a:hover {
+  .socials a:hover {
     transform: scale(1.15);
   }
 
-  footer .footer-line{
+  .footer-line{
     height: 0.5px;
     width: 25%;
-    background-color: #f0f0f0;;
+    background-color: #f0f0f0;
+    margin-bottom: 2vh;
   }
   
-  footer p{
+  p{
     font-family:"Nunito-Regular";
     color:#f0f0f0;
     font-size: 0.9em;
