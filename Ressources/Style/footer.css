@@ -6,7 +6,7 @@ footer{
     overflow: hidden;
   }
   
-  .bottom{
+  footer .bottom{
       position:absolute;
       bottom: 0;
       left: 0;
@@ -15,7 +15,7 @@ footer{
       background: none;
   }
 
-  .socials {
+  footer.socials {
     display: flex;
     margin-top: 1em;
     width: 20%;
@@ -24,7 +24,7 @@ footer{
     margin-bottom: 2vh;
   }
   
-  .socials a {
+  footer .socials a {
     color: var(--light_pink);
     text-align: center;
     background-color: #f0f0f0;
@@ -41,18 +41,18 @@ footer{
     user-select: none;
   }
   
-  .socials a:hover {
+  footer .socials a:hover {
     transform: scale(1.15);
   }
 
-  .footer-line{
+  footer .footer-line{
     height: 0.5px;
     width: 25%;
     background-color: #f0f0f0;
     margin-bottom: 2vh;
   }
   
-  p{
+  footer p{
     font-family:"Nunito-Regular";
     color:#f0f0f0;
     font-size: 0.9em;

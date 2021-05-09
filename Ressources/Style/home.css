@@ -545,7 +545,8 @@
 .FAQ-reponse p{
   font-size: 1.2em;
   color:grey;
-  text-align: justify;
+  text-align:justify;
+  width: 100%;
 }
 
 .FAQ-question-reponses--open .FAQ-question .icon::after {

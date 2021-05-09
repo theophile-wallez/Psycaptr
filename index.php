@@ -48,7 +48,7 @@
 
         <div class="inner">
           <div class="home-text rellax" data-rellax-speed="-5">
-            <p>Better health for future <br>with Infinite Measures</p>
+            <p>Better health for future <br>with <strong>Infinite Measures</strong></p>
           </div>
           <div class="menu-items">
               <div class="item item-rapide">
