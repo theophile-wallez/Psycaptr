@@ -8,8 +8,15 @@
 	unset($_SESSION['Nom']);
 	unset($_SESSION['Mail']);
 
-	$Mail = htmlspecialchars($_POST['Mail']);
-	$Mdp = htmlspecialchars($_POST['Mdp']);
+	function convertInput ($input) {
+		$input = trim ($input);
+		$input = Stripslashes ($input);
+		$input = Htmlspecialchars ($input); 
+		return $input;
+	}
+
+	$Mail = convertInput($_POST['Mail']);
+	$Mdp  = convertInput($_POST['Mdp']);
 
 	$_SESSION['Mail']=$Mail;
 

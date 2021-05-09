@@ -9,17 +9,24 @@ unset($_SESSION['Prenom']);
 unset($_SESSION['Nom']);
 unset($_SESSION['Mail']);
 
-$Id = IdGenerator(10); //Un Id est généré par une méthode
-//On récupère les données rentrées par l'utilisateur
-$Mdp = htmlspecialchars($_POST['Mdp']);
-$MdpBis = htmlspecialchars($_POST['MdpBis']);
-$Nom = htmlspecialchars($_POST['Nom']);
-$Prenom = htmlspecialchars($_POST['Prenom']);
-$Mail = htmlspecialchars($_POST['Mail']);
-$Date = date('Y-m-d');
+function convertInput ($input) {
+  $input = trim ($input);
+  $input = Stripslashes ($input);
+  $input = Htmlspecialchars ($input); 
+  return $input;
+}
 
-$_SESSION['Mail']= $Mail;
-$_SESSION['Nom']= $Nom;
+$Id     = IdGenerator(10); //Un Id est généré par une méthode
+//On récupère les données rentrées par l'utilisateur
+$Mdp    = convertInput($_POST['Mdp']);
+$MdpBis = convertInput($_POST['MdpBis']);
+$Nom    = convertInput($_POST['Nom']);
+$Prenom = convertInput($_POST['Prenom']);
+$Mail   = convertInput($_POST['Mail']);
+$Date   = date('Y-m-d');
+
+$_SESSION['Mail']  = $Mail;
+$_SESSION['Nom']   = $Nom;
 $_SESSION['Prenom']= $Prenom;
 
 // On vérifie si le mot de passe est le même que celui de confirmation,
@@ -34,9 +41,9 @@ if($MdpBis != $Mdp){
 $CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
 
 $servername = 'localhost';
-$bddname = 'ttwawain_Psycaptr';
-$username = 'theophile';
-$password = 'psycaptrisep2023';
+$bddname    = 'ttwawain_Psycaptr';
+$username   = 'theophile';
+$password   = 'psycaptrisep2023';
 
 //Message d'erreur en cas d'accès impossible à la database
 $bdd = new mysqli($servername, $username, $password, $bddname);
