@@ -61,5 +61,5 @@
 
 </body>
 
-<footer class="bottom" id="footer"></footer>
+<!-- <footer class="bottom" id="footer"></footer> -->
 </html>

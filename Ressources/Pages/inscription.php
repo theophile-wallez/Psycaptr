@@ -69,6 +69,6 @@
     </form>
   </div>
 
-  <footer class="bottom" id="footer"></footer>
+  <!-- <footer class="bottom" id="footer"></footer> -->
 </body>
 </html>
