@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900">
 
-  <link rel="icon" href="Ressources/Images/Logo_simple.png" size="32x32" type="image/icon type">
+  <link rel="icon" href="../Images/Logo_simple.png" type="image/icon type">
   <title>Inscription • Psycaptr</title>
 </head>
 
