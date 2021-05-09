@@ -19,7 +19,7 @@ function displayNavBar(string $url=""){
     echo '</div>';
 
     if($_SESSION['login'] == 1) {
-        echo '<a class="header-connect-container" href="'.$url2.'/Pages/dashboard.php#" draggable="false">Dashboard</a>';
+        echo '<a class="header-connect-container" href="'.$url2.'/Pages/dashboard.php#" draggable="false">Votre Dashboard</a>';
     }
     else{
         echo '<a class="header-connect-container" href="'.$url2.'/Pages/connexion.php#" draggable="false">Connexion</a>';
