@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 echo '<a class="link-logo" href="index.php#">';
 echo '<img class="header-logo" src="Ressources/Images/logo.png" alt="Logo Psycaptr" draggable="false">';
 echo '</a>';
