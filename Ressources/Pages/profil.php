@@ -1,4 +1,8 @@
 <?php
+
+  //ON GARDE ÇA ?
+
+
 	session_start();
 	unset($_SESSION['login']);
   unset($_SESSION['login_Admin']);
@@ -97,7 +101,7 @@
 
 <?php
 	// session_start();
-	// if($_SESSION['login'] != 0 | !isset($_SESSION['login'])) {
+	// if($_SESSION['login'] != 1 | !isset($_SESSION['login'])) {
 	// 	if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 	// 		unset($_SESSION['login']);
 	// 		header('Location:home.html');

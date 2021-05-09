@@ -36,7 +36,7 @@
 	if($result = $bdd -> query($sql)){
 		while($row = $result -> fetch_row()) {
 			if($Mail == $row[0] && $Mdp == $row[1]){
-				$_SESSION['login_Admin'] = 0;
+				$_SESSION['login_Admin'] = 1;
 				$_SESSION['lastActivity'] = time();
 				$_SESSION['Nom'] = $row[2];
 			    $_SESSION['Prenom'] = $row[3];
@@ -55,7 +55,7 @@
 	if($result = $bdd -> query($sql)) {
 		while($row = $result -> fetch_row())  {
 			if($Mail == $row[1] && password_verify($Mdp, $row[2])) {
-				$_SESSION['login'] = 0;
+				$_SESSION['login'] = 1;
 				$_SESSION['lastActivity'] = time();
 				$_SESSION['Nom'] = $row[4];
 			    $_SESSION['Prenom'] = $row[5];

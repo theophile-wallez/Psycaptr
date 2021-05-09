@@ -12,8 +12,9 @@ echo '<a class="header-link Contact" href="index.php#contact_link" draggable="fa
 echo '</div>';
 echo '<a class="header-connect-container" href="Ressources/Pages/connexion.php#" draggable="false">Connexion</a>';
 
-// if($_SESSION['login'] == 0)) {
-// }
+if($_SESSION['login'] == 1)) {
+    echo 'connecté!'
+}
 // else{
 //     echo '<a class="header-connect-container" href="Ressources/Pages/dashboard.php#" draggable="false">Dashboard</a>';
 // }

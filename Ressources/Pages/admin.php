@@ -92,7 +92,7 @@
 
 <?php
 	session_start();
-	if($_SESSION['login_Admin'] != 0 | !isset($_SESSION['login_Admin'])) {
+	if($_SESSION['login_Admin'] != 1 | !isset($_SESSION['login_Admin'])) {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 			unset($_SESSION['login']);
 			header('Location:../../index.php#');

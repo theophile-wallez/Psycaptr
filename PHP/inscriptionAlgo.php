@@ -84,7 +84,7 @@ if(!$bdd -> query($sql)){
   echo " |".$Id;
 }
 else {
-  $_SESSION['login'] = 0;
+  $_SESSION['login'] = 1;
   $_SESSION['lastActivity'] = time();
   $_SESSION["Nom"] = $Nom;
   $_SESSION["Prenom"] = $Prenom;

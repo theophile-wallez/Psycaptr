@@ -27,7 +27,7 @@
 <nav></nav>
 
 <body>
-  
+
   <div class="dashboard_container">
     <h1 class="dashboard_title">Votre tableau de bord</h1>
     <div class="main_part_container">
@@ -72,7 +72,7 @@
 <?php
 
 	session_start();
-	if($_SESSION['login'] != 0 | !isset($_SESSION['login'])) {
+	if($_SESSION['login'] != 1 | !isset($_SESSION['login'])) {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 			unset($_SESSION['login']);
 			header('Location:../../index.php');
