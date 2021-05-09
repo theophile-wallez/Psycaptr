@@ -285,10 +285,7 @@
   </footer>
 
   <!-- Ajout de la barre de navigation et du footer -->
-  <script src="./javascripts/nav_bar.js"></script>
   <script src="./javascripts/faq.js"></script>
-  <script>nav_function()</script>
-
   <script src="./javascripts/rellax.js"></script>
   <script> var rellax = new Rellax('.rellax',{ center : true }); </script>
 </body>
