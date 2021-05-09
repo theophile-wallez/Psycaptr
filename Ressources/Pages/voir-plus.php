@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../images/logo_simple.png" type="image/icon type">
+    <link rel="icon" href="../images/Logo_light.png" type="image/icon type">
     <link rel="stylesheet" href="../Style/nav_bar.css"/>
     <link rel="stylesheet" href="../Style/style.css"/>
     <link rel="stylesheet" href="../Style/voir-plus.css"/>

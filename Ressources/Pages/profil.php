@@ -20,7 +20,7 @@
 
   <link rel="stylesheet" href="../Style/profil.css"/>
 
-  <link rel="icon" href="../Images/Logo_simple.png" type="image/icon type">
+  <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
   <title>DashBoard • Psycaptr</title>
 </head>
 
