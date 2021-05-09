@@ -11,7 +11,6 @@ echo '<a class="header-link Contact" href="index.php#contact_link" draggable="fa
 echo '</div>';
 
 if($_SESSION['login'] == 1) {
-    echo 'connecté!';
     echo '<a class="header-connect-container" href="Ressources/Pages/dashboard.php#" draggable="false">Dashboard</a>';
 }
 else{

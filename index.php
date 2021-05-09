@@ -23,8 +23,6 @@
 <body>
     <nav id="header">
       <?php 
-        //Est-ce que je start la session ici ? ou dans le fichier .php ?
-        //session_start();
         require_once('PHP/navBar.php');
       ?>
     </nav>
