@@ -27,7 +27,6 @@
 </nav>
 
 <body>
-
   <form class="connect_container" action="../../PHP/connexionAlgo.php" method="POST">
       <!-- Titre -->
       <div class="title_container">

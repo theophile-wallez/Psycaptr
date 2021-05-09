@@ -21,7 +21,12 @@
 </head>
 
 <body>
-    <nav id="header"></nav>
+    <nav id="header">
+      <?php 
+        require_once('Ressources/Pages/navBar.php');
+        displayNavBar();
+      ?>
+    </nav>
 
     <a draggable="false" class="back-to-top" href="#"><i class="fa fa-arrow-up"></i></a>
 

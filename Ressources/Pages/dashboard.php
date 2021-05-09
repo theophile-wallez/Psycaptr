@@ -27,6 +27,7 @@
 <nav></nav>
 
 <body>
+  
   <div class="dashboard_container">
     <h1 class="dashboard_title">Votre tableau de bord</h1>
     <div class="main_part_container">
