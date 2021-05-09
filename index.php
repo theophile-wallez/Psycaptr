@@ -23,8 +23,7 @@
 <body>
     <nav id="header">
       <?php 
-        require_once('Ressources/Pages/navBar.php');
-        displayNavBar();
+        require_once('PHP/navBar.php');
       ?>
     </nav>
 
