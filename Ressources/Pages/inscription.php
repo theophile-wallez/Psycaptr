@@ -23,11 +23,13 @@
 </head>
 
 <nav id="navi" class="nav_absolute" >
-
+      <?php 
+        require_once('PHP/navBar.php');
+        displayNavBar("../../");
+      ?>
 </nav>
 
 <body>
-
   <div id="contact-container">
     <form class="contact_form_container" action="../../PHP/inscriptionAlgo.php" method="POST">
       <div class="abstract_container" id="contact_link"></div>
@@ -69,7 +71,4 @@
 
   <footer class="bottom" id="footer"></footer>
 </body>
-
-<script src="../../javascripts/nav_bar.js"></script>
-<script>nav_page_function()</script>
 </html>

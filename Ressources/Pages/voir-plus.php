@@ -9,7 +9,10 @@
 </head>
 
 <nav id="navi">
-    
+    <?php 
+        require_once('PHP/navBar.php');
+        displayNavBar("../../");
+    ?>
 </nav>
 <body>
     <div class="container">

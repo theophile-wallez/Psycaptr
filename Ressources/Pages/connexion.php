@@ -23,7 +23,10 @@
 </head>
 
 <nav id="navi" class="nav_absolute" >
-
+  <?php 
+    require_once('PHP/navBar.php');
+    displayNavBar("../../");
+  ?>
 </nav>
 
 <body>
@@ -59,7 +62,4 @@
 </body>
 
 <footer class="bottom" id="footer"></footer>
-
-<script src="../../javascripts/nav_bar.js"></script>
-<script>nav_page_function()</script>
 </html>
