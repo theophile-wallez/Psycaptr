@@ -10,7 +10,7 @@
 
 <nav id="navi">
     <?php 
-        require_once('PHP/navBar.php');
+        require_once('../../PHP/navBar.php');
         displayNavBar("../../");
     ?>
 </nav>

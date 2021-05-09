@@ -24,7 +24,7 @@
 
 <nav id="navi" class="nav_absolute" >
       <?php 
-        require_once('PHP/navBar.php');
+        require_once('../../PHP/navBar.php');
         displayNavBar("../../");
       ?>
 </nav>
