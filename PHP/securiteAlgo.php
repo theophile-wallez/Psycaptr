@@ -1,3 +1,4 @@
+<!-- Ou est-ce que ce php est appelé ? -->
 <?php 
 	session_start();
 	if($_SESSION['login'] != 1 | !isset($_SESSION['login'])) {

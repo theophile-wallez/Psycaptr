@@ -1,8 +1,7 @@
 <?php
 
   //ON GARDE ÇA ?
-
-
+  
 	session_start();
 	unset($_SESSION['login']);
   unset($_SESSION['login_Admin']);
@@ -10,6 +9,8 @@
   unset($_SESSION['Prenom']);
   unset($_SESSION['Nom']);
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
