@@ -8,6 +8,33 @@ nav{
     bottom: 0;
     z-index: 9;
     transition: width 0.5s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 8em;
+    
+}
+
+nav .icon-container{
+    width: 5em;
+    height: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 3em;
+}
+
+.icon-container svg{
+    width:  2.5em;
+    height: 2.5em;
+}
+.icon-container p{
+    margin: 0;
+    font-size: 0.9em;
 }
 
 .slide-menu:hover {
