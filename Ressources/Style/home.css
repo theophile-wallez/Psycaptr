@@ -37,8 +37,8 @@
   width: 100vw ;
   background-image:url('/Ressources/Images/background-1.jpg');
   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position:  auto 100%;
+  background-repeat: space;
   background-size: auto 100%;
   z-index: 4;
  
