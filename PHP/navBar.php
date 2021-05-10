@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 function displayNavBar(string $url=""){
     if($url==""){
         $url2="Ressources";
