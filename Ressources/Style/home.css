@@ -109,16 +109,16 @@
 }
 
 .item:hover{
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0px 0px 15px #bdc3c7;
 }
 
 .item-precis{
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .item-precis:hover{
-  transform: scale(1.15);
+  transform: scale(1.03);
 }
 
 .item-icon
