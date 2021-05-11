@@ -193,7 +193,7 @@
   position: relative;
 }
 
-.presentation-title{
+.presentation-title  {
   text-align: center;
   font-size: 3em;
   color: white;
@@ -210,15 +210,17 @@
 .tests-item-container {
   margin-top: 3em;
   width: 100%;
-  height: 25em;
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content:space-between;
+  flex-wrap: wrap;
 }
 
 .test-item {
   width: 30%;
-  height: 100%;
+  min-width: 280px;
+  height: 25em;
   background-color: #fcf4f7dd;
 
   box-shadow: 0px 0px 10px #bdc3c7;
@@ -229,12 +231,12 @@
   position: relative;
 }
 
-.test-item:hover{
+.test-item:hover {
   transform: translateY(-0.3em) scale(1.005);
   box-shadow: 0px 0px 15px #bdc3c7;
 }
 
-.item-illustration{
+.item-illustration {
   width: 100%;
   height: 40%;
   border-top-left-radius: 1.5em;
@@ -246,14 +248,15 @@
   align-items: center;
 }
 
-.test-item h3{
+.test-item h3 {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
   color: #645483;
   font-size: 1.5em;
 }
-.test-description{
+
+.test-description {
   width: 90%;
   color: #777777;
   text-align: justify;
@@ -262,19 +265,19 @@
   margin-right: 5%;
 }
 
-.test-item a{
+.test-item a {
   text-decoration: none;
   position: absolute;
   color: var(--pink);
   font-size: 1.1em;
-  bottom: 1.5em;
+  bottom: 1em;
   left: 1em;
   user-select: none;
 }
 
-.line{
+.line {
   position: absolute;
-  bottom: 1.4em;
+  bottom: 0.9em;
   left: 1em;
   width: 0%;
   height: 0.05em;
@@ -282,7 +285,7 @@
   transition: width 0.4s, background-color 0.4s, transform 0.4s;
 }
 
-.test-item:hover .line{
+.test-item:hover .line {
   width: 5em;
   background-color: var(--pink);
 }
@@ -292,7 +295,7 @@
   text-align:center;
 }
 
-.test-item:hover .ecg path{
+.test-item:hover .ecg path {
   animation: dash 3s linear infinite forwards;
   stroke-dasharray: 250;
   stroke-dashoffset: 0;
@@ -304,7 +307,7 @@
   }
 }
 
-.yellow-circle{
+.yellow-circle {
   height:3em;
   width:3em;
   background: var(--pink);
@@ -328,11 +331,11 @@
   }
 }
 
-.test-item:hover .yellow-circle{
+.test-item:hover .yellow-circle {
   animation: pulse-red 1s infinite;
 }
 
-.sound-wave{
+.sound-wave {
   height: 30%;
   width: 30%;
   display:flex;
@@ -340,15 +343,18 @@
   align-items: center;
   justify-content: center;
 }
-.bar{
+
+.bar {
   width: 20%;
   height: 3%;
   background: var(--pink);
 }
-.test-item:hover .bar{
+
+.test-item:hover .bar {
   animation: audio-wave 1.5s infinite ease-in-out;
 
 }
+
 .test-item:hover .bar:nth-child(2) {
   left: 11px;
   animation-delay: 0.2s;
@@ -405,7 +411,7 @@
 }
 
 /* -- FAQ -- */
-#FAQ-section{
+#FAQ-section {
   padding-top: 1em;
   width: 100%;
   position: relative;
@@ -413,7 +419,7 @@
   padding-bottom: 8em;
 }
 
-.FAQ-une-question-title{
+.FAQ-une-question-title {
   color: var(--light_pink);
   font-size: 3em;
   width: 30%;
@@ -462,12 +468,12 @@
   font-weight: 400;
 }
 
-.question-first{
+.question-first {
   border-top-left-radius: 1.2em;
   border-top-right-radius: 1.2em;
 }
 
-.question-fin{
+.question-fin {
   border-bottom-left-radius: 1.2em;
   border-bottom-right-radius: 1.2em;
 }
@@ -514,21 +520,21 @@
   transition: 0.2s ease all;
 }
 
-.FAQ-question-reponses:hover .FAQ-question h4{
+.FAQ-question-reponses:hover .FAQ-question h4 {
   color: var(--pink);
   transform: scale(1.05);
   padding-left: 0.8em;
 }
 
-.FAQ-question-reponses--open .FAQ-question h4{
+.FAQ-question-reponses--open .FAQ-question h4 {
   color: var(--pink);
 }
 
-.FAQ-question-reponses:hover .FAQ-question .icon{
+.FAQ-question-reponses:hover .FAQ-question .icon {
   color: var(--pink);
 }
 
-.FAQ-question-reponses--open .FAQ-question .icon{
+.FAQ-question-reponses--open .FAQ-question .icon {
   color: var(--pink);
   transform: scale(1.1);
 }
@@ -542,7 +548,7 @@
   transition: 0.4s ease all;
 }
 
-.FAQ-reponse p{
+.FAQ-reponse p {
   font-size: 1.2em;
   color:grey;
   text-align:justify;
@@ -553,34 +559,32 @@
   transform: scaleY(0);
 }
 
-.circle{
+.circle {
   position: absolute;
   z-index: 3;
 }
-.circle1{
+.circle1 {
   width: 15em;
   height: 15em;
   bottom: 50%;
   left: 1em;
 }
 
-.circle3{
+.circle3 {
   width: 25em;
   height: 25em;
   top:  8em;
   right: 1em;
 }
 
-.footer-section
-{
+.footer-section {
   width: 100%;
   height: 80vh;
   position: relative;
   z-index: 0;
 }
 
-.fixed-container
-{
+.fixed-container {
   width: 100%;
   height: 80vh;
   bottom: 0;
@@ -589,7 +593,7 @@
   background: #ffeeff;
 }
 
-#contact-container{
+#contact-container {
   height: 80vh;
   max-height: 40em;
   width: 100vw;
@@ -604,7 +608,7 @@
   display: flex;
   align-items: center;
 }
-.contact_form_container{
+.contact_form_container {
   position: relative;
   width: 40%;
   height:85%;
@@ -625,11 +629,11 @@
   z-index: 10001;
 }
 
-.contact_form_container:hover{
+.contact_form_container:hover {
   backdrop-filter: blur(0px) saturate(100%);
 }
 
-.input_container{
+.input_container {
   width: 80%;
 
   display: flex;
@@ -638,7 +642,7 @@
   align-items: center;
 }
 
-.contact_form_container .title_container{
+.contact_form_container .title_container {
   width: 80%;
   height: 10%;
 
@@ -648,7 +652,7 @@
   margin-top: 1em;
 }
 
-.contact_form_container .title_container h3{
+.contact_form_container .title_container h3 {
   width: 100%;
   height: 100%;
 
@@ -661,7 +665,7 @@
   user-select: none;
 }
 
-.input_container input, textarea{
+.input_container input, textarea {
   width: 100%;
   height: 7vh;
   user-select: none;
@@ -675,34 +679,34 @@
   color : #474547;
 }
 
-.input_container_1 input{
+.input_container_1 input {
   width: 42%;
 }
 
-.input_container input:hover,.input_container input:focus, textarea:hover, textarea:focus{
+.input_container input:hover,.input_container input:focus, textarea:hover, textarea:focus {
   border: none;
   border-style: none;
   outline: none;
   caret-color: var(--light_pink);
   box-shadow: 0px 0px 4px #bdc3c7;
 }
-.input_container input:focus, textarea:focus{
+.input_container input:focus, textarea:focus {
   transform: scale(1.03);
   transform-origin: center;
 }
 
-.input_container_3{
+.input_container_3 {
   height: 25%;
 }
 
-.input_container_3 textarea{
+.input_container_3 textarea {
   height: 100%;
   width: 100%;
   resize: none;
   padding-top: 0.7em;
 }
 
-.envoyer_button{
+.envoyer_button {
   height: 15%;
   width: 100%;
   display: flex;
@@ -711,7 +715,7 @@
   overflow: hidden;
 }
 
-.envoyer_button button{
+.envoyer_button button {
   height: 200%;
   width:  200%;
 
@@ -730,14 +734,14 @@
   transition: all 0.3s;
 }
 
-.envoyer_button button:hover{
+.envoyer_button button:hover {
   cursor: pointer;
   transform: scale(1.05);
   transform-origin: center;
   z-index: 10;
 }
 
-.abstract_container{
+.abstract_container {
   position: absolute;
   top:-8em;
   height: 8em;

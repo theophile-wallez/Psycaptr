@@ -106,7 +106,6 @@
 
       <div class="tests-item-container">
         <div class="test-item">
-
           <div class="item-illustration">
             <svg class="ecg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="446.667px" height="99.174px" viewBox="0 0 446.667 99.174" enable-background="new 0 0 446.667 99.174" xml:space="preserve"><g>
 	          <path fill="none" stroke="#D9004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M379.833,54.893H179.452
