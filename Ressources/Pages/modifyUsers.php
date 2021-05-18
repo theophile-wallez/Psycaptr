@@ -41,17 +41,6 @@
 <body>
   <section class="content-container">
     <h2>Liste des utilisateurs</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Mail</th>
-          <th>Identifiant</th>
-          <th>Date d'inscription</th>
-        </tr>
-      </thead>
-      <tbody>
     <?php 
     $servername = 'localhost';
     $bddname = 'ttwawain_Psycaptr';
@@ -72,20 +61,16 @@
         $Date_Inscription = date("d-m-Y",strtotime($row[3]));
         $Nom = $row[4];
         $Prenom = $row[5];
-       ?>
-       <tr>
-        <td><?=$Nom?></td>
-        <td><?=$Prenom?></td>
-        <td><?=$Mail?></td>
-        <td><?=$Id?></td>
-        <td><?=$Date_Inscription?></td>
-        </tr> 
-        <?php
+
+        echo '<div class="user-container">';
+        echo '<div class="nom-container">'.$Nom.'</div>';
+        echo '<div class="prenom-container">'.$Prenom.'</div>';
+        echo '<div class="mail-container">'.$Mail.'</div>';
+        echo '<div class="id-container">'.$Id.'</div>';
+        echo '<div class="date-container">'.$Date_Inscription.'</div>';
+        echo '</div>';
     }
     ?>
-  </tr> 
-    </tbody>
-    </table>
 
 
     <!-- <div class="user-container">
