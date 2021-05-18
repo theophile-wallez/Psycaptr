@@ -2,14 +2,14 @@
     require_once('algo.php');
     require_once('connectDatabase.php');
 
+    unset($search);
     $search = convertInput($_POST['search']);
-    echo 'Search est '.$search;
+    echo '<p>Search est '.$search.'</p>';
     if(isset($search)) { 
         
         echo '<p>il y a quelque chose</p>';
         $sql = 'SELECT * FROM Utilisateurs where name like '$search%' order by Nom asc';
-        unset($search);
-        header('Location:../Ressources/Pages/modifyUsers.php');
+        header('Location:../Ressources/Pages/modifyUsers.php'); //pas sur de ça
     }
     else {
         echo '<p>il y a rien dans la barre de recherche</p>';
