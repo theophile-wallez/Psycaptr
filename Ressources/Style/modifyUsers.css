@@ -18,9 +18,16 @@
     overflow: hidden;
 }
 
+
 .user-description{
     box-shadow: none;
+    margin: 0;
 }
+
+.user-description>*{
+    font-size:1.3em;
+}
+
 
 .user-container:last-child{
     margin-bottom:0;
@@ -35,6 +42,10 @@
     padding: 0em 1em 1em 0em;
 }
 
-.user-container>*:nth-child(2n){
+.line-container>*:nth-child(2n){
     background-color: #f8f8f8;
+}
+
+.line-container:hover{
+    transform: scale(1.02);
 }

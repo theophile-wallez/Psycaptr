@@ -65,7 +65,7 @@
         $Nom = $row[4];
         $Prenom = $row[5];
 
-        echo '<div class="user-container">';
+        echo '<div class="line-container user-container">';
         echo '<div class="nom-container">'.$Nom.'</div>';
         echo '<div class="prenom-container">'.$Prenom.'</div>';
         echo '<div class="mail-container">'.$Mail.'</div>';
