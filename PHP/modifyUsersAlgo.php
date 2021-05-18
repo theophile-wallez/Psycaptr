@@ -7,8 +7,8 @@
         $search = convertInput($_POST['search']);
         echo '<p>il y a quelque chose</p>';
         $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' order by Nom asc";
-        header('Location:../Ressources/Pages/modifyUsers.php'); //pas sur de ça
-        // header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
+       // header('Location:../Ressources/Pages/modifyUsers.php'); //pas sur de ça
+        header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
     }
     else {
         echo '<p>il y a rien dans la barre de recherche</p>';
@@ -18,6 +18,7 @@
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
+    echo 'Les résultats sont : '.$result;
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
