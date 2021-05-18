@@ -39,7 +39,7 @@
   <section class="content-container">
     <h2>Liste des utilisateurs</h2>
 
-    <form class="search_bar" action="../../PHP/modifyUsersAlgo.php" method="POST">
+    <form class="search_bar" action="modifyUsers.php" method="POST">
       <input required type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
       <button type="submit">Recherche</button>
     </form>
