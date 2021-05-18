@@ -3,11 +3,6 @@
   //ON GARDE ÇA ?
   
 	session_start();
-	unset($_SESSION['login']);
-  unset($_SESSION['login_Admin']);
-  unset($_SESSION['lastActivity']);
-  unset($_SESSION['Prenom']);
-  unset($_SESSION['Nom']);
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +54,6 @@
       </thead>
       <tbody>
     <?php 
-    session_start();
     $servername = 'localhost';
     $bddname = 'ttwawain_Psycaptr';
     $username = 'theophile';
@@ -72,15 +66,14 @@
     exit();
     }
 
-    $query = $bdd->query("SELECT * FROM Utilisateurs order by Nom asc");
+    $query = $bdd->query("SELECT * FROM Utilisateurs");
     // Recuperation des resultats
     while($row = $query ->fetch()){
-        $Id=$row[1];
-        $Mail=$row[2];
-        $CryptedMdp = $row[3];
-        $Date_Inscription = date("d-m-Y",strtotime($row[4]));
-        $Nom = $row[5];
-        $Prenom = $row[6];
+        $Id=$row[0];
+        $Mail=$row[1];
+        $Date_Inscription = date("d-m-Y",strtotime($row[3]));
+        $Nom = $row[4];
+        $Prenom = $row[5];
        ?>
        <tr>
         <td><?=$Nom?></td>
