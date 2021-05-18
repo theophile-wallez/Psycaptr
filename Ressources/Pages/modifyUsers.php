@@ -41,6 +41,7 @@
       <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs" value="<?php
           if(isset($_SESSION['search'])){
             echo $_SESSION['search'];
+            unset($_SESSION['search']);
           }
         ?>">
       <div class="button-container"><button type="submit">Recherche</button></div>
