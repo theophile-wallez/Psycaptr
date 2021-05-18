@@ -22,18 +22,18 @@
     }
     // echo 'Les résultats sont : '.$result;
 
-    if (mysql_num_rows(query($sql))==0) { 
-        echo '<p>Aucun résultat ne correspond à la recherche effectuée</p>';
-    }   
-    else {
-        echo '<div class="user-container user-description">';
-        echo '<div class="nom-container">Nom</div>';
-        echo '<div class="prenom-container">Prénom</div>';
-        echo '<div class="mail-container">Adresse mail</div>';
-        echo '<div class="id-container">Identifiant</div>';
-        echo '<div class="date-container">Date d',"'inscription</div>";
-        echo '</div>';
-    }
+    // if (mysql_num_rows(query($sql))==0) { 
+    //     echo '<p>Aucun résultat ne correspond à la recherche effectuée</p>';
+    // }   
+    // else {
+    //     echo '<div class="user-container user-description">';
+    //     echo '<div class="nom-container">Nom</div>';
+    //     echo '<div class="prenom-container">Prénom</div>';
+    //     echo '<div class="mail-container">Adresse mail</div>';
+    //     echo '<div class="id-container">Identifiant</div>';
+    //     echo '<div class="date-container">Date d',"'inscription</div>";
+    //     echo '</div>';
+    // }
     
 
     // Recuperation des resultats
