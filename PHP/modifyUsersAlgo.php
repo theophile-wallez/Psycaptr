@@ -12,7 +12,7 @@
     // } 
 
     if(isset($search)) { 
-        $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' order by Nom asc";
+        $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' or Prenom like '$search%' or Id like '$search%' order by Nom asc";
     }
     else {
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
