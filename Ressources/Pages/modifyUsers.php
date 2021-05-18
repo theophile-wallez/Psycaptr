@@ -57,7 +57,7 @@
     $servername = 'localhost';
     $bddname = 'ttwawain_Psycaptr';
     $username = 'theophile';
-    $password = 'psycaptrisep2023';
+    $password = 'psycaptrisep2023'; 
 
     //Message d'erreur en cas d'accès impossible à la database
     $bdd = new mysqli($servername, $username, $password, $bddname);
