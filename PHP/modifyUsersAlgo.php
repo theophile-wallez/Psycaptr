@@ -18,7 +18,7 @@
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     }
 
-    if(!$result = $bdd -> query($sql)){
+    if(!$result = $bdd -> mysql_query($sql)){
     }
     // echo 'Les résultats sont : '.$result;
 
