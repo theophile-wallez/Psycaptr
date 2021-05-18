@@ -41,7 +41,7 @@
 <body>
   <section class="content-container">
     <h2>Liste des utilisateurs</h2>
-    <table class="tableau_container">
+    <table>
       <thead>
         <tr>
           <th>I-Code</th>
@@ -61,14 +61,13 @@
 
     //Message d'erreur en cas d'accès impossible à la database
     $bdd = new mysqli($servername, $username, $password, $bddname);
-    if($bdd->connect_errno){
-    echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
-    exit();
+    $bdd->query("SELECT * FROM Utilisateurs");
+    if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
 
-    $query = $bdd->query("SELECT * FROM Utilisateurs");
     // Recuperation des resultats
-    while($row = $query ->fetch()){
+    while($row = $result -> fetch_row()){
         $Id=$row[0];
         $Mail=$row[1];
         $Date_Inscription = date("d-m-Y",strtotime($row[3]));
