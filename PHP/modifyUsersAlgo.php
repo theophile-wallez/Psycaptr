@@ -5,6 +5,7 @@
     $search = convertInput($_POST['search']);
 
     if(isset($search)){ 
+        echo 'il y a quelque chose';
         $sql = 'SELECT * FROM Utilisateurs where name like '$search%' order by Nom asc';
         unset($search);
     }
@@ -12,7 +13,7 @@
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     }
 
-    
+
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
