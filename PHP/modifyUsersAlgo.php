@@ -1,5 +1,5 @@
 <?php 
-    require_once('../../PHP/algo.php');
+    require_once('algo.php');
     require_once('connectDatabase.php');
 
     
