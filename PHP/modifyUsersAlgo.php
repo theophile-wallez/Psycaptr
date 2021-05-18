@@ -1,24 +1,21 @@
 <?php 
-    require('algo.php');
-    require('connectDatabase.php');
+    require('algo.php'); //Ajout de la méthode convertInput()
+    require('connectDatabase.php'); //Connexion à la database
 
-    
     echo '<p>Search est '.$search.'</p>';
     if(isset($_POST['search'])) { 
         $search = convertInput($_POST['search']);
         echo '<p>il y a quelque chose</p>';
-        $sql = "SELECT * FROM Utilisateurs where Nom like '$search%'";
-        // order by Nom asc
-        header('Location:modifyUsers.php'); //pas sur de ça
+        $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' order by Nom asc";
+        header('Location:../Ressources/Pages/modifyUsers.php'); //pas sur de ça
         // header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
-
-        unset($_POST['search']);
+        unset($search);
     }
     else {
         echo '<p>il y a rien dans la barre de recherche</p>';
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     }
-    echo $result;
+    echo 'Les résultats sont : '.$result;
 
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
