@@ -18,7 +18,7 @@
     overflow: hidden;
 }
 
-.user-container:first-child{
+.user-description{
     box-shadow: none;
 }
 

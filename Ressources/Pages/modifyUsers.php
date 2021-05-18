@@ -41,7 +41,7 @@
 <body>
   <section class="content-container">
     <h2>Liste des utilisateurs</h2>
-    <div class="user-container">
+    <div class="user-container user-description">
       <div class="nom-container">Nom</div>
       <div class="prenom-container">Prénom</div>
       <div class="mail-container">Adresse mail</div>
