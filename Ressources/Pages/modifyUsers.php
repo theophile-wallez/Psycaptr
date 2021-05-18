@@ -38,12 +38,7 @@
     <h2>Liste des utilisateurs</h2>
 
     <form class="search_bar-container" action="modifyUsers.php" method="POST">
-      <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs" value="<?php
-          if(isset($_SESSION['search'])){
-            echo $_SESSION['search'];
-            unset($_SESSION['search']);
-          }
-        ?>">
+      <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
       <div class="button-container"><button type="submit">Recherche</button></div>
     </form>
 
