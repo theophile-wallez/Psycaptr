@@ -2,10 +2,10 @@
     require_once('algo.php');
     require_once('connectDatabase.php');
 
-    $search = $_POST['search'];
-
+    $search = convertInput($_POST['search']);
+    echo 'Search est '.$search;
     if(isset($search)) { 
-
+        
         echo '<p>il y a quelque chose</p>';
         $sql = 'SELECT * FROM Utilisateurs where name like '$search%' order by Nom asc';
         unset($search);
