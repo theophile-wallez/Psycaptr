@@ -43,7 +43,7 @@
     <h2>Liste des utilisateurs</h2>
     <?php 
     
-    require_once('../../PHP/connectDataBase.php');
+    require_once('../../PHP/connectDatabase.php');
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
