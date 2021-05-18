@@ -10,7 +10,6 @@
         $sql = 'SELECT * FROM Utilisateurs where name like '$search%' order by Nom asc';
         unset($search);
         header('Location:../Ressources/Pages/modifyUsers.php');
-		exit();
     }
     else {
         echo '<p>il y a rien dans la barre de recherche</p>';
