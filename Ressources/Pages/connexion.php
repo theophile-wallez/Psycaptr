@@ -50,9 +50,7 @@
         </div>
       </div>
 
-
       <!-- Boutton de connexion -->
-
       <div class="connexion_button">
           <button type="submit">Connexion</button>
       </div>

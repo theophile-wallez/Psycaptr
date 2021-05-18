@@ -1,4 +1,5 @@
 <?php
+require_once('algo.php');
 session_start();
 
 unset($_SESSION['login']);
@@ -7,13 +8,6 @@ unset($_SESSION['lastActivity']);
 unset($_SESSION['Prenom']);
 unset($_SESSION['Nom']);
 unset($_SESSION['Mail']);
-
-function convertInput ($input) {
-  $input = trim ($input);
-  $input = Stripslashes ($input);
-  $input = Htmlspecialchars ($input); 
-  return $input;
-}
 
 $Id     = IdGenerator(10); //Un Id est généré par une méthode
 //On récupère les données rentrées par l'utilisateur

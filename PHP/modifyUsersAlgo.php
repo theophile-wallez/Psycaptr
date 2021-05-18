@@ -1,9 +1,18 @@
 <?php 
-    
+    require_once('algo.php');
     require_once('connectDatabase.php');
 
-    $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
+    $search = convertInput($_POST['search']);
 
+    if(isset($search)){ 
+        $sql = 'SELECT * FROM Utilisateurs where name like '$search%' order by Nom asc';
+        unset($search);
+    }
+    else{
+        $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
+    }
+
+    
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }

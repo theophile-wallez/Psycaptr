@@ -41,6 +41,12 @@
 <body>
   <section class="content-container">
     <h2>Liste des utilisateurs</h2>
+
+    <form class="search_bar" action="../../PHP/modifyUsersAlgo.php" method="POST">
+      <input type="text"  name="search" placeholder="Rechercher parmis les utilisateurs">
+      <button type="submit">Recherche</button>
+    </form>
+
     <div class="user-container user-description">
       <div class="nom-container">Nom</div>
       <div class="prenom-container">Prénom</div>
@@ -49,28 +55,9 @@
       <div class="date-container">Date d'inscription</div>
     </div>
 
-    // Affichage de la liste des utilisateurs
+    <!-- Affichage de la liste des utilisateurs -->
     <?php require_once('../../PHP/modifyUsersAlgo.php');?>
 
   </section>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="../../javascripts/Graph/graph.js"></script>
-
-<script>
-  graph1();
-  graph2();
-</script>
 </html>
-
-<?php
-	// session_start();
-	// if($_SESSION['login'] != 1 | !isset($_SESSION['login'])) {
-	// 	if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
-	// 		unset($_SESSION['login']);
-	// 		header('Location:home.html');
-	// 		exit();
-	// 	}
-	// }
-	// $_SESSION['lastActivity']= time();
-?>
