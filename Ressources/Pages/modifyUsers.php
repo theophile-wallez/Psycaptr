@@ -53,7 +53,7 @@
     </div>
 
     <!-- Affichage de la liste des utilisateurs -->
-    <?php require_once('../../PHP/modifyUsersAlgo.php');?>
+    <?php require('../../PHP/modifyUsersAlgo.php');?>
 
   </section>
 </body>
