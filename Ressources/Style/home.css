@@ -748,3 +748,14 @@
   width: 100%;
   visibility: hidden;
 }
+
+.CGU{
+	color: white;
+	display: flex;
+	justify-content: center;
+}
+
+.CGU a{
+	color: white;
+	text-decoration: none;
+}
