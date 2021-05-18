@@ -11,8 +11,6 @@
 
     if(isset($search)) { 
         $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' order by Nom asc";
-       // header('Location:../Ressources/Pages/modifyUsers.php'); //pas sur de ça
-        //header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
     }
     else {
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
