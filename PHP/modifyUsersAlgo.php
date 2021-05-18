@@ -18,6 +18,7 @@
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
+    echo 'Les résultats sont : '.$result;
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
@@ -35,7 +36,6 @@
         echo '<div class="date-container">'.$Date_Inscription.'</div>';
         echo '</div>';
     }
-    echo 'Les résultats sont : '.$result;
 
     $result -> free_result();
     ?>
