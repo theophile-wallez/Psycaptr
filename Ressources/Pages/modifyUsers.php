@@ -42,13 +42,6 @@
       <div class="button-container"><button type="submit">Recherche</button></div>
     </form>
 
-    <div class="user-container user-description">
-      <div class="nom-container">Nom</div>
-      <div class="prenom-container">Prénom</div>
-      <div class="mail-container">Adresse mail</div>
-      <div class="id-container">Identifiant</div>
-      <div class="date-container">Date d'inscription</div>
-    </div>
 
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');?>
