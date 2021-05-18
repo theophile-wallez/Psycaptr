@@ -45,6 +45,11 @@
     
     require_once('../../PHP/connectDatabase.php');
 
+    $sql = 'SELECT * FROM Utilisateurs';
+
+    if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+    }
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
         $Id=$row[0];
