@@ -18,7 +18,7 @@
         echo '<p>il y a rien dans la barre de recherche</p>';
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     }
-    echo $sql;
+    echo $result;
     // $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
 
     if(!$result = $bdd -> query($sql)){
