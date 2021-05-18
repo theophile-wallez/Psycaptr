@@ -3,7 +3,7 @@
         $input = trim ($input);
         $input = Stripslashes ($input);
         $input = Htmlspecialchars ($input); 
-        $input = mysql_real_escape_string($input);
+        // $input = mysql_real_escape_string($input);
         return $input;
     }
 
