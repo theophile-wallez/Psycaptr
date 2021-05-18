@@ -22,7 +22,7 @@
     }
     // echo 'Les résultats sont : '.$result;
 
-    echo mysql_num_rows($result);
+    // echo mysql_num_rows($result);
     // if (mysql_num_rows($result)==0) { 
     //     echo '<p>Aucun résulat ne correspond à la recherche effectuée</p>';
     // }
