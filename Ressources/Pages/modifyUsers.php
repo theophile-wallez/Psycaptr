@@ -48,16 +48,16 @@
     <h2>Liste des utilisateurs</h2>
     <table class="tableau_container">
       <thead>
-      <tr>
-      <th>I-Code</th>
-      <th>E-mail</th>
-      <th>Prenom</th>
-      <th>Nom</th>
-      <th>Date de naissance</th>
-      <th>Date de naissance</th>
-      </tr>
-    </thead>
-    <tbody>
+        <tr>
+          <th>I-Code</th>
+          <th>E-mail</th>
+          <th>Prenom</th>
+          <th>Nom</th>
+          <th>Date de naissance</th>
+          <th>Date de naissance</th>
+        </tr>
+      </thead>
+      <tbody>
     <?php 
     session_start();
     $servername = 'localhost';
@@ -71,7 +71,7 @@
     echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
     exit();
     }
-    
+
     $query = $bdd->query("SELECT * FROM Utilisateurs order by Nom asc");
     // Recuperation des resultats
     while($row = $query ->fetch()){
@@ -81,17 +81,18 @@
         $Date_Inscription = date("d-m-Y",strtotime($row[3]));
         $Nom = $row[4];
         $Prenom = $row[5];
-
-       ?><tr>
-        <td><?=$Nom?></td>
-        <td><?=$Prenom?></td>
-        <td><?=$Mail?></td>
-        <td><?=$Id?></td>
-        <td><?=$Date_Inscription?></td>
+       ?>
+       <tr>
+        <td><?php=$Nom?></td>
+        <td><?php=$Prenom?></td>
+        <td><?php=$Mail?></td>
+        <td><?php=$Id?></td>
+        <td><?php=$Date_Inscription?></td>
         </tr> 
         <?php
     }
     ?>
+  </tr> 
     </tbody>
     </table>
 
