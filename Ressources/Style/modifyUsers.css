@@ -50,4 +50,6 @@
 .line-container:hover{
     transform: scale(1.01);
     box-shadow: 0px 0px 5px #bdc3c7;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
 }
