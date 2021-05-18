@@ -8,9 +8,6 @@
     echo '<p>Search est '.$search.'</p>';
 
 
-    function search(){
-
-    }
 
 
     if(isset($search)) { 
@@ -46,5 +43,10 @@
         echo '<div class="date-container">'.$Date_Inscription.'</div>';
         echo '</div>';
     }
+
+    exit();
+	$result -> free_result();
+
+	$bdd -> close(); 
 
     ?>
