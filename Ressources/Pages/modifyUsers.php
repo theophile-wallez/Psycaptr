@@ -45,7 +45,7 @@
     
     require_once('../../PHP/connectDatabase.php');
 
-    $sql = 'SELECT * FROM Utilisateurs';
+    $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
 
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
