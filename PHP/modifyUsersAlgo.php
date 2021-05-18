@@ -18,7 +18,7 @@
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
-    echo 'Les résultats sont : '.$result;
+    // echo 'Les résultats sont : '.$result;
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
