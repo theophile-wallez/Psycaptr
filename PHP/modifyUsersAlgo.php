@@ -1,14 +1,24 @@
 <?php 
+	session_start();
+    
+
     require('algo.php'); //Ajout de la méthode convertInput()
     require('connectDatabase.php'); //Connexion à la database
 
     echo '<p>Search est '.$search.'</p>';
-    if(isset($_POST['search'])) { 
+
+
+    function search(){
+
+    }
+
+
+    if(isset($search)) { 
         $search = convertInput($_POST['search']);
         echo '<p>il y a quelque chose</p>';
         $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' order by Nom asc";
        // header('Location:../Ressources/Pages/modifyUsers.php'); //pas sur de ça
-        header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
+        //header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
     }
     else {
         echo '<p>il y a rien dans la barre de recherche</p>';
@@ -37,5 +47,4 @@
         echo '</div>';
     }
 
-    $result -> free_result();
     ?>
