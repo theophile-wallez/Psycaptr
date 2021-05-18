@@ -39,6 +39,8 @@
         echo '</div>';
     }
 
+    $_SESSION['search'] = $search;
+
     exit();
 	$result -> free_result();
 

@@ -39,8 +39,8 @@
 
     <form class="search_bar-container" action="modifyUsers.php" method="POST">
       <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs" value="<?php
-          if(isset($search)){
-            echo $search;
+          if(isset($_SESSION['search'])){
+            echo $_SESSION['search'];
           }
         ?>">
       <div class="button-container"><button type="submit">Recherche</button></div>
