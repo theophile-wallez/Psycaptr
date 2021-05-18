@@ -1,7 +1,4 @@
-<?php
-
-  //ON GARDE ÇA ?
-  
+<?php  
 	session_start();
 ?>
 
