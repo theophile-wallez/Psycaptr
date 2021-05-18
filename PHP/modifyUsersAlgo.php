@@ -5,12 +5,12 @@
     $search = convertInput($_POST['search']);
 
     if(isset($search)){ 
-        echo 'il y a quelque chose';
+        echo '<p>il y a quelque chose</p>';
         $sql = 'SELECT * FROM Utilisateurs where name like '$search%' order by Nom asc';
         unset($search);
     }
     else{
-        echo 'il y a rien dans la barre de recherche';
+        echo '<p>il y a rien dans la barre de recherche</p>';
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     }
 
