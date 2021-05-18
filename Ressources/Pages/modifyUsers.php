@@ -41,6 +41,7 @@
       <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs" value="<?php
           if(isset($_SESSION['search'])){
             echo $_SESSION['search'];
+            unset($_SESSION['search']);
           }
         ?>">
       <div class="button-container"><button type="submit">Recherche</button></div>
@@ -55,9 +56,7 @@
     </div>
 
     <!-- Affichage de la liste des utilisateurs -->
-    <?php require('../../PHP/modifyUsersAlgo.php');
-    unset($_SESSION['search']);
-    ?>
+    <?php require('../../PHP/modifyUsersAlgo.php');?>
 
   </section>
 </body>
