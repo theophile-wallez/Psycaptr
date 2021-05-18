@@ -753,6 +753,8 @@
 	color: white;
 	display: flex;
 	justify-content: center;
+	height: 5vh;
+	width: 100%;
 }
 
 .CGU a{
