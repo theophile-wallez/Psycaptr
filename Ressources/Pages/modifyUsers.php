@@ -56,6 +56,7 @@
 
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');
+    unset($_SESSION['search']);
     ?>
 
   </section>
