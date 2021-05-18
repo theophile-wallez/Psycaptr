@@ -75,12 +75,12 @@
     $query = $bdd->query("SELECT * FROM Utilisateurs order by Nom asc");
     // Recuperation des resultats
     while($row = $query ->fetch()){
-        $Id=$row[0];
-        $Mail=$row[1];
-        $CryptedMdp = $row[2];
-        $Date_Inscription = date("d-m-Y",strtotime($row[3]));
-        $Nom = $row[4];
-        $Prenom = $row[5];
+        $Id=$row[1];
+        $Mail=$row[2];
+        $CryptedMdp = $row[3];
+        $Date_Inscription = date("d-m-Y",strtotime($row[4]));
+        $Nom = $row[5];
+        $Prenom = $row[6];
        ?>
        <tr>
         <td><?php=$Nom?></td>
