@@ -57,9 +57,6 @@
           <button type="submit">Connexion</button>
       </div>
   </form>
-
-
 </body>
-
 <!-- <footer class="bottom" id="footer"></footer> -->
 </html>
