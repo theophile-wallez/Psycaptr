@@ -63,7 +63,7 @@
       </div>
 		
 	  <div class="CGU"> 
-		<a href="Ressources/Pages/CGU.html"> CGU </a> 
+		<a href="Ressources/Pages/CGU.php"> CGU </a> 
 	  </div>
 
       <div class="envoyer_button">
