@@ -11,7 +11,7 @@
         header('Location:modifyUsers.php'); //pas sur de ça
         // header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
 
-        unset($_POST['search']);
+        unset($search);
     }
     else {
         echo '<p>il y a rien dans la barre de recherche</p>';
