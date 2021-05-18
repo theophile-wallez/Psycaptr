@@ -4,7 +4,7 @@
 
     $search = convertInput($_POST['search']);
 
-    if(isset($search)){ 
+    if(isset($_POST['search'])){ 
         echo 'il y a quelque chose';
         $sql = 'SELECT * FROM Utilisateurs where name like '$search%' order by Nom asc';
         unset($search);
