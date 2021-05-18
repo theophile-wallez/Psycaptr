@@ -15,7 +15,6 @@
         echo '<p>il y a rien dans la barre de recherche</p>';
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     }
-    echo 'Les résultats sont : '.$result;
 
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
@@ -37,4 +36,7 @@
         echo '<div class="date-container">'.$Date_Inscription.'</div>';
         echo '</div>';
     }
+    echo 'Les résultats sont : '.$result;
+
+    $result -> free_result();
     ?>
