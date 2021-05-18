@@ -22,6 +22,7 @@
     }
     // echo 'Les résultats sont : '.$result;
 
+    echo mysql_num_rows($result);
     if (mysql_num_rows($result)==0) { 
         echo '<p>Aucun résulat ne correspond à la recherche effectuée</p>';
     }
@@ -31,7 +32,7 @@
         echo '<div class="prenom-container">Prénom</div>';
         echo '<div class="mail-container">Adresse mail</div>';
         echo '<div class="id-container">Identifiant</div>';
-        // echo '<div class="date-container">Date d',"'inscription</div>";
+        echo '<div class="date-container">Date d',"'inscription</div>";
         echo '</div>';
     }
     
