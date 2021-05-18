@@ -83,11 +83,11 @@
         $Prenom = $row[6];
        ?>
        <tr>
-        <td><?php=$Nom?></td>
-        <td><?php=$Prenom?></td>
-        <td><?php=$Mail?></td>
-        <td><?php=$Id?></td>
-        <td><?php=$Date_Inscription?></td>
+        <td><?=$Nom?></td>
+        <td><?=$Prenom?></td>
+        <td><?=$Mail?></td>
+        <td><?=$Id?></td>
+        <td><?=$Date_Inscription?></td>
         </tr> 
         <?php
     }
