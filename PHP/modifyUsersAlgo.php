@@ -7,10 +7,12 @@
 
 
     $search = convertInput($_POST['search']);
+    if (contains_at_least_one_word($search)){
+        echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
+    } 
 
     if(isset($search)) { 
         $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' order by Nom asc";
-        echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
     }
     else {
         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
