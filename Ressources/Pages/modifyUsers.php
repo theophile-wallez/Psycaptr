@@ -49,46 +49,10 @@
       <div class="date-container">Date d'inscription</div>
     </div>
 
+    // Affichage de la liste des utilisateurs
     <?php require_once('../../PHP/modifyUsersAlgo.php');?>
 
-
-    <!-- <div class="user-container">
-      <div class="nom-container">Wallez</div>
-      <div class="prenom-container">Théophile</div>
-      <div class="mail-container">theophile.wall@gmail.com</div>
-      <div class="id-container">2141241</div>
-      <div class="date-container">12/12/2012</div>
-    </div>
-    <div class="user-container">
-      <div class="nom-container">Delerue</div>
-      <div class="prenom-container">Arthur</div>
-      <div class="mail-container">arthur.delerue@gmail.com</div>
-      <div class="id-container">2141241</div>
-      <div class="date-container">12/12/2012</div>
-    </div>
-    <div class="user-container">
-      <div class="nom-container">Delerue</div>
-      <div class="prenom-container">Arthur</div>
-      <div class="mail-container">arthur.delerue@gmail.com</div>
-      <div class="id-container">2141241</div>
-      <div class="date-container">12/12/2012</div>
-    </div>
-    <div class="user-container">
-      <div class="nom-container">Delerue</div>
-      <div class="prenom-container">Arthur</div>
-      <div class="mail-container">arthur.delerue@gmail.com</div>
-      <div class="id-container">2141241</div>
-      <div class="date-container">12/12/2012</div>
-    </div>
-    <div class="user-container">
-      <div class="nom-container">Delerue</div>
-      <div class="prenom-container">Arthur</div>
-      <div class="mail-container">arthur.delerue@gmail.com</div>
-      <div class="id-container">2141241</div>
-      <div class="date-container">12/12/2012</div>
-    </div> -->
   </section>
-  
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="../../javascripts/Graph/graph.js"></script>
