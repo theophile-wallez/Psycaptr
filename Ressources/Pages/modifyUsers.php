@@ -60,7 +60,18 @@
     <tbody>
     <?php 
     session_start();
-    include '../../PHP/connectDatabase.php';
+    $servername = 'localhost';
+    $bddname = 'ttwawain_Psycaptr';
+    $username = 'theophile';
+    $password = 'psycaptrisep2023';
+
+    //Message d'erreur en cas d'accès impossible à la database
+    $bdd = new mysqli($servername, $username, $password, $bddname);
+    if($bdd->connect_errno){
+    echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
+    exit();
+    }
+    
     $query = $bdd->query("SELECT * FROM Utilisateurs order by Nom asc");
     // Recuperation des resultats
     while($row = $query ->fetch()){
