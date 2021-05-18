@@ -26,8 +26,6 @@
     }
     // echo 'Les résultats sont : '.$result;
 
-    // $_SESSION['Result'] = $result;
-
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
         $Id=$row[0];

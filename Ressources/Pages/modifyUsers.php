@@ -40,7 +40,7 @@
     <h2>Liste des utilisateurs</h2>
 
     <form class="search_bar" action="modifyUsers.php" method="POST">
-      <input required type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
+      <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
       <button type="submit">Recherche</button>
     </form>
 
@@ -54,7 +54,6 @@
 
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');
-    echo $result;
     ?>
 
   </section>
