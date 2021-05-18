@@ -44,12 +44,11 @@
     <table>
       <thead>
         <tr>
-          <th>I-Code</th>
-          <th>E-mail</th>
-          <th>Prenom</th>
           <th>Nom</th>
-          <th>Date de naissance</th>
-          <th>Date de naissance</th>
+          <th>Prénom</th>
+          <th>Mail</th>
+          <th>Identifiant</th>
+          <th>Date d'inscription</th>
         </tr>
       </thead>
       <tbody>
@@ -61,7 +60,7 @@
 
     //Message d'erreur en cas d'accès impossible à la database
     $bdd = new mysqli($servername, $username, $password, $bddname);
-    $sql = 'SELECT * FROM Utilisateurs';
+    $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
