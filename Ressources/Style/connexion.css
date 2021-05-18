@@ -65,7 +65,9 @@ body{
 }
 
 #CGU{
-	padding-left: 1vw;
+	color: #645483;
+    font-size: 1em;
+    transition: all 0.2s;
 }
 
 .form_container input:hover,.form_container input:focus{
