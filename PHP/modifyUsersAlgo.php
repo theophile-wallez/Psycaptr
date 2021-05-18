@@ -23,7 +23,7 @@
     // echo 'Les résultats sont : '.$result;
 
     if (mysql_num_rows($result)==0) { 
-        echo 'Aucun résulat ne correspond à la recherche effectuée';
+        echo '<p>Aucun résulat ne correspond à la recherche effectuée</p>';
     }
     else{
         echo '<div class="user-container user-description">';
