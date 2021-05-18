@@ -7,11 +7,9 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="../Style/style.css"/>
-  <link rel="stylesheet" href="../Style/input.css"/>
 
   <link rel="stylesheet" href="../Style/profil.css"/>
   <link rel="stylesheet" href="../Style/modifyUsers.css"/>
-
 
   <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
   <title>DashBoard • Psycaptr</title>
@@ -39,9 +37,9 @@
   <section class="content-container">
     <h2>Liste des utilisateurs</h2>
 
-    <form class="search_bar" action="modifyUsers.php" method="POST">
+    <form class="search_bar-container" action="modifyUsers.php" method="POST">
       <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
-      <button type="submit">Recherche</button>
+      <div class="button-container"><button type="submit">Recherche</button></div>
     </form>
 
     <div class="user-container user-description">

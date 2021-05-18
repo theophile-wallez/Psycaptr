@@ -1,12 +1,14 @@
-.content-container{
+.content-container {
     padding:1em;
+    display: flex;
+    flex-direction: column;
 }
  
-.content-container h2{
+.content-container h2 {
     margin-bottom: 1em;
 }
 
-.user-container{
+.user-container {
     width:100%;
     height:3em;
     display:flex;
@@ -20,20 +22,20 @@
 }
 
 
-.user-description{
+.user-description {
     box-shadow: none;
     margin-bottom: 0.1em;
 }
 
-.user-description>*{
+.user-description>* {
     font-size:1.3em;
 }
 
 
-.user-container:last-child{
+.user-container:last-child {
     margin-bottom:0;
 }
-.user-container>*{
+.user-container>* {
     display: flex;
     justify-content:center;
     align-items: center;
@@ -43,11 +45,99 @@
     padding: 0em 1em 1em 0em;
 }
 
-.line-container>*:nth-child(2n){
+.line-container>*:nth-child(2n) {
     background-color: #f8f8f8;
 }
 
-.line-container:hover{
+.line-container:hover {
     transform: scale(1.01);
     box-shadow: 0px 0px 5px #bdc3c7;
+}
+
+
+/* Style de la barre de recherche */
+
+.search_bar-container {
+    width: 60%;
+    height: 2.6em;
+    margin-bottom: 2em;
+
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    box-shadow: 0px 0px 2px #bdc3c7;
+    border-radius: 1em;
+    transition: all 0.2s ease;
+
+    overflow: hidden;
+}
+
+.search_bar-container:hover, .search_bar-container:focus {
+    box-shadow: 0px 0px 4px #bdc3c7;
+  }
+
+.search_bar-container:focus-within {
+    transform: scale(1.03);
+    transform-origin: center;
+}
+
+.search_bar-container>* {
+    height:100%;
+}
+.search_bar-container input {
+    border-style: none;
+    width:60%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    color : #474547;
+    padding-left: 1em;
+    padding-right: 1em;
+    max-width: 100%;
+}
+
+.search_bar-container input:hover, .search_bar-container input:focus {
+    border: none;
+    outline: none;
+    caret-color: var(--light_pink);
+}
+
+.search_bar-container .button-container {
+    width: 40%;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+  
+.button-container button {
+    height: 200%;
+    width:  200%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    background: var(--pink);
+    border-style: none;
+    border:none;
+    outline: none;
+    overflow: hidden;
+    transition: all 0.3s;
+    user-select: none;
+}
+  
+.button-container button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transform-origin: center;
+    z-index: 10;
 }
