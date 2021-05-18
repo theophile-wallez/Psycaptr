@@ -2,10 +2,9 @@
     require('algo.php');
     require('connectDatabase.php');
 
-    
+    $search = convertInput($_POST['search']);
     echo '<p>Search est '.$search.'</p>';
-    if(isset($_POST['search'])) { 
-        $search = convertInput($_POST['search']);
+    if(isset($search)) { 
         echo '<p>il y a quelque chose</p>';
         $sql = "SELECT * FROM Utilisateurs where Nom like '$search%'";
         // order by Nom asc
