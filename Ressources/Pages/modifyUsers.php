@@ -61,7 +61,7 @@
 
     //Message d'erreur en cas d'accès impossible à la database
     $bdd = new mysqli($servername, $username, $password, $bddname);
-    $bdd->query("SELECT * FROM Utilisateurs");
+    $sql = 'SELECT * FROM Utilisateurs';
     if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
