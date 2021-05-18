@@ -9,7 +9,6 @@
         $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' order by Nom asc";
         header('Location:../Ressources/Pages/modifyUsers.php'); //pas sur de ça
         // header("Refresh:0; url=../Ressources/Pages/modifyUsers.php");
-        unset($search);
     }
     else {
         echo '<p>il y a rien dans la barre de recherche</p>';
