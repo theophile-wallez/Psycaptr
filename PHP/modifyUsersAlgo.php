@@ -2,7 +2,6 @@
     require_once('algo.php');
     require_once('connectDatabase.php');
 
-    unset($search);
     $search = convertInput($_POST['search']);
     echo '<p>Search est '.$search.'</p>';
     if(isset($search)) { 
