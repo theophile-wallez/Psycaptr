@@ -47,6 +47,7 @@
         <div class="forgot_container">
           <a href="#">Mot de passe oublié</a>
           <a href="inscription.php">Créer un compte</a>
+		  <a id="CGU" href="Ressources/Pages/CGU.html"> CGU </a>
         </div>
       </div>
 

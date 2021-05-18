@@ -61,7 +61,10 @@
         <input name="Mdp" type="password" placeholder="Mot de passe" required/>
         <input name="MdpBis" type="password" placeholder="Confirmation" required/>
       </div>
-
+		
+	  <div class="CGU"> 
+		<a href="Ressources/Pages/CGU.html"> CGU </a> 
+	  </div>
 
       <div class="envoyer_button">
         <button type="submit">Valider</button>

@@ -281,7 +281,7 @@
 
   <footer id="footer" class="centered" >
 	<div class="CGU"> 
-		<a href="Ressources/Pages/CGU.html"> CGU </a>
+		<a href="Ressources/Pages/CGU.html"> CGU </a> </div>
   </footer>
 
   <!-- Ajout de la barre de navigation et du footer -->

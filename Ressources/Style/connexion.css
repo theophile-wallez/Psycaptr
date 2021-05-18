@@ -64,6 +64,9 @@ body{
     color : #474547;
 }
 
+#CGU{
+	padding-left: 1vw;
+}
 
 .form_container input:hover,.form_container input:focus{
     border: none;
