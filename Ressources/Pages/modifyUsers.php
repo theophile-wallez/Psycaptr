@@ -42,17 +42,8 @@
   <section class="content-container">
     <h2>Liste des utilisateurs</h2>
     <?php 
-    $servername = 'localhost';
-    $bddname = 'ttwawain_Psycaptr';
-    $username = 'theophile';
-    $password = 'psycaptrisep2023'; 
-
-    //Message d'erreur en cas d'accès impossible à la database
-    $bdd = new mysqli($servername, $username, $password, $bddname);
-    $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
-    if(!$result = $bdd -> query($sql)){
-      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-    }
+    
+    require_once('../../PHP/connectDataBase.php');
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
