@@ -1,6 +1,6 @@
 <?php 
-    require_once('algo.php');
-    require_once('connectDatabase.php');
+    require('algo.php');
+    require('connectDatabase.php');
 
     
     echo '<p>Search est '.$search.'</p>';
