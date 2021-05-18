@@ -145,4 +145,6 @@ body{
 .CGU{
 	display: flex;
 	justify-content: center;
+	height: 3vh;
+	width: 100%;
 }
