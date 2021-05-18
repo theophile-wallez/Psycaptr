@@ -22,7 +22,7 @@
     }
     // echo 'Les résultats sont : '.$result;
 
-    if (mysql_num_rows($sql)==0) { 
+    if (mysql_num_rows(query($sql))==0) { 
         echo '<p>Aucun résultat ne correspond à la recherche effectuée</p>';
     }   
     else {
