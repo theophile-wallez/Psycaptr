@@ -43,6 +43,7 @@
       <div class="button-container"><button type="submit">Recherche</button></div>
     </form>
 
+    <!-- Ces lignes servent aux tests en localhost (sans BDD) -->
     <!-- <form class="line-container user-container" action="modifyUsers.php" method="POST">
       <input type="text" name="Nom" value="'.$Nom.'" required>
       <input type="text" name="Nom" value="'.$Prenom.'" required>
@@ -51,9 +52,9 @@
       <div class="date-container">.$Date_Inscription.</div>
       <div class="valider_changement"><button type="submit"><i class="fa fa-check"></i></button></div>
     </form> -->
+
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');?>
-
     
   </section>
 </body>
