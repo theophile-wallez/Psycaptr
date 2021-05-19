@@ -48,9 +48,7 @@
 
 	$result -> free_result();
 
-
 	$sql = 'SELECT * FROM Utilisateurs';
-
 
 	if($result = $bdd -> query($sql)) {
 		while($row = $result -> fetch_row())  {
@@ -66,10 +64,9 @@
 	}
 
 	header('Location:../Ressources/Pages/connexion.php');
-	exit();
-
 
 	$result -> free_result();
 
 	$bdd -> close();
+	exit();
  ?>
