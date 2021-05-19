@@ -23,7 +23,9 @@
     }
     //echo 'Les résultats sont : '.$result;
 
-    if (isnull($result)) { 
+    $num_row = mysqli_num_rows($result);
+
+    if ($num_row==0) { 
         echo '<p>Aucun résultat ne correspond à la recherche effectuée</p>';
     }   
     else {
