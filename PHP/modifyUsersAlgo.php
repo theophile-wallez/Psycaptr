@@ -50,13 +50,22 @@
         $Nom = $row[4];
         $Prenom = $row[5];
 
-        echo '<div class="line-container user-container">';
-        echo '<div class="nom-container">'.$Nom.'</div>';
-        echo '<div class="prenom-container">'.$Prenom.'</div>';
-        echo '<div class="mail-container">'.$Mail.'</div>';
-        echo '<div class="id-container">'.$Id.'</div>';
-        echo '<div class="date-container">'.$Date_Inscription.'</div>';
-        echo '</div>';
+        // echo '<div class="line-container user-container">';
+        // echo '<div class="nom-container">'.$Nom.'</div>';
+        // echo '<div class="prenom-container">'.$Prenom.'</div>';
+        // echo '<div class="mail-container">'.$Mail.'</div>';
+        // echo '<div class="id-container">'.$Id.'</div>';
+        // echo '<div class="date-container">'.$Date_Inscription.'</div>';
+        // echo '</div>';
+
+        echo '<form class="line-container user-container" action="modifyUsers.php" method="POST">';
+        echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
+        echo    '<input type="text" name="Nom" value="'.$Prenom.'" required>';
+        echo    '<input input type="email" name="Nom" value="'.$Mail.'" required>';
+        echo    '<div class="id-container">'.$Id.'</div>';
+        echo    '<div class="date-container">'.$Date_Inscription.'</div>';
+        echo    '<div class="valider_changement"><button type="submit"><i class="fa fa-check"></i></button></div>';
+        echo '</form>';
     }
 
     $_SESSION['search'] = $search;

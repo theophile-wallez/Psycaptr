@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="../Style/profil.css"/>
   <link rel="stylesheet" href="../Style/modifyUsers.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
   <title>DashBoard • Psycaptr</title>
@@ -25,7 +26,7 @@
     <?php
       //session_start();
       echo "<p>";
-      echo "Bonjour, Theo".$_SESSION["Prenom"];
+      echo "Bonjour, ".$_SESSION["Prenom"];
       echo "</p>";
      ?>
   </div>
@@ -42,10 +43,11 @@
       <div class="button-container"><button type="submit">Recherche</button></div>
     </form>
 
-
+    
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');?>
 
+    
   </section>
 </body>
 </html>
