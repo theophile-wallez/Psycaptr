@@ -54,6 +54,11 @@
     box-shadow: 0px 0px 5px #bdc3c7;
 }
 
+.line-container:hover + .line-container {
+    transform: scale(1.005);
+    box-shadow: 0px 0px 5px #bdc3c7;
+}
+
 
 /* Style de la barre de recherche */
 
