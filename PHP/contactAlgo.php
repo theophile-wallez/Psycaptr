@@ -1,5 +1,4 @@
 <?php
-
 $Id = IdGenerator(11); //Un Id est généré par une méthode
 
 //On récupère les données rentrées par l'utilisateur
@@ -22,7 +21,6 @@ if($bdd->connect_errno){
   exit();
 }
 
-
 $sql = 'SELECT * FROM Message';
 
 if($result = $bdd -> query($sql)){
@@ -35,20 +33,16 @@ if($result = $bdd -> query($sql)){
 
 $result -> free_result();
 
-
 $sql = "INSERT INTO `Message` (`Id`, `Nom`, `Prenom`, `Mail`, `Message`, `Date`) VALUES ('".$Id."','".$Nom."','".$Prenom."','".$Mail."','".$Message."','".$Date."')";
 
 if (!mysql_query($sql,$bdd)) {
 	die('impossible d’ajouter cet enregistrement : ' . mysql_error());
 	}
 
-
-
 $bdd -> close();
 
 header("Location:../Ressources/Pages/connexion.php");
 exit();
-
 
 function IdGenerator($taille){
   // Liste des caractères possibles
