@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 function displayNavBar(string $url=""){
     if($url==""){

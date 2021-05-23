@@ -9,11 +9,13 @@
   font-family: 'Avenir';
   src: url('../Font/Avenir.ttc');
 }
+
 @font-face {
   font-family: 'Nunito-Regular';
   src: url('../Font/Nunito-Regular.ttf');
 }
-html{
+
+html {
   scroll-behavior: smooth;
   margin: 0;
   -ms-overflow-style: none;  
@@ -24,22 +26,22 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-a{
+a {
   text-decoration: none;
   z-index: 10000000;
 }
 
 
-p{
+p {
   font-size: 1.2em;
   text-align: justify;
   color: #2d3436;
 }
 
-*
-{
+*{
   font-family:"Nunito-Regular";
 }
+
 *::selection
 {
   color: white;

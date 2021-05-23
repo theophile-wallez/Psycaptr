@@ -53,6 +53,7 @@ $sql = 'SELECT * FROM Utilisateurs';
 if(!$result = $bdd -> query($sql)){
   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
+
 else {
   while($row = $result -> fetch_row()) {
     // On vérifie que le mail n'est pas déjà utilisé
@@ -75,6 +76,7 @@ if(!$bdd -> query($sql)){
   echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
   echo " |".$Id;
 }
+
 else {
   $_SESSION['login'] = 1;
   $_SESSION['lastActivity'] = time();

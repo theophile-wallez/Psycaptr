@@ -1,4 +1,4 @@
-nav{
+/* nav{
     width: 5em;
     background-color: white;
 
@@ -82,8 +82,7 @@ header .welcome-text {
 }
 .home_logo a img:hover{
     transform: scale(1.05);
-}
-
+} */
 
 body{
     margin: 0;
