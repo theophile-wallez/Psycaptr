@@ -99,6 +99,7 @@ nav{
 
     padding-top: 8em;
     box-shadow: 0px 0px 4px #e4e7e9;
+    overflow: hidden;
 
     
 }
@@ -145,6 +146,7 @@ nav .icon-container{
 .icon-container:hover i{
     color: #FE6BBF;
 }
+
 
 /* Ligne verticale à gauche de l'icon */
 .line{

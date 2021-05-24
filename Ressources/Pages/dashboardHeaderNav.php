@@ -1,6 +1,7 @@
 <?php  
   session_start();
-  require('../../PHP/securiteAlgo.php');
+  // Securité des pages après connexion à la session
+  // require('../../PHP/securiteAlgo.php');
 ?>
 
 <!DOCTYPE html>
