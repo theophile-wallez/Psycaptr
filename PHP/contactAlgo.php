@@ -1,4 +1,5 @@
 <?php
+
 $Id = IdGenerator(11); //Un Id est généré par une méthode
 
 //On récupère les données rentrées par l'utilisateur
@@ -44,17 +45,4 @@ $bdd -> close();
 header("Location:../Ressources/Pages/connexion.php");
 exit();
 
-function IdGenerator($taille){
-  // Liste des caractères possibles
-  $chars="0123456789";
-  $Id='';
-  $length=strlen($chars);
-
-  srand((double)microtime()*1000000);
-  //Initialise le générateur de nombres aléatoires
-
-  for($i=0;$i<$taille;$i++)$Id=$Id.substr($chars,rand(0,$length-1),1);
-
-  return $Id;
-}
 ?>

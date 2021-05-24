@@ -1,4 +1,5 @@
 <?php
+	require_once('algo.php');
 	session_start();
 
 	unset($_SESSION['login']);
@@ -8,12 +9,6 @@
 	unset($_SESSION['Nom']);
 	unset($_SESSION['Mail']);
 
-	function convertInput ($input) {
-		$input = trim ($input);
-		$input = Stripslashes ($input);
-		$input = Htmlspecialchars ($input); 
-		return $input;
-	}
 
 	$Mail = convertInput($_POST['Mail']);
 	$Mdp  = convertInput($_POST['Mdp']);
