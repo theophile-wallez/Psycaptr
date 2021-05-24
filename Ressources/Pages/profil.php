@@ -1,13 +1,6 @@
 <?php
-
-  //ON GARDE ÇA ?
-  
 	session_start();
-	// unset($_SESSION['login']);
-  // unset($_SESSION['login_Admin']);
-  // unset($_SESSION['lastActivity']);
-  // unset($_SESSION['Prenom']);
-  // unset($_SESSION['Nom']);
+  require_once('securiteAlgo.php');
 ?>
 
 <!DOCTYPE html>

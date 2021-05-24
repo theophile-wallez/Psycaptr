@@ -56,5 +56,8 @@
       </div>
   </form>
 </body>
-<!-- <footer class="bottom" id="footer"></footer> -->
 </html>
+
+<!-- Ces balises de script fixent un bug de Chrome qui déclanche les  
+animations des :hover au lancement de la page -->
+<script> </script>
