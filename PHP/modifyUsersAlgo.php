@@ -4,7 +4,6 @@
     require('algo.php'); //Ajout de la méthode convertInput()
     require('connectDatabase.php'); //Connexion à la database
 
-
     $search = convertInput($_POST['search']);
     // if (contains_at_least_one_word($search)){
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
