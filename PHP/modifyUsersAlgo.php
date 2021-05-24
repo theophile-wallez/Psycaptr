@@ -78,6 +78,8 @@
 
 
     function addUser(){
+        echo '<p>Ca marche</p>';
+
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
         $Mdp    = convertInput($_POST['Mdp']);
         $MdpBis = convertInput($_POST['MdpBis']);
@@ -113,7 +115,8 @@
                 }
             }
         }
-        echo '<p>Ca marche</p>';
+
+
         $result -> free_result();
 
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
@@ -131,4 +134,9 @@
         $bdd -> close();
 
     }
+
+	$result -> free_result();
+
+	$bdd -> close(); 
+    exit();
 ?>
