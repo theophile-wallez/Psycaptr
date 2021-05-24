@@ -1,5 +1,4 @@
 <?php 
-  require_once('algo.php');
 
   //Cette méthode permet d'empêcher les injections SQL dans nos inputs
   function convertInput ($input) {
