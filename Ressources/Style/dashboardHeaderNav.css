@@ -83,6 +83,7 @@ header .welcome-text {
     border:none;
     text-align: center;
     transform-origin: center;
+
     
 }
 .home_logo a:hover i{
@@ -180,12 +181,12 @@ nav .icon-container{
 
     background-color: #939a9c;
     opacity: 0;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.5s ease-in-out;
     transition: opacity 0.2s ease-in-out;
 }
 .icon-container:hover .line{
     opacity: 1;
-    width: 2px;
+    width: 3px;
     background-color: #FE6BBF;
     box-shadow: 0px 0px 2px #FE6BBF;
 }

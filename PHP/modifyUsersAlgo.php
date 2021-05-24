@@ -36,7 +36,16 @@
         echo '<div class="date-container">Date d',"'inscription</div>";
         echo '</div>';
     }
+    ?>
+
+    <form class="line-container user-container" onsubmit="addUser()" method="POST">
+      <input type="text" name="Nom" placeholder="Nom" required>
+      <input type="text" name="Nom" placeholder="Prenom" required>
+      <input input type="email" name="Nom" placeholder="Adresse mail" required>
+      <div class="valider_changement"><button type="submit"><i class="fas fa-plus"></i></button></div>
+    </form>
     
+    <?php
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){

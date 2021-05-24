@@ -29,13 +29,11 @@
 
     <!-- Ces lignes servent aux tests en localhost (sans BDD) -->
     
-    <!-- <form class="line-container user-container" action="modifyUsers.php" method="POST">
-      <input type="text" name="Nom" value="'.$Nom.'" required>
-      <input type="text" name="Nom" value="'.$Prenom.'" required>
-      <input input type="email" name="Nom" value="'.$Mail.'" required>
-      <div class="id-container">.$Id.</div>
-      <div class="date-container">.$Date_Inscription.</div>
-      <div class="valider_changement"><button type="submit"><i class="fa fa-check"></i></button></div>
+    <!-- <form class="line-container user-container" onsubmit="addUser()" method="POST">
+      <input type="text" name="Nom" placeholder="Nom" required>
+      <input type="text" name="Nom" placeholder="Prenom" required>
+      <input input type="email" name="Nom" placeholder="Adresse mail" required>
+      <div class="valider_changement"><button type="submit"><i class="fas fa-plus"></i></button></div>
     </form> -->
 
     <!-- Affichage de la liste des utilisateurs -->
