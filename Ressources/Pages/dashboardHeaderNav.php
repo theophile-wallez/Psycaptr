@@ -12,8 +12,9 @@
 
 <header class="centered">
   <div class="home_logo">
-    <a href="../../index.php#" draggable="false">
-      <img src="../Images/Logo_light.png" draggable="false" alt="logo">
+    <a href="dashboard.php" draggable="false">
+      <!-- <img src="../Images/Logo_light.png" draggable="false" alt="logo"> -->
+      <i class="fas fa-home"></i>
     </a>
   </div>
   <div class="welcome-text">
