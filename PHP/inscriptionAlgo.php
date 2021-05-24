@@ -89,17 +89,5 @@ else {
 
 $bdd -> close();
 
-function IdGenerator($taille){
-  // Liste des caractères possibles
-  $chars="0123456789";
-  $IdGen='';
-  $length=strlen($chars);
 
-  srand((double)microtime()*1000000);
-  //Initialise le générateur de nombres aléatoires
-
-  for($i=0;$i<$taille;$i++)$IdGen=$IdGen.substr($chars,rand(0,$length-1),1);
-
-  return $IdGen;
-}
  ?>
