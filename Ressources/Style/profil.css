@@ -83,13 +83,20 @@ body .content-container{
     right: 4em;
     padding-left: 2em;
     padding-right: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: var(--light_pink);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border:2px solid #FF589E;
+    border-radius:1em;
+    color: #FF589E;
+    transition:all 0.4s;
 }
 
 .modif_button:hover{
+    background: #FF589E;
+    color: white;
 }
+
+
 
 input{
     min-width: 6em;
