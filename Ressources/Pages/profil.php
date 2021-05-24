@@ -1,6 +1,6 @@
 <?php
 	session_start();
-  require_once('securiteAlgo.php');
+  require_once('../../PHP/securiteAlgo.php');
 ?>
 
 <!DOCTYPE html>
