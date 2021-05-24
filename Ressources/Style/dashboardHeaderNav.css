@@ -21,6 +21,10 @@ header{
     box-shadow: 0px 0px 4px #e4e7e9;
 }
 
+header:hover{
+    box-shadow: 0px 0px 7px #e4e7e9;
+}
+
 header .home_logo{
     position: absolute;
     left: 0;
@@ -91,7 +95,7 @@ nav{
     top: 0;
     bottom: 0;
     z-index: 9;
-    transition: width 0.5s;
+    transition: all 0.2s ease-in-out;
 
     display: flex;
     flex-direction: column;
@@ -100,8 +104,10 @@ nav{
     padding-top: 8em;
     box-shadow: 0px 0px 4px #e4e7e9;
     overflow: hidden;
+}
 
-    
+nav:hover{
+    box-shadow: 0px 0px 7px #e4e7e9;
 }
 
 nav .icon-container{
