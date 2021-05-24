@@ -113,7 +113,7 @@
                 }
             }
         }
-
+        echo '<p>Ca marche</p>';
         $result -> free_result();
 
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
