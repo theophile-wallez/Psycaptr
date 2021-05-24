@@ -1,6 +1,5 @@
 <?php  
   session_start();
-  require('securiteAlgo.php');
 ?>
 
 <!DOCTYPE html>

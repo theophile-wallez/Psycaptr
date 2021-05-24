@@ -1,6 +1,5 @@
 <?php 
 	session_start();
-    
 
     require('algo.php'); //Ajout de la méthode convertInput()
     require('connectDatabase.php'); //Connexion à la database
