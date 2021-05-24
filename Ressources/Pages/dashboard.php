@@ -1,6 +1,5 @@
 <?php 
   session_start();
-  require('securiteAlgo.php');
 ?>
 
 <!DOCTYPE html>
@@ -59,3 +58,5 @@
   graph2();
 </script>
 </html>
+
+<?php   require('securiteAlgo.php');?>
