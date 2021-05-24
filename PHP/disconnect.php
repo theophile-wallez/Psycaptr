@@ -6,10 +6,10 @@ session_start();
 // unset($_SESSION['Prenom']);
 // unset($_SESSION['Nom']);
 // unset($_SESSION['Mail']);
-unset($_SESSION);
+// unset($_SESSION);
 
 // J'ai lu qu'il était mieux d'utiliser $_SESSION = array(); plutot que unset($_SESSION);
-// $_SESSION = array(); 
+$_SESSION = array(); 
 
 header('Location:../index.php#');
 $result -> free_result();
