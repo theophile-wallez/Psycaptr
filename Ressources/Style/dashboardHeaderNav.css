@@ -78,9 +78,10 @@ header .welcome-text {
 
 nav{
     width: 5em;
+    height:100vh;
     background-color: white;
 
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
