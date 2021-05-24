@@ -5,7 +5,7 @@
       $input = trim ($input);
       $input = Stripslashes ($input);
       $input = Htmlspecialchars ($input); 
-      $input = mysqli_real_escape_string($input);
+      // $input = mysqli_real_escape_string($input);
       return $input;
   }
 
