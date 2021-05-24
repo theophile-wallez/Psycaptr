@@ -63,7 +63,7 @@ body .dashboard_container{
     height: 100%;
     background: white;
     border-radius: 0.5em;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@ body .dashboard_container{
 
 .graph:hover{
     transform-origin: center;
-    transform: scale(1.01);
+    transform: scale(1.012);
 }
 
 .canvas_title{
