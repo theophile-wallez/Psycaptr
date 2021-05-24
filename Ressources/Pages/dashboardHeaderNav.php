@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<?php  
-  session_start();
-?>
-
-=======
->>>>>>> parent of 84c7046 (ajout securite)
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../Style/dashboardHeaderNav.css"/>
