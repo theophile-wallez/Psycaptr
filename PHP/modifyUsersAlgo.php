@@ -131,9 +131,4 @@
         $bdd -> close();
 
     }
-
-	$result -> free_result();
-
-	$bdd -> close(); 
-    exit();
 ?>
