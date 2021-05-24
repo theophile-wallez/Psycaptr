@@ -24,19 +24,9 @@
 
     $num_row = mysqli_num_rows($result);
 
-    if ($num_row==0) { 
-        echo '<p>Aucun résultat ne correspond à la recherche effectuée</p>';
-    }   
-    else {
-        echo '<div class="user-container user-description">';
-        echo '<div class="nom-container">Nom</div>';
-        echo '<div class="prenom-container">Prénom</div>';
-        echo '<div class="mail-container">Adresse mail</div>';
-        echo '<div class="id-container">Identifiant</div>';
-        echo '<div class="date-container">Date d',"'inscription</div>";
-        echo '</div>';
-    }
     ?>
+
+    <h2>Ajout d'un utilisateur</h2>
 
     <form class="line-container user-container" onsubmit="addUser()" method="POST">
       <input type="text" name="Nom" placeholder="Nom" required>
@@ -46,6 +36,20 @@
     </form>
     
     <?php
+    if ($num_row==0) { 
+        echo '<p>Aucun résultat ne correspond à la recherche effectuée</p>';
+    }   
+    else {
+        echo '<h2>Liste des utilisateurs</h2>';
+        echo '<div class="user-container user-description">';
+        echo '<div class="nom-container">Nom</div>';
+        echo '<div class="prenom-container">Prénom</div>';
+        echo '<div class="mail-container">Adresse mail</div>';
+        echo '<div class="id-container">Identifiant</div>';
+        echo '<div class="date-container">Date d',"'inscription</div>";
+        echo '</div>';
+    }
+    
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){

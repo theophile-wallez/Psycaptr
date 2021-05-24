@@ -20,7 +20,7 @@
 
 <body>
   <section class="content-container">
-    <h2>Liste des utilisateurs</h2>
+    <h2>Gestion des utilisateurs</h2>
 
     <form class="search_bar-container" action="modifyUsers.php" method="POST">
       <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
