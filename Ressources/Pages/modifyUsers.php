@@ -29,10 +29,13 @@
 
     <!-- Ces lignes servent aux tests en localhost (sans BDD) -->
     
-    <!-- <form class="line-container user-container" onsubmit="addUser()" method="POST">
+    <!-- <form class="line-container user-container addUser" onsubmit="addUser()" method="POST">
       <input type="text" name="Nom" placeholder="Nom" required>
-      <input type="text" name="Nom" placeholder="Prenom" required>
-      <input input type="email" name="Nom" placeholder="Adresse mail" required>
+      <input type="text" name="Prenom" placeholder="Prenom" required>
+      <input input type="email" name="Mail" placeholder="Adresse mail" required>
+      <input input type="text" name="Mdp" placeholder="Mot de passe" required>
+      <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
+
       <div class="valider_changement"><button type="submit"><i class="fas fa-plus"></i></button></div>
     </form> -->
 

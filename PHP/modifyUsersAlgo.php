@@ -24,7 +24,7 @@
 
     $num_row = mysqli_num_rows($result);
 
-    ?>
+?>
 
     <h2>Ajout d'un utilisateur</h2>
 
@@ -33,15 +33,18 @@
       <input type="text" name="Prenom" placeholder="Prenom" required>
       <input input type="email" name="Mail" placeholder="Adresse mail" required>
       <input input type="text" name="Mdp" placeholder="Mot de passe" required>
+      <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
+
       <div class="valider_changement"><button type="submit"><i class="fas fa-plus"></i></button></div>
     </form>
     
-    <?php
+<?php
+    echo '<h2>Liste des utilisateurs</h2>';
+
     if ($num_row==0) { 
-        echo '<p>Aucun résultat ne correspond à la recherche effectuée</p>';
+        echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
     }   
     else {
-        echo '<h2>Liste des utilisateurs</h2>';
         echo '<div class="user-container user-description">';
         echo '<div class="nom-container">Nom</div>';
         echo '<div class="prenom-container">Prénom</div>';
@@ -73,8 +76,64 @@
 
     $_SESSION['search'] = $search;
 
+
+    function addUser(){
+        $Id     = IdGenerator(10); //Un Id est généré par une méthode
+        $Mdp    = convertInput($_POST['Mdp']);
+        $MdpBis = convertInput($_POST['MdpBis']);
+        $Nom    = convertInput($_POST['Nom']);
+        $Prenom = convertInput($_POST['Prenom']);
+        $Mail   = convertInput($_POST['Mail']);
+        $Date   = date('Y-m-d');
+
+        if($MdpBis != $Mdp){
+            header('Location:../Ressources/Pages/modifyUsers.php');
+            exit();
+        }
+
+        $CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
+
+        //On sélectionne la table Utilisateurs dans la database
+        $sql = 'SELECT * FROM Utilisateurs';
+
+        if(!$result = $bdd -> query($sql)){
+        echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+        }
+
+        else {
+            while($row = $result -> fetch_row()) {
+                // On vérifie que le mail n'est pas déjà utilisé
+                if($Mail == $row[1]) {
+                    header('Location:../Ressources/Pages/modifyUsers.php');
+                    exit();
+                }
+
+                while($Id == $row[0]){
+                    $Id = IdGenerator(10);
+                }
+            }
+        }
+
+        $result -> free_result();
+
+        $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+
+        if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+        }
+
+        else {
+            header("Location:../Ressources/Pages/modifyUsers.php");
+            exit();
+        }
+
+        $bdd -> close();
+
+    }
+
 	$result -> free_result();
 
 	$bdd -> close(); 
     exit();
-    ?>
+?>
