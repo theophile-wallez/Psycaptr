@@ -1,13 +1,5 @@
 <?php
-
-  //ON GARDE ÇA ?
-  
-	session_start();
-	// unset($_SESSION['login']);
-  // unset($_SESSION['login_Admin']);
-  // unset($_SESSION['lastActivity']);
-  // unset($_SESSION['Prenom']);
-  // unset($_SESSION['Nom']);
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -82,14 +74,3 @@
 </script>
 </html>
 
-<?php
-	// session_start();
-	// if($_SESSION['login'] != 1 | !isset($_SESSION['login'])) {
-	// 	if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
-	// 		unset($_SESSION['login']);
-	// 		header('Location:home.html');
-	// 		exit();
-	// 	}
-	// }
-	// $_SESSION['lastActivity']= time();
-?>

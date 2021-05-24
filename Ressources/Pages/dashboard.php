@@ -13,6 +13,7 @@
   <title>DashBoard • Psycaptr</title>
 </head>
 
+<!-- Ajout du header et de la barre de navigation -->
 <?php require_once('dashboardHeaderNav.php');?>
 
 <body>
@@ -58,14 +59,4 @@
 </script>
 </html>
 
-<?php
-	if($_SESSION['login'] != 1 | !isset($_SESSION['login'])) {
-		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
-			unset($_SESSION['login']);
-			header('Location:../../index.php');
-			exit();
-		}
-	}
-	$_SESSION['lastActivity']= time();
 
-?>

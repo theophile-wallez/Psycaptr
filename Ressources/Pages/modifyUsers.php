@@ -1,5 +1,5 @@
 <?php  
-	session_start();
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,7 @@
   <title>DashBoard • Psycaptr</title>
 </head>
 
+<!-- Ajout du header et de la barre de navigation -->
 <?php require_once('dashboardHeaderNav.php');?>
 
 <body>
@@ -42,6 +43,5 @@
     <?php require('../../PHP/modifyUsersAlgo.php');?>
     
   </section>
-  <!-- <script src="../../javascripts/Graph/graph.js"></script> -->
 </body>
 </html>

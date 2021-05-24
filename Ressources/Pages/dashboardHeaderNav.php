@@ -1,3 +1,8 @@
+<?php  
+  session_start();
+  require('securiteAlgo.php');
+?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../Style/dashboardHeaderNav.css"/>

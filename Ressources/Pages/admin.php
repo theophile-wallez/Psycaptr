@@ -9,10 +9,12 @@
   <title>Administrateur • Psycaptr</title>
 </head>
 
-<?php require_once('dashboardHeaderNav.php');?>
-
+<!-- Ajout du header et de la barre de navigation -->
 <!-- Il faudrait pour check le type d'user connecté, 
 si c'est l'admin alors afficher d'autre logo dans la nav bar -->
+<?php require_once('dashboardHeaderNav.php');?>
+
+
 
 <body>
   <div class="dashboard_container">
