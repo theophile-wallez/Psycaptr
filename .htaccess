@@ -1,4 +1,6 @@
 RewriteEngine on
 
-RewriteRule ^home index.php [NC,L]
-RewriteRule ^dashboard /Ressources/Pages/dashboard.php [NC,L]
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(([A-Za-z0-9\-]+/)*[A-Za-z0-9\-]+)?$ $1.php
