@@ -89,7 +89,7 @@
         $Date   = date('Y-m-d');
 
         if($MdpBis != $Mdp){
-            header('Location:../Ressources/Pages/modifyUsers.php');
+            // header('Location:../Ressources/Pages/modifyUsers.php');
             exit();
         }
 
@@ -106,7 +106,7 @@
             while($row = $result -> fetch_row()) {
                 // On vérifie que le mail n'est pas déjà utilisé
                 if($Mail == $row[1]) {
-                    header('Location:../Ressources/Pages/modifyUsers.php');
+                    // header('Location:../Ressources/Pages/modifyUsers.php');
                     exit();
                 }
 
@@ -127,11 +127,10 @@
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         }
-
-        else {
-            header("Location:../Ressources/Pages/modifyUsers.php");
-            exit();
-        }
+        // else {
+        //     header("Location:../Ressources/Pages/modifyUsers.php");
+        //     exit();
+        // }
 
         $bdd -> close();
         exit();
@@ -153,14 +152,14 @@
 
         $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
 
-        echo $row[5];
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
-        } else {
-            header("Location:../Ressources/Pages/modifyUsers.php");
-            exit();
-        }
+        } 
+        // else {
+        //     header("Location:../Ressources/Pages/modifyUsers.php");
+        //     exit();
+        // }
 
         $_POST['addUser'] = array(); 
 
