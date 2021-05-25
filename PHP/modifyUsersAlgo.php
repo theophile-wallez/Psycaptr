@@ -1,10 +1,92 @@
 <?php 
-    header("Location:/Ressources/Pages/modifyUsers.php");
-
 	session_start();
 
     require('algo.php'); //Ajout de la méthode convertInput()
     require('connectDatabase.php'); //Connexion à la database
+
+
+    if(isset($_POST['addUser'])){
+        $Id     = IdGenerator(10); //Un Id est généré par une méthode
+        $Mdp    = convertInput($_POST['Mdp']);
+        $MdpBis = convertInput($_POST['MdpBis']);
+        $Nom    = convertInput($_POST['Nom']);
+        $Prenom = convertInput($_POST['Prenom']);
+        $Mail   = convertInput($_POST['Mail']);
+        $Date   = date('Y-m-d');
+
+        if($MdpBis != $Mdp){
+            header("Location:../Ressources/Pages/modifyUsers.php");
+            exit();
+        }
+
+        $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
+
+        //On sélectionne la table Utilisateurs dans la database
+        $sql = 'SELECT * FROM Utilisateurs';
+
+        if(!$result = $bdd -> query($sql)){
+        echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+        }
+
+        else {
+            while($row = $result -> fetch_row()) {
+                // On vérifie que le mail n'est pas déjà utilisé
+                if($Mail == $row[1]) {
+                    header("Location:../Ressources/Pages/modifyUsers.php");
+                    exit();
+                }
+
+                while($Id == $row[0]){
+                    $Id = IdGenerator(10);
+                }
+            }
+        }
+
+        $result -> free_result();
+
+        $_POST['addUser'] = array(); 
+
+        $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        header("Location:../Ressources/Pages/modifyUsers.php");
+
+        // exit();
+
+        // if(!$bdd -> query($sql)){
+        //     echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+        //     echo " |".$Id;
+        // }else {
+        //     header("Location:../Ressources/Pages/modifyUsers.php");
+        //     exit();
+        // }
+
+        $bdd -> close();
+        exit();
+    }
+
+    if(isset($_POST['modifyUser'])){
+        $Nom    = convertInput($_POST['Nom']);
+        $Prenom = convertInput($_POST['Prenom']);
+        $Mail   = convertInput($_POST['Mail']);
+        $Id     = convertInput($_POST['Id']);
+
+        $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
+
+        if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+        } else {
+            header("Location:../Ressources/Pages/modifyUsers.php");
+            exit();
+        }
+
+        $_POST['addUser'] = array(); 
+
+        $result -> free_result();
+        $bdd -> close();
+        exit();
+    }
+
+
 
     $search = convertInput($_POST['search']);
     // if (contains_at_least_one_word($search)){
@@ -86,65 +168,7 @@
     //Script qui permet d'ajouter un utilisateur
     // 
 
-    if(isset($_POST['addUser'])){
-        $Id     = IdGenerator(10); //Un Id est généré par une méthode
-        $Mdp    = convertInput($_POST['Mdp']);
-        $MdpBis = convertInput($_POST['MdpBis']);
-        $Nom    = convertInput($_POST['Nom']);
-        $Prenom = convertInput($_POST['Prenom']);
-        $Mail   = convertInput($_POST['Mail']);
-        $Date   = date('Y-m-d');
-
-        if($MdpBis != $Mdp){
-            // header("Location:../Ressources/Pages/modifyUsers.php");
-            exit();
-        }
-
-        $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
-
-        //On sélectionne la table Utilisateurs dans la database
-        $sql = 'SELECT * FROM Utilisateurs';
-
-        if(!$result = $bdd -> query($sql)){
-        echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-        }
-
-        else {
-            while($row = $result -> fetch_row()) {
-                // On vérifie que le mail n'est pas déjà utilisé
-                if($Mail == $row[1]) {
-                    header("Location:../Ressources/Pages/modifyUsers.php");
-                    exit();
-                }
-
-                while($Id == $row[0]){
-                    $Id = IdGenerator(10);
-                }
-            }
-        }
-
-        $result -> free_result();
-
-        $_POST['addUser'] = array(); 
-
-        $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
-        echo 'ca marche avant le header';
-        header("Location:.Ressources/Pages/modifyUsers.php");
-        echo 'ca marche après le header';
-
-        // exit();
-
-        // if(!$bdd -> query($sql)){
-        //     echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-        //     echo " |".$Id;
-        // }else {
-        //     header("Location:../Ressources/Pages/modifyUsers.php");
-        //     exit();
-        // }
-
-        $bdd -> close();
-        exit();
-    }
+    
 
 
 
@@ -152,28 +176,7 @@
     //Script qui permet de modifier les informations d'un utilisateur
     // 
 
-    if(isset($_POST['modifyUser'])){
-        $Nom    = convertInput($_POST['Nom']);
-        $Prenom = convertInput($_POST['Prenom']);
-        $Mail   = convertInput($_POST['Mail']);
-        $Id     = convertInput($_POST['Id']);
-
-        $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
-
-        if(!$bdd -> query($sql)){
-            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-            echo " |".$Id;
-        } else {
-            header("Location:../Ressources/Pages/modifyUsers.php");
-            exit();
-        }
-
-        $_POST['addUser'] = array(); 
-
-        $result -> free_result();
-        $bdd -> close();
-        exit();
-    }
+    
 
 	$result -> free_result();
 
