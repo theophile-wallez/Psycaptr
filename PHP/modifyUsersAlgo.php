@@ -75,8 +75,9 @@
 
     $_SESSION['search'] = $search;
 
-
+    // 
     //Script qui permet d'ajouter un utilisateur
+    // 
     if(isset($_POST['addUser'])){
         
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
@@ -115,7 +116,6 @@
             }
         }
 
-
         $result -> free_result();
 
         $_POST['addUser'] = array(); 
@@ -137,7 +137,9 @@
         exit();
     }
 
-
+    //
+    //Script qui permet de modifier les informations d'un utilisateur
+    // 
     if(isset($_POST['modifyUser'])){
         //A retirer si ça sert à rien vu que déjà en haut
         require('connectDatabase.php'); //Connexion à la database
@@ -151,6 +153,7 @@
 
         $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
 
+        echo $row[5];
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
