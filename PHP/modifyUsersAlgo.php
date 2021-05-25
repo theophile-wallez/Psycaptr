@@ -1,5 +1,5 @@
 <?php 
-    header("Location:../Ressources/Pages/modifyUsers.php");
+    header("Location:/Ressources/Pages/modifyUsers.php");
 
 	session_start();
 
