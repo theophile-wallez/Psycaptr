@@ -27,7 +27,7 @@
 
     <h2>Ajout d'un utilisateur</h2>
 
-    <form class="line-container user-container addUser" action="modifyUsers.php" method="POST">
+    <form class="line-container user-container addUser" action="../../PHP/modifyUsers.php" method="POST">
       <input type="text" name="Nom" placeholder="Nom" required>
       <input type="text" name="Prenom" placeholder="Prenom" required>
       <input input type="email" name="Mail" placeholder="Adresse mail" required>
@@ -76,7 +76,7 @@
     $_SESSION['search'] = $search;
 
 
-    
+
     // 
     //Script qui permet d'ajouter un utilisateur
     // 
@@ -125,14 +125,16 @@
 
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
 
+        header("Location:../Ressources/Pages/modifyUsers.php");
+        // exit();
 
-        if(!$bdd -> query($sql)){
-            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-            echo " |".$Id;
-        }else {
-            // header("Location:../Ressources/Pages/modifyUsers.php");
-            exit();
-        }
+        // if(!$bdd -> query($sql)){
+        //     echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+        //     echo " |".$Id;
+        // }else {
+        //     header("Location:../Ressources/Pages/modifyUsers.php");
+        //     exit();
+        // }
 
         $bdd -> close();
         exit();
