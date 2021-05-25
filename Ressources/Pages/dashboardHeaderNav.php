@@ -12,7 +12,7 @@
 
 <header class="centered">
   <div class="home_logo">
-    <a href="dashboard.php" draggable="false">
+    <a href="dashboard" draggable="false">
       <!-- <img src="../Images/Logo_light.png" draggable="false" alt="logo"> -->
       <i class="fas fa-home"></i>
     </a>
@@ -27,13 +27,13 @@
 </header>
 
 <nav>
-  <a href="profil.php" class="icon-container">
+  <a href="profil" class="icon-container">
     <div class="line"></div>
     <i class="fas fa-user"></i>
     <!-- <p>Profil</p> -->
   </a>
 
-  <a href="modifyUsers.php" class="icon-container">
+  <a href="modifyUsers" class="icon-container">
     <div class="line"></div>
     <i class="fas fa-users"></i>
     <p></p>
