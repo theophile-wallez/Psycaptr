@@ -65,10 +65,10 @@
         //On génère une ligne qui correpond à chaque utilisateurs
         echo '<form class="line-container user-container" action="modifyUsers.php" method="POST">';
         echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
-        echo    '<input type="text" name="Nom" value="'.$Prenom.'" required>';
-        echo    '<input input type="email" name="Nom" value="'.$Mail.'" required>';
-        echo    '<input input type="text" name="Nom" readonly="readonly" value="'.$Id.'" required>';
-        echo    '<input input type="text" name="Nom" readonly="readonly" value="'.$Date_Inscription.'" required>';
+        echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
+        echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
+        echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
+        echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
         echo    '<div class="valider_changement"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
         echo '</form>';
     }
