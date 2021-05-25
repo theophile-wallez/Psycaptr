@@ -128,7 +128,7 @@
       <input input type="text" name="Mdp" placeholder="Mot de passe" required>
       <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
 
-      <div class="valider_changement modify"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
+      <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
     </form>
     
 <?php
