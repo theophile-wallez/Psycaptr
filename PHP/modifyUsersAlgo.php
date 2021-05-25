@@ -27,14 +27,14 @@
 
     <h2>Ajout d'un utilisateur</h2>
 
-    <form class="line-container user-container addUser" onsubmit="addUser()" method="POST">
+    <form class="line-container user-container addUser" action="modifyUsers.php" method="POST">
       <input type="text" name="Nom" placeholder="Nom" required>
       <input type="text" name="Prenom" placeholder="Prenom" required>
       <input input type="email" name="Mail" placeholder="Adresse mail" required>
       <input input type="text" name="Mdp" placeholder="Mot de passe" required>
       <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
 
-      <div class="valider_changement"><button type="submit"><i class="fas fa-plus"></i></button></div>
+      <div class="valider_changement"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
     </form>
     
 <?php
@@ -76,7 +76,8 @@
     $_SESSION['search'] = $search;
 
 
-    function addUser(){
+    if(isset($_POST['addUser'])){
+        
         echo '<p>Ca marche</p>';
 
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
@@ -118,7 +119,10 @@
 
         $result -> free_result();
 
+        $_POST['addUser'] = array(); 
+
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+
 
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -131,7 +135,6 @@
         }
 
         $bdd -> close();
-
     }
 
 	$result -> free_result();
