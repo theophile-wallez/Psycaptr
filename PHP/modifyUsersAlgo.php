@@ -147,7 +147,7 @@
         echo 'Ca marche';
         $_POST['addUser'] = array(); 
 
-        $sql = "UPDATE `Utilisateurs` SET `Mail`='$Mail', `Nom`='$Nom', `Prenom`='$Prenom' WHERE `Id`=$Id;";
+        $sql = "UPDATE `Utilisateurs` SET `Mail`='$Mail', `Nom`='$Nom', `Prenom`='$Prenom' WHERE `Id`=$Id";
 
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
