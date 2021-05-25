@@ -13,5 +13,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond %{REQUEST_FILENAME}.php -f
 
-RewriteRule ^(.+)$ /$1.php [L,QSA]
+RewriteRule ^(.+)$ /$1.php [QSA]
+
+
+RewriteCond %{HTTP_HOST}  ([^/]+)\.example\.com.*
+RewriteCond %{REQUEST_URI}  ^/([^/]+)$
+RewriteRule .*  http://%1.example.com/somepath/%1/%2 [L]
 
