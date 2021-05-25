@@ -47,17 +47,14 @@
         $_POST['addUser'] = array(); 
 
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
-        header("Location:../Ressources/Pages/modifyUsers.php");
 
-        // exit();
-
-        // if(!$bdd -> query($sql)){
-        //     echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-        //     echo " |".$Id;
-        // }else {
-        //     header("Location:../Ressources/Pages/modifyUsers.php");
-        //     exit();
-        // }
+        if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+        }else {
+            header("Location:../Ressources/Pages/modifyUsers.php");
+            exit();
+        }
 
         $bdd -> close();
         exit();
