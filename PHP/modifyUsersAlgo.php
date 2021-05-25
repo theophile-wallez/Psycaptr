@@ -126,8 +126,9 @@
         $_POST['addUser'] = array(); 
 
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        echo 'ca marche avant le header';
         header("Location:.Ressources/Pages/modifyUsers.php");
-
+        echo 'ca marche après le header';
 
         // exit();
 
