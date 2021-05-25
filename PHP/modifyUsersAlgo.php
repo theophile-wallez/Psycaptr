@@ -27,7 +27,7 @@
 
     <h2>Ajout d'un utilisateur</h2>
 
-    <form class="line-container user-container addUser" action="modifyUsers.php" method="POST">
+    <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo.php" method="POST">
       <input type="text" name="Nom" placeholder="Nom" required>
       <input type="text" name="Prenom" placeholder="Prenom" required>
       <input input type="email" name="Mail" placeholder="Adresse mail" required>
@@ -89,7 +89,7 @@
         $Date   = date('Y-m-d');
 
         if($MdpBis != $Mdp){
-            // header('Location:../Ressources/Pages/modifyUsers.php');
+            header("Location:../Ressources/Pages/modifyUsers.php");
             exit();
         }
 
@@ -106,7 +106,7 @@
             while($row = $result -> fetch_row()) {
                 // On vérifie que le mail n'est pas déjà utilisé
                 if($Mail == $row[1]) {
-                    // header('Location:../Ressources/Pages/modifyUsers.php');
+                    header("Location:../Ressources/Pages/modifyUsers.php");
                     exit();
                 }
 
@@ -126,11 +126,10 @@
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
+        }else {
+            header("Location:../Ressources/Pages/modifyUsers.php");
+            exit();
         }
-        // else {
-        //     header("Location:../Ressources/Pages/modifyUsers.php");
-        //     exit();
-        // }
 
         $bdd -> close();
         exit();
@@ -140,23 +139,17 @@
     //Script qui permet de modifier les informations d'un utilisateur
     // 
     if(isset($_POST['modifyUser'])){
-        //A retirer si ça sert à rien vu que déjà en haut
-        require('connectDatabase.php'); //Connexion à la database
-
         $Nom    = convertInput($_POST['Nom']);
         $Prenom = convertInput($_POST['Prenom']);
         $Mail   = convertInput($_POST['Mail']);
         $Id     = convertInput($_POST['Id']);
-
-        echo 'L\'Id en question est '.$Id;
 
         $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
 
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
-        } 
-        else {
+        } else {
             header("Location:../Ressources/Pages/modifyUsers.php");
             exit();
         }
