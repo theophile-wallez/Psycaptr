@@ -144,6 +144,7 @@
         $Mail   = convertInput($_POST['Mail']);
         $Id     = convertInput($_POST['Id']);
 
+        echo 'Ca marche';
         $_POST['addUser'] = array(); 
 
         $sql = "UPDATE `Utilisateurs` SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id=$ID;";
