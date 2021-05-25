@@ -67,8 +67,8 @@
         echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
         echo    '<input type="text" name="Nom" value="'.$Prenom.'" required>';
         echo    '<input input type="email" name="Nom" value="'.$Mail.'" required>';
-        echo    '<input input type="email" name="Nom" readonly="readonly" value="'.$Id.'" required>';
-        echo    '<div class="date-container">'.$Date_Inscription.'</div>';
+        echo    '<input input type="text" name="Nom" readonly="readonly" value="'.$Id.'" required>';
+        echo    '<input input type="text" name="Nom" readonly="readonly" value="'.$Date_Inscription.'" required>';
         echo    '<div class="valider_changement"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
         echo '</form>';
     }
