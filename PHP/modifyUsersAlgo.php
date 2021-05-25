@@ -24,9 +24,9 @@
     $num_row = mysqli_num_rows($result);
 
 ?>
-    // 
-    //Script qui permet d'afficher les inputs afin d'ajouter un utilisateur
-    // 
+    
+    <!-- Script qui permet d'afficher les inputs afin d'ajouter un utilisateur -->
+    
 
     <h2>Ajout d'un utilisateur</h2>
 
