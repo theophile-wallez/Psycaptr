@@ -63,7 +63,7 @@
         $Prenom = $row[5];
 
         //On génère une ligne qui correpond à chaque utilisateurs
-        echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo.php" method="POST">';
+        echo '<form class="line-container user-container" action="modifyUsers.php" method="POST">';
         echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
         echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
         echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
@@ -150,7 +150,7 @@
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         } else {
-            header("Location:/Ressources/Pages/modifyUsers.php");
+            header("Location:../Ressources/Pages/modifyUsers.php");
             exit();
         }
 
@@ -163,6 +163,6 @@
 
 	$result -> free_result();
 
-	$bdd -> close(); 
+	$bdd -> close();
     exit();
 ?>
