@@ -148,7 +148,7 @@
         $Mail   = convertInput($_POST['Mail']);
         $Id     = convertInput($_POST['Id']);
 
-        echo 'Ca marche';
+        echo 'L\'Id en question est '.$Id;
 
         $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
 
