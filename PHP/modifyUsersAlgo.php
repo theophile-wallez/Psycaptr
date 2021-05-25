@@ -67,19 +67,18 @@
         echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
         echo    '<input type="text" name="Nom" value="'.$Prenom.'" required>';
         echo    '<input input type="email" name="Nom" value="'.$Mail.'" required>';
-        echo    '<div class="id-container">'.$Id.'</div>';
+        echo    '<input input type="email" name="Nom" readonly="readonly" value="'.$Id.'" required>';
         echo    '<div class="date-container">'.$Date_Inscription.'</div>';
-        echo    '<div class="valider_changement"><button type="submit"><i class="fa fa-check"></i></button></div>';
+        echo    '<div class="valider_changement"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
         echo '</form>';
     }
 
     $_SESSION['search'] = $search;
 
 
+    //Script qui permet d'ajouter un utilisateur
     if(isset($_POST['addUser'])){
         
-        echo '<p>Ca marche</p>';
-
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
         $Mdp    = convertInput($_POST['Mdp']);
         $MdpBis = convertInput($_POST['MdpBis']);
@@ -135,6 +134,49 @@
         }
 
         $bdd -> close();
+        exit();
+    }
+
+
+    if(isset($_POST['modifyUser'])){
+        $Nom    = convertInput($_POST['Nom']);
+        $Prenom = convertInput($_POST['Prenom']);
+        $Mail   = convertInput($_POST['Mail']);
+        $Id     = convertInput($_POST['Id']);
+
+        $_POST['addUser'] = array(); 
+
+        $sql = "UPDATE `Utilisateurs` SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id=$ID;";
+
+        if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+        }
+
+        else {
+            header("Location:../Ressources/Pages/modifyUsers.php");
+            exit();
+        }
+
+        // $sql = 'SELECT * FROM Utilisateurs';
+
+        // if($result = $bdd -> query($sql)) {
+        //     while($row = $result -> fetch_row())  {
+        //         if($Id == $row[0]) {
+        //             // $sql = "INSERT INTO `Utilisateurs` (`Mail`, `Nom`, `Prenom`) VALUES ('$Mail','$Nom','$Prenom')";
+        //             header('Location:../Ressources/Pages/modifyUsers.php');
+        //             exit();
+        //         }
+        //     }
+        // }
+    
+        // header('Location:../Ressources/Pages/connexion.php');
+    
+        // $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        
+        $result -> free_result();
+        $bdd -> close();
+        exit();
     }
 
 	$result -> free_result();
