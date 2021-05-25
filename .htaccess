@@ -1,4 +1,4 @@
 RewriteEngine on
 
 RewriteRule ^home index.php [NC,L]
-RewriteRule ^dashboard dashboard.php [NC,L]
+RewriteRule ^dashboard /Ressources/Pages/dashboard.php [NC,L]
