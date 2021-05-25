@@ -1,4 +1,6 @@
 <?php 
+    header("Location:../Ressources/Pages/modifyUsers.php");
+
 	session_start();
 
     require('algo.php'); //Ajout de la méthode convertInput()
