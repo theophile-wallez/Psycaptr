@@ -134,7 +134,6 @@ html {
     text-decoration: none;
     font-size: 1.2em;
     color: white;
-    background: #4bcffa;
     border-style: none;
     border:none;
     outline: none;
@@ -142,6 +141,15 @@ html {
     transition: all 0.3s;
     user-select: none;
 }
+
+.modify button{
+    background: #1e90ff;
+}
+
+.remove button{
+    background: var(--pink);
+}
+
 .valider_changement button:hover{
     transform: scale(1.3);
 }

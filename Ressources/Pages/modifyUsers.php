@@ -50,6 +50,18 @@
       <div class="valider_changement"><button type="submit"><i class="fas fa-plus"></i></button></div>
     </form> -->
 
+    <?php 
+      // echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo.php" method="POST">';
+      // echo    '<input type="text" name="Nom" value="Nom" required>';
+      // echo    '<input type="text" name="Prenom" value="$Prenom." required>';
+      // echo    '<input input type="email" name="Mail" value="$Mail" required>';
+      // echo    '<input input type="text" name="Id" readonly="readonly" value="$Id" required>';
+      // echo    '<input input type="text" name="Date" readonly="readonly" value="$Date_Inscription" required>';
+      // echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+      // echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
+      // echo '</form>';
+    ?>
+
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');?>
     

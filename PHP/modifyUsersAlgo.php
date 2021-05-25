@@ -4,8 +4,6 @@
     require('algo.php'); //Ajout de la méthode convertInput()
     require('connectDatabase.php'); //Connexion à la database
 
-
-
     // 
     //Script qui permet d'ajouter un utilisateur
     // 
@@ -23,16 +21,11 @@
             header("Location:../Ressources/Pages/modifyUsers.php");
             exit();
         }
-
         $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
-
-        //On sélectionne la table Utilisateurs dans la database
         $sql = 'SELECT * FROM Utilisateurs';
-
         if(!$result = $bdd -> query($sql)){
         echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
         }
-
         else {
             while($row = $result -> fetch_row()) {
                 // On vérifie que le mail n'est pas déjà utilisé
@@ -40,19 +33,14 @@
                     header("Location:../Ressources/Pages/modifyUsers.php");
                     exit();
                 }
-
                 while($Id == $row[0]){
                     $Id = IdGenerator(10);
                 }
             }
         }
-
         $result -> free_result();
-
         $_POST['addUser'] = array(); 
-
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
-
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
@@ -60,11 +48,9 @@
             header("Location:../Ressources/Pages/modifyUsers.php");
             exit();
         }
-
         $bdd -> close();
         exit();
     }
-
 
 
     //
@@ -88,13 +74,10 @@
         }
 
         $_POST['addUser'] = array(); 
-
         $result -> free_result();
         $bdd -> close();
         exit();
     }
-
-
 
     $search = convertInput($_POST['search']);
     // if (contains_at_least_one_word($search)){
@@ -118,8 +101,6 @@
 ?>
     
     <!-- Script qui permet d'afficher les inputs afin d'ajouter un utilisateur -->
-    
-
     <h2>Ajout d'un utilisateur</h2>
 
     <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo.php" method="POST">
@@ -147,7 +128,6 @@
         echo '<div class="date-container">Date d',"'inscription</div>";
         echo '</div>';
     }
-    
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
@@ -164,7 +144,8 @@
         echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
         echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
         echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
-        echo    '<div class="valider_changement"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+        echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+        echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
         echo '</form>';
     }
 
