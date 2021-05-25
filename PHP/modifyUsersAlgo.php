@@ -85,7 +85,7 @@
     // 
 
     if(isset($_POST['addUser'])){
-        
+        header("Location:../Ressources/Pages/modifyUsers.php");
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
         $Mdp    = convertInput($_POST['Mdp']);
         $MdpBis = convertInput($_POST['MdpBis']);
@@ -112,7 +112,7 @@
             while($row = $result -> fetch_row()) {
                 // On vérifie que le mail n'est pas déjà utilisé
                 if($Mail == $row[1]) {
-                    // header("Location:../Ressources/Pages/modifyUsers.php");
+                    header("Location:../Ressources/Pages/modifyUsers.php");
                     exit();
                 }
 
@@ -128,7 +128,7 @@
 
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
 
-        header("Location:../Ressources/Pages/modifyUsers.php");
+
         // exit();
 
         // if(!$bdd -> query($sql)){
