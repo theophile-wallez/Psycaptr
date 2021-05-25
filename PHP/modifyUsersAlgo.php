@@ -85,7 +85,6 @@
     // 
 
     if(isset($_POST['addUser'])){
-        header("Location:../Ressources/Pages/modifyUsers.php");
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
         $Mdp    = convertInput($_POST['Mdp']);
         $MdpBis = convertInput($_POST['MdpBis']);
@@ -127,6 +126,7 @@
         $_POST['addUser'] = array(); 
 
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        header("Location:.Ressources/Pages/modifyUsers.php");
 
 
         // exit();
