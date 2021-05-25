@@ -139,42 +139,28 @@
 
 
     if(isset($_POST['modifyUser'])){
+        //A retirer si ça sert à rien vu que déjà en haut
+        require('connectDatabase.php'); //Connexion à la database
+
         $Nom    = convertInput($_POST['Nom']);
         $Prenom = convertInput($_POST['Prenom']);
         $Mail   = convertInput($_POST['Mail']);
         $Id     = convertInput($_POST['Id']);
 
         echo 'Ca marche';
-        $_POST['addUser'] = array(); 
 
-        $sql = "UPDATE `Utilisateurs` SET `Mail`=$Mail, `Nom`=$Nom, `Prenom`=$Prenom WHERE `Id`=$Id";
+        $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
 
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
-        }
-
-        else {
+        } else {
             header("Location:../Ressources/Pages/modifyUsers.php");
             exit();
         }
 
-        // $sql = 'SELECT * FROM Utilisateurs';
+        $_POST['addUser'] = array(); 
 
-        // if($result = $bdd -> query($sql)) {
-        //     while($row = $result -> fetch_row())  {
-        //         if($Id == $row[0]) {
-        //             // $sql = "INSERT INTO `Utilisateurs` (`Mail`, `Nom`, `Prenom`) VALUES ('$Mail','$Nom','$Prenom')";
-        //             header('Location:../Ressources/Pages/modifyUsers.php');
-        //             exit();
-        //         }
-        //     }
-        // }
-    
-        // header('Location:../Ressources/Pages/connexion.php');
-    
-        // $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
-        
         $result -> free_result();
         $bdd -> close();
         exit();
