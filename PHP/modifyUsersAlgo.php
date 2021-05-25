@@ -73,7 +73,25 @@
             exit();
         }
 
-        $_POST['addUser'] = array(); 
+        $_POST['modifyUser'] = array(); 
+        $result -> free_result();
+        $bdd -> close();
+        exit();
+    }
+
+    if(isset($_POST['removeUser'])){
+        $Id     = convertInput($_POST['Id']);
+
+        $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;
+        if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+        } else {
+            header("Location:../Ressources/Pages/modifyUsers.php");
+            exit();
+        }
+
+        $_POST['removeUser'] = array(); 
         $result -> free_result();
         $bdd -> close();
         exit();
