@@ -1,19 +1,4 @@
-Options +FollowSymlinks
 
-
-RewriteEngine On
-
-
-RewriteBase /
-
-RewriteCond %{REQUEST_FILENAME} !-f
-
-
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteCond %{REQUEST_FILENAME}.php -f
-
-RewriteRule ^(.+)$ /$1.php [L,QSA]
-
+RewriteEngine on
 RewriteCond %{REQUEST_URI} !^Ressources/Pages/
 RewriteRule ^(.*)$ Ressources/Pages/$1 [L]
