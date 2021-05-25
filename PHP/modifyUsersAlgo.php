@@ -157,7 +157,7 @@
             echo " |".$Id;
         } 
         else {
-            header("Location:modifyUsers.php");
+            header("Location:../Ressources/Pages/modifyUsers.php");
             exit();
         }
 
