@@ -5,6 +5,11 @@
     require('connectDatabase.php'); //Connexion à la database
 
 
+
+    // 
+    //Script qui permet d'ajouter un utilisateur
+    // 
+
     if(isset($_POST['addUser'])){
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
         $Mdp    = convertInput($_POST['Mdp']);
@@ -59,6 +64,12 @@
         $bdd -> close();
         exit();
     }
+
+
+
+    //
+    //Script qui permet de modifier les informations d'un utilisateur
+    // 
 
     if(isset($_POST['modifyUser'])){
         $Nom    = convertInput($_POST['Nom']);
@@ -158,22 +169,6 @@
     }
 
     $_SESSION['search'] = $search;
-
-
-
-    // 
-    //Script qui permet d'ajouter un utilisateur
-    // 
-
-    
-
-
-
-    //
-    //Script qui permet de modifier les informations d'un utilisateur
-    // 
-
-    
 
 	$result -> free_result();
 
