@@ -18,5 +18,6 @@ RewriteRule ^(.+)$ /$1.php [QSA]
 
 RewriteCond %{HTTP_HOST}  ([^/]+)\.example\.com.*
 RewriteCond %{REQUEST_URI}  ^/([^/]+)$
-RewriteRule .*  http://%1.example.com/somepath/%1/%2 [L]
+RewriteRule .*  https://%1.psycaptr.tk/%1/%2 [L]
+
 
