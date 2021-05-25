@@ -150,7 +150,7 @@
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         } else {
-            header("Location:../Ressources/Pages/modifyUsers.php");
+            header("Location:/Ressources/Pages/modifyUsers.php");
             exit();
         }
 
