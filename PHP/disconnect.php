@@ -1,7 +1,7 @@
 <?php 
     session_start();
     $_SESSION = array(); 
-    header('Location:../index');
+    header('Location:../');
     $result -> free_result();
     exit();
 ?>
