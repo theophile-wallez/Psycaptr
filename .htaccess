@@ -13,5 +13,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond %{REQUEST_FILENAME}.php -f
 
-RewriteRule ^(.+)$ /$1.php [L,QSA]
+RewriteRule ^(.+)$ /$1.php [QSA]
+
+RewriteCond %{REQUEST_URI} !^/(Ressources)
+RewriteRule (.*) /Ressources/$1
 
