@@ -119,7 +119,7 @@
 
           <h3>Niveau de stress</h3>
           <div class="test-description"> Nous allons évaluer le stress d'un patient par une mesure de la fréquence cardiaque et de la température de la peau. </div>
-          <a href="Ressources/Pages/voir-plus.php">Voir plus</a>
+          <a href="Ressources/Pages/voir-plus">Voir plus</a>
           <div class="line"></div>
         </div>
 
@@ -129,7 +129,7 @@
           </div>
           <h3>Acuité visuelle</h3>
           <div class="test-description"> Nous allons étudier la réaction d'un sujet à une lumière. Pour ce faire, nous allons mesurer le temps de réaction à un stimulus visuel.</div>
-          <a href="Ressources/Pages/voir-plus.php">Voir plus</a>
+          <a href="Ressources/Pages/voir-plus">Voir plus</a>
           <div class="line"></div>
         </div>
 
@@ -146,7 +146,7 @@
 
           <h3>Acuité sonore</h3>
           <div class="test-description">Nous allons mesurer la qualité de reconnaissance de tonalité, le temps de récation à un stimulus sonore et l'étendue de la perception auditive d'un patient. </div>
-          <a href="Ressources/Pages/voir-plus.php">Voir plus</a>
+          <a href="Ressources/Pages/voir-plus">Voir plus</a>
           <div class="line"></div>
         </div>
       </div>
@@ -256,7 +256,7 @@
 
   <div id="contact-container" class="centered">
     <div class="inner">
-      <form class="contact_form_container" action="contact.php" method="POST">
+      <form class="contact_form_container" action="PHP/contactAlgo.php" method="POST">
         <div class="abstract_container" id="contact_link"></div>
         <div class="title_container">
           <h3 draggable="false">Une autre question ?    Contactez-nous !</h3>

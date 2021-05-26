@@ -13,11 +13,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteCond %{REQUEST_FILENAME}.php -f
 
-RewriteRule ^(.+)$ /$1.php [QSA]
-
-
-RewriteCond %{HTTP_HOST}  ([^/]+)\.psycaptr\.tk.*
-RewriteCond %{REQUEST_URI}  ^/([^/]+)$
-RewriteRule .*  https://%1.psycaptr.tk/%1/%2 [L]
-
+RewriteRule ^(.+)$ /$1.php [L,QSA]
 

@@ -35,7 +35,7 @@
 				$_SESSION['lastActivity'] = time();
 				$_SESSION['Nom'] = $row[2];
 			    $_SESSION['Prenom'] = $row[3];
-				header('Location:../Ressources/Pages/admin.php');
+				header('Location:../Ressources/Pages/admin');
 				exit();
 			}
 		}
@@ -52,13 +52,13 @@
 				$_SESSION['lastActivity'] = time();
 				$_SESSION['Nom'] = $row[4];
 			    $_SESSION['Prenom'] = $row[5];
-				header('Location:../Ressources/Pages/dashboard.php');
+				header('Location:../Ressources/Pages/dashboard');
 				exit();
 			}
 		}
 	}
 
-	header('Location:../Ressources/Pages/connexion.php');
+	header('Location:../Ressources/Pages/connexion');
 
 	$result -> free_result();
 

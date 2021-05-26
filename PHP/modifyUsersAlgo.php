@@ -18,7 +18,7 @@
         $Date   = date('Y-m-d');
 
         if($MdpBis != $Mdp){
-            header("Location:../Ressources/Pages/modifyUsers.php");
+            header("Location:../Ressources/Pages/modifyUsers");
             exit();
         }
         $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
@@ -30,7 +30,7 @@
             while($row = $result -> fetch_row()) {
                 // On vérifie que le mail n'est pas déjà utilisé
                 if($Mail == $row[1]) {
-                    header("Location:../Ressources/Pages/modifyUsers.php");
+                    header("Location:../Ressources/Pages/modifyUsers");
                     exit();
                 }
                 while($Id == $row[0]){
@@ -45,7 +45,7 @@
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         }else {
-            header("Location:../Ressources/Pages/modifyUsers.php");
+            header("Location:../Ressources/Pages/modifyUsers");
             exit();
         }
         $bdd -> close();
@@ -69,7 +69,7 @@
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         } else {
-            header("Location:../Ressources/Pages/modifyUsers.php");
+            header("Location:../Ressources/Pages/modifyUsers");
             exit();
         }
 
@@ -87,7 +87,7 @@
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         } else {
-            header("Location:../Ressources/Pages/modifyUsers.php");
+            header("Location:../Ressources/Pages/modifyUsers");
             exit();
         }
 

@@ -26,7 +26,7 @@
   // sinon on reviens vers la page d'inscription
 
   if($MdpBis != $Mdp){
-    header('Location:../Ressources/Pages/inscription.php');
+    header('Location:../Ressources/Pages/inscription');
     exit();
   }
 
@@ -58,7 +58,7 @@
     while($row = $result -> fetch_row()) {
       // On vérifie que le mail n'est pas déjà utilisé
       if($Mail == $row[1]) {
-        header('Location:../Ressources/Pages/connexion.php');
+        header('Location:../Ressources/Pages/connexion');
         exit();
       }
 
@@ -83,7 +83,7 @@
     $_SESSION["Nom"] = $Nom;
     $_SESSION["Prenom"] = $Prenom;
 
-    header("Location:../Ressources/Pages/dashboard.php");
+    header("Location:../Ressources/Pages/dashboard");
     exit();
   }
 

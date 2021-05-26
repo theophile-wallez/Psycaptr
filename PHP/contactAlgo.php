@@ -42,7 +42,7 @@ if (!mysql_query($sql,$bdd)) {
 
 $bdd -> close();
 
-header("Location:../Ressources/Pages/connexion.php");
+header("Location:../Ressources/Pages/connexion");
 exit();
 
 ?>
