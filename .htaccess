@@ -16,8 +16,7 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+)$ /$1.php [QSA]
 
 RewriteCond %{REQUEST_URI} !^/(Ressources)
-RewriteRule (.*) /Ressources/$2
+RewriteRule (.*) /Ressources/$1
 
-RewriteCond %{REQUEST_URI} !^/(Pages)
-RewriteRule (.*) /Pages/$3
+
 
