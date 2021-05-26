@@ -8,11 +8,11 @@ function displayNavBar(string $url=""){
     else{
         $url2="..";
     }
-    echo '<a class="link-logo" href="'.$url.'index#">';
+    echo '<a class="link-logo" href="'.$url.'/#">';
     echo '<img class="header-logo" src="'.$url2.'/Images/logo.png" alt="Logo Psycaptr" draggable="false">';
     echo '</a>';
     echo '<div class="header-link-container" draggable="false">';
-    echo '<a class="header-link Acceuil" href="'.$url.'/" draggable="false">Accueil</a>';
+    echo '<a class="header-link Acceuil" href="'.$url.'/#" draggable="false">Accueil</a>';
     echo '<a class="header-link Tests" href="'.$url.'/#test-section" draggable="false">Tests</a>';
     echo '<a class="header-link FAQ" href="'.$url.'/#FAQ-link" draggable="false">FAQ</a>';
     echo '<a class="header-link Contact" href="'.$url.'/#contact_link" draggable="false">Contact</a>';
