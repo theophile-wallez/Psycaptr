@@ -80,29 +80,38 @@
 
     $sql = 'SELECT * FROM FAQ order by Question asc';
 
-    echo '<h2>Liste des utilisateurs</h2>';
+    if(!$bdd -> query($sql)){
+        echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+        echo " |".$Id;
+    } else {
+        echo '<h2>Liste des utilisateurs</h2>';
 
-    // Recuperation des resultats
-    while($row = $result -> fetch_row()){
-        $Id=$row[0];
-        $Question=$row[1];
-        $Reponse = $row[2];
+        // Recuperation des resultats
+        while($row = $result -> fetch_row()){
+            $Id=$row[0];
+            $Question=$row[1];
+            $Reponse = $row[2];
 
-        //On génère une ligne qui correpond à chaque utilisateurs
-        echo '<form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">';
-        echo '<div class="inputs_container">';
-        echo '<div class="line-container user-container">';
-        echo '<input class="question-container" type="text" placeholder="Contenu de la question" name="Question" value"'.$Question.'" required>';
-        echo '<div class="valider_changement modify"><button type="submit" name="modifyFAQ"><i class="fa fa-check"></i></button></div>';
-        echo '<div class="valider_changement remove"><button type="submit" name="addFAQ"><i class="fa fa-trash"></i></button></div>';
-        echo '</div>';
-        echo '<input class="question-container invisible" readonly="readonly" type="text" placeholder="Contenu de la question" name="Id" value"'.$Id.'" required>';
-        echo '<textarea class="reponse-container" type="text" name="Reponse" placeholder="Contenu de la réponse " value"'.$Reponse.'" required></textarea>';
-        echo '</div>';
-        echo '</form>';
+            //On génère une ligne qui correpond à chaque utilisateurs
+            echo '<form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">';
+            echo '<div class="inputs_container">';
+            echo '<div class="line-container user-container">';
+            echo '<input class="question-container" type="text" placeholder="Contenu de la question" name="Question" value"'.$Question.'" required>';
+            echo '<div class="valider_changement modify"><button type="submit" name="modifyFAQ"><i class="fa fa-check"></i></button></div>';
+            echo '<div class="valider_changement remove"><button type="submit" name="addFAQ"><i class="fa fa-trash"></i></button></div>';
+            echo '</div>';
+            echo '<input class="question-container invisible" readonly="readonly" type="text" placeholder="Contenu de la question" name="Id" value"'.$Id.'" required>';
+            echo '<textarea class="reponse-container" type="text" name="Reponse" placeholder="Contenu de la réponse " value"'.$Reponse.'" required></textarea>';
+            echo '</div>';
+            echo '</form>';
+        }
+
+        $result -> free_result();
+
+        $bdd -> close();
+        exit();
     }
-
-	$result -> free_result();
+    
 
 	$bdd -> close();
     exit();
