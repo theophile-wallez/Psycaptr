@@ -109,7 +109,7 @@
         echo '<div class="valider_changement remove"><button type="submit" name="addFAQ"><i class="fa fa-trash"></i></button></div>';
         echo '</div>';
         echo '<input class="question-container invisible" readonly="readonly" type="text" placeholder="Contenu de la question" name="Id" value"'.$Id.'" required>';
-        echo '<textarea class="reponse-container" type="text" name="Reponse" placeholder="Contenu de la réponse " value"'.$Reponse.'" required></textarea>';
+        echo '<textarea class="reponse-container" type="text" name="Reponse" placeholder="Contenu de la réponse " required>'.$Reponse.'</textarea>';
         echo '</div>';
         echo '</form>';
     }
