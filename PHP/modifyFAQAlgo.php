@@ -104,7 +104,7 @@
         echo '<form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">';
         echo '<div class="inputs_container">';
         echo '<div class="line-container user-container">';
-        echo '<input class="question-container" type="text" placeholder="Contenu de la question" name="Question" value"'.$Question.'" required>';
+        echo '<input class="question-container" type="text" name="Question" value"'.$Question.'" required>';
         echo '<div class="valider_changement modify"><button type="submit" name="modifyFAQ"><i class="fa fa-check"></i></button></div>';
         echo '<div class="valider_changement remove"><button type="submit" name="addFAQ"><i class="fa fa-trash"></i></button></div>';
         echo '</div>';
