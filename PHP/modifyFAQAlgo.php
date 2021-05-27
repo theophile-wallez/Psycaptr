@@ -96,20 +96,20 @@
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
-        $Id=$row[0];
-        $Question=$row[1];
-        $Reponse = $row[2];
+        $IdA=$row[0];
+        $QuestionA=$row[1];
+        $ReponseA = $row[2];
 
         //On génère une ligne qui correpond à chaque utilisateurs
         echo '<form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">';
         echo '<div class="inputs_container">';
         echo '<div class="line-container user-container">';
-        echo '<input class="question-container" type="text" name="Question" value"'.$Question.'" required>';
+        echo '<input class="question-container" type="text" name="Question" value"'.$QuestionA.'" required>';
         echo '<div class="valider_changement modify"><button type="submit" name="modifyFAQ"><i class="fa fa-check"></i></button></div>';
         echo '<div class="valider_changement remove"><button type="submit" name="addFAQ"><i class="fa fa-trash"></i></button></div>';
         echo '</div>';
-        echo '<input class="question-container invisible" readonly="readonly" type="text" placeholder="Contenu de la question" name="Id" value"'.$Id.'" required>';
-        echo '<textarea class="reponse-container" type="text" name="Reponse" placeholder="Contenu de la réponse " required>'.$Reponse.'</textarea>';
+        echo '<input class="question-container invisible" readonly="readonly" type="text" placeholder="Contenu de la question" name="Id" value"'.$IdA.'" required>';
+        echo '<textarea class="reponse-container" type="text" name="Reponse" placeholder="Contenu de la réponse " required>'.$ReponseA.'</textarea>';
         echo '</div>';
         echo '</form>';
     }
