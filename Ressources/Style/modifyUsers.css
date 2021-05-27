@@ -239,7 +239,7 @@ html {
     user-select: none;
 }
   
-button:hover {
+.button-container button:hover {
     cursor: pointer;
     transform: scale(1.05);
     transform-origin: center;

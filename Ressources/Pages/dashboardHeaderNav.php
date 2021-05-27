@@ -38,6 +38,13 @@
     <i class="fas fa-users"></i>
     <p></p>
   </a>
+
+  <a href="modifyFAQ" class="icon-container">
+    <div class="line"></div>
+    <i class="fas fa-question"></i>
+    <p></p>
+  </a>
+
   
   <!-- Icon de déconnexion -->
   <a href="/PHP/disconnect.php" class="icon-container">

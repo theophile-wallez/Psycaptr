@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
-  <title>DashBoard • Psycaptr</title>
+  <title>Gestion des utilisateurs • Psycaptr</title>
 </head>
 
 <script>
@@ -66,7 +66,6 @@
     <?php require('../../PHP/modifyUsersAlgo.php');?>
     
   </section>
-  <!-- <script src="../../javascripts/Graph/graph.js"></script> -->
 </body>
 </html>
 
