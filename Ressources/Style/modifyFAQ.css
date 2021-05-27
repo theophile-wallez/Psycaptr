@@ -1,7 +1,13 @@
 .container-form{
     
     width: 100%;
+    margin-bottom: 2em;
 
+}
+
+.invisible{
+    visibility: hidden;
+    position: absolute;
 }
 
 .user-container {
@@ -84,8 +90,15 @@ input:hover, input:focus, textarea:hover, textarea:focus{
     border-style: none;
     outline: none;
     caret-color: var(--light_pink);
-    background:none;
+    background:none; 
 }
+
+/* .user-container:hover, .user-container:focus-within, textarea:hover, textarea:focus{
+    box-shadow: 0px 0px 3px #abb1b4;
+}
+input:hover .user-container, input:focus .user-container, textarea:hover, textarea:focus{
+    box-shadow: 0px 0px 10px #abb1b4;
+} */
 
 
 .container-form textarea {
@@ -104,9 +117,8 @@ input:hover, input:focus, textarea:hover, textarea:focus{
     padding-top: 0.7em;
     box-sizing: border-box;
     overflow-y: auto;
-word-wrap:break-word;
-min-height: 60px;
-
+    word-wrap:break-word;
+    min-height: 60px;
 }
 
 
