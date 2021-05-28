@@ -16,7 +16,7 @@ $num_row = mysqli_num_rows($result);
 $_SESSION['Msg'] = '';
 
 if($num_row==0){
-   $_SESSION['Msg'] = 'Il n''y a pas de compte associés à ce mail.';
+   $_SESSION['Msg'] = 'Il ny a pas de compte associés à ce mail.';
    header("Location:../Ressources/Pages/mdpOublie");
    exit();
 }
