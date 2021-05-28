@@ -108,7 +108,7 @@ h2{
 }
 
 .container-form:hover .count_container{
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) scale(1.1);
     transform-origin: center;
 }
 
