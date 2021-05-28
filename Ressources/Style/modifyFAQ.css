@@ -63,7 +63,7 @@
 }
 
 .user-container{
-    width:40%;
+    width:60%;
     background:none;
     transition: width 0.5s ease;
 }
