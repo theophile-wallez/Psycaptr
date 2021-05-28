@@ -166,7 +166,6 @@ input:hover .user-container, input:focus .user-container, textarea:hover, textar
 }
 .modify button{
     background: #1e90ff;
-    z-index: 1000;
 }
 
 .remove button{
