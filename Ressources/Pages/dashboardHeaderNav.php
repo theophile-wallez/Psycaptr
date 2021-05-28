@@ -38,12 +38,18 @@
     <i class="fas fa-users"></i>
     <p></p>
   </a>
-
+<?php 
+  if($_SESSION['userType'] == 0){
+?>
   <a href="modifyFAQ" class="icon-container">
     <div class="line"></div>
     <i class="fas fa-question"></i>
     <p></p>
   </a>
+<?php
+  }
+?>
+  
 
   
   <!-- Icon de déconnexion -->
