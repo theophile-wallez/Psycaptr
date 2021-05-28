@@ -77,6 +77,7 @@
             echo " |".$Id;
         } else {
             header("Location:../Ressources/Pages/modifyFAQ");
+            echo $Id;
             exit();
         }
 
