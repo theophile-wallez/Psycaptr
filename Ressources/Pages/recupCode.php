@@ -33,19 +33,15 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-      <input name="recup_mail" type="email" placeholder="Adresse mail" value="<?php
-          if(isset($_SESSION['Mail'])){
-            echo $_SESSION['Mail'];
-          }
-        ?>" required/>
-        <div class="back_to_connect_container">
-          <a href="connexion.php">Retour</a>
+      <input name="recup_mail" type="email" placeholder="Adresse mail" value="">
+        <div class="back_to_mail_container">
+          <a href="mdpOublie.php">Vous n'avez rien reçu ?</a>
         </div>
       </div>
 
       <!-- Boutton de connexion -->
       <div class="connexion_button">
-          <button type="submit"name="recup_submit">Envoyer</button>
+          <button type="submit" href="recupCode.php" name="verif_submit">Envoyer</button>
       </div>
   </form>
   <?php if(isset($error)) { echo '<span style="color:red">'.$error.'</span>'; } else { echo ""; } ?>
