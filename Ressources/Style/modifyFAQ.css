@@ -107,7 +107,7 @@ h2{
     color: var(--pink);
 }
 
-.container-form:hover .count_container_grand{
+.container-form:hover .count_container_grand, .container-form:focus-within .count_container_grand{
     transform: rotate(-90deg) scale(1.1);
     transform-origin: center;
 }
