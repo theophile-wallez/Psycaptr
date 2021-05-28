@@ -12,6 +12,8 @@
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
         $Question    = convertInput($_POST['Question']);
         $Reponse = convertInput($_POST['Reponse']);
+        $Question = str_replace("'","''",$Question);
+        $Reponse = str_replace("'","''",$Reponse);
         $_POST['addFAQ'] = array(); 
 
 
@@ -49,7 +51,10 @@
         $Id     = convertInput($_POST['Id']);
         $Question    = convertInput($_POST['Question']);
         $Reponse = convertInput($_POST['Reponse']);
+        $Question = str_replace("'","''",$Question);
+        $Reponse = str_replace("'","''",$Reponse);
 
+        $_POST['modifyFAQ'] = array(); 
 
         $sql = "UPDATE FAQ SET Question='$Question', Reponse='$Reponse' WHERE Id='$Id'";
 
@@ -60,7 +65,6 @@
             header("Location:../Ressources/Pages/modifyFAQ");
             exit();
         }
-        $_POST['modifyFAQ'] = array(); 
 
         $result -> free_result();
         $bdd -> close();
@@ -69,6 +73,7 @@
 
     if(isset($_POST['removeFAQ'])){
         $Id     = $_POST['Id'];
+        $_POST['removeFAQ'] = array(); 
 
         $sql = "DELETE FROM FAQ WHERE Id='$Id'" ;
         if(!$bdd -> query($sql)){
@@ -79,7 +84,6 @@
             echo $Id;
             exit();
         }
-        $_POST['removeFAQ'] = array(); 
 
         $result -> free_result();
         $bdd -> close();

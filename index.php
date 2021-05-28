@@ -163,7 +163,6 @@
   <section id="FAQ-section">
     <script src="Javascripts/faq.js"></script>
     <h1 class="FAQ-une-question-title">Une question ?</h1>
-
     <div class="FAQ-container">
       <ul class="FAQ-questions-reponses-container">
         <li class="FAQ-question-reponses question-first" onclick="toggleAccordion(this)">
