@@ -194,12 +194,11 @@
         $result -> free_result();
 
         $bdd -> close();
-        exit();
         ?>
 
         <li class="FAQ-question-reponses question-first" onclick="toggleAccordion(this)">
           <div class="FAQ-question">
-            <h4>Faut-il se préparer avant de réaliser un test ?</h4><span class="icon"></span>
+            <h4>Faut-ils se préparer avant de réaliser un test ?</h4><span class="icon"></span>
           </div>
           <div class="FAQ-reponse">
             <div class="wrapper">
@@ -269,7 +268,7 @@
             </div>
           </div>
         </li>
-        
+
       </ul>
     </div>
 
