@@ -99,14 +99,19 @@
     
     echo '<h2>Liste des utilisateurs</h2>';
 
+    $count = 0;
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
         $Id=$row[0];
         $Question=$row[1];
         $Reponse = $row[2];
+        $count+=1;
 
         //On génère une ligne qui correpond à chaque utilisateurs
         echo '<form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">';
+        echo '<div class="count_container">';
+        echo '<h3 class="count">#'.$count.'</h3>';
+        echo '</div>';
         echo '<div class="inputs_container">';
         echo '<div class="line-container user-container">';
         echo '<input class="question-container" type="text" name="Question" value="'.$Question.'" required/>';

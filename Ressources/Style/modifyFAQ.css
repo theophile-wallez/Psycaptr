@@ -1,13 +1,54 @@
-.container-form{
-    width: 100%;
-    margin-bottom: 2em;
+h2{
+    text-align: center;
+    font-size:2.2em;
+    color: var(--light_pink);
+    font-weight: bold;
+    user-select: none;
 }
 
+/* Formulaire */
+.container-form {
+    width: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Compteur à droite des inputs */
+.count_container {
+    height: 100%;
+    width: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease;
+}
+
+/* Texte du compteur */
+.count {
+    font-size: 3.5em;
+    color: var(--light_pink);
+
+    font-weight: bold;
+    user-select: none;
+    transition: color 0.4s ease;
+
+}
+
+/* Container de tous les inputs du formulaire dont le textarea */
+.inputs_container{
+    width:70%;
+    transition: transform 0.4s ease;
+}
+
+/* CSS pour cacher l'input de l'Id */
 .invisible{
     visibility: hidden;
     position: absolute;
 }
 
+/* Ligne qui contient l'input et les boutons */
 .user-container {
     height: 3em;
     display: flex;
@@ -47,20 +88,23 @@
     visibility: visible;
 }
 .container-form:hover .inputs_container {
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
     transform-origin: center;
 }
 
 .container-form:focus-within .inputs_container {
-    transform: scale(1.01);
+    /* transform: scale(1.01); */
     transform-origin: center;
 }
-
-.inputs_container{
-    width:70%;
-    margin-left:8%;
-    transition: transform 0.4s ease;
+.container-form:focus-within .count_container, .container-form:hover .count_container {
+    transform: scale(1.1);
+    transform-origin: center;
 }
+.container-form:focus-within .count{
+    color: var(--pink);
+}
+
+
 
 .user-container{
     width:60%;
@@ -91,12 +135,7 @@ input:hover, input:focus, textarea:hover, textarea:focus{
     background:none; 
 }
 
-/* .user-container:hover, .user-container:focus-within, textarea:hover, textarea:focus{
-    box-shadow: 0px 0px 3px #abb1b4;
-}
-input:hover .user-container, input:focus .user-container, textarea:hover, textarea:focus{
-    box-shadow: 0px 0px 10px #abb1b4;
-} */
+
 
 
 .container-form textarea {
@@ -179,3 +218,4 @@ input:hover .user-container, input:focus .user-container, textarea:hover, textar
 .valider_changement button>*{
     opacity: 0;
 }
+
