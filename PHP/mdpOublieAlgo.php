@@ -75,9 +75,10 @@ $message = '
 </html>
 ';
 
-mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
-echo $Mail;
-// header("Location:../Ressources/Pages/recuperation.php?section=code");
+if(mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header)){
+   echo 'email envoyé';
+}
+header("Location:http://127.0.0.1/path/recuperation.php?section=code");
 
 
 // if(isset($_POST['verif_submit'],$_POST['verif_code'])) {
