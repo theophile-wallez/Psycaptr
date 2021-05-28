@@ -34,7 +34,9 @@
     <h2>Ajout d'une question à la FAQ</h2>
 
    <form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">
-      <div class="count_container"></div>
+      <div class="count_container">
+        <h3 class="count">+</h3>
+      </div>
       <div class="inputs_container">
         <div class="line-container user-container">
           <input class="question-container" type="text" placeholder="Contenu de la question" name="Question" required/>
