@@ -1,14 +1,12 @@
 .container-form{
-    
     width: 100%;
     margin-bottom: 2em;
-
 }
 
-.invisible{
+/* .invisible{
     visibility: hidden;
     position: absolute;
-}
+} */
 
 .user-container {
     height: 3em;
