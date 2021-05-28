@@ -50,7 +50,6 @@
   }
 ?>
   
-  
   <!-- Icon de déconnexion -->
   <a href="/PHP/disconnect.php" class="icon-container">
     <div class="line"></div>
