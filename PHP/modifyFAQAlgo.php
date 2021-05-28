@@ -45,41 +45,41 @@
     //Script qui permet de modifier les informations d'un utilisateur
     // 
 
-    if(isset($_POST['modifyUser'])){
-        $Nom    = convertInput($_POST['Nom']);
-        $Prenom = convertInput($_POST['Prenom']);
-        $Mail   = convertInput($_POST['Mail']);
+    if(isset($_POST['modifyFAQ'])){
         $Id     = convertInput($_POST['Id']);
+        $Question    = convertInput($_POST['Question']);
+        $Reponse = convertInput($_POST['Reponse']);
+        $_POST['modifyFAQ'] = array(); 
 
-        $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
+
+        $sql = "UPDATE FAQ SET Question='$Question', Reponse='$Reponse' WHERE Id='$Id'";
 
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         } else {
-            header("Location:../Ressources/Pages/modifyUsers");
+            header("Location:../Ressources/Pages/modifyFAQ");
             exit();
         }
 
-        $_POST['modifyUser'] = array(); 
         $result -> free_result();
         $bdd -> close();
         exit();
     }
 
-    if(isset($_POST['removeUser'])){
+    if(isset($_POST['removeFAQ'])){
         $Id     = convertInput($_POST['Id']);
+        $_POST['removeFAQ'] = array(); 
 
-        $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;
+        $sql = "DELETE FROM FAQ WHERE Id='$Id'" ;
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
         } else {
-            header("Location:../Ressources/Pages/modifyUsers");
+            header("Location:../Ressources/Pages/modifyFAQ");
             exit();
         }
 
-        $_POST['removeUser'] = array(); 
         $result -> free_result();
         $bdd -> close();
         exit();

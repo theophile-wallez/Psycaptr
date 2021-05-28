@@ -36,9 +36,8 @@
    <form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">
       <div class="inputs_container">
         <div class="line-container user-container">
-          <input class="question-container" type="text" placeholder="Contenu de la question" name="Question" required>
-          <!-- <div class="valider_changement modify"><button type="submit" name="modifyFAQ"><i class="fa fa-check"></i></button></div> -->
-          <div class="valider_changement remove"><button type="submit" name="addFAQ"><i class="fa fa-trash"></i></button></div>
+          <input class="question-container" type="text" placeholder="Contenu de la question" name="Question" required/>
+          <div class="valider_changement remove"><button type="submit" name="addFAQ"><i class="fa fa-plus"></i></button></div>
         </div>
         <input class="question-container invisible" readonly="readonly" type="text" placeholder="Contenu de la question" name="Id" required>
         <textarea class="reponse-container" type="text" name="Reponse" placeholder="Contenu de la réponse " required></textarea>
