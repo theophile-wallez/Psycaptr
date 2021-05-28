@@ -97,7 +97,7 @@
         echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
     
-    echo '<h2>Liste des utilisateurs</h2>';
+    echo '<h2>Liste des questions et réponses</h2>';
 
     $count = 0;
     // Recuperation des resultats

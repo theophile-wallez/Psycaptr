@@ -165,78 +165,35 @@
     <h1 class="FAQ-une-question-title">Une question ?</h1>
     <div class="FAQ-container">
       <ul class="FAQ-questions-reponses-container">
-        <li class="FAQ-question-reponses question-first" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Faut-il se préparer avant de réaliser un test ?</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Non, le but est d'effectuer un test dans des conditions normales.</p>
-            </div>
-          </div>
-        </li>
+        <?php 
+        require('PHP/connectDatabase.php'); 
+        $sql = 'SELECT * FROM FAQ';
 
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Comment m'inscrire pour effectuer un test ?</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Pour s'inscrire afin d'effectuer un test psychotechnique, vous devez passer par votre médecin traitant.
-              </p>
-              <p>Celui-ci devra créer un compte à son nom en tant que médecin, si cela n'est pas déjà fait et ensuite, créer votre compte patient. Il fera ensuite une demande sur la plateforme pour faire votre test.
-              </p>
-            </div>
-          </div>
-        </li>
+        if(!$result = $bdd -> query($sql)){
+            echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+        }
+        
+        // Recuperation des resultats
+        while($row = $result -> fetch_row()){
+            $Question=$row[1];
+            $Reponse = $row[2];
+            //On génère une ligne qui correpond à chaque question
+            echo '<li class="FAQ-question-reponses question-first" onclick="toggleAccordion(this)">';
+            echo '<div class="FAQ-question">';
+            echo '<h4>'.$Question.'</h4><span class="icon"></span>';
+            echo '</div>';
+            echo '<div class="FAQ-reponse">';
+            echo '<div class="wrapper">';
+            echo '<p>'.$Reponse.'</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</li>';
+        }
 
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Combien de temps dure un test ?</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Un test  réaliser correctement dure entre 45 min à 1 heure.
-              </p>
-            </div>
-          </div>
-        </li>
-
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>ipsum dolor sit amet</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-              </p>
-            </div>
-          </div>
-        </li>
-
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>ipsum dolor sit amet</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-              </p>
-            </div>
-          </div>
-        </li>
-
-        <li class="FAQ-question-reponses question-fin" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Lorem ipsum</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-          </div>
-        </li>
+        $result -> free_result();
+        $bdd -> close();
+        exit();
+        ?>
       </ul>
     </div>
 
