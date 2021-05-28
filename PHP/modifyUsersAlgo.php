@@ -10,19 +10,27 @@
 
     if(isset($_POST['addUser'])){
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
-        $Mdp    = convertInput($_POST['Mdp']);
-        $MdpBis = convertInput($_POST['MdpBis']);
+        if(_SESSION['typeUser']=='admin'){
+            $Mdp    = convertInput($_POST['Mdp']);
+            $MdpBis = convertInput($_POST['MdpBis']);
+            if($MdpBis != $Mdp){
+                header("Location:../Ressources/Pages/modifyUsers");
+                exit();
+            }
+            $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
+        }
+
         $Nom    = convertInput($_POST['Nom']);
         $Prenom = convertInput($_POST['Prenom']);
         $Mail   = convertInput($_POST['Mail']);
         $Date   = date('Y-m-d');
 
-        if($MdpBis != $Mdp){
-            header("Location:../Ressources/Pages/modifyUsers");
-            exit();
+        if(_SESSION['typeUser']=='admin'){
+            $sql = "SELECT * FROM Utilisateurs";
         }
-        $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
-        $sql = 'SELECT * FROM Utilisateurs';
+        else{
+            $sql = "SELECT * FROM Patient WHERE Id='$_SESSION['IdMedecin']'";
+        }
         if(!$result = $bdd -> query($sql)){
         echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
         }

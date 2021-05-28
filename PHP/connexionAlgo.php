@@ -43,7 +43,7 @@
 	if($result = $bdd -> query($sql)) {
 		while($row = $result -> fetch_row())  {
 			if($Mail == $row[1] && password_verify($Mdp, $row[2])) {
-				$_SESSION['Id'] = $row[0];
+				$_SESSION['IdMedecin'] = $row[0];
 				$_SESSION['Nom'] = $row[4];
 			    $_SESSION['Prenom'] = $row[5];
 
