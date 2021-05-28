@@ -39,7 +39,7 @@
     <p></p>
   </a>
 <?php 
-  if($_SESSION['userType'] == 0){
+  if($_SESSION['userType'] == 'admin'){
 ?>
   <a href="modifyFAQ" class="icon-container">
     <div class="line"></div>
