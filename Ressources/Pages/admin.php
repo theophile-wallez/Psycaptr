@@ -67,7 +67,7 @@ si c'est l'admin alors afficher d'autre logo dans la nav bar -->
 
 <?php
 	session_start();
-	if($_SESSION['login_Admin'] != 1 | !isset($_SESSION['login_Admin'])) {
+	if($_SESSION['login'] != 1 | $_SESSION['userType'] != 1)) {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 			unset($_SESSION['login']);
 			header('Location:../../index');
