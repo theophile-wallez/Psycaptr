@@ -36,6 +36,9 @@ h2{
 
 }
 
+.count_plus{
+    font-size: 4em;
+}
 /* Container de tous les inputs du formulaire dont le textarea */
 .inputs_container{
     width:70%;
@@ -103,6 +106,12 @@ h2{
 .container-form:focus-within .count{
     color: var(--pink);
 }
+
+.container-form:hover .count_container{
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
 
 
 

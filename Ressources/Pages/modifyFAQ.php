@@ -35,7 +35,7 @@
 
    <form class="container-form" action="../../PHP/modifyFAQAlgo.php" method="POST">
       <div class="count_container">
-        <h3 class="count">+</h3>
+        <h3 class="count count_plus">+</h3>
       </div>
       <div class="inputs_container">
         <div class="line-container user-container">
