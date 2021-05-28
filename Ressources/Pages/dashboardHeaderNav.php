@@ -43,14 +43,13 @@
 ?>
   <a href="modifyFAQ" class="icon-container">
     <div class="line"></div>
-    <i class="fas fa-question"></i>
+    <i class="fas fa-info-circle"></i>
     <p></p>
   </a>
 <?php
   }
 ?>
   
-
   
   <!-- Icon de déconnexion -->
   <a href="/PHP/disconnect.php" class="icon-container">
