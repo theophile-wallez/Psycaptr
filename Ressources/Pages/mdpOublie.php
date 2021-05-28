@@ -30,11 +30,12 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-        <input name="newMdp" type="password" placeholder="Nouveau mot de passe" value="<?php
+      <input name="Mail" type="email" placeholder="Adresse mail" value="<?php
           if(isset($_SESSION['Mail'])){
             echo $_SESSION['Mail'];
           }
         ?>" required/>
+        <input name="newMdp" type="password" placeholder="Nouveau mot de passe" value="" required/>
         <input name="newMdpConf" type="password" placeholder="Confirmer" required/>
         <div class="back_to_connect_container">
           <a href="connexion.php">Retour</a>
