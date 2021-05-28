@@ -31,7 +31,7 @@
 		while($row = $result -> fetch_row()) {
 			if($Mail == $row[0] && $Mdp == $row[1]){
 				$_SESSION['login'] = 1;
-				$_SESSION['userType'] = 0;
+				$_SESSION['userType'] = 'admin';
 				$_SESSION['lastActivity'] = time();
 				$_SESSION['Nom'] = $row[2];
 			    $_SESSION['Prenom'] = $row[3];
@@ -48,11 +48,14 @@
 	if($result = $bdd -> query($sql)) {
 		while($row = $result -> fetch_row())  {
 			if($Mail == $row[1] && password_verify($Mdp, $row[2])) {
-				$_SESSION['login'] = 1;
-				$_SESSION['userType'] = 1;
-				$_SESSION['lastActivity'] = time();
+				$_SESSION['Id'] = $row[0];
 				$_SESSION['Nom'] = $row[4];
 			    $_SESSION['Prenom'] = $row[5];
+				
+				$_SESSION['login'] = 1;
+				$_SESSION['userType'] = 'medecin';
+				$_SESSION['lastActivity'] = time();
+				
 				header('Location:../Ressources/Pages/dashboard');
 				exit();
 			}

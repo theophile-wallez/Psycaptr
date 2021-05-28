@@ -66,8 +66,9 @@ si c'est l'admin alors afficher d'autre logo dans la nav bar -->
 </html>
 
 <?php
+  // Vérification que l'utilisateur est bien connecté, et qu'il est bien un admin
 	session_start();
-	if($_SESSION['login'] != 1 | $_SESSION['userType'] != 1) {
+	if($_SESSION['login'] != 1 | $_SESSION['userType'] != 'admin') {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 			unset($_SESSION['login']);
 			header('Location:../../index');
@@ -75,5 +76,4 @@ si c'est l'admin alors afficher d'autre logo dans la nav bar -->
 		}
 	}
 	$_SESSION['lastActivity']= time();
-
 ?>
