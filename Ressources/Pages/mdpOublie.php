@@ -1,20 +1,12 @@
-<?php
-	session_start();
-	unset($_SESSION['login']);
-  unset($_SESSION['login_Admin']);
-  unset($_SESSION['lastActivity']);
-  unset($_SESSION['Prenom']);
-  unset($_SESSION['Nom']);
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="../Style/style.css"/>
   <link rel="stylesheet" href="../Style/nav_bar.css"/>
   <link rel="stylesheet" href="../Style/footer.css"/>
-  <link rel="stylesheet" href="../Style/connexion.css"/>
+  <link rel="stylesheet" href="../Style/mdpOublie.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900">
 
@@ -30,23 +22,22 @@
 </nav>
 
 <body>
-  <form class="connect_container" action="../../PHP/connexionAlgo.php" method="POST">
+  <form class="backup_container" action="../../PHP/mdpOublieAlgo.php" method="POST">
       <!-- Titre -->
       <div class="title_container">
-        <h3 draggable="false">Connectez-vous</h3>
+        <h3 draggable="false">Mot de passe oublié</h3>
       </div>
 
       <!-- Boites d'input -->
       <div class="form_container">
-        <input name="Mail" type="email" placeholder="Adresse mail" value="<?php
+        <input name="newMdp" type="password" placeholder="Nouveau mot de passe" value="<?php
           if(isset($_SESSION['Mail'])){
             echo $_SESSION['Mail'];
           }
         ?>" required/>
-        <input name="Mdp" type="password" placeholder="Mot de passe" required/>
-        <div class="forgot_container">
-          <a href="mdpOublie.php">Mot de passe oublié</a>
-          <a href="inscription.php">Créer un compte</a>
+        <input name="newMdpConf" type="password" placeholder="Confirmer" required/>
+        <div class="back_to_connect_container">
+          <a href="connexion.php">Retour</a>
         </div>
       </div>
 
