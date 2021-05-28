@@ -2,12 +2,7 @@
 	require_once('algo.php');
 	session_start();
 
-	unset($_SESSION['login']);
-	unset($_SESSION['login_Admin']);
-	unset($_SESSION['lastActivity']);
-	unset($_SESSION['Prenom']);
-	unset($_SESSION['Nom']);
-	unset($_SESSION['Mail']);
+	$_SESSION = array(); 
 
 	$Mail = convertInput($_POST['Mail']);
 	$Mdp  = convertInput($_POST['Mdp']);
@@ -51,7 +46,7 @@
 				$_SESSION['Id'] = $row[0];
 				$_SESSION['Nom'] = $row[4];
 			    $_SESSION['Prenom'] = $row[5];
-				
+
 				$_SESSION['login'] = 1;
 				$_SESSION['userType'] = 'medecin';
 				$_SESSION['lastActivity'] = time();

@@ -52,7 +52,6 @@
         exit();
     }
 
-
     //
     //Script qui permet de modifier les informations d'un utilisateur
     // 
