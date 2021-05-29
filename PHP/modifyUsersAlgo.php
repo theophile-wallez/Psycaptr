@@ -109,7 +109,7 @@
     }
 
     if(isset($_POST['removeUser'])){
-        $Id     = convertInput($_POST['Id']);
+        $Id = convertInput($_POST['Id']);
 
         if($_SESSION['userType']=='admin'){
             $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;

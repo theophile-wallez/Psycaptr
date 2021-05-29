@@ -117,14 +117,13 @@ if(isset($_POST['recup_submit'])) {
    exit();
 }
 
+// Apres avoir cliqué sur le mail, l'utisateur rentre son nouveau mot de passe 
+// On récupère alors les valeurs transmisent dans l'URL du lien via le mail
 
 if(isset($_POST['mdp_submit'])) {
    $Id = $_SESSION['IdRecover'];
    $Code = $_SESSION['CodeRecover'];
    
-
-   echo 'Identifiant : '.$Id;
-   echo 'Code : '.$Code;
    $Mdp    = convertInput($_POST['Mdp']);
    $MdpBis = convertInput($_POST['MdpBis']);
 
@@ -144,17 +143,7 @@ if(isset($_POST['mdp_submit'])) {
    $num_row = mysqli_num_rows($result);
 
    if($num_row != 1){
-      while($row = $result -> fetch_row()){
-         $Id=$row[0];
-         $Code2=$row[2];
-          
-         echo $Id;
-         echo $Code2;
-     }
-      echo 'probleme de row askip';
-      echo 'nombre de row '.$num_row;
-
-      // header("Location:../Ressources/Pages/nouveauMdp");
+      header("Location:../Ressources/Pages/nouveauMdp");
       $_SESSION['Msg'] = 'Code invalide';
       $bdd -> close();
       exit();
@@ -166,7 +155,7 @@ if(isset($_POST['mdp_submit'])) {
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }
 
-   $sql = "DELETE * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code";
+   $sql = "DELETE * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code'";
 
    if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
