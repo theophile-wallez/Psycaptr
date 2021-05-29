@@ -122,14 +122,15 @@ if(isset($_POST['recup_submit'])) {
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
 
 if(isset($_POST['mdp_submit'])) {
-   $Id = convertInput($_GET['ID']);
-   $Code = convertInput($_GET['recup_code']);
+   $Id     = convertInput($_GET['ID']);
+   $Code   = convertInput($_GET['recup_code']);
 
    $Mdp    = convertInput($_POST['Mdp']);
    $MdpBis = convertInput($_POST['MdpBis']);
 
    if($MdpBis != $Mdp){
-      header('Location:../Ressources/Pages/nouveauMdp');
+      // header('Location:../Ressources/Pages/nouveauMdp');
+      echo 'Le mot de passe est différent';
       $_SESSION['Msg'] = 'Code invalide';
       exit();
    }
@@ -141,8 +142,11 @@ if(isset($_POST['mdp_submit'])) {
    }
    $num_row = mysqli_num_rows($result);
 
-   if($num_row!=1){
-      header("Location:../Ressources/Pages/nouveauMdp");
+   if($num_row != 1){
+      echo 'probleme de row askip';
+      echo 'nombre de row '.$num_row;
+
+      // header("Location:../Ressources/Pages/nouveauMdp");
       $_SESSION['Msg'] = 'Code invalide';
       $result -> free_result();
       $bdd -> close();
