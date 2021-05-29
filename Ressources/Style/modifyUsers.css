@@ -98,12 +98,16 @@ html {
     background-color: #f8f8f8;
 }
 
-.line-container:hover {
+.form_all:hover .line-container {
     /* transform: scale(1.005); */
     box-shadow: 0px 0px 5px #bdc3c7;
 }
 
-.line-container:focus-within{
+.form_all:hover .user button{
+    background: var(--pink);
+}
+
+.form_all:focus-within{
     transform: scale(1.01);
 }
 
