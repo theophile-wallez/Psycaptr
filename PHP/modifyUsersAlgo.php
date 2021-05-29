@@ -155,7 +155,7 @@
 
     $num_row = mysqli_num_rows($result);
 
-
+    echo '<section class="content-container">';
     // Script qui permet d'afficher les utilisateurs
     if($_SESSION['userType']=='admin'){
         echo '<h2>Ajout d\'un utilisateur</h2>';
@@ -164,7 +164,6 @@
     }
     ?>
 
-    <section class="content-container">
         <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
         <input type="text" name="Nom" placeholder="Nom" required>
         <input type="text" name="Prenom" placeholder="Prenom" required>
