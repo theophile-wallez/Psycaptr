@@ -155,10 +155,15 @@
 
     $num_row = mysqli_num_rows($result);
 
-?>
+
     
     <!-- Script qui permet d'afficher les inputs afin d'ajouter un utilisateur -->
-    <h2>Ajout d'un utilisateur</h2>
+    if($_SESSION['userType']=='admin'){
+        echo '<h2>Ajout d''un utilisateur</h2>';
+    } else if($_SESSION['userType']=='medecin'){
+        echo '<h2>Ajout d''un patient</h2>';
+    }
+    ?>
 
     <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
       <input type="text" name="Nom" placeholder="Nom" required>
@@ -172,7 +177,11 @@
     </form>
     
 <?php
-    echo '<h2>Liste des utilisateurs</h2>';
+    if($_SESSION['userType']=='admin'){
+        echo '<h2>Liste des utilisateurs</h2>';
+    } else if($_SESSION['userType']=='medecin'){
+        echo '<h2>Liste de vos patients</h2>';
+    }
     if ($num_row==0) { 
         echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
     }   

@@ -31,39 +31,18 @@
 
 <body>
   <section class="content-container">
-    <h2>Gestion des utilisateurs</h2>
+    <?php
+      if($_SESSION['userType']=='admin'){
+        echo '<h2>Gestion des utilisateurs</h2>';
+      } else if($_SESSION['userType']=='medecin'){
+        echo '<h2>Gestion de vos patients</h2>';
+      }
+    ?>
 
     <form class="search_bar-container" action="modifyUsers" method="POST">
       <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
       <div class="button-container"><button type="submit">Recherche</button></div>
     </form>
-
-    <!-- Ces lignes servent aux tests en localhost (sans BDD) -->
-    
-    <!-- <form class="line-container user-container addUser" onsubmit="addUser()" method="POST">
-      <input type="text" name="Nom" placeholder="Nom" required>
-      <input type="text" name="Prenom" placeholder="Prenom" required>
-      <input input type="email" name="Mail" placeholder="Adresse mail" required>
-      <input input type="text" name="Mdp" placeholder="Mot de passe" required>
-      <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
-
-      <div class="valider_changement"><button type="submit"><i class="fas fa-plus"></i></button></div>
-    </form> -->
-
-    <?php 
-      // echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
-      // echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
-      // echo  '<div class="line-container user-container">';
-      // echo    '<input type="text" name="Nom" value=".$Nom." required>';
-      // echo    '<input type="text" name="Prenom" value=".$Prenom." required>';
-      // echo    '<input input type="email" name="Mail" value=".$Mail." required>';
-      // echo    '<input input type="text" name="Id" readonly="readonly" value=".$Id." required>';
-      // echo    '<input input type="text" name="Date" readonly="readonly" value=".$Date_Inscription." required>';
-      // echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
-      // echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
-      // echo   '</div>';
-      // echo '</form>';
-    ?>
 
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');?>
