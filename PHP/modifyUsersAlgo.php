@@ -182,7 +182,7 @@
     
 <?php
     echo '<h2>Liste des utilisateurs</h2>';
-
+    echo $IdMedecin;
     if ($num_row==0) { 
         echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
     }   
