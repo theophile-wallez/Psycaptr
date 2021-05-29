@@ -25,7 +25,7 @@
 
 <body>
 
-  <form class="backup_container" method="POST">
+  <form class="backup_container" action="../../PHP/mdpOublieAlgo.php" method="POST">
       <!-- Titre -->
       <div class="title_container">
         <h3 draggable="false">Mot de passe oublié</h3>
