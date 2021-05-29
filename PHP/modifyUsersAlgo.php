@@ -175,12 +175,8 @@
         <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
         </form>
     </section>
-    <section class="content-container">
-        <form class="search_bar-container" action="modifyUsers" method="POST">
-            <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
-            <div class="button-container"><button type="submit">Recherche</button></div>
-        </form>
 <?php
+    echo '<section class="content-container">';
 
     if($_SESSION['userType']=='admin'){
         echo '<h2>Liste des utilisateurs</h2>';
@@ -193,6 +189,13 @@
             echo '<p>Aucun patient ne correspond à la recherche effectuée.</p>';
         } 
     }
+?>
+    <!-- Barre de recherche -->
+    <form class="search_bar-container" action="modifyUsers" method="POST">
+        <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
+        <div class="button-container"><button type="submit">Recherche</button></div>
+    </form>
+<?php
       
     else {
         echo '<div class="user-container user-description">';
