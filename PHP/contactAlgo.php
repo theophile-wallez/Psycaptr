@@ -11,6 +11,8 @@ $Nom = convertInput($_POST['Nom']);
 $Prenom = convertInput($_POST['Prenom']);
 $Mail = convertInput($_POST['Mail']);
 $Message = convertInput($_POST['Message']);
+$Message = str_replace("'","''",$Message);
+
 $Date = date('Y-m-d H:i:s');
 $IdUser = 0;
 
