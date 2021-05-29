@@ -45,8 +45,8 @@
         ?>" required/>
         <input name="Mdp" type="password" placeholder="Mot de passe" required/>
         <div class="forgot_container">
-          <a href="mdpOublie.php">Mot de passe oublié</a>
-          <a href="inscription.php">Créer un compte</a>
+          <a href="mdpOublie">Mot de passe oublié</a>
+          <a href="inscription">Créer un compte</a>
         </div>
       </div>
 
