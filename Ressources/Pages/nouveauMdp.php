@@ -33,8 +33,8 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-      <input name="new_mdp" type="password" placeholder="Nouveau Mot de Passe" value="" required/>
-      <input name="new_mdp_conf" type="password" placeholder="Confirmer le Mot de Passe" value="" required/>
+      <input name="Mdp" type="password" placeholder="Nouveau Mot de Passe" value="" required/>
+      <input name="MdpBis" type="password" placeholder="Confirmer le Mot de Passe" value="" required/>
         <div class="back_to_connect_container">
           <a href="connexion">Annuler</a>
         </div>
