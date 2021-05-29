@@ -73,7 +73,7 @@
 
     $i = 0;
     while($row = $result -> fetch_row()){
-      echo Data[$i] = $row[0];
+      echo "Data[".$i."] = ".$row[0];
       $i++;
     }
 
