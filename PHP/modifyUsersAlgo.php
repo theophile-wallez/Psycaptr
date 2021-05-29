@@ -8,7 +8,7 @@
     //Script qui permet d'ajouter un utilisateur
     // 
 
-    if($_SESSION['typeUser']=='medecin'){
+    if($_SESSION['userType']=='medecin'){
         $IdMedecin = $_SESSION['IdMedecin'];
     }
     
@@ -16,7 +16,7 @@
     if(isset($_POST['addUser'])){
         $Id = IdGenerator(10); //Un Id est généré par une méthode
 
-        if($_SESSION['typeUser']=='admin'){
+        if($_SESSION['userType']=='admin'){
             $Mdp    = convertInput($_POST['Mdp']);
             $MdpBis = convertInput($_POST['MdpBis']);
             if($MdpBis != $Mdp){
@@ -32,7 +32,7 @@
         $Date   = date('Y-m-d');
 
 
-        if($_SESSION['typeUser']=='admin'){
+        if($_SESSION['userType']=='admin'){
             $sql = "SELECT * FROM Utilisateurs";
         }
         else{
@@ -60,10 +60,10 @@
         $_POST['addUser'] = array(); 
 
 
-        if($_SESSION['typeUser']=='admin'){
+        if($_SESSION['userType']=='admin'){
             $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
         }
-        else if($_SESSION['typeUser']=='medecin'){
+        else if($_SESSION['userType']=='medecin'){
             $sql = "INSERT INTO `Patient` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$IdMedecin','$Date','$Nom','$Prenom')";
         }
         if(!$bdd -> query($sql)){
@@ -87,10 +87,10 @@
         $Mail   = convertInput($_POST['Mail']);
         $Id     = convertInput($_POST['Id']);
 
-        if($_SESSION['typeUser']=='admin'){
+        if($_SESSION['userType']=='admin'){
             $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
         }
-        else if($_SESSION['typeUser']=='medecin'){
+        else if($_SESSION['userType']=='medecin'){
             $sql = "UPDATE Patient SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
         }
 
@@ -111,10 +111,10 @@
     if(isset($_POST['removeUser'])){
         $Id     = convertInput($_POST['Id']);
 
-        if($_SESSION['typeUser']=='admin'){
+        if($_SESSION['userType']=='admin'){
             $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;
         }
-        else if($_SESSION['typeUser']=='medecin'){
+        else if($_SESSION['userType']=='medecin'){
             $sql = "DELETE FROM Patient WHERE Id='$Id'" ;
         }
 
@@ -137,20 +137,19 @@
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
     // } 
 
-    $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     if(isset($search)) { 
-        if($_SESSION['typeUser']=='admin'){
+        if($_SESSION['userType']=='admin'){
             $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
-        else if($_SESSION['typeUser']=='medecin'){
+        else if($_SESSION['userType']=='medecin'){
             $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' and Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
     }
     else {
-        if($_SESSION['typeUser']=='admin'){
+        if($_SESSION['userType']=='admin'){
             $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
         }
-        else if($_SESSION['typeUser']=='medecin'){
+        else if($_SESSION['userType']=='medecin'){
             $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
         }
     }
@@ -171,7 +170,7 @@
       <input type="text" name="Nom" placeholder="Nom" required>
       <input type="text" name="Prenom" placeholder="Prenom" required>
       <input input type="email" name="Mail" placeholder="Adresse mail" required>
-      <?php if($_SESSION['typeUser']=='admin'){ ?>
+      <?php if($_SESSION['userType']=='admin'){ ?>
       <input input type="text" name="Mdp" placeholder="Mot de passe" required>
       <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
       <?php } ?>
