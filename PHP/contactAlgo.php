@@ -11,7 +11,7 @@ $Nom = convertInput($_POST['Nom']);
 $Prenom = convertInput($_POST['Prenom']);
 $Mail = convertInput($_POST['Mail']);
 $Message = convertInput($_POST['Message']);
-$Date = date('j F Y h:i:s');
+$Date = date('j F Y h i s');
 $IdUser = 0;
 
 $sql = 'SELECT * FROM Message';
