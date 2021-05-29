@@ -77,5 +77,5 @@ $message = '
 
 mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
 
-require('recupCode.php');
+require('Pages/recupCode.php');
 ?>
