@@ -28,6 +28,7 @@ $sql = 'SELECT * FROM Utilisateurs';
 if($result = $bdd -> query($sql)) {
    while($row = $result -> fetch_row())  {
       if($Mail == $row[1]) {
+         $Id = $row[0];
          $Nom = $row[4];
          $Prenom = $row[5];
       }
@@ -77,18 +78,30 @@ $message = '
 
 mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
 
-header("Location:../Ressources/Pages/recupCode");
+// Pas ici, après.
 
 
 // --------------  NE FONCTIONNE PAS RIEN N APPARAIT DANS LA BDD ------------------------
 
-$sql = "SELECT * FROM RecupMotdePasse WHERE Mail='$Mail'";
+$sql = "SELECT * FROM RecupMotdePasse WHERE Id='$Id'";
+
+if(!$result = $bdd -> query($sql)){
+   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+}
+
 $num_row = mysqli_num_rows($result);
 if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne dépasse pas 1
-   $sql = "UPDATE RecupMotdePasse SET code = '$recup_code' WHERE mail = '$Mail'";
+   // $sql = "UPDATE RecupMotdePasse SET code = '$recup_code' WHERE mail = '$Mail'";
+   $_SESSION['Msg'] = 'Vérifiez vos spam.';
+   header("Location:../Ressources/Pages/recupCode");
+   exit();
 }
 else{
-   $sql = "INSERT INTO RecupMotdePasse(mail,code) VALUES ($Mail, $recup_code)";
+   $sql = "INSERT INTO `RecupMotdePasse` (`Id`, `Mail`, `Code`) VALUES ('$Id','$Mail','$recup_code')";
+}
+
+if(!$result = $bdd -> query($sql)){
+   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
 
 
