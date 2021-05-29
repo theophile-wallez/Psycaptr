@@ -129,12 +129,12 @@ if(isset($_POST['mdp_submit'])) {
    $MdpBis = convertInput($_POST['MdpBis']);
 
    if($MdpBis != $Mdp){
-      // header('Location:../Ressources/Pages/nouveauMdp');
+      header('Location:../Ressources/Pages/nouveauMdp');
       echo 'Le mot de passe est différent';
       $_SESSION['Msg'] = 'Code invalide';
       exit();
    }
-   $CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
+   $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
 
    $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code";
    if(!$result = $bdd -> query($sql)){
@@ -148,7 +148,6 @@ if(isset($_POST['mdp_submit'])) {
 
       // header("Location:../Ressources/Pages/nouveauMdp");
       $_SESSION['Msg'] = 'Code invalide';
-      $result -> free_result();
       $bdd -> close();
       exit();
    }
