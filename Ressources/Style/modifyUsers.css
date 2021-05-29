@@ -105,6 +105,7 @@ html {
 
 .form_all:hover .user button{
     background: var(--pink);
+    color: white;
 }
 
 .form_all:focus-within{
