@@ -13,7 +13,6 @@
   <title>DashBoard • Psycaptr</title>
 </head>
 
-<?php require_once('../dashboardHeaderNav.php');?>
 
 <body>
 
@@ -54,17 +53,13 @@
 
 <script>
 
-  require_once('../../PHP/connectDatabase.php');
+
 
   var Data = [];
-  var Length = <?php
-      $result = $bdd->query("SELECT Resultats FROM Test WHERE Id_Medecin = '434201016' ORDER BY Resultats ASC");
-      $row_cnt = $result->num_rows;
-      echo $row_cnt;
-  ?>;
+  var Length = 4;
 
   for(let i=0; i<Length; i++){
-    Data[i] = <?php $row = $result -> fetch_row(); echo $row[3]; ?>;
+    Data[i] = <?php echo 1 ?>+i;
   }
 
   console.log(Data);
