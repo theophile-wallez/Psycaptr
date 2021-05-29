@@ -6,6 +6,7 @@ html {
     display:flex;
     height:3em;
     margin-bottom: 0.8em;
+    transition: all 0.3s;
 }
 
 .user{
