@@ -91,8 +91,8 @@ if(!$result = $bdd -> query($sql)){
 
 $num_row = mysqli_num_rows($result);
 if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne dépasse pas 1
-   // $sql = "UPDATE RecupMotdePasse SET code = '$recup_code' WHERE mail = '$Mail'";
-   $_SESSION['Msg'] = 'Vérifiez vos spam.';
+   $sql = "UPDATE RecupMotDePasse SET Code = '$recup_code' WHERE Id = '$Id'";
+   // $_SESSION['Msg'] = 'Un';
    header("Location:../Ressources/Pages/recupCode");
    exit();
 }
