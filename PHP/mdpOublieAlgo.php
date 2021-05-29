@@ -65,7 +65,7 @@ $message = '
           <tr>
           <td align="center">
             <font size="2">
-                Ceci est un email automatique, merci de ne pas y répondre
+                Ceci est un email automatique, merci de ne pas y répondre.
             </font>
           </td>
           </tr>
@@ -90,9 +90,16 @@ if(!$result = $bdd -> query($sql)){
 }
 
 $num_row = mysqli_num_rows($result);
+$result -> free_result();
+
 if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne dépasse pas 1
    $sql = "UPDATE RecupMotDePasse SET Code = '$recup_code' WHERE Id = '$Id'";
-   // $_SESSION['Msg'] = 'Un';
+   if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+   }
+
+   $result -> free_result();
+   $bdd -> close();
    header("Location:../Ressources/Pages/recupCode");
    exit();
 }
@@ -103,8 +110,10 @@ else{
 if(!$result = $bdd -> query($sql)){
    echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
+$result -> free_result();
+$bdd -> close();
 header("Location:../Ressources/Pages/recupCode");
-
+exit();
 
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
 
