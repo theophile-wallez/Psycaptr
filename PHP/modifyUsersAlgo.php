@@ -137,6 +137,7 @@
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
     // } 
 
+    $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
     if(isset($search)) { 
         if($_SESSION['typeUser']=='admin'){
             $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
