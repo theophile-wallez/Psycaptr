@@ -67,13 +67,13 @@
       exit();
     }
 
-    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '434201016' ORDER BY Resultats ASC";
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '434201016' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
 
     $i = 0;
     while($row = $result -> fetch_row()){
-      echo "Data[".$i."] = ".$row[0];
+      echo "Data[".$i."] = ".$row[0].";\n";
       $i++;
     }
 
