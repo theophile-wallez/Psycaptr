@@ -20,6 +20,12 @@
   <?php 
     require_once('../../PHP/navBar.php');
     displayNavBar("../../");
+    require_once('algo.php');
+    session_start();
+
+  $_SESSION['IdRecover'] = convertInput($_GET['Id']);
+  $_SESSION['CodeRecover'] = convertInput($_GET['recup_code']);
+
   ?>
 </nav>
 
