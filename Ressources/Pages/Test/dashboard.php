@@ -58,7 +58,7 @@
 
   var Data = [];
   var Length = <?php
-      $result = $bdd->query("SELECT Resultats FROM Test WHERE Id_Medecin = $_SESSION['Id'] ORDER BY Resultats ASC");
+      $result = $bdd->query("SELECT Resultats FROM Test WHERE Id_Medecin =".$_SESSION['Id']." ORDER BY Resultats ASC");
       $row_cnt = $result->num_rows;
   ?>;
 
