@@ -145,7 +145,7 @@
             $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
         else if($_SESSION['userType']=='medecin'){
-            $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+            $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
     }
     // else {
