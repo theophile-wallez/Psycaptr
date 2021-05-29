@@ -33,7 +33,7 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-      <input name="recup_mail" type="email" placeholder="Adresse mail" value="">
+      <input name="enter_code" type="password" placeholder="Code de Sécurité" value="">
         <div class="back_to_mail_container">
           <a href="mdpOublie.php">Vous n'avez rien reçu ?</a>
         </div>
@@ -41,11 +41,10 @@
 
       <!-- Boutton de connexion -->
       <div class="connexion_button">
-          <button type="submit" href="recupCode.php" name="verif_submit">Envoyer</button>
+          <button type="submit" name="verif_submit">Valider</button>
       </div>
   </form>
-  <?php if(isset($error)) { echo '<span style="color:red">'.$error.'</span>'; } else { echo ""; } ?>
-
+  
 </body>
 </html>
 
