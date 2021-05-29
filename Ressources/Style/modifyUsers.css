@@ -17,6 +17,8 @@ html {
     
     border-radius: 1em;
     box-shadow: 0px 0px 2px #bdc3c7;
+    transition: all 0.2s;
+
 }
 
 .user button{
