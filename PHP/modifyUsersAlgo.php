@@ -150,6 +150,7 @@
             $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
         }
         else if($_SESSION['userType']=='medecin'){
+            echo $IdMedecin;
             $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
         }
     }
@@ -182,7 +183,6 @@
     
 <?php
     echo '<h2>Liste des utilisateurs</h2>';
-    echo $IdMedecin;
     if ($num_row==0) { 
         echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
     }   
