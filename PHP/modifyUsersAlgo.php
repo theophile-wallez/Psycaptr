@@ -175,6 +175,7 @@
         <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
         </form>
     </section>
+
 <?php
     echo '<section class="content-container">';
 
@@ -189,14 +190,6 @@
             echo '<p>Aucun patient ne correspond à la recherche effectuée.</p>';
         } 
     }
-?>
-    <!-- Barre de recherche -->
-    <form class="search_bar-container" action="modifyUsers" method="POST">
-        <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
-        <div class="button-container"><button type="submit">Recherche</button></div>
-    </form>
-<?php
-      
     else {
         echo '<div class="user-container user-description">';
         echo '<div class="nom-container">Nom</div>';
@@ -206,6 +199,13 @@
         echo '<div class="date-container">Date d',"'inscription</div>";
         echo '</div>';
     }
+?>
+    <!-- Barre de recherche -->
+    <form class="search_bar-container" action="modifyUsers" method="POST">
+        <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
+        <div class="button-container"><button type="submit">Recherche</button></div>
+    </form>
+<?php
 
     // Recuperation des resultats
     while($row = $result -> fetch_row()){
