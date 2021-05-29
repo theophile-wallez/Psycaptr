@@ -42,7 +42,7 @@
 
       <!-- Boutton de connexion -->
       <div class="connexion_button">
-          <button type="submit"name="recup_submit">Valider</button>
+          <button type="submit"name="mdp_submit">Valider</button>
       </div>
   </form>
 
