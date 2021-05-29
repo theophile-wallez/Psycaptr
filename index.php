@@ -220,16 +220,16 @@
           <h3 draggable="false">Une autre question ?    Contactez-nous !</h3>
         </div>
         <div class="input_container input_container_1">
-          <input name="Prenom" type="text" placeholder="Prénom"/>
-          <input name="Nom" type="text" placeholder="Nom"/>
+          <input name="Prenom" type="text" placeholder="Prénom" required/>
+          <input name="Nom" type="text" placeholder="Nom" required/>
         </div>
 
         <div class="input_container input_container_2">
-          <input name="Mail" type="email" placeholder="Votre mail"/>
+          <input name="Mail" type="email" placeholder="Votre mail" required/>
         </div>
 
         <div class="input_container input_container_3">
-          <textarea name="Message" placeholder="Votre message"></textarea>
+          <textarea name="Message" placeholder="Votre message" required></textarea>
         </div>
         <div class="envoyer_button">
           <button type="submit">Envoyer le message</button>
