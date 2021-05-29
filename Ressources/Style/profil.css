@@ -10,7 +10,8 @@ body{
 
 body .content-container{
     position: relative;
-    margin-top: 8em;
+    margin-top: 1em;
+    margin-bottom:1em;
     margin-left: 8em;
     margin-right: 3em;
 
@@ -19,6 +20,10 @@ body .content-container{
     background-color: white;
 
     overflow: hidden;
+}
+
+body .content-container:first-child{
+    margin-top: 8em;
 }
 
 .content-container .profil-container{
