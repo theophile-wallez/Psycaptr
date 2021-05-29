@@ -66,6 +66,16 @@ if(isset($search)) {
       } 
     }
 }
+else if($_SESSION['userType']=='admin') {
+  $sql = "SELECT * FROM Utilisateurs order by Date_inscription desc";
+}
+else if($_SESSION['userType']=='medecin') {
+  $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' order by Date_inscription desc";
+}
+
+if(!$result = $bdd -> query($sql)){
+  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+} 
 // $num_row = mysqli_num_rows($result);
 
 echo '<section class="content-container">';
