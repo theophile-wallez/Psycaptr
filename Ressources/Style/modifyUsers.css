@@ -50,6 +50,10 @@ html {
     background: var(--pink);
 }
 
+.user button:hover .user{
+    box-shadow: 0px 0px 0px #bdc3c7;
+}
+
 .content-container {
     padding:1em;
     display: flex;
