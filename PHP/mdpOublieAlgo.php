@@ -134,6 +134,7 @@ if(isset($_POST['mdp_submit'])) {
       $_SESSION['Msg'] = 'Code invalide';
       exit();
    }
+
    $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
 
    $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code'";
@@ -143,6 +144,13 @@ if(isset($_POST['mdp_submit'])) {
    $num_row = mysqli_num_rows($result);
 
    if($num_row != 1){
+      while($row = $result -> fetch_row()){
+         $Id=$row[0];
+         $Mail=$row[1];
+          
+         echo $Id;
+         echo $Mail;
+     }
       echo 'probleme de row askip';
       echo 'nombre de row '.$num_row;
 
