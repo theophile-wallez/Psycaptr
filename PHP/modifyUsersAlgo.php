@@ -14,7 +14,7 @@
     
 
     if(isset($_POST['addUser'])){
-        $Id = IdGenerator(10); //Un Id est généré par une méthode
+        $Id = IdGenerator(7); //Un Id est généré par une méthode
 
         if($_SESSION['userType']=='admin'){
             $Mdp    = convertInput($_POST['Mdp']);
@@ -51,7 +51,7 @@
                     exit();
                 }
                 while($Id == $row[0]){
-                    $Id = IdGenerator(10);
+                    $Id = IdGenerator(7);
                 }
             }
         }
