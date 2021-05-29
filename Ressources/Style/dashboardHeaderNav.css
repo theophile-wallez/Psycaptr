@@ -74,6 +74,8 @@ header .welcome-text {
     display: flex;
     justify-content:center;
     align-items:center;
+    width:100%;
+    height: 100%;
 
     font-size:2.5em;
 
@@ -83,8 +85,6 @@ header .welcome-text {
     border:none;
     text-align: center;
     transform-origin: center;
-
-    
 }
 .home_logo a:hover i{
     color: #FE6BBF;
