@@ -108,8 +108,12 @@ html {
     background: var(--pink);
     color: white;
 }
-
 .form_all:focus-within{
+    background: var(--pink);
+    color: white;
+}
+
+.line-container:focus-within{
     transform: scale(1.01);
 }
 
