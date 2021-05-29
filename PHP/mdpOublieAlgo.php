@@ -146,10 +146,10 @@ if(isset($_POST['mdp_submit'])) {
    if($num_row != 1){
       while($row = $result -> fetch_row()){
          $Id=$row[0];
-         $Mail=$row[1];
+         $Code2=$row[2];
           
          echo $Id;
-         echo $Mail;
+         echo $Code2;
      }
       echo 'probleme de row askip';
       echo 'nombre de row '.$num_row;
