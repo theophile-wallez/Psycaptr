@@ -115,6 +115,13 @@ else {
 ?>
 <!-- Barre de recherche -->
 <form class="search_bar-container" action="modifyUsers" method="POST">
+    <?php
+    if($_SESSION['userType']=='admin'){
+      echo '<input type="text" name="search" placeholder="Rechercher parmis les utilisateurs">';
+    } else if($_SESSION['userType']=='medecin'){
+      echo '<input type="text" name="search" placeholder="Rechercher parmis vos patients">';
+    }
+    ?>
     <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
     <div class="button-container"><button type="submit">Recherche</button></div>
 </form>
