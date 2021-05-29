@@ -139,20 +139,20 @@
 
     if(isset($search)) { 
         if($_SESSION['userType']=='admin'){
-            $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+            $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
         else if($_SESSION['userType']=='medecin'){
-            $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' and Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+            $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
     }
-    else {
-        if($_SESSION['userType']=='admin'){
-            $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
-        }
-        else if($_SESSION['userType']=='medecin'){
-            $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
-        }
-    }
+    // else {
+    //     if($_SESSION['userType']=='admin'){
+    //         $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
+    //     }
+    //     else if($_SESSION['userType']=='medecin'){
+    //         $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' order by Nom asc";
+    //     }
+    // }
 
     // $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
 
