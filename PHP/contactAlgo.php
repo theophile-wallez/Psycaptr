@@ -26,9 +26,10 @@ if($result = $bdd -> query($sql)){
 
 $sql = "INSERT INTO `Message-Utilisateur` (`Id`, `IdUser`, `Nom`, `Prenom`, `Mail`, `Message`, `Date`) VALUES ('$Id','$IdUser','$Nom','$Prenom','$Mail','$Message','$Date')";
 
-if (!mysql_query($sql,$bdd)) {
-	die('impossible d’ajouter cet enregistrement : ' . mysql_error());
+if(!$result = $bdd -> query($sql)){
+  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
+
 
 $bdd -> close();
 
