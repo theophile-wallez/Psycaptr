@@ -154,6 +154,9 @@
         }
     }
 
+    $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
+
+
     if(!$result = $bdd -> query($sql)){
         echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
     }
