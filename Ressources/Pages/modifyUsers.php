@@ -32,17 +32,19 @@
 <body>
   <section class="content-container">
     <?php
-      if($_SESSION['userType']=='admin'){
-        echo '<h2>Gestion des utilisateurs</h2>';
-      } else if($_SESSION['userType']=='medecin'){
-        echo '<h2>Gestion de vos patients</h2>';
-      }
+      // if($_SESSION['userType']=='admin'){
+      //   echo '<h2>Gestion des utilisateurs</h2>';
+      // } else if($_SESSION['userType']=='medecin'){
+      //   echo '<h2>Gestion de vos patients</h2>';
+      // }
     ?>
 
     <form class="search_bar-container" action="modifyUsers" method="POST">
       <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
       <div class="button-container"><button type="submit">Recherche</button></div>
     </form>
+  </section>
+  <section class="content-container">
 
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');?>
