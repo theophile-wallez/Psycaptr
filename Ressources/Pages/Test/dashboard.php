@@ -50,10 +50,24 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="../../../javascripts/Graph/graph.js"></script>
+<script src="../../../javascripts/Graph/test_Graph.js"></script>
 
 <script>
-  graph1();
-  graph2();
+
+  require_once('../../PHP/connectDatabase.php');
+
+  var Data = [];
+  var Length = <?php
+      $result = $bdd->query("SELECT Resultats FROM Test WHERE Id_Medecin = $_SESSION['Id'] ORDER BY Resultats ASC");
+      $row_cnt = $result->num_rows;
+  ?>;
+
+  for(let i=0; i<Length; i++){
+    Data[i] = <?php $row = $result -> fetch_row(); echo $row[3]; ?>;
+  }
+
+  console.log(Data);
+  graph(Data);
+
 </script>
 </html>
