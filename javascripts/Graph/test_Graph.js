@@ -12,7 +12,7 @@ function graph(Data){
 
   var Data_Abscisse = [];
 
-  for(let i=0; i <Data.length(); i++){
+  for(let i=0; i <Data.length; i++){
     Data_Abscisse[i] = i+1;
   }
 
