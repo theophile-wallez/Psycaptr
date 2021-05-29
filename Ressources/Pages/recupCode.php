@@ -25,7 +25,7 @@
 
 <body>
 
-  <form class="backup_container" method="POST">
+  <form class="backup_container" method="POST" action="../../PHP/mdpOublieAlgo.php">
       <!-- Titre -->
       <div class="title_container">
         <h3 draggable="false">Mot de passe oublié</h3>
@@ -41,7 +41,7 @@
 
       <!-- Boutton de connexion -->
       <div class="connexion_button">
-          <button type="submit" name="verif_submit">Valider</button>
+          <button type="submit" name="valider_code">Valider</button>
       </div>
   </form>
   

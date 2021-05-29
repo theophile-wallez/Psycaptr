@@ -3,97 +3,113 @@ session_start();
 require('algo.php'); //Connexion à la database
 require('connectDatabase.php'); //Connexion à la database
 
-$Mail = convertInput($_POST['recup_mail']);
 
-$sql = "SELECT * FROM Utilisateurs WHERE Mail='$Mail'";
+if(isset($_POST['recup_submit'])) {
+   $Mail = convertInput($_POST['recup_mail']);
 
-if(!$result = $bdd -> query($sql)){
-   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-}
+   $sql = "SELECT * FROM Utilisateurs WHERE Mail='$Mail'";
 
-$num_row = mysqli_num_rows($result);
+   if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+   }
 
-$_SESSION['Msg'] = '';
+   $num_row = mysqli_num_rows($result);
 
-if($num_row==0){
-   $_SESSION['Msg'] = "Aucun compte n'est associé à ce mail";
-   header("Location:../Ressources/Pages/mdpOublie");
-   exit();
-}
+   $_SESSION['Msg'] = '';
 
-$result -> free_result();
+   if($num_row==0){
+      $_SESSION['Msg'] = "Aucun compte n'est associé à ce mail";
+      header("Location:../Ressources/Pages/mdpOublie");
+      exit();
+   }
 
-$sql = 'SELECT * FROM Utilisateurs';
+   $result -> free_result();
 
-if($result = $bdd -> query($sql)) {
-   while($row = $result -> fetch_row())  {
-      if($Mail == $row[1]) {
-         $Id = $row[0];
-         $Nom = $row[4];
-         $Prenom = $row[5];
+   $sql = 'SELECT * FROM Utilisateurs';
+
+   if($result = $bdd -> query($sql)) {
+      while($row = $result -> fetch_row())  {
+         if($Mail == $row[1]) {
+            $Id = $row[0];
+            $Nom = $row[4];
+            $Prenom = $row[5];
+         }
       }
    }
-}
 
-$result -> free_result();
+   $result -> free_result();
 
-$recup_code = IdGenerator(8);
+   $recup_code = IdGenerator(8);
 
-$header="MIME-Version: 1.0\r\n";
-$header.='From:"Psycaptr"<support@psycaptr.tk>'."\n";
-$header.='Content-Type:text/html; charset="utf-8"'."\n";
-$header.='Content-Transfer-Encoding: 8bit';
-$message = '
-<html>
-<head>
-    <title>Récupération de mot de passe - Psycaptr</title>
-    <meta charset="utf-8" />
-</head>
-<body>
-    <font color="#303030";>
-    <div align="center">
-      <table width="600px">
-          <tr>
-          <td align="center">
-            <img src ="https://psycaptr.tk/Ressources/Images/Logo_simple.png" height="70px" width="70px"><br><br>
-            <div align="center">Bonjour <b>'.$Prenom.' '.$Nom.'</b>,</div>
-            <div align="center"> Voici votre code de récupération: <b>'.$recup_code.'</b>
-            A bientôt sur <a href="https://psycaptr.tk">Psycaptr</a> ! </div>
-            
-          </td>
-          </tr>
-          <tr>
-          <td align="center">
-            <font size="2">
-                Ceci est un email automatique, merci de ne pas y répondre.
-            </font>
-          </td>
-          </tr>
-      </table>
-    </div>
-    </font>
-</body>
-</html>
-';
+   $header="MIME-Version: 1.0\r\n";
+   $header.='From:"Psycaptr"<support@psycaptr.tk>'."\n";
+   $header.='Content-Type:text/html; charset="utf-8"'."\n";
+   $header.='Content-Transfer-Encoding: 8bit';
+   $message = '
+   <html>
+   <head>
+       <title>Récupération de mot de passe - Psycaptr</title>
+       <meta charset="utf-8" />
+   </head>
+   <body>
+       <font color="#303030";>
+       <div align="center">
+         <table width="600px">
+             <tr>
+             <td align="center">
+               <img src ="https://psycaptr.tk/Ressources/Images/Logo_simple.png" height="70px" width="70px"><br><br>
+               <div align="center">Bonjour <b>'.$Prenom.' '.$Nom.'</b>,</div>
+               <div align="center"> Voici votre code de récupération: <b>'.$recup_code.'</b>
+               <a href = "https://psycaptr.tk/Ressources/Pages/recupCode?Id='.$Id.'&recup_code='.$recup_code.'">Cliquez-ici pour réinitialiser votre mot de passe"</a>
+               A bientôt sur <a href="https://psycaptr.tk">Psycaptr</a> ! </div>
+               
+             </td>
+             </tr>
+             <tr>
+             <td align="center">
+               <font size="2">
+                   Ceci est un email automatique, merci de ne pas y répondre.
+               </font>
+             </td>
+             </tr>
+         </table>
+       </div>
+       </font>
+   </body>
+   </html>
+   ';
 
-mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
+   mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
 
-// Pas ici, après.
+   // Pas ici, après.
 
 
-// --------------  NE FONCTIONNE PAS RIEN N APPARAIT DANS LA BDD ------------------------
+   // --------------  NE FONCTIONNE PAS RIEN N APPARAIT DANS LA BDD ------------------------
 
-$sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id'";
+   $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id'";
 
-if(!$result = $bdd -> query($sql)){
-   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-}
+   if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+   }
 
-$num_row = mysqli_num_rows($result);
-$result -> free_result();
+   $num_row = mysqli_num_rows($result);
+   $result -> free_result();
 
-if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne dépasse pas 1
-   $sql = "UPDATE RecupMotDePasse SET Code = '$recup_code' WHERE Id = '$Id'";
+   if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne dépasse pas 1
+      $sql = "UPDATE RecupMotDePasse SET Code = '$recup_code' WHERE Id = '$Id'";
+      if(!$result = $bdd -> query($sql)){
+         echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+      }
+
+      header("Location:../Ressources/Pages/recupCode");
+      $result -> free_result();
+      $bdd -> close();
+      exit();
+   }
+   else{
+      $sql = "INSERT INTO `RecupMotDePasse` (`Id`, `Mail`, `Code`) VALUES ('$Id','$Mail','$recup_code')";
+   }
+
    if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }
@@ -103,33 +119,19 @@ if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne d
    $bdd -> close();
    exit();
 }
-else{
-   $sql = "INSERT INTO `RecupMotDePasse` (`Id`, `Mail`, `Code`) VALUES ('$Id','$Mail','$recup_code')";
-}
-
-if(!$result = $bdd -> query($sql)){
-   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-}
-
-header("Location:../Ressources/Pages/recupCode");
-$result -> free_result();
-$bdd -> close();
-exit();
-
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
 
-/*if(isset($_POST['verif_submit'],$_POST['enter_code'])) {
-   if(!empty($_POST['enter_code'])) {
-      $entered_code = htmlspecialchars($_POST['enter_code']);
-      $sql = "SELECT * FROM RecupMotDePasse WHERE Mail='$Mail' AND code='$entered_code";
-      $result -> free_result();
-      $num_row = mysqli_num_rows($result);
-      if($num_row==1){
-         header("Location:../Ressources/Pages/nouveauMdp");
-      }
-      else{
-         $_SESSION['Msg'] = 'Code invalide';
-      }
+if(isset($_POST['valider_code'])) {
+   $Code = convertInput($_POST['enter_code']);
+
+   $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND code='$entered_code";
+   $result -> free_result();
+   $num_row = mysqli_num_rows($result);
+   if($num_row==1){
+      header("Location:../Ressources/Pages/nouveauMdp");
+   }
+   else{
+      $_SESSION['Msg'] = 'Code invalide';
    }
 }
 
@@ -140,5 +142,5 @@ if(isset($_POST['mdp_submit'],$_POST['new_mdp'],$_POST['new_mdp_conf']){
    else{
       $_SESSION['Msg'] = 'Les mots de passe ne correspondent pas';
    }
-}*/
+}
 ?>
