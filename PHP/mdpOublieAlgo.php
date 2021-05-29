@@ -136,7 +136,7 @@ if(isset($_POST['mdp_submit'])) {
    }
    $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
 
-   $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code";
+   $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code'";
    if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }
