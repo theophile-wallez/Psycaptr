@@ -60,7 +60,7 @@ if(isset($_POST['recup_submit'])) {
                <img src ="https://psycaptr.tk/Ressources/Images/Logo_simple.png" height="70px" width="70px"><br><br>
                <div align="center">Bonjour <b>'.$Prenom.' '.$Nom.'</b>,</div>
                <div align="center"> Voici votre code de récupération: <b>'.$recup_code.'</b>
-               <a href = "https://psycaptr.tk/Ressources/Pages/recupCode?Id='.$Id.'&recup_code='.$recup_code.'">Cliquez-ici pour réinitialiser votre mot de passe"</a>
+               <a href = "https://psycaptr.tk/Ressources/Pages/nouveauMdp?Id='.$Id.'&recup_code='.$recup_code.'">Cliquez-ici pour réinitialiser votre mot de passe"</a>
                A bientôt sur <a href="https://psycaptr.tk">Psycaptr</a> ! </div>
                
              </td>
@@ -101,7 +101,7 @@ if(isset($_POST['recup_submit'])) {
          echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
       }
 
-      header("Location:../Ressources/Pages/recupCode");
+      header("Location:../Ressources/Pages/mailEnvoye");
       $result -> free_result();
       $bdd -> close();
       exit();
@@ -114,26 +114,59 @@ if(isset($_POST['recup_submit'])) {
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }
 
-   header("Location:../Ressources/Pages/recupCode");
+   header("Location:../Ressources/Pages/mailEnvoye");
    $result -> free_result();
    $bdd -> close();
    exit();
 }
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
 
-// if(isset($_POST['valider_code'])) {
-//    $Code = convertInput($_POST['enter_code']);
+if(isset($_POST['mdp_submit'])) {
+   $Id = convertInput($_GET['ID']);
+   $Code = convertInput($_GET['recup_code']);
 
-//    $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND code='$entered_code";
-//    $result -> free_result();
-//    $num_row = mysqli_num_rows($result);
-//    if($num_row==1){
-//       header("Location:../Ressources/Pages/nouveauMdp");
-//    }
-//    else{
-//       $_SESSION['Msg'] = 'Code invalide';
-//    }
-// }
+   $Mdp    = convertInput($_POST['Mdp']);
+   $MdpBis = convertInput($_POST['MdpBis']);
+
+   if($MdpBis != $Mdp){
+      header('Location:../Ressources/Pages/nouveauMdp');
+      $_SESSION['Msg'] = 'Code invalide';
+      exit();
+   }
+   $CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
+
+   $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code";
+   if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+   }
+   $num_row = mysqli_num_rows($result);
+
+   if($num_row!=1){
+      header("Location:../Ressources/Pages/nouveauMdp");
+      $_SESSION['Msg'] = 'Code invalide';
+      $result -> free_result();
+      $bdd -> close();
+      exit();
+   }
+
+   $sql = "UPDATE Utilisateurs SET CryptedMdp='$CryptedMdp' WHERE Id='$Id'";
+   
+   if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+   }
+   $result -> free_result();
+
+   $sql = "DELETE * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code";
+
+   if(!$result = $bdd -> query($sql)){
+      echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+   }
+
+   header("Location:../");
+   $result -> free_result();
+   $bdd -> close();
+   exit();
+}
 
 // if(isset($_POST['mdp_submit'],$_POST['new_mdp'],$_POST['new_mdp_conf']){
 //    if(!empty($_POST['new_mdp']) && !empty($_POST['new_mdp_conf'])) {

@@ -36,7 +36,7 @@
       <input name="new_mdp" type="password" placeholder="Nouveau Mot de Passe" value="" required/>
       <input name="new_mdp_conf" type="password" placeholder="Confirmer le Mot de Passe" value="" required/>
         <div class="back_to_connect_container">
-          <a href="connexion.php">Annuler</a>
+          <a href="connexion">Annuler</a>
         </div>
       </div>
 
