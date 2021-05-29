@@ -103,6 +103,7 @@ else{
 if(!$result = $bdd -> query($sql)){
    echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
+header("Location:../Ressources/Pages/recupCode");
 
 
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
