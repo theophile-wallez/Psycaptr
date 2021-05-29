@@ -13,8 +13,7 @@
   <title>DashBoard • Psycaptr</title>
 </head>
 
-<!--<?php require_once('../dashboardHeaderNav.php');?>
--->
+
 <body>
 
   <div class="dashboard_container">
@@ -54,7 +53,7 @@
 
 <script>
 
-  require_once('../../PHP/connectDatabase.php');
+
 
   var Data = [];
   var Length = 4;
