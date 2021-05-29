@@ -132,7 +132,6 @@
         exit();
     }
 
-    $result -> free_result();
     $search = convertInput($_POST['search']);
     // if (contains_at_least_one_word($search)){
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
