@@ -98,9 +98,9 @@ if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne d
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }
 
+   header("Location:../Ressources/Pages/recupCode");
    $result -> free_result();
    $bdd -> close();
-   header("Location:../Ressources/Pages/recupCode");
    exit();
 }
 else{
@@ -110,9 +110,10 @@ else{
 if(!$result = $bdd -> query($sql)){
    echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
+
+header("Location:../Ressources/Pages/recupCode");
 $result -> free_result();
 $bdd -> close();
-header("Location:../Ressources/Pages/recupCode");
 exit();
 
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
