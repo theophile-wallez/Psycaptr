@@ -281,7 +281,7 @@
 
   <footer id="footer" class="centered" >
 	<div class="CGU"> 
-		<a href="Ressources/Pages/CGU.php"> CGU </a>
+		<a href="Ressources/Pages/CGU.html"> CGU </a>
 	</div>
   </footer>
 
