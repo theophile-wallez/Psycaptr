@@ -135,6 +135,8 @@ while($row = $result -> fetch_row()){
   $Nom = $row[4];
   $Prenom = $row[5];
 
+  
+
   //On génère une ligne qui correpond à chaque utilisateurs
   echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
   echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
