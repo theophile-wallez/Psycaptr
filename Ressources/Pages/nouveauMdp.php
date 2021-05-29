@@ -33,18 +33,19 @@
 
       <!-- Boites d'input -->
       <div class="form_container">
-      <input name="enter_code" type="password" placeholder="Code de Sécurité" value="">
-        <div class="back_to_mail_container">
-          <a href="mdpOublie.php">Vous n'avez rien reçu ?</a>
+      <input name="new_mdp" type="password" placeholder="Nouveau Mot de Passe" value="" required/>
+      <input name="new_mdp_conf" type="password" placeholder="Confirmer le Mot de Passe" value="" required/>
+        <div class="back_to_connect_container">
+          <a href="connexion.php">Annuler</a>
         </div>
       </div>
 
       <!-- Boutton de connexion -->
       <div class="connexion_button">
-          <button type="submit" name="verif_submit">Valider</button>
+          <button type="submit"name="recup_submit">Valider</button>
       </div>
   </form>
-  
+
 </body>
 </html>
 

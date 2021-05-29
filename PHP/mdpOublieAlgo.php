@@ -16,7 +16,7 @@ $num_row = mysqli_num_rows($result);
 $_SESSION['Msg'] = '';
 
 if($num_row==0){
-   $_SESSION['Msg'] = 'Il ny a pas de compte associés à ce mail.';
+   $_SESSION['Msg'] = 'Aucun compte n''est associé à ce mail.';
    header("Location:../Ressources/Pages/mdpOublie");
    exit();
 }
@@ -78,4 +78,32 @@ $message = '
 mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
 
 header("Location:../Ressources/Pages/recupCode");
+
+$sql = "SELECT * FROM RecupMotdePasse WHERE Mail='$Mail'";
+
+if(!$result = $bdd -> query($sql)){
+   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+}
+$num_row = mysqli_num_rows($result);
+if($num_row>=1){ //Supérieur uniquament par précaution en theorie ça ne dépasse pas 1
+   $sql = "UPDATE RecupMotdePasse SET code = '$recup_code' WHERE mail = '$Mail'";
+}
+else{
+   $sql = "INSERT INTO RecupMotdePasse(mail,code) VALUES ($Mail, $recup_code)";
+}
+
+if(isset($_POST['verif_submit'],$_POST['enter_code'])) {
+   if(!empty($_POST['enter_code'])) {
+      $entered_code = htmlspecialchars($_POST['enter_code']);
+      $sql = "SELECT * FROM RecupMotdePasse WHERE Mail='$Mail' AND code='$entered_code";
+      $result -> free_result();
+      $num_row = mysqli_num_rows($result);
+      if($num_row==1){
+         header("Location:../Ressources/Pages/nouveauMdp");
+      }
+      else{
+         $_SESSION['Msg'] = 'Code invalide';
+      }
+   }
+}
 ?>
