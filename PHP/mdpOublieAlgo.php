@@ -122,9 +122,11 @@ if(isset($_POST['recup_submit'])) {
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
 
 if(isset($_POST['mdp_submit'])) {
-   $Id     = convertInput($_GET['Id']);
-   $Code   = convertInput($_GET['recup_code']);
+   $Id     = $_GET['Id'];
+   $Code   = $_GET['recup_code'];
 
+   echo 'Identifiant : '.$Id;
+   echo 'Code : '.$Code;
    $Mdp    = convertInput($_POST['Mdp']);
    $MdpBis = convertInput($_POST['MdpBis']);
 
