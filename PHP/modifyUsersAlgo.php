@@ -35,7 +35,7 @@
         if($_SESSION['userType']=='admin'){
             $sql = "SELECT * FROM Utilisateurs";
         }
-        else{
+        else if($_SESSION['userType']=='medecin'){
             $sql = "SELECT * FROM Patient WHERE Id='$IdMedecin'";
         }
 
