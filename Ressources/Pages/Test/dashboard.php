@@ -53,13 +53,32 @@
 
 <script>
 
+  <?php
+    $servername = 'localhost';
+    $bddname = 'ttwawain_Psycaptr';
+    $username = 'theophile';
+    $password = 'psycaptrisep2023';
 
+    $bdd = new mysqli($servername, $username, $password, $bddname);
+    if($bdd->connect_errno){
+      echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
+      exit();
+    }
+
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '434201016' ORDER BY Resultats ASC";
+
+  	$result = $bdd -> query($sql);
+
+    $test = 4;
+
+  ?>
 
   var Data = [];
   var Length = 4;
 
   for(let i=0; i<Length; i++){
-    Data[i] = <?php echo 1 ?>+i;
+    <?php $row = $result -> fetch_row();?>
+    Data[i] = <?php echo $test; ?>;
   }
 
   console.log(Data);
