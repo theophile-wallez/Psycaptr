@@ -178,12 +178,16 @@
 <?php
     if($_SESSION['userType']=='admin'){
         echo '<h2>Liste des utilisateurs</h2>';
+        if ($num_row==0) { 
+            echo '<p>Aucun utilisateur ne correspond à la recherche effectuée.</p>';
+        } 
     } else if($_SESSION['userType']=='medecin'){
         echo '<h2>Liste de vos patients</h2>';
+        if ($num_row==0) { 
+            echo '<p>Aucun patient ne correspond à la recherche effectuée.</p>';
+        } 
     }
-    if ($num_row==0) { 
-        echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
-    }   
+      
     else {
         echo '<div class="user-container user-description">';
         echo '<div class="nom-container">Nom</div>';
