@@ -24,8 +24,6 @@ if($result = $bdd -> query($sql)){
   }
 }
 
-$result -> free_result();
-
 $sql = "INSERT INTO `Message-Utilisateur` (`Id`, `IdUser`, `Nom`, `Prenom`, `Mail`, `Message`, `Date`) VALUES ('$Id','$IdUser','$Nom','$Prenom','$Mail','$Message','$Date')";
 
 if (!mysql_query($sql,$bdd)) {
