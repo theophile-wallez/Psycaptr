@@ -169,7 +169,7 @@
     <!-- Script qui permet d'afficher les inputs afin d'ajouter un utilisateur -->
     <h2>Ajout d'un utilisateur</h2>
 
-    <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo.php" method="POST">
+    <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
       <input type="text" name="Nom" placeholder="Nom" required>
       <input type="text" name="Prenom" placeholder="Prenom" required>
       <input input type="email" name="Mail" placeholder="Adresse mail" required>
@@ -205,7 +205,7 @@
         $Prenom = $row[5];
 
         //On génère une ligne qui correpond à chaque utilisateurs
-        echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo.php" method="POST">';
+        echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo" method="POST">';
         echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
         echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
         echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
