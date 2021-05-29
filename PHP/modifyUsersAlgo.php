@@ -138,6 +138,7 @@
     // } 
 
     if(isset($search)) { 
+        echo isset($search);
         if($_SESSION['userType']=='admin'){
             $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
