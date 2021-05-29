@@ -121,26 +121,26 @@ if(isset($_POST['recup_submit'])) {
 }
 // ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
 
-if(isset($_POST['valider_code'])) {
-   $Code = convertInput($_POST['enter_code']);
+// if(isset($_POST['valider_code'])) {
+//    $Code = convertInput($_POST['enter_code']);
 
-   $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND code='$entered_code";
-   $result -> free_result();
-   $num_row = mysqli_num_rows($result);
-   if($num_row==1){
-      header("Location:../Ressources/Pages/nouveauMdp");
-   }
-   else{
-      $_SESSION['Msg'] = 'Code invalide';
-   }
-}
+//    $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id' AND code='$entered_code";
+//    $result -> free_result();
+//    $num_row = mysqli_num_rows($result);
+//    if($num_row==1){
+//       header("Location:../Ressources/Pages/nouveauMdp");
+//    }
+//    else{
+//       $_SESSION['Msg'] = 'Code invalide';
+//    }
+// }
 
-if(isset($_POST['mdp_submit'],$_POST['new_mdp'],$_POST['new_mdp_conf']){
-   if(!empty($_POST['new_mdp']) && !empty($_POST['new_mdp_conf'])) {
-      //ajouter à la bdd
-   } 
-   else{
-      $_SESSION['Msg'] = 'Les mots de passe ne correspondent pas';
-   }
-}
+// if(isset($_POST['mdp_submit'],$_POST['new_mdp'],$_POST['new_mdp_conf']){
+//    if(!empty($_POST['new_mdp']) && !empty($_POST['new_mdp_conf'])) {
+//       //ajouter à la bdd
+//    } 
+//    else{
+//       $_SESSION['Msg'] = 'Les mots de passe ne correspondent pas';
+//    }
+// }
 ?>
