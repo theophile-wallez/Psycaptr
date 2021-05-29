@@ -150,7 +150,7 @@
             $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
         }
         else if($_SESSION['userType']=='medecin'){
-            echo 'Id du médecin : '.$IdMedecin;
+            echo "Id du médecin : ".$IdMedecin;
             $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
         }
     }
