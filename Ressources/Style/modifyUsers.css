@@ -25,16 +25,10 @@ html {
     transition: all 0.2s ease;
 }
 
-.user-container:hover{
-    cursor: pointer;
-}
-
-
 .user-description {
     box-shadow: none;
     margin-bottom: 0.1em;
 }
-
 
 .user-description>* {
     font-size: 1.3em;
