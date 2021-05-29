@@ -132,6 +132,7 @@
         exit();
     }
 
+    $result -> free_result();
     $search = convertInput($_POST['search']);
     // if (contains_at_least_one_word($search)){
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
@@ -150,7 +151,6 @@
             $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
         }
         else if($_SESSION['userType']=='medecin'){
-            echo $IdMedecin;
             $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
         }
     }
