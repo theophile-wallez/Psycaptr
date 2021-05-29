@@ -158,9 +158,9 @@
 
     // Script qui permet d'afficher les utilisateurs
     if($_SESSION['userType']=='admin'){
-        echo '<h2>Ajout d''un utilisateur</h2>';
+        echo '<h2>Ajout d\'un utilisateur</h2>';
     } else if($_SESSION['userType']=='medecin'){
-        echo '<h2>Ajout d''un patient</h2>';
+        echo '<h2>Ajout d\'un patient</h2>';
     }
     ?>
 
