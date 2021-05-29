@@ -39,7 +39,9 @@ if(isset($_POST['recup_submit'])) {
 
    $result -> free_result();
 
-   $recup_code = IdGenerator(8);
+   $recup_code = IdGenerator(20);
+   $CryptedCode = password_hash($recup_code, PASSWORD_DEFAULT);
+
 
    $header="MIME-Version: 1.0\r\n";
    $header.='From:"Psycaptr"<support@psycaptr.tk>'."\n";
@@ -59,8 +61,7 @@ if(isset($_POST['recup_submit'])) {
              <td align="center">
                <img src ="https://psycaptr.tk/Ressources/Images/Logo_simple.png" height="70px" width="70px"><br><br>
                <div align="center">Bonjour <b>'.$Prenom.' '.$Nom.'</b>,</div>
-               <div align="center"> Voici votre code de récupération: <b>'.$recup_code.'</b>
-               <a href = "https://psycaptr.tk/Ressources/Pages/nouveauMdp?Id='.$Id.'&recup_code='.$recup_code.'">Cliquez-ici pour réinitialiser votre mot de passe"</a>
+               <a align="center" href = "https://psycaptr.tk/Ressources/Pages/nouveauMdp?Id='.$Id.'&token='.$CryptedCode.'">Cliquez-ici pour réinitialiser votre mot de passe"</a>
                A bientôt sur <a href="https://psycaptr.tk">Psycaptr</a> ! </div>
                
              </td>
@@ -81,11 +82,7 @@ if(isset($_POST['recup_submit'])) {
 
    mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
 
-   // Pas ici, après.
-
-
-   // --------------  NE FONCTIONNE PAS RIEN N APPARAIT DANS LA BDD ------------------------
-
+  
    $sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id'";
 
    if(!$result = $bdd -> query($sql)){
@@ -96,7 +93,7 @@ if(isset($_POST['recup_submit'])) {
    $result -> free_result();
 
    if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne dépasse pas 1
-      $sql = "UPDATE RecupMotDePasse SET Code = '$recup_code' WHERE Id = '$Id'";
+      $sql = "UPDATE RecupMotDePasse SET Code = '$CryptedCode' WHERE Id = '$Id'";
       if(!$result = $bdd -> query($sql)){
          echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
       }
@@ -107,7 +104,7 @@ if(isset($_POST['recup_submit'])) {
       exit();
    }
    else{
-      $sql = "INSERT INTO `RecupMotDePasse` (`Id`, `Mail`, `Code`) VALUES ('$Id','$Mail','$recup_code')";
+      $sql = "INSERT INTO `RecupMotDePasse` (`Id`, `Mail`, `Code`) VALUES ('$Id','$Mail','$CryptedCode')";
    }
 
    if(!$result = $bdd -> query($sql)){
@@ -119,7 +116,6 @@ if(isset($_POST['recup_submit'])) {
    $bdd -> close();
    exit();
 }
-// ----  JE PENSE NE FONCTIONNE PAS CAR VALIDATION EN BUTTON ET PAS INPUT ET DONC BAH $POST....(?) ------------------------
 
 
 if(isset($_POST['mdp_submit'])) {

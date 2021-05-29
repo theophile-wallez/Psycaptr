@@ -24,7 +24,7 @@
     session_start();
 
   $_SESSION['IdRecover'] = convertInput($_GET['Id']);
-  $_SESSION['CodeRecover'] = convertInput($_GET['recup_code']);
+  $_SESSION['CodeRecover'] = convertInput($_GET['token']);
 
   ?>
 </nav>
