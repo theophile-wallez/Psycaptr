@@ -8,9 +8,15 @@
     //Script qui permet d'ajouter un utilisateur
     // 
 
+    if($_SESSION['typeUser']=='medecin'){
+        $IdMedecin = $_SESSION['IdMedecin'];
+    }
+    
+
     if(isset($_POST['addUser'])){
-        $Id     = IdGenerator(10); //Un Id est généré par une méthode
-        if(_SESSION['typeUser']=='admin'){
+        $Id = IdGenerator(10); //Un Id est généré par une méthode
+
+        if($_SESSION['typeUser']=='admin'){
             $Mdp    = convertInput($_POST['Mdp']);
             $MdpBis = convertInput($_POST['MdpBis']);
             if($MdpBis != $Mdp){
@@ -25,15 +31,18 @@
         $Mail   = convertInput($_POST['Mail']);
         $Date   = date('Y-m-d');
 
-        if(_SESSION['typeUser']=='admin'){
+
+        if($_SESSION['typeUser']=='admin'){
             $sql = "SELECT * FROM Utilisateurs";
         }
         else{
-            $sql = "SELECT * FROM Patient WHERE Id='$_SESSION['IdMedecin']'";
+            $sql = "SELECT * FROM Patient WHERE Id='$IdMedecin'";
         }
+
         if(!$result = $bdd -> query($sql)){
-        echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+            echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
         }
+
         else {
             while($row = $result -> fetch_row()) {
                 // On vérifie que le mail n'est pas déjà utilisé
@@ -46,9 +55,17 @@
                 }
             }
         }
+
         $result -> free_result();
         $_POST['addUser'] = array(); 
-        $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+
+
+        if($_SESSION['typeUser']=='admin'){
+            $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        }
+        else if($_SESSION['typeUser']=='medecin'){
+            $sql = "INSERT INTO `Patient` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$IdMedecin','$Date','$Nom','$Prenom')";
+        }
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
@@ -70,7 +87,12 @@
         $Mail   = convertInput($_POST['Mail']);
         $Id     = convertInput($_POST['Id']);
 
-        $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
+        if($_SESSION['typeUser']=='admin'){
+            $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
+        }
+        else if($_SESSION['typeUser']=='medecin'){
+            $sql = "UPDATE Patient SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
+        }
 
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -89,7 +111,13 @@
     if(isset($_POST['removeUser'])){
         $Id     = convertInput($_POST['Id']);
 
-        $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;
+        if($_SESSION['typeUser']=='admin'){
+            $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;
+        }
+        else if($_SESSION['typeUser']=='medecin'){
+            $sql = "DELETE FROM Patient WHERE Id='$Id'" ;
+        }
+
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
             echo " |".$Id;
@@ -110,10 +138,20 @@
     // } 
 
     if(isset($search)) { 
-        $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+        if($_SESSION['typeUser']=='admin'){
+            $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+        }
+        else if($_SESSION['typeUser']=='medecin'){
+            $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' and Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+        }
     }
     else {
-        $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
+        if($_SESSION['typeUser']=='admin'){
+            $sql = 'SELECT * FROM Utilisateurs order by Nom asc';
+        }
+        else if($_SESSION['typeUser']=='medecin'){
+            $sql = "SELECT * FROM Patient where Id_Medecin = '$IdMedecin' order by Nom asc";
+        }
     }
 
     if(!$result = $bdd -> query($sql)){
@@ -132,9 +170,10 @@
       <input type="text" name="Nom" placeholder="Nom" required>
       <input type="text" name="Prenom" placeholder="Prenom" required>
       <input input type="email" name="Mail" placeholder="Adresse mail" required>
+      <?php if($_SESSION['typeUser']=='admin'){?>
       <input input type="text" name="Mdp" placeholder="Mot de passe" required>
       <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
-
+      <?php}?>
       <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
     </form>
     
