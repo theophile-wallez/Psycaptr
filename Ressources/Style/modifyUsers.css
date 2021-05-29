@@ -47,9 +47,7 @@ html {
 }
 
 .user button:hover{
-    transform: scale(1.1);
-    color: white;
-    background: var(--pink);
+    transform: scale(1.15);
 }
 
 
