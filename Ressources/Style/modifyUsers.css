@@ -108,7 +108,7 @@ html {
     background: var(--pink);
     color: white;
 }
-.form_all:focus-within{
+.form_all:focus-within .user button{
     background: var(--pink);
     color: white;
 }
