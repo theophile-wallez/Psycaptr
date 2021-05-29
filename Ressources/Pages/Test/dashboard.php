@@ -58,8 +58,9 @@
 
   var Data = [];
   var Length = <?php
-      $result = $bdd->query("SELECT Resultats FROM Test WHERE Id_Medecin = 434201016 ORDER BY Resultats ASC");
+      $result = $bdd->query("SELECT Resultats FROM Test WHERE Id_Medecin = '434201016' ORDER BY Resultats ASC");
       $row_cnt = $result->num_rows;
+      echo $row_cnt;
   ?>;
 
   for(let i=0; i<Length; i++){
