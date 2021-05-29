@@ -55,6 +55,9 @@ $search = convertInput($_POST['search']);
 if(isset($search)) { 
     if($_SESSION['userType']=='admin'){
       $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+      if(!$result = $bdd -> query($sql)){
+        echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+      } 
     }
     else if($_SESSION['userType']=='medecin'){
       $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and (Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%') order by Date_inscription desc";
@@ -63,7 +66,7 @@ if(isset($search)) {
       } 
     }
 }
-$num_row = mysqli_num_rows($result);
+// $num_row = mysqli_num_rows($result);
 
 echo '<section class="content-container">';
 // Script qui permet d'afficher les utilisateurs
