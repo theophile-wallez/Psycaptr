@@ -135,7 +135,6 @@
 
     unset($search);
     $search = convertInput($_POST['search']);
-    echo $search;
     // if (contains_at_least_one_word($search)){
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
     // } 
@@ -148,7 +147,6 @@
             $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and (Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%') order by Date_inscription desc";
         }
     }
-
 
     if(!$result = $bdd -> query($sql)){
         echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
@@ -197,7 +195,9 @@
         $Prenom = $row[5];
 
         //On génère une ligne qui correpond à chaque utilisateurs
-        echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo" method="POST">';
+        echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
+        echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
+        echo  '<div class="line-container user-container">';
         echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
         echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
         echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
@@ -205,7 +205,18 @@
         echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
         echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
         echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
+        echo   '</div>';
         echo '</form>';
+
+        // echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo" method="POST">';
+        // echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
+        // echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
+        // echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
+        // echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
+        // echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
+        // echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+        // echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
+        // echo '</form>';
     }
 
     $_SESSION['search'] = $search;
