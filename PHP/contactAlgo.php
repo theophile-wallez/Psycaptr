@@ -30,11 +30,10 @@ $sql = "INSERT INTO `Message-Utilisateur` (`Id`, `IdUser`, `Nom`, `Prenom`, `Mai
 
 if (!mysql_query($sql,$bdd)) {
 	die('impossible d’ajouter cet enregistrement : ' . mysql_error());
-	}
+}
 
 $bdd -> close();
 
 header("Location:/");
 exit();
-
 ?>
