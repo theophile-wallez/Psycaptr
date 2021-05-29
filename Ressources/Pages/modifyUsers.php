@@ -1,4 +1,4 @@
-<?php  
+<?php
 	session_start();
 ?>
 
@@ -17,7 +17,7 @@
 </head>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) { 
+  document.addEventListener("DOMContentLoaded", function(event) {
       var scrollpos = localStorage.getItem('scrollpos');
       if (scrollpos) window.scrollTo(0, scrollpos);
   });
@@ -32,15 +32,15 @@
 <body>
 
     <!-- Affichage de la liste des utilisateurs -->
-<?php 
+<?php
 session_start();
 
 require('../../PHP/algo.php'); //Ajout de la méthode convertInput()
 require('../../PHP/connectDatabase.php'); //Connexion à la database
 
-// 
+//
 //Script qui permet d'ajouter un utilisateur
-// 
+//
 
 if($_SESSION['userType']=='medecin'){
     $IdMedecin = $_SESSION['IdMedecin'];
@@ -49,9 +49,9 @@ unset($search);
 $search = convertInput($_POST['search']);
 // if (contains_at_least_one_word($search)){
 //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
-// } 
+// }
 
-if(isset($search)) { 
+if(isset($search)) {
   if($_SESSION['userType']=='admin'){
       $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
   }
@@ -93,14 +93,14 @@ echo '<section class="content-container">';
 
 if($_SESSION['userType']=='admin'){
   echo '<h2>Liste des utilisateurs</h2>';
-  if ($num_row==0) { 
+  if ($num_row==0) {
       echo '<p>Aucun utilisateur ne correspond à la recherche effectuée.</p>';
-  } 
+  }
 } else if($_SESSION['userType']=='medecin'){
   echo '<h2>Liste de vos patients</h2>';
-  if ($num_row==0) { 
+  if ($num_row==0) {
       echo '<p>Aucun patient ne correspond à la recherche effectuée.</p>';
-  } 
+  }
 }
 else {
   echo '<div class="user-container user-description">';
@@ -115,14 +115,13 @@ else {
 
 <!-- Barre de recherche -->
 <form class="search_bar-container" action="modifyUsers" method="POST">
-  <?php 
+  <?php
   if($_SESSION['userType']=='admin'){
     echo '<input type="text" name="search" placeholder="Rechercher parmis les utilisateurs">';
   } else if($_SESSION['userType']=='medecin'){
     echo '<input type="text" name="search" placeholder="Rechercher parmis vos patients">';
   }
   ?>
-  <input type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
   <div class="button-container"><button type="submit">Recherche</button></div>
 </form>
 <?php
@@ -159,11 +158,11 @@ $result -> free_result();
 $bdd -> close();
 exit();
 ?>
-    
+
   </section>
 </body>
 </html>
 
-<!-- Ces balises de script fixent un bug de Chrome qui déclanche les  
+<!-- Ces balises de script fixent un bug de Chrome qui déclanche les
 animations des :hover au lancement de la page -->
 <script> </script>
