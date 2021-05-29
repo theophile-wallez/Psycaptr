@@ -69,16 +69,14 @@
 
   	$result = $bdd -> query($sql);
 
-
-
   ?>
 
   var Data = [];
   var Length = <?php echo $result -> num_rows; ?>;
 
   for(let i=0; i<Length; i++){
-    <?php $row = $result -> fetch_row();?>
-    Data[i] = <?php echo $row[0]; ?>;
+    <?php $row = $result -> fetch();?>
+    Data[i] = <?php echo $row; ?>;
   }
 
   console.log(Data);
