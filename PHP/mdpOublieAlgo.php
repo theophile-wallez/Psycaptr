@@ -83,7 +83,7 @@ mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
 
 // --------------  NE FONCTIONNE PAS RIEN N APPARAIT DANS LA BDD ------------------------
 
-$sql = "SELECT * FROM RecupMotdePasse WHERE Id='$Id'";
+$sql = "SELECT * FROM RecupMotDePasse WHERE Id='$Id'";
 
 if(!$result = $bdd -> query($sql)){
    echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
@@ -97,7 +97,7 @@ if($num_row>=1){     //Supérieur uniquement par précaution en theorie ça ne d
    exit();
 }
 else{
-   $sql = "INSERT INTO `RecupMotdePasse` (`Id`, `Mail`, `Code`) VALUES ('$Id','$Mail','$recup_code')";
+   $sql = "INSERT INTO `RecupMotDePasse` (`Id`, `Mail`, `Code`) VALUES ('$Id','$Mail','$recup_code')";
 }
 
 if(!$result = $bdd -> query($sql)){
@@ -110,7 +110,7 @@ if(!$result = $bdd -> query($sql)){
 /*if(isset($_POST['verif_submit'],$_POST['enter_code'])) {
    if(!empty($_POST['enter_code'])) {
       $entered_code = htmlspecialchars($_POST['enter_code']);
-      $sql = "SELECT * FROM RecupMotdePasse WHERE Mail='$Mail' AND code='$entered_code";
+      $sql = "SELECT * FROM RecupMotDePasse WHERE Mail='$Mail' AND code='$entered_code";
       $result -> free_result();
       $num_row = mysqli_num_rows($result);
       if($num_row==1){
