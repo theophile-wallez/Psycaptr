@@ -13,7 +13,12 @@ h2{
 }
 
 .content-container{
+    margin-top:1em;
     margin-bottom: 1em;
+}
+
+.content-first{
+    margin-top:8em;
 }
 .form_all{
     display:flex;
