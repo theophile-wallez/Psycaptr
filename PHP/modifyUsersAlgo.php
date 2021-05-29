@@ -1,12 +1,12 @@
-<?php 
+<?php
 	session_start();
 
     require('algo.php'); //Ajout de la méthode convertInput()
     require('connectDatabase.php'); //Connexion à la database
 
-    // 
+    //
     //Script qui permet d'ajouter un utilisateur
-    // 
+    //
 
     if(isset($_POST['addUser'])){
         $Id     = IdGenerator(10); //Un Id est généré par une méthode
@@ -39,7 +39,7 @@
             }
         }
         $result -> free_result();
-        $_POST['addUser'] = array(); 
+        $_POST['addUser'] = array();
         $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -55,7 +55,7 @@
 
     //
     //Script qui permet de modifier les informations d'un utilisateur
-    // 
+    //
 
     if(isset($_POST['modifyUser'])){
         $Nom    = convertInput($_POST['Nom']);
@@ -73,7 +73,7 @@
             exit();
         }
 
-        $_POST['modifyUser'] = array(); 
+        $_POST['modifyUser'] = array();
         $result -> free_result();
         $bdd -> close();
         exit();
@@ -91,7 +91,7 @@
             exit();
         }
 
-        $_POST['removeUser'] = array(); 
+        $_POST['removeUser'] = array();
         $result -> free_result();
         $bdd -> close();
         exit();
@@ -100,9 +100,9 @@
     $search = convertInput($_POST['search']);
     // if (contains_at_least_one_word($search)){
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
-    // } 
+    // }
 
-    if(isset($search)) { 
+    if(isset($search)) {
         $sql = "SELECT * FROM Utilisateurs where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
     }
     else {
@@ -117,7 +117,7 @@
     $num_row = mysqli_num_rows($result);
 
 ?>
-    
+
     <!-- Script qui permet d'afficher les inputs afin d'ajouter un utilisateur -->
     <h2>Ajout d'un utilisateur</h2>
 
@@ -130,13 +130,15 @@
 
       <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
     </form>
-    
+
 <?php
+
+
     echo '<h2>Liste des utilisateurs</h2>';
 
-    if ($num_row==0) { 
+    if ($num_row==0) {
         echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
-    }   
+    }
     else {
         echo '<div class="user-container user-description">';
         echo '<div class="nom-container">Nom</div>';
@@ -170,6 +172,98 @@
     $_SESSION['search'] = $search;
 
 	$result -> free_result();
+
+/*------------------------------------------------------------------------*/
+
+	$sql = "SELECT * FROM ValidationMedecin where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+
+	$result = $bdd -> query($sql);
+
+	echo '<h2>Validation Medecin en attente</h2>';
+
+	if ($num_row==0) {
+			echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
+	}
+	else {
+			echo '<div class="user-container user-description">';
+			echo '<div class="nom-container">Nom</div>';
+			echo '<div class="prenom-container">Prénom</div>';
+			echo '<div class="mail-container">Adresse mail</div>';
+			echo '<div class="id-container">Identifiant</div>';
+			echo '<div class="date-container">Date d',"'inscription</div>";
+			echo '</div>';
+	}
+
+	// Recuperation des resultats
+	while($row = $result -> fetch_row()){
+			$Id=$row[0];
+			$Mail=$row[3];
+			$Date_Inscription = date("d-m-Y",strtotime($row[5]));
+			$Nom = $row[1];
+			$Prenom = $row[2];
+
+			//On génère une ligne qui correpond à chaque utilisateurs
+			echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo.php" method="POST">';
+			echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
+			echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
+			echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
+			echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
+			echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
+			echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+			echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
+			echo '</form>';
+	}
+
+	$result -> free_result();
+
+/*----------------------------------------------------------------------*/
+
+	$sql = "SELECT * FROM ValidationPatient where Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+
+	$result = $bdd -> query($sql);
+
+	echo '<h2>Validation Patient en attente</h2>';
+
+	if ($num_row==0) {
+			echo '<p>Aucun résultat ne correspond à la recherche effectuée.</p>';
+	}
+	else {
+			echo '<div class="user-container user-description">';
+			echo '<div class="nom-container">Nom</div>';
+			echo '<div class="prenom-container">Prénom</div>';
+			echo '<div class="mail-container">Adresse mail</div>';
+			echo '<div class="id-container">Identifiant</div>';
+			echo '<div class="date-container">Date d',"'inscription</div>";
+			echo '</div>';
+	}
+
+	// Recuperation des resultats
+	while($row = $result -> fetch_row()){
+			$Id=$row[0];
+			$Mail=$row[4];
+			$Date_Inscription = date("d-m-Y",strtotime($row[5]));
+			$Nom = $row[1];
+			$Prenom = $row[2];
+			$Medecin = $row[3];
+
+			//On génère une ligne qui correpond à chaque utilisateurs
+			echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo.php" method="POST">';
+			echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
+			echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
+			echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
+			echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
+			echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
+			echo    '<input input type="text" name="Medecin" readonly="readonly" value="'.$Medecin.'" required>';
+			echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+			echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
+			echo '</form>';
+	}
+
+	$result -> free_result();
+
+
+
+
 
 	$bdd -> close();
     exit();
