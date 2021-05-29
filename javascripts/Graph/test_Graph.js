@@ -10,10 +10,16 @@ function graph(Data){
   gradientStroke2.addColorStop(0, '#ffdef0');
   gradientStroke2.addColorStop(1, '#fff5f0');
 
+  var Data_Abscisse = [];
+
+  for(let i=0; i <Data.length(); i++){
+    Data_Abscisse[i] = i+1;
+  }
+
   new Chart(document.getElementById("line-chart"), {
   type: 'line',
   data: {
-    labels: [1,2,3,4,5,6,7,8],
+    labels: Data_Abscisse,
     datasets: [{
         data: Data,
         borderColor: gradientStroke,
