@@ -149,14 +149,14 @@ if(isset($_POST['mdp_submit'])) {
       exit();
    }
 
-   $sql = "UPDATE Utilisateurs SET CryptedMdp='$CryptedMdp' WHERE Id='$Id'";
-   
+   $sql = "DELETE * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code'";
+
    if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }
 
-   $sql = "DELETE * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code'";
-
+   $sql = "UPDATE Utilisateurs SET CryptedMdp='$CryptedMdp' WHERE Id='$Id'";
+   
    if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }

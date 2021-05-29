@@ -213,6 +213,7 @@
 
   <div id="contact-container" class="centered">
     <div class="inner">
+
       <form class="contact_form_container" action="PHP/contactAlgo.php" method="POST">
         <div class="abstract_container" id="contact_link"></div>
         <div class="title_container">
