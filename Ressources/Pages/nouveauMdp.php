@@ -20,7 +20,7 @@
   <?php 
     require_once('../../PHP/navBar.php');
     displayNavBar("../../");
-    require_once('algo.php');
+    require_once('../../PHP/algo.php');
     session_start();
 
   $_SESSION['IdRecover'] = convertInput($_GET['Id']);
