@@ -69,6 +69,8 @@
 
   	$result = $bdd -> query($sql);
 
+    $test = 4;
+
   ?>
 
   var Data = [];
@@ -76,7 +78,7 @@
 
   for(let i=0; i<Length; i++){
     <?php $row = $result -> fetch_row();?>
-    Data[i] = <?php echo $row[3]; ?>;
+    Data[i] = <?php echo $test; ?>;
   }
 
   console.log(Data);
