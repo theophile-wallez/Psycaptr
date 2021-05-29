@@ -39,7 +39,7 @@ $result -> free_result();
 $recup_code = IdGenerator(8);
 
 $header="MIME-Version: 1.0\r\n";
-$header.='From:"Psycaptr"<support@psycaptr.com>'."\n";
+$header.='From:"Psycaptr"<support@psycaptr.tk>'."\n";
 $header.='Content-Type:text/html; charset="utf-8"'."\n";
 $header.='Content-Transfer-Encoding: 8bit';
 $message = '
@@ -54,7 +54,7 @@ $message = '
       <table width="600px">
           <tr>
           <td>
-            <img src ="Ressources\Images\Logo_simple.png" align="center"><br>
+            <img src ="https://psycaptr.tk/Ressources/Images/Logo_simple.png" align="center"><br>
             <div align="center">Bonjour <b>'.$Prenom.' '.$Nom.'</b>,</div>
             <div align="center"> Voici votre code de récupération: <b>'.$recup_code.'</b>
             A bientôt sur <a href="https://psycaptr.tk">Psycaptr</a> ! </div>
