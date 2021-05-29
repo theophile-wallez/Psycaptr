@@ -8,8 +8,13 @@ h2{
     color: var(--light_pink);
     font-weight: bold;
     user-select: none;
+    color: #83898b;
+    margin-bottom:1em;
 }
 
+.content-container{
+    margin-bottom: 1em;
+}
 .form_all{
     display:flex;
     height:3em;
@@ -65,10 +70,7 @@ h2{
     flex-direction: column;
 }
  
-.content-container h2 {
-    margin-bottom: 1em;
-    color: #83898b;
-}
+
 
 .user-container {
     width: 100%;
