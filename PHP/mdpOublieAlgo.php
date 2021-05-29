@@ -169,7 +169,6 @@ if(isset($_POST['mdp_submit'])) {
    if(!$result = $bdd -> query($sql)){
       echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
    }
-   $result -> free_result();
 
    $sql = "DELETE * FROM RecupMotDePasse WHERE Id='$Id' AND Code='$Code";
 
