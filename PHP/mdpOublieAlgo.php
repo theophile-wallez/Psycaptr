@@ -54,7 +54,7 @@ $message = '
       <table width="600px">
           <tr>
           <td>
-            <img src ="https://psycaptr.tk/Ressources/Images/Logo_simple.png" height="70px" width="70px" align="center"><br>
+            <div align="center"><img src ="https://psycaptr.tk/Ressources/Images/Logo_simple.png" height="70px" width="70px"><div><br>
             <div align="center">Bonjour <b>'.$Prenom.' '.$Nom.'</b>,</div>
             <div align="center"> Voici votre code de récupération: <b>'.$recup_code.'</b>
             A bientôt sur <a href="https://psycaptr.tk">Psycaptr</a> ! </div>
