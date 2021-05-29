@@ -164,18 +164,25 @@
     }
     ?>
 
-    <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
-      <input type="text" name="Nom" placeholder="Nom" required>
-      <input type="text" name="Prenom" placeholder="Prenom" required>
-      <input input type="email" name="Mail" placeholder="Adresse mail" required>
-      <?php if($_SESSION['userType']=='admin'){ ?>
-      <input input type="text" name="Mdp" placeholder="Mot de passe" required>
-      <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
-      <?php } ?>
-      <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
-    </form>
-    
+    <section class="content-container">
+        <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
+        <input type="text" name="Nom" placeholder="Nom" required>
+        <input type="text" name="Prenom" placeholder="Prenom" required>
+        <input input type="email" name="Mail" placeholder="Adresse mail" required>
+        <?php if($_SESSION['userType']=='admin'){ ?>
+        <input input type="text" name="Mdp" placeholder="Mot de passe" required>
+        <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
+        <?php } ?>
+        <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
+        </form>
+    </section>
+    <section class="content-container">
+        <form class="search_bar-container" action="modifyUsers" method="POST">
+            <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
+            <div class="button-container"><button type="submit">Recherche</button></div>
+        </form>
 <?php
+
     if($_SESSION['userType']=='admin'){
         echo '<h2>Liste des utilisateurs</h2>';
         if ($num_row==0) { 
@@ -219,17 +226,9 @@
         echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
         echo   '</div>';
         echo '</form>';
-
-        // echo '<form class="line-container user-container" action="../../PHP/modifyUsersAlgo" method="POST">';
-        // echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
-        // echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
-        // echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
-        // echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
-        // echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
-        // echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
-        // echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
-        // echo '</form>';
     }
+    echo  '</section>';
+
 
     $_SESSION['search'] = $search;
 

@@ -30,14 +30,6 @@
 <?php require_once('dashboardHeaderNav.php');?>
 
 <body>
-  <section class="content-container">
-    <form class="search_bar-container" action="modifyUsers" method="POST">
-      <input  type="text" name="search" placeholder="Rechercher parmis les utilisateurs">
-      <div class="button-container"><button type="submit">Recherche</button></div>
-    </form>
-  </section>
-  <section class="content-container">
-
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyUsersAlgo.php');?>
     
