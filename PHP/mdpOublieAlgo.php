@@ -77,5 +77,5 @@ $message = '
 
 mail($Mail, "Récupération de mot de passe - Psycaptr", $message, $header);
 
-header('https://psycaptr.tk/Ressources/Pages/recupCode.php');
+header("Location:../Ressources/Pages/recupCode");
 ?>
