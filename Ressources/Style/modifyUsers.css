@@ -5,6 +5,7 @@ html {
 .form_all{
     display:flex;
     height:3em;
+    margin-bottom: 0.8em;
 }
 
 .user{
@@ -14,7 +15,7 @@ html {
     overflow: hidden;
     
     border-radius: 1em;
-    box-shadow: 0px 0px 2px #bdc3c7;
+    box-shadow: 0px 0px 2px #415a6b;
 }
 
 .user button{
@@ -63,7 +64,6 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 0.8em;
     box-shadow: 0px 0px 2px #bdc3c7;
     border-radius: 1em;
     overflow: hidden;
