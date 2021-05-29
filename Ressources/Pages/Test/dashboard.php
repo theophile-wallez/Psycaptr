@@ -53,6 +53,8 @@
 
 <script>
 
+  var Data = [];
+
   <?php
     $servername = 'localhost';
     $bddname = 'ttwawain_Psycaptr';
@@ -69,15 +71,14 @@
 
   	$result = $bdd -> query($sql);
 
+    $i = 0;
+    while($row = $result -> fetch_row()){
+      echo Data[$i] = $row[0];
+      $i++;
+    }
+
+
   ?>
-
-  var Data = [];
-  var Length = <?php echo $result -> num_rows; ?>;
-
-  for(let i=0; i<Length; i++){
-    <?php $row = $result -> fetch_row();?>
-    Data[i] = <?php echo $row[0]; ?>;
-  }
 
   console.log(Data);
   graph(Data);
