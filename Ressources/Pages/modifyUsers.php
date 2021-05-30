@@ -47,14 +47,20 @@ if($_SESSION['userType']=='medecin'){
 }
 unset($search);
 $search = convertInput($_POST['search']);
+$type = convertInput($_POST['Type']);
 // if (contains_at_least_one_word($search)){
 //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
 // }
 
 if(isset($search)) {
   if($_SESSION['userType']=='admin'){
-      $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
-  }
+			if($type == 'Patient'){
+				$sql = "SELECT * FROM Patient WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+			else {
+				$sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+    }
   else if($_SESSION['userType']=='medecin'){
       $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and (Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%') order by Date_inscription desc";
   }
