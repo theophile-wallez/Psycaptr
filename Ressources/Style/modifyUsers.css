@@ -17,11 +17,13 @@ body{
 .content-container{
     margin-top:1em;
     margin-bottom: 1em;
+    position: relative;
 }
 
 .fixed-container{
     width:100%;
     position: sticky;
+    top: 0;
 }
 
 .form_all{
