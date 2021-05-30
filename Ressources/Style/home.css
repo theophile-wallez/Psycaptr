@@ -163,6 +163,21 @@
   color: #645483;
   text-align: center;
 }
+@media screen and (max-width: 600px) {
+  .home-text{
+    width: 60%;
+    
+  }
+  .home-text p{
+    font-size: 1.5em;
+  }
+  .item{
+    height: 70%;
+  }
+  .item-text p{
+    display: none;
+  }
+}
 
 .pourquoi-utiliser-container{
   position: relative;
