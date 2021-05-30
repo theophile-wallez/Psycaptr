@@ -144,3 +144,9 @@ nav .header-logo
 {
   color: white;
 }
+
+@media screen and (max-width: 600px) {
+  .header-link{
+    display: none;
+  }
+}

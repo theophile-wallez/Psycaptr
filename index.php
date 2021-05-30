@@ -91,7 +91,9 @@
         
     </div>
 
-    <section class="pourquoi-utiliser-container"></section>
+    <section class="pourquoi-utiliser-container">
+      
+    </section>
 
     <section id="test-section">
     <!-- Vague d'ouverture de section -->

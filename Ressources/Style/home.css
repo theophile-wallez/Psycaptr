@@ -30,7 +30,6 @@
 
 /* -- HOME -- */
 
-
 .home-background{
   height: 80vh;
   max-height: 40em;
@@ -172,6 +171,8 @@
   background: white;
   z-index: 1;
 }
+
+
 
 /* -- Présentation des tests -- */
 
