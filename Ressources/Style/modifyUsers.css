@@ -25,7 +25,7 @@ body{
     width:101%;
     position: sticky;
     top: 5em;
-    background:linear-gradient(90deg, white 95%, rgba(255,255,255,0) 100%);;
+    background:linear-gradient(180deg, white 95%, rgba(255,255,255,0) 100%);;
 }
 
 .form_all{
