@@ -68,10 +68,10 @@
 
   	$result = $bdd -> query($sql);
 
-    echo 'IdMedecin : '.$IdMedecin;
-    echo 'IdPatient : '.$IdPatient;
-    echo 'PrenomPatient : '.$PrenomPatient;
-    echo 'NomPatient : '.$NomPatient;
+    // echo 'IdMedecin : '.$IdMedecin;
+    // echo 'IdPatient : '.$IdPatient;
+    // echo 'PrenomPatient : '.$PrenomPatient;
+    // echo 'NomPatient : '.$NomPatient;
 
     $i = 0;
     while($row = $result -> fetch_row()){
