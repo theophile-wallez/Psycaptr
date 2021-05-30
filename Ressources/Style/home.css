@@ -166,13 +166,14 @@
 @media screen and (max-width: 600px) {
   .home-text{
     width: 60%;
-    
+    top: 15%;
   }
   .home-text p{
     font-size: 1.5em;
   }
   .item{
-    height: 70%;
+    height: 80%;
+    width: 35%;
   }
   .item-text p{
     display: none;
