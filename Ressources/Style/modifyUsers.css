@@ -328,4 +328,6 @@ select {
     border: none;
     border-right: solid 1px #f2f3f7;
     margin: 0;
+    color : #474547;
+    font-size: 1.2em;
 }
