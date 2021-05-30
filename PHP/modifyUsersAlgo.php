@@ -82,6 +82,50 @@
 
     /*------------------------------------------------------------------------*/
 
+
+if(isset($_POST['modifyUser'])){
+        $Nom    = convertInput($_POST['Nom']);
+        $Prenom = convertInput($_POST['Prenom']);
+        $Mail   = convertInput($_POST['Mail']);
+        $Id     = convertInput($_POST['Id']);
+
+        if($_SESSION['userType']=='admin'){
+            $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
+        }
+        else if($_SESSION['userType']=='medecin'){
+            $sql = "UPDATE Patient SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
+        }
+
+        if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+        } else {
+            header("Location:../Ressources/Pages/modifyUsers");
+            exit();
+        }
+
+        $_POST['modifyUser'] = array();
+        $result -> free_result();
+        $bdd -> close();
+        exit();
+    }
+
+    /*------------------------------------------------------------------------*/
+
+    if(isset($_POST['accessUser'])){
+        $_SESSION['NomPatient']   = convertInput($_POST['Nom']);
+        $_SESSION['PrenomPatient'] = convertInput($_POST['Prenom']);
+        $_SESSION['MailPatient']   = convertInput($_POST['Mail']);
+        $_SESSION['IdPatient']     = convertInput($_POST['Id']);
+
+        header("Location:../Ressources/Pages/dashboardData");
+
+        $_POST['accessUser'] = array();
+        $result -> free_result();
+        $bdd -> close();
+        exit();
+    }
+    
     //
     //Script qui permet de modifier les informations d'un utilisateur
     //
