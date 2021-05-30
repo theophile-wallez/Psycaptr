@@ -25,6 +25,7 @@
   <title>DashBoard • Psycaptr</title>
 </head>
 
+<?php require_once('dashboardHeaderNav.php');?>
 
 <body>
 
