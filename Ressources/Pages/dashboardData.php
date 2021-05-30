@@ -58,13 +58,20 @@
   <?php
     require('../../PHP/connectDatabase.php');
 
-    $IdMedecin = $_SESSION['IdMedecin'];
-    $NomPatient = $_SESSION['NomPatient'];
+    $IdMedecin     = $_SESSION['IdMedecin'];
+    $IdPatient     = $_SESSION['IdPatient'];    
+    $NomPatient    = $_SESSION['NomPatient'];
     $PrenomPatient = $_SESSION['PrenomPatient'];
-    $MailPatient  = $_SESSION['MailPatient'];
-    $IdPatient     = $_SESSION['IdPatient'];    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Id_Patient = '' ORDER BY Date_Test ASC";
+    $MailPatient   = $_SESSION['MailPatient'];
+    
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Id_Patient = '' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
+
+    echo 'IdMedecin : '.$IdMedecin;
+    echo 'IdPatient : '.$IdPatient;
+    echo 'PrenomPatient : '.$PrenomPatient;
+    echo 'NomPatient : '.$NomPatient;
 
     $i = 0;
     while($row = $result -> fetch_row()){
