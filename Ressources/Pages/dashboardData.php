@@ -1,5 +1,10 @@
 <?php
   session_start();
+    $IdMedecin     = $_SESSION['IdMedecin'];
+    $IdPatient     = $_SESSION['IdPatient'];    
+    $NomPatient    = $_SESSION['NomPatient'];
+    $PrenomPatient = $_SESSION['PrenomPatient'];
+    $MailPatient   = $_SESSION['MailPatient'];
 ?>
 
 <!DOCTYPE html>
@@ -57,12 +62,6 @@
 
   <?php
     require('../../PHP/connectDatabase.php');
-
-    $IdMedecin     = $_SESSION['IdMedecin'];
-    $IdPatient     = $_SESSION['IdPatient'];    
-    $NomPatient    = $_SESSION['NomPatient'];
-    $PrenomPatient = $_SESSION['PrenomPatient'];
-    $MailPatient   = $_SESSION['MailPatient'];
     
     $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Id_Patient = '' ORDER BY Date_Test ASC";
 
