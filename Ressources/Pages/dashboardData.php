@@ -7,7 +7,7 @@
     $MailPatient   = $_SESSION['MailPatient'];
 
     if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u'])) { 
-      $de = 'd ';
+      $de = 'd\'';
      }
      else {
        $de = 'de ';
