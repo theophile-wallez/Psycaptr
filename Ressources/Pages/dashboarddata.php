@@ -6,9 +6,9 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="../../Style/style.css"/>
-  <link rel="stylesheet" href="../../Style/dashboard.css"/>
-  <link rel="icon" href="../../Images/Logo_light.png" type="image/icon type">
+  <link rel="stylesheet" href="../Style/style.css"/>
+  <link rel="stylesheet" href="../Style/dashboard.css"/>
+  <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
 
   <title>DashBoard • Psycaptr</title>
 </head>
