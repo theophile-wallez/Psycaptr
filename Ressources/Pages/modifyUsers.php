@@ -83,14 +83,15 @@ if($_SESSION['userType']=='admin'){
 ?>
 
   <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
-	<select name='Type' value='Medecin' required><option>Administrateur</option><option>Medecin</option><option>Patient</option></select>;
   <input type="text" name="Nom" placeholder="Nom" required>
   <input type="text" name="Prenom" placeholder="Prenom" required>
   <input input type="email" name="Mail" placeholder="Adresse mail" required>
   <?php if($_SESSION['userType']=='admin'){ ?>
   <input input type="text" name="Mdp" placeholder="Mot de passe" required>
   <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
+	<select name='Type' value='Medecin' required><option>Administrateur</option><option>Medecin</option><option>Patient</option></select>
   <?php } ?>
+
   <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
   </form>
 </section>
