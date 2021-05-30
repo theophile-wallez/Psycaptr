@@ -21,9 +21,10 @@ body{
 }
 
 .fixed-container{
-    width:100%;
+    align-self: center;
+    width:101%;
     position: sticky;
-    top: 8em;
+    top: 5em;
     background:linear-gradient(90deg, white 95%, rgba(255,255,255,0) 100%);;
 }
 
