@@ -18,7 +18,6 @@ body{
     margin-top:1em;
     margin-bottom: 1em;
     position: relative;
-    overflow:auto;
 }
 
 .fixed-container{
