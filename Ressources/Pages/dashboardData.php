@@ -58,7 +58,8 @@
   <?php
     require('../../PHP/connectDatabase.php');
 
-    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$_SESSION['IdMedecin']' ORDER BY Date_Test ASC";
+    $IdMedecin = $_SESSION['IdMedecin'];
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
 
