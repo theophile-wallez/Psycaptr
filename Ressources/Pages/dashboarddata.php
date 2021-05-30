@@ -56,18 +56,9 @@
   var Data = [];
 
   <?php
-    $servername = 'localhost';
-    $bddname = 'ttwawain_Psycaptr';
-    $username = 'theophile';
-    $password = 'psycaptrisep2023';
+    require('../../PHP/connectDatabase.php');
 
-    $bdd = new mysqli($servername, $username, $password, $bddname);
-    if($bdd->connect_errno){
-      echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
-      exit();
-    }
-
-    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '434201016' ORDER BY Date_Test ASC";
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$_SESSION['IdMedecin']' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
 
@@ -76,8 +67,6 @@
       echo "Data[".$i."] = ".$row[0].";\n";
       $i++;
     }
-
-
   ?>
 
   console.log(Data);
