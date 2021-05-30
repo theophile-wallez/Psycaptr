@@ -132,7 +132,7 @@ else {
 
 if ($num_row!=0) {
   echo '<div class="form_all">';
-  echo '<div class="user"></div>';
+  echo '<div class="void"></div>';
   echo '<div class="user-container user-description">';
   echo '<div class="nom-container">Nom</div>';
   echo '<div class="prenom-container">Prénom</div>';

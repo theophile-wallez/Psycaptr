@@ -26,6 +26,11 @@ body{
     transition: all 0.3s;
 }
 
+.void{
+    height:100%;
+    width:3em;
+    margin-right: 0.8em;
+}
 .user{
     height:100%;
     width:3em;
@@ -90,7 +95,6 @@ body{
 .user-description {
     box-shadow: none;
     margin-bottom: 0.1em;
-    margin-left:  3.8em;
 }
 
 .user-description>* {
