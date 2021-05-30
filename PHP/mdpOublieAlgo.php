@@ -144,7 +144,7 @@ if(isset($_POST['mdp_submit'])) {
 
    if($num_row != 1){
       echo 'probleme de row askip';
-      echo 'nombre de row '.$num_row;
+      echo 'nombre de row ';
 
       // header("Location:../Ressources/Pages/nouveauMdp");
       $_SESSION['Msg'] = 'Code invalide';
