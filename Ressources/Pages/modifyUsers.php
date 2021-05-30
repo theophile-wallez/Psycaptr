@@ -47,14 +47,20 @@ if($_SESSION['userType']=='medecin'){
 }
 unset($search);
 $search = convertInput($_POST['search']);
+$type = convertInput($_POST['Type']);
 // if (contains_at_least_one_word($search)){
 //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
 // }
 
 if(isset($search)) {
   if($_SESSION['userType']=='admin'){
-      $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
-  }
+			if($type == 'Patient'){
+				$sql = "SELECT * FROM Patient WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+			else {
+				$sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+    }
   else if($_SESSION['userType']=='medecin'){
       $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and (Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%') order by Date_inscription desc";
   }
@@ -83,7 +89,9 @@ if($_SESSION['userType']=='admin'){
   <?php if($_SESSION['userType']=='admin'){ ?>
   <input input type="text" name="Mdp" placeholder="Mot de passe" required>
   <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
+	<select name='Type' value='Medecin' required><option>Administrateur</option><option>Medecin</option></select>
   <?php } ?>
+
   <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>
   </form>
 </section>
@@ -103,13 +111,7 @@ if($_SESSION['userType']=='admin'){
   }
 }
 else {
-  echo '<div class="user-container user-description">';
-  echo '<div class="nom-container">Nom</div>';
-  echo '<div class="prenom-container">Prénom</div>';
-  echo '<div class="mail-container">Adresse mail</div>';
-  echo '<div class="id-container">Identifiant</div>';
-  echo '<div class="date-container">Date d',"'inscription</div>";
-  echo '</div>';
+  
 }
 ?>
 
@@ -128,6 +130,20 @@ else {
 </form>
 <?php
 
+if ($num_row!=0) {
+  echo '<div class="form_all">';
+  echo '<div class="user"></div>';
+  echo '<div class="user-container user-description">';
+  echo '<div class="nom-container">Nom</div>';
+  echo '<div class="prenom-container">Prénom</div>';
+  echo '<div class="mail-container">Adresse mail</div>';
+  echo '<div class="id-container">Identifiant</div>';
+  echo '<div class="date-container">Date d',"'inscription</div>";
+  echo '</div>';
+  echo '</div>';
+}
+
+  
 // Recuperation des resultats
 while($row = $result -> fetch_row()){
   $Id=$row[0];

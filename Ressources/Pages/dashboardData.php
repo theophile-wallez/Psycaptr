@@ -6,9 +6,9 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="../../Style/style.css"/>
-  <link rel="stylesheet" href="../../Style/dashboard.css"/>
-  <link rel="icon" href="../../Images/Logo_light.png" type="image/icon type">
+  <link rel="stylesheet" href="../Style/style.css"/>
+  <link rel="stylesheet" href="../Style/dashboard.css"/>
+  <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
 
   <title>DashBoard • Psycaptr</title>
 </head>
@@ -56,28 +56,28 @@
   var Data = [];
 
   <?php
-    $servername = 'localhost';
-    $bddname = 'ttwawain_Psycaptr';
-    $username = 'theophile';
-    $password = 'psycaptrisep2023';
+    require('../../PHP/connectDatabase.php');
 
-    $bdd = new mysqli($servername, $username, $password, $bddname);
-    if($bdd->connect_errno){
-      echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
-      exit();
-    }
-
-    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '434201016' ORDER BY Date_Test ASC";
+    $IdMedecin     = $_SESSION['IdMedecin'];
+    $IdPatient     = $_SESSION['IdPatient'];    
+    $NomPatient    = $_SESSION['NomPatient'];
+    $PrenomPatient = $_SESSION['PrenomPatient'];
+    $MailPatient   = $_SESSION['MailPatient'];
+    
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Id_Patient = '' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
+
+    // echo 'IdMedecin : '.$IdMedecin;
+    // echo 'IdPatient : '.$IdPatient;
+    // echo 'PrenomPatient : '.$PrenomPatient;
+    // echo 'NomPatient : '.$NomPatient;
 
     $i = 0;
     while($row = $result -> fetch_row()){
       echo "Data[".$i."] = ".$row[0].";\n";
       $i++;
     }
-
-
   ?>
 
   console.log(Data);
