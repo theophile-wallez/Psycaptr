@@ -1,17 +1,17 @@
-<?php 
+<?php
 	session_start();
 
     require('algo.php'); //Ajout de la méthode convertInput()
     require('connectDatabase.php'); //Connexion à la database
 
-    // 
+    //
     //Script qui permet d'ajouter un utilisateur
-    // 
+    //
 
     if($_SESSION['userType']=='medecin'){
         $IdMedecin = $_SESSION['IdMedecin'];
     }
-    
+
 
     if(isset($_POST['addUser'])){
         $Id = IdGenerator(7); //Un Id est généré par une méthode
@@ -57,7 +57,7 @@
         }
 
         $result -> free_result();
-        $_POST['addUser'] = array(); 
+        $_POST['addUser'] = array();
 
 
         if($_SESSION['userType']=='admin'){
@@ -79,7 +79,7 @@
 
     //
     //Script qui permet de modifier les informations d'un utilisateur
-    // 
+    //
 
     if(isset($_POST['modifyUser'])){
         $Nom    = convertInput($_POST['Nom']);
@@ -102,14 +102,14 @@
             exit();
         }
 
-        $_POST['modifyUser'] = array(); 
+        $_POST['modifyUser'] = array();
         $result -> free_result();
         $bdd -> close();
         exit();
     }
 
     if(isset($_POST['removeUser'])){
-        $Id     = convertInput($_POST['Id']);
+        $Id = convertInput($_POST['Id']);
 
         if($_SESSION['userType']=='admin'){
             $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;
@@ -126,7 +126,7 @@
             exit();
         }
 
-        $_POST['removeUser'] = array(); 
+        $_POST['removeUser'] = array();
         $result -> free_result();
         $bdd -> close();
         exit();
@@ -137,9 +137,9 @@
     $search = convertInput($_POST['search']);
     // if (contains_at_least_one_word($search)){
     //     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
-    // } 
+    // }
 
-    if(isset($search)) { 
+    if(isset($search)) {
         if($_SESSION['userType']=='admin'){
             $sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
         }
@@ -181,14 +181,14 @@
 
     if($_SESSION['userType']=='admin'){
         echo '<h2>Liste des utilisateurs</h2>';
-        if ($num_row==0) { 
+        if ($num_row==0) {
             echo '<p>Aucun utilisateur ne correspond à la recherche effectuée.</p>';
-        } 
+        }
     } else if($_SESSION['userType']=='medecin'){
         echo '<h2>Liste de vos patients</h2>';
-        if ($num_row==0) { 
+        if ($num_row==0) {
             echo '<p>Aucun patient ne correspond à la recherche effectuée.</p>';
-        } 
+        }
     }
     else {
         echo '<div class="user-container user-description">';
@@ -235,6 +235,8 @@
     $_SESSION['search'] = $search;
 
 	$result -> free_result();
+
+/*------------------------------------------------------------------------*/
 
 	$bdd -> close();
     exit();
