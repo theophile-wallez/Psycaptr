@@ -98,7 +98,7 @@ if($_SESSION['userType']=='admin'){
 
 <?php
 echo '<section class="content-container">';
-echo '<section class="fixed-container">':
+echo '<section class="fixed-container">';
 
 if($_SESSION['userType']=='admin'){
   echo '<h2>Liste des utilisateurs</h2>';
