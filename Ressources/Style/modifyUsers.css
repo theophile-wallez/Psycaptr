@@ -333,3 +333,8 @@ select {
     padding-right: 0.3em;
     padding-left: 0.3em;
 }
+
+select * {
+    color : #474547;
+    font-size: 1.2em;
+}
