@@ -6,7 +6,7 @@
     $PrenomPatient = $_SESSION['PrenomPatient'];
     $MailPatient   = $_SESSION['MailPatient'];
 
-    if (in_array($PrenomPatient{0}, ['a','e','i','o','u'])) { 
+    if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u'])) { 
       $de = 'd ';
      }
      else {
@@ -34,7 +34,6 @@
         <div class="part_1_container ">
           <div class="graph graph-1">
             <h4 class="canvas_title">Évolution du score <?php echo $de.$PrenomPatient?></h4>
-            <?php echo $PrenomPatient{0}?>
             <div class="canvas_container">
              <canvas id="line-chart"></canvas>
             </div>
