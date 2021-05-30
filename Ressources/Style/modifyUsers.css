@@ -323,6 +323,9 @@ body{
 }
 
 select {
+    width:20%;
+    height:100%;
     border: none;
+    border-right: solid 1px #f2f3f7;
     margin: 0;
 }
