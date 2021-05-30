@@ -5,6 +5,13 @@
     $NomPatient    = $_SESSION['NomPatient'];
     $PrenomPatient = $_SESSION['PrenomPatient'];
     $MailPatient   = $_SESSION['MailPatient'];
+
+    if (in_array($PrenomPatient{0}, ['a','e','i','o','u'])) { 
+      $de = 'd';
+     }
+     else {
+       $de = 'de';
+     }
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +29,11 @@
 <body>
 
   <div class="dashboard_container">
-    <h1 class="dashboard_title">Voici les données de <?php echo $PrenomPatient?></h1>
+    <h1 class="dashboard_title">Voici les données <?php echo $de.' '.$PrenomPatient?></h1>
     <div class="main_part_container">
         <div class="part_1_container ">
           <div class="graph graph-1">
-            <h4 class="canvas_title">Évolution du score de <?php echo $PrenomPatient?></h4>
+            <h4 class="canvas_title">Évolution du score <?php echo $de.' '.$PrenomPatient?></h4>
             <div class="canvas_container">
              <canvas id="line-chart"></canvas>
             </div>
