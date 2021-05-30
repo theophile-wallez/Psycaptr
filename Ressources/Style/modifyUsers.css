@@ -23,7 +23,7 @@ body{
 .fixed-container{
     width:100%;
     position: sticky;
-    top: 0;
+    top: 8em;
 }
 
 .form_all{
