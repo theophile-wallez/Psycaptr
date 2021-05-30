@@ -83,6 +83,7 @@ if($_SESSION['userType']=='admin'){
 ?>
 
   <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
+	<select name='Type' value='Medecin' required><option>Administrateur</option><option>Medecin</option><option>Patient</option></select>;
   <input type="text" name="Nom" placeholder="Nom" required>
   <input type="text" name="Prenom" placeholder="Prenom" required>
   <input input type="email" name="Mail" placeholder="Adresse mail" required>
