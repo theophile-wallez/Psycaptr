@@ -98,6 +98,7 @@ if($_SESSION['userType']=='admin'){
 
 <?php
 echo '<section class="content-container">';
+echo '<section class="fixed-container">';
 
 if($_SESSION['userType']=='admin'){
   echo '<h2>Liste des utilisateurs</h2>';
@@ -141,6 +142,7 @@ if ($num_row!=0) {
   echo '<div class="date-container">Date d',"'inscription</div>";
   echo '</div>';
   echo '</div>';
+  echo '</section>';
 }
 
   

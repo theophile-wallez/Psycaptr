@@ -19,6 +19,12 @@ body{
     margin-bottom: 1em;
 }
 
+.fixed-container{
+    width:100%;
+    position: sticky;
+    top: 8em;
+}
+
 .form_all{
     display:flex;
     height:3em;
@@ -100,7 +106,6 @@ body{
 .user-description>* {
     font-size: 1.3em;
 }
-
 
 .user-container:last-child {
     margin-bottom: 0;
