@@ -172,7 +172,7 @@
     font-size: 1.5em;
   }
   .item{
-    height: 60%;
+    height: 50%;
   }
   .item-title p{
     color:var(--gradient);
