@@ -178,7 +178,7 @@
     color:var(--gradient);
     font-weight: bold;
     user-select: none;
-    font-size: 1em;
+    font-size: 0.5em;
   }
   .item-text p{
     display: none;
