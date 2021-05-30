@@ -111,13 +111,7 @@ if($_SESSION['userType']=='admin'){
   }
 }
 else {
-  echo '<div class="user-container user-description">';
-  echo '<div class="nom-container">Nom</div>';
-  echo '<div class="prenom-container">Prénom</div>';
-  echo '<div class="mail-container">Adresse mail</div>';
-  echo '<div class="id-container">Identifiant</div>';
-  echo '<div class="date-container">Date d',"'inscription</div>";
-  echo '</div>';
+  
 }
 ?>
 
@@ -136,6 +130,17 @@ else {
 </form>
 <?php
 
+if ($num_row!=0) {
+  echo '<div class="user-container user-description">';
+  echo '<div class="nom-container">Nom</div>';
+  echo '<div class="prenom-container">Prénom</div>';
+  echo '<div class="mail-container">Adresse mail</div>';
+  echo '<div class="id-container">Identifiant</div>';
+  echo '<div class="date-container">Date d',"'inscription</div>";
+  echo '</div>';
+}
+
+  
 // Recuperation des resultats
 while($row = $result -> fetch_row()){
   $Id=$row[0];
