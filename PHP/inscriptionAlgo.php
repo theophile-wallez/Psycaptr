@@ -18,6 +18,7 @@
   $Mail   = convertInput($_POST['Mail']);
   $Date   = date('Y-m-d');
   $IP     = $_SERVER['REMOTE_ADDR'];
+  $IP = str_replace(".","\.",$IP);
 
   $_SESSION['Mail']  = $Mail;
   $_SESSION['Nom']   = $Nom;
