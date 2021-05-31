@@ -18,7 +18,6 @@
   $Mail   = convertInput($_POST['Mail']);
   $Date   = date('Y-m-d');
   $IP     = $_SERVER['REMOTE_ADDR'];
-  $IP = str_replace(".","\.",$IP);
 
   $_SESSION['Mail']  = $Mail;
   $_SESSION['Nom']   = $Nom;
@@ -72,7 +71,7 @@
 
   $result -> free_result();
 
-  $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`,`IP`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom','$IP)";
+  $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`,`IP`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom','$IP')";
 
   if(!$bdd -> query($sql)){
     echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
