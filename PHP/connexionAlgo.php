@@ -51,6 +51,21 @@
 				$_SESSION['userType'] = 'medecin';
 				$_SESSION['lastActivity'] = time();
 				
+				// Récupère l'IP de l'utilisateur et la crypte
+				$IP = password_hash($_SERVER['REMOTE_ADDR'], PASSWORD_DEFAULT);
+
+				// CREER ICI UNE CONDITION POUR VERIFIER SI L'UTILISATEUR N'EST BANNIT
+
+				//Récupère la dernière adresse IP utilisée pour se connecter
+				if($IP != $row[6]){
+					$result -> free_result();
+					$sql = "UPDATE Utilisateurs SET IP='$Mail' WHERE Id='$_SESSION['IdMedecin']'";
+					if(!$bdd -> query($sql)){
+						echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+						echo " |".$Id;
+					}
+				}
+				
 				header('Location:../Ressources/Pages/dashboard');
 				exit();
 			}
