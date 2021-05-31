@@ -58,7 +58,7 @@
 
 				//Récupère la dernière adresse IP utilisée pour se connecter
 				if($IP != $row[6]){
-					$sql = "UPDATE Utilisateurs SET IP='$Mail' WHERE Id='$row[0]'";
+					$sql = "UPDATE Utilisateurs SET IP='$IP' WHERE Id='$row[0]'";
 					$result -> free_result();
 
 					if(!$bdd -> query($sql)){
