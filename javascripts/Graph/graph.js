@@ -1,5 +1,5 @@
 
-function lineChart() {
+function lineChart(Data) {
   var ctx = document.getElementById('line-chart').getContext("2d");
 
   var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
@@ -10,12 +10,18 @@ function lineChart() {
   gradientStroke2.addColorStop(0, '#ffdef0');
   gradientStroke2.addColorStop(1, '#fff5f0');
 
+  var Data_Abscisse = [];
+
+  for(let i=0; i <Data.length; i++){
+    Data_Abscisse[i] = i+1;
+  }
+
   new Chart(document.getElementById("line-chart"), {
   type: 'line',
   data: {
-    labels: [1,2,3,4,5,6,7,8],
+    labels: Data_Abscisse,
     datasets: [{
-        data: [2,5,7,6,5,8,7,9],
+        data: Data,
         borderColor: gradientStroke,
         fill: true,
         backgroundColor	:gradientStroke2,
@@ -79,6 +85,9 @@ function doughnutChart() {
   var degrade3 = ctr.createLinearGradient(100, 0,0 , 100);
   degrade3.addColorStop(0, '#7cf4df');
   degrade3.addColorStop(1, '#62a9fe');
+
+
+  
 
   new Chart(document.getElementById("doughnut-chart"), {
   type: 'doughnut',
@@ -266,4 +275,3 @@ function radarChart(){
   }
   });
 }
-

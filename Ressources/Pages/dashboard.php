@@ -1,4 +1,4 @@
-<?php 
+<?php
   session_start();
 ?>
 
@@ -65,10 +65,30 @@
 
 <script src="../../javascripts/Graph/graph.js"></script>
 <script>
-  lineChart();
+
+<script>
+
+  var Data = [];
+
+  <?php
+    require('../../PHP/connectDatabase.php');
+
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' ORDER BY Date_Test ASC";
+
+  	$result = $bdd -> query($sql);
+
+    $i = 0;
+    while($row = $result -> fetch_row()){
+      echo "Data[".$i."] = ".$row[0].";\n";
+      $i++;
+    }
+  ?>
+
+  console.log(Data);
+
+  lineChart(Data);
   doughnutChart();
   barChart();
   radarChart();
 </script>
 </html>
-
