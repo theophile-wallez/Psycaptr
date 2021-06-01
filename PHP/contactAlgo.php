@@ -17,7 +17,7 @@ $Date = date('Y-m-d H:i:s');
 $IdUser = 0;
 $MailTo = 'theophile@psycaptr.tk'
 
-$sql = 'SELECT * FROM Message';
+$sql = "SELECT * FROM `Message-Utilisateur`";
 
 if($result = $bdd -> query($sql)){
   while($row = $result -> fetch_row()) {
