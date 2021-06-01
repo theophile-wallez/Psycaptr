@@ -186,14 +186,6 @@
   }
 }
 
-.pourquoi-utiliser-container{
-  position: relative;
-  width: 100%;
-  height: 60em;
-  background: white;
-  z-index: 1;
-}
-
 
 
 /* -- Présentation des tests -- */
@@ -783,4 +775,37 @@
 .CGU a{
 	color: white;
 	text-decoration: none;
+}
+
+.pourquoi-utiliser-container{
+  position: relative;
+  width: 100%;
+  background: white;
+  z-index: 1;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; 
+  padding-top: 7em; 
+  padding-bottom: 3em;
+}
+
+.title-pk {
+  text-align: center;
+  font-size: 3em;
+  user-select: none;
+
+  background: var(--light_gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.pourquoi-utiliser-container img {
+  width: 80%;
+
+}
+
+.sub-title-pk{
+  color: #645483;
+  margin-bottom: 2em;
 }

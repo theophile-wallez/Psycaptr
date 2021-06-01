@@ -92,7 +92,9 @@
     </div>
 
     <section class="pourquoi-utiliser-container">
-
+      <h2 class="title-pk">Pourquoi nous faire confiance ?</h2>
+      <p class="presentation-sub-title sub-title-pk">Nos tests psychotechniques servent à vérifier les capacités psychotechniques d'un individu pour la conduite automobile, moto... <br> Ces tests peuvent s'avérer utiles pour les pilotes d'avion, d'autocar et de course qui veulent vérifier leurs aptitudes au pilotage d'appareils transportant des vies.</p>
+      <img src="Ressources/Images/ordinateurs.png" draggable="false">
     </section>
 
     <section id="test-section">
