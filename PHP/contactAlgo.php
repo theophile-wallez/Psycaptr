@@ -17,15 +17,6 @@ $Date = date('Y-m-d H:i:s');
 $IdUser = 0;
 $MailTo = 'theophile@psycaptr.tk'
 
-$sql = "SELECT * FROM `Message-Utilisateur`";
-
-if($result = $bdd -> query($sql)){
-  while($row = $result -> fetch_row()) {
-    if($Id == $row[0]){
-      $Id = IdGenerator(11);
-    }
-  }
-}
 
 $sql = "INSERT INTO `Message-Utilisateur` (`Id`, `IdUser`, `Nom`, `Prenom`, `Mail`, `Message`, `Date`) VALUES ('$Id','$IdUser','$Nom','$Prenom','$Mail','$Message','$Date')";
 
