@@ -75,18 +75,19 @@ if($_SESSION['userType']=='admin'){
 
 <?php
 
+// VALIDATION DES PATIENTS
+
 if($_SESSION['userType']=='admin'){
 	$sql = "SELECT * FROM ValidationMedecin";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
-  $num_row = mysqli_num_rows($result);
+  $num_row1 = mysqli_num_rows($result);
 
-
-  if ($num_row != 0){
+  if ($num_row1 != 0){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
-    echo '<h2>Liste des validations en attente</h2>';
+    echo '<h2>Liste des utilisateurs en attente de validation</h2>';
     echo '<div class="form_all">';
     echo '<div class="user-container user-description">';
     echo '<div class="nom-container">Nom</div>';
@@ -127,6 +128,21 @@ if($_SESSION['userType']=='admin'){
 
   $num_row = mysqli_num_rows($result);
   if ($num_row != 0){
+    if($num_row1 == 0){
+      echo '<section class="content-container">';
+      echo '<section class="fixed-container">';
+      echo '<h2>Liste des patients en attente de validation</h2>';
+      echo '<div class="form_all">';
+      echo '<div class="user-container user-description">';
+      echo '<div class="nom-container">Nom</div>';
+      echo '<div class="prenom-container">Prénom</div>';
+      echo '<div class="mail-container">Adresse mail</div>';
+      echo '<div class="id-container">Identifiant</div>';
+      echo '<div class="date-container">Date d\'inscription</div>';
+      echo '</div>';
+      echo '</div>';
+      echo '</section>';
+    }
     while($row = $result -> fetch_row()){
       $Id=$row[0];
       $Mail=$row[1];
