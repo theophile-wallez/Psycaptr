@@ -82,7 +82,7 @@
   <?php
     require('../../PHP/connectDatabase.php');
 
-    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' ORDER BY Date_Test ASC";
+    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Type='3' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
 
