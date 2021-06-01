@@ -75,11 +75,6 @@
 
   	$result = $bdd -> query($sql);
 
-    // echo 'IdMedecin : '.$IdMedecin;
-    // echo 'IdPatient : '.$IdPatient;
-    // echo 'PrenomPatient : '.$PrenomPatient;
-    // echo 'NomPatient : '.$NomPatient;
-
     $i = 0;
     while($row = $result -> fetch_row()){
       echo "Data[".$i."] = ".$row[0].";\n";

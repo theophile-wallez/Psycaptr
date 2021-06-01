@@ -1,5 +1,5 @@
 
-function graph1() {
+function lineChart() {
   var ctx = document.getElementById('line-chart').getContext("2d");
 
   var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
@@ -19,7 +19,9 @@ function graph1() {
         borderColor: gradientStroke,
         fill: true,
         backgroundColor	:gradientStroke2,
-        pointBackgroundColor: gradientStroke
+        pointBackgroundColor: gradientStroke,
+        tension: 0.3,
+        cubicInterpolationMode: 'default',
       }
     ]
   },
@@ -28,30 +30,33 @@ function graph1() {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    legend: {
-    display: false,
+    plugins: {
+      legend: {
+        labels: {
+          usePointStyle: true,
+        },
+        display: false,
+      }
     },
     scales: {
-        xAxes: [{
-            gridLines: {
-                display:false,
-                drawBorder: false,
-            },
-            ticks: {
-              display:false
-            }
-            
-        }],
-        yAxes: [{
-            gridLines: {
-                display:false,
-            },
-            ticks: {
-              beginAtZero: true,
-              autoSkip: true,
-              maxTicksLimit: 2
-            }
-        }]
+        x: {
+          grid: {
+              display:false,
+          },
+          ticks: {
+            display:false,
+          }
+        },
+        y: {
+          grid: {
+              display:false,
+          },
+          ticks: {
+            beginAtZero: true,
+            autoSkip: true,
+            maxTicksLimit: 2
+          }
+        }
     }
 
   }
@@ -60,33 +65,7 @@ function graph1() {
 }
 
 
-function doughnut() {
-  new Chart(document.getElementById("doughnut-chart"), {
-    type: 'doughnut',
-    data: {
-      labels: ["Médeçins", "Auto école", "Ecole d'aviation", 'Hopitaux'],
-      datasets: [
-        {
-          label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#c45850","#e8c3b9"],
-          data: [25, 15, 55, 10]
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: {
-        easing: "easeInOutBack"
-      }
-    }
-
-  });
-}
-
-
-
-function graph2() {
+function doughnutChart() {
   var ctr = document.getElementById("doughnut-chart").getContext("2d");
 
   var degrade1 = ctr.createLinearGradient(0, 100, 0, 0);
@@ -116,6 +95,14 @@ function graph2() {
   options: {
     responsive: true,
     maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          usePointStyle: true,
+        },
+        display: false,
+      }
+    },
     legend: {
     display: false,
     },
@@ -123,24 +110,24 @@ function graph2() {
       easing: "easeInOutBack"
     },
     scales: {
-        xAxes: [{
-            gridLines: {
-                display:false,
-                drawBorder: false,
-            },
-            ticks: {
-              display: false //this will remove only the label
+        x: {
+          grid: {
+              display:false,
+              drawBorder: false,
+          },
+          ticks: {
+            display: false //this will remove only the label
           }
-        }],
-        yAxes: [{
-            gridLines: {
-                display:false,
-                drawBorder: false,
-            },
-            ticks: {
-              display: false //this will remove only the label
+        },
+        y: {
+          grid: {
+              display:false,
+              drawBorder: false,
+          },
+          ticks: {
+            display: false //this will remove only the label
           }
-        }]
+        }
     }
 
   }
@@ -148,4 +135,135 @@ function graph2() {
 
 }
 
+function barChart() {
+  var ctr = document.getElementById("bar-chart").getContext("2d");
+
+  var degrade1 = ctr.createLinearGradient(0, 100, 0, 0);
+  degrade1.addColorStop(0, '#fe6fbe');
+  degrade1.addColorStop(1, '#ffcfbe');
+
+  var degrade2 = ctr.createLinearGradient(0, 100, 100,0 );
+  degrade2.addColorStop(0, '#9877ff');
+  degrade2.addColorStop(1, '#f450cd');
+
+  var degrade3 = ctr.createLinearGradient(100, 0,0 , 100);
+  degrade3.addColorStop(0, '#7cf4df');
+  degrade3.addColorStop(1, '#62a9fe');
+
+  new Chart(document.getElementById("bar-chart"), {
+  type: 'bar',
+  data: {
+    labels: ["test1", 2, 3, 4,5,6,7,8],
+    datasets: [
+      {
+        data: [25, 16, 15, 20, 30, 40, 10, 13],
+        backgroundColor: "#FFDFF0",
+        borderColor: "#FF6CBD",
+        borderWidth: 1,
+        borderRadius: 20,
+        barPercentage: 0.5,
+      }
+    ]
+  },
+
+
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          usePointStyle: true,
+        },
+        display: false,
+      }
+    },
+    animation: {
+      easing: "easeInOutBack"
+    },
+    scales: {
+        x: {
+          grid: {
+              display:false,
+              drawBorder: true,
+          },
+          ticks: {
+            display: true //this will remove only the label
+          }
+        },
+        y: {
+          grid: {
+              display:false,
+              drawBorder: true,
+          },
+          ticks: {
+            display: true,//this will remove only the label
+            beginAtZero: true,
+          }
+        }
+    }
+
+  }
+  });
+
+}
+
+function radarChart(){
+  var ctr = document.getElementById("radar-chart").getContext("2d");
+
+  var degrade1 = ctr.createLinearGradient(0, 100, 0, 0);
+  degrade1.addColorStop(0, '#fe6fbe');
+  degrade1.addColorStop(1, '#ffcfbe');
+
+  var degrade2 = ctr.createLinearGradient(0, 100, 100,0 );
+  degrade2.addColorStop(0, '#9877ff');
+  degrade2.addColorStop(1, '#f450cd');
+
+  var degrade3 = ctr.createLinearGradient(100, 0,0 , 100);
+  degrade3.addColorStop(0, '#7cf4df');
+  degrade3.addColorStop(1, '#62a9fe');
+
+  new Chart(document.getElementById("radar-chart"), {
+  type: 'radar',
+  data: {
+    labels: ["test 1", "test 2", "test 3", "test 4", "test 5"],
+    datasets: [
+      {
+        data: [8, 6, 9, 4, 5],
+        backgroundColor: "#FFDFF0",
+        borderColor: "#FF6CBD",
+        borderWidth: 1,
+        borderRadius: 20,
+        barPercentage: 0.5,
+        scaleSteps: 5,
+        scaleStepWidth: 5,
+        scaleStartValue: 0,
+      }
+    ]
+  },
+
+
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          usePointStyle: true,
+        },
+        display: false,
+      }
+    },
+    animation: {
+      easing: "easeInOutBack"
+    },
+    scales: {
+      r: {
+        suggestedMin: 0,
+        suggestedMax: 10
+      }
+    }
+  }
+  });
+}
 

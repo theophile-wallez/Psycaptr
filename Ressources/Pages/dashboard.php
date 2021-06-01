@@ -39,8 +39,18 @@
     </div>
     <div class="main_part_container">
       <div class="part_1_container">
-          <div class="graph graph-double graph-3"></div>
-          <div class="graph graph-double graph-4"></div>
+          <div class="graph graph-double graph-3">
+            <h4 class="canvas_title">Tests par catégorie</h4>
+            <div class="canvas_container">
+             <canvas id="radar-chart"></canvas>
+            </div>
+          </div>
+          <div class="graph graph-double graph-4">
+            <h4 class="canvas_title">Tests par catégorie</h4>
+            <div class="canvas_container">
+             <canvas id="bar-chart"></canvas>
+            </div>
+          </div>
       </div>
       <div class="part_2_container">
         <div class="graph graph-5"></div>
@@ -49,12 +59,16 @@
   </div>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="../../javascripts/Graph/graph.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+<script src="../../node_modules/chart.js/dist/chart.js"></script>
+<script src="../../node_modules/chart.js/dist/chartjs-plugin-colorschemes.js"></script>
 
+<script src="../../javascripts/Graph/graph.js"></script>
 <script>
-  graph1();
-  graph2();
+  lineChart();
+  doughnutChart();
+  barChart();
+  radarChart();
 </script>
 </html>
 
