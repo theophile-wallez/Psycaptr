@@ -108,3 +108,14 @@ body{
 body > * {
   box-sizing: border-box;
 }
+
+.CGU {
+    margin: 0 auto;
+    background-color: #f72414;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    box-shadow: 0 7px 10px #ffbeb8;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+}
