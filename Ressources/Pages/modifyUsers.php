@@ -73,10 +73,10 @@ if($_SESSION['userType']=='admin'){
   </form>
 </section>
 
-<?php 
+<?php
 
 if($_SESSION['userType']=='admin'){
-  $sql = "SELECT * FROM ValidationMedecin order by Date_inscription desc";
+  $sql = "SELECT * FROM ValidationMedecin, ValidationPatient order by Date_inscription desc";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
@@ -105,7 +105,7 @@ if($_SESSION['userType']=='admin'){
       $Date_Inscription = date("d-m-Y",strtotime($row[3]));
       $Nom = $row[4];
       $Prenom = $row[5];
-    
+
       //On génère une ligne qui correpond à chaque utilisateurs
       echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
       echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
@@ -227,7 +227,7 @@ $_SESSION['search'] = $search;
 $result -> free_result();
 $bdd -> close();
 exit();
-?> 
+?>
 </body>
 </html>
 
