@@ -66,8 +66,6 @@
 <script src="../../javascripts/Graph/graph.js"></script>
 <script>
 
-<script>
-
   var Data = [];
 
   <?php
