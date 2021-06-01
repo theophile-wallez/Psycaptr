@@ -23,7 +23,7 @@
 </head>
 
 <nav id="navi" class="nav_absolute" >
-      <?php 
+      <?php
         require_once('../../PHP/navBar.php');
         displayNavBar("../../");
       ?>
@@ -62,6 +62,7 @@
         <input name="MdpBis" type="password" placeholder="Confirmation" required/>
       </div>
 
+			<input type="checkbox" name="cgu" required>
 
       <div class="envoyer_button">
         <button type="submit">Valider</button>
@@ -73,6 +74,6 @@
 </body>
 </html>
 
-<!-- Ces balises de script fixent un bug de Chrome qui déclanche les  
+<!-- Ces balises de script fixent un bug de Chrome qui déclanche les
 animations des :hover au lancement de la page -->
 <script> </script>
