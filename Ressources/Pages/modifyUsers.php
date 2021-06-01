@@ -76,7 +76,7 @@ if($_SESSION['userType']=='admin'){
 <?php
 
 if($_SESSION['userType']=='admin'){
-  $sql = "SELECT * FROM ValidationMedecin, ValidationPatient order by Date_inscription desc";
+  $sql = "SELECT * FROM ValidationMedecin, ValidationPatient";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
@@ -122,7 +122,7 @@ if($_SESSION['userType']=='admin'){
     }
     echo  '</section>';
   }
-  $result -> free_result();
+
 }
 
 unset($search);
