@@ -59,7 +59,7 @@ if($_SESSION['userType']=='admin'){
 }
 ?>
 
-  <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo" method="POST">
+  <form class="line-container user-container addUser" action="../../PHP/modifyUsersAlgo.php" method="POST">
   <input type="text" name="Nom" placeholder="Nom" required>
   <input type="text" name="Prenom" placeholder="Prenom" required>
   <input input type="email" name="Mail" placeholder="Adresse mail" required>
