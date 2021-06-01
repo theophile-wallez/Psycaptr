@@ -62,8 +62,12 @@
         <input name="MdpBis" type="password" placeholder="Confirmation" required/>
       </div>
 
-			<input type="checkbox" id="cgu" name="cgu" required>
-			<label for="cgu">Accepter les <a href="CGU">Conditiosn d'utilisations ? </a></label>
+
+
+			<label class="CGU">Accepter les <a href="CGU">Conditions d'utilisations ? </a>
+				<input type="checkbox" id="cgu" name="cgu" required>
+				<span class="checkmark"></span>
+			</label>
 
       <div class="envoyer_button">
         <button type="submit">Valider</button>
