@@ -242,7 +242,7 @@
 
   <footer id="footer" class="centered" >
 	<div class="CGU">
-		<a href="Ressources/Pages/CGU.php"> Conditions d'utilisations et mentions légales </a>
+		<a href="Ressources/Pages/CGU.php"> Conditions d'utilisation et mentions légales </a>
 	</div>
   </footer>
 
