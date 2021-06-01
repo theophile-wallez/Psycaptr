@@ -61,12 +61,6 @@
         <input name="Mdp" type="password" placeholder="Mot de passe" required/>
         <input name="MdpBis" type="password" placeholder="Confirmation" required/>
       </div>
-		
-	  <div class="CGU"> 
-		<a href="Ressources/Pages/CGU.php"> CGU </a> 
-	  </div>
-
-
 			<label class="CGU">
 				<input type="checkbox" id="cgu" name="cgu" required>
 				<span class="checkmark"></span>
