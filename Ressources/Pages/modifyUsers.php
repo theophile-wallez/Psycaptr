@@ -82,7 +82,7 @@ if($_SESSION['userType']=='admin'){
   }
   $num_row = mysqli_num_rows($result);
 
-  if ($num_row == 0){
+  if ($num_row != 0){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
     echo '<h2>Liste des médecins en attente de validation</h2>';
