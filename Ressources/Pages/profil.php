@@ -19,7 +19,7 @@
 
 <?php require_once('dashboardHeaderNav.php');
 
-	require('connectDatabase.php');
+	require('../../PHP/connectDatabase.php');
 
 	$sql = "SELECT * FROM Utilisateurs WHERE Id='$IdMedecin'";
 
