@@ -1,17 +1,7 @@
 <?php
 	session_start();
-		$IdMedecin     = $_SESSION['IdMedecin'];
-		$IdPatient     = $_SESSION['IdPatient'];
-		$NomPatient    = $_SESSION['NomPatient'];
-		$PrenomPatient = $_SESSION['PrenomPatient'];
-		$MailPatient   = $_SESSION['MailPatient'];
+	$IdMedecin  = $_SESSION["IdMedecin"];
 
-		if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u','é','y'])) {
-			$de = 'd\'';
-		 }
-		 else {
-			 $de = 'de ';
-		 }
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +17,20 @@
   <title>Gestion de votre profil • Psycaptr</title>
 </head>
 
-<?php require_once('dashboardHeaderNav.php');?>
+<?php require_once('dashboardHeaderNav.php');
+
+	require('connectDatabase.php');
+
+	$sql = "SELECT * FROM Utilisateurs WHERE Id='$IdMedecin'";
+
+	if(!$result = $bdd -> query($sql)){
+			echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			echo " |".$Id;
+	}
+
+	$row = $result -> fetch_row();
+
+?>
 
 <body>
   <section class="content-container">
@@ -49,12 +52,12 @@
         <h2>Mes informations</h2>
         <div class="item prénom-container">
           <h4>Prénom</h4>
-          <input name="Prenom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php $PrenomPatient ?>"/>
+          <input name="Prenom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php echo $row[5]; ?>"/>
         </div>
 
         <div class="item nom-container">
             <h4>Nom</h4>
-            <input name="Nom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php $NomPatient ?>"/>
+            <input name="Nom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php echo $row[4]; ?>"/>
         </div>
 
       </section>
@@ -64,12 +67,12 @@
         <h2>Mes coordonnées</h2>
         <div class="item mail-container">
           <h4>Votre adresse mail</h4>
-          <input name="Mail" type="mail" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php $MailPatient ?>"/>
+          <input name="Mail" type="mail" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php echo $row[1]; ?>"/>
         </div>
 
         <div class="item tel-container">
-            <h4>Votre numéro de téléphone</h4>
-            <input name="Tel" type="tel" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php echo $_SESSION["modifyProfile"]; ?>"/>
+            <h4>Votre Mot de passe</h4>
+            <input name="Tel" type="tel" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php echo $row[2] ?>"/>
         </div>
 
 				<?php
