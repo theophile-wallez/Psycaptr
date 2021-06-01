@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if(isset($_POST['modifyProfile'])){
 
   $_SESSION["modifyProfile"] = 0;
