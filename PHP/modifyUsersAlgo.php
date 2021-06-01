@@ -125,7 +125,7 @@ if(isset($_POST['modifyUser'])){
         $bdd -> close();
         exit();
     }
-    
+
     //
     //Script qui permet de modifier les informations d'un utilisateur
     //
@@ -185,6 +185,69 @@ if(isset($_POST['modifyUser'])){
 
 /*------------------------------------------------------------------------*/
 
+if(isset($_POST['validationUserP'])){
+
+	$id = convertInput($_POST['Id']);
+
+	$sql = "SELECT * FROM ValidationPatient WHERE Id=$id";
+
+	 if(!$result = $bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 $row = $result -> fetch_row();
+
+
+	$sql = "INSERT INTO `Patient` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]')" ;
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 $sql = "DELETE FROM ValidationPatient WHERE Id=$_POST['Id']" ;
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 header("Location:../Ressources/Pages/modifyUsers");
+	 exit();
+}
+else if(isset($_POSt['validationUserM'])){
+	$id = convertInput($_POST['Id']);
+
+	$sql = "SELECT * FROM ValidationValidation WHERE Id=$id";
+
+	 if(!$result = $bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 $row = $result -> fetch_row();
+
+
+	$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]')" ;
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 $sql = "DELETE FROM ValidationMedecin WHERE Id=$_POST['Id']" ;
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 header("Location:../Ressources/Pages/modifyUsers");
+	 exit();
+}
+
+
 	$bdd -> close();
-    exit();
+  exit();
 ?>
