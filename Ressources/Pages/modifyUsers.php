@@ -227,8 +227,8 @@ if ($num_row!=0) {
   echo '<div class="date-container">Date d\'inscription</div>';
   echo '</div>';
   echo '</div>';
-  echo '</section>';
 }
+echo '</section>';
 
 // Recuperation des resultats
 while($row = $result -> fetch_row()){
