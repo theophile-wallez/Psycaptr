@@ -217,7 +217,7 @@
 
 .presentation-sub-title {
   text-align: center;
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: white;
   margin-top: -1em;
 }
@@ -807,6 +807,5 @@
 .sub-title-pk{
   color: #645483;
   margin-bottom: 2em;
-  font-size: 1.2em;
   width: 80%;
 }
