@@ -75,10 +75,10 @@ body .content-container{
     padding: 0;
 }
 .form-container .noModify:hover{
-    transform: scale(0);
+    transform: scale(1);
 }
 .form-container .noModify:active{
-    transform: scale(0);
+    transform: scale(1);
 }
 
 
