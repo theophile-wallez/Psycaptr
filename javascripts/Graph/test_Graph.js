@@ -1,4 +1,3 @@
-
 function graph(Data){
   var ctx = document.getElementById('line-chart').getContext("2d");
 
