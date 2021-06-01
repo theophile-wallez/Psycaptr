@@ -220,7 +220,7 @@ if(isset($_POST['validationUserP'])){
 if(isset($_POSt['validationUserM'])){
 	$id = convertInput($_POST['Id']);
 
-	echo $id;
+
 
 	$sql = "SELECT * FROM ValidationMedecin WHERE Id='$id'";
 
@@ -232,7 +232,7 @@ if(isset($_POSt['validationUserM'])){
 	 $row = $result -> fetch_row();
 
 
-	$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]')" ;
+	$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`, `IP`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]', '$row[6]')";
 
 	 if(!$bdd -> query($sql)){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
