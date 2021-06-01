@@ -154,7 +154,7 @@ if($_SESSION['userType']=='admin'){
     echo  '</section>';
   }
 	else {
-		echo echo '</section>';
+		echo '</section>';
 	}
 
 }
