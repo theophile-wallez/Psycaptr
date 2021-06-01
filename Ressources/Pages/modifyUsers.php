@@ -274,6 +274,7 @@ if($_SESSION['userType']=='admin'){
     echo '<section class="fixed-container">';
     echo '<h2>Liste des validations en attente</h2>';
     echo '<div class="form_all">';
+    echo '<div class="void"></div>';
     echo '<div class="user-container user-description">';
     echo '<div class="nom-container">Nom</div>';
     echo '<div class="prenom-container">Prénom</div>';
@@ -291,6 +292,7 @@ if($_SESSION['userType']=='admin'){
 
       //On génère une ligne qui correpond à chaque utilisateurs
       echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
+      echo  '<div class="user"><button type="submit" name="unbanUser"><i class="fa fa-check"></i></button></div>';
       echo  '<div class="line-container user-container">';
       echo    '<input type="text" readonly="readonly" name="Nom" value="'.$Nom.'" required>';
       echo    '<input type="text" readonly="readonly" name="Prenom" value="'.$Prenom.'" required>';
