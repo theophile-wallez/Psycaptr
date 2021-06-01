@@ -45,22 +45,19 @@
         ?>" required/>
         <input name="Mdp" type="password" placeholder="Mot de passe" required/>
         <div class="forgot_container">
-          <a href="#">Mot de passe oublié</a>
-          <a href="inscription.php">Créer un compte</a>
-		  <a href="Ressources/Pages/CGU.php"> CGU </a>
+          <a href="mdpOublie">Mot de passe oublié</a>
+          <a href="inscription">Créer un compte</a>
         </div>
       </div>
 
-
       <!-- Boutton de connexion -->
-
       <div class="connexion_button">
           <button type="submit">Connexion</button>
       </div>
   </form>
-
-
 </body>
-
-<!-- <footer class="bottom" id="footer"></footer> -->
 </html>
+
+<!-- Ces balises de script fixent un bug de Chrome qui déclanche les  
+animations des :hover au lancement de la page -->
+<script> </script>

@@ -1,19 +1,8 @@
 <?php
+	require_once('algo.php');
 	session_start();
 
-	unset($_SESSION['login']);
-	unset($_SESSION['login_Admin']);
-	unset($_SESSION['lastActivity']);
-	unset($_SESSION['Prenom']);
-	unset($_SESSION['Nom']);
-	unset($_SESSION['Mail']);
-
-	function convertInput ($input) {
-		$input = trim ($input);
-		$input = Stripslashes ($input);
-		$input = Htmlspecialchars ($input); 
-		return $input;
-	}
+	$_SESSION = array(); 
 
 	$Mail = convertInput($_POST['Mail']);
 	$Mdp  = convertInput($_POST['Mdp']);
@@ -36,11 +25,12 @@
 	if($result = $bdd -> query($sql)){
 		while($row = $result -> fetch_row()) {
 			if($Mail == $row[0] && $Mdp == $row[1]){
-				$_SESSION['login_Admin'] = 1;
+				$_SESSION['login'] = 1;
+				$_SESSION['userType'] = 'admin';
 				$_SESSION['lastActivity'] = time();
 				$_SESSION['Nom'] = $row[2];
 			    $_SESSION['Prenom'] = $row[3];
-				header('Location:../Ressources/Pages/admin.php');
+				header('Location:../Ressources/Pages/admin');
 				exit();
 			}
 		}
@@ -48,28 +38,45 @@
 
 	$result -> free_result();
 
-
 	$sql = 'SELECT * FROM Utilisateurs';
-
 
 	if($result = $bdd -> query($sql)) {
 		while($row = $result -> fetch_row())  {
 			if($Mail == $row[1] && password_verify($Mdp, $row[2])) {
-				$_SESSION['login'] = 1;
-				$_SESSION['lastActivity'] = time();
+				$_SESSION['IdMedecin'] = $row[0];
 				$_SESSION['Nom'] = $row[4];
 			    $_SESSION['Prenom'] = $row[5];
-				header('Location:../Ressources/Pages/dashboard.php');
+
+				$_SESSION['login'] = 1;
+				$_SESSION['userType'] = 'medecin';
+				$_SESSION['lastActivity'] = time();
+				
+				// Récupère l'IP de l'utilisateur et la crypte
+				$IP = password_hash($_SERVER['REMOTE_ADDR'], PASSWORD_DEFAULT);
+
+				// CREER ICI UNE CONDITION POUR VERIFIER SI L'UTILISATEUR N'EST BANNIT
+
+				//Récupère la dernière adresse IP utilisée pour se connecter
+				if($IP != $row[6]){
+					$sql = "UPDATE Utilisateurs SET IP='$IP' WHERE Id='$row[0]'";
+					$result -> free_result();
+
+					if(!$bdd -> query($sql)){
+						echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+						echo " |".$Id;
+					}
+				}
+				
+				header('Location:../Ressources/Pages/dashboard');
 				exit();
 			}
 		}
 	}
 
-	header('Location:../Ressources/Pages/connexion.php');
-	exit();
-
+	header('Location:../Ressources/Pages/connexion');
 
 	$result -> free_result();
 
 	$bdd -> close();
+	exit();
  ?>

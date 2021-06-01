@@ -1,27 +1,20 @@
 <?php
+session_start();
+require('algo.php'); //Connexion à la database
+require('connectDatabase.php'); //Connexion à la database
+
 
 $Id = IdGenerator(11); //Un Id est généré par une méthode
 
 //On récupère les données rentrées par l'utilisateur
-$Nom = htmlspecialchars($_POST['Nom']);
-$Prenom = htmlspecialchars($_POST['Prenom']);
-$Mail = htmlspecialchars($_POST['Mail']);
-$Message = htmlspecialchars($_POST['Message']);
-$Date = date('j F Y');
+$Nom = convertInput($_POST['Nom']);
+$Prenom = convertInput($_POST['Prenom']);
+$Mail = convertInput($_POST['Mail']);
+$Message = convertInput($_POST['Message']);
+$Message = str_replace("'","''",$Message);
 
-//Connexion à la database
-$servername = 'localhost';
-$bddname = 'ttwawain_Psycaptr';
-$username = 'theophile';
-$password = 'psycaptrisep2023';
-
-//Message d'erreur en cas d'accès impossible à la database
-$bdd = new mysqli($servername, $username, $password, $bddname);
-if($bdd->connect_errno){
-  echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
-  exit();
-}
-
+$Date = date('Y-m-d H:i:s');
+$IdUser = 0;
 
 $sql = 'SELECT * FROM Message';
 
@@ -33,34 +26,15 @@ if($result = $bdd -> query($sql)){
   }
 }
 
-$result -> free_result();
+$sql = "INSERT INTO `Message-Utilisateur` (`Id`, `IdUser`, `Nom`, `Prenom`, `Mail`, `Message`, `Date`) VALUES ('$Id','$IdUser','$Nom','$Prenom','$Mail','$Message','$Date')";
 
-
-$sql = "INSERT INTO `Message` (`Id`, `Nom`, `Prenom`, `Mail`, `Message`, `Date`) VALUES ('".$Id."','".$Nom."','".$Prenom."','".$Mail."','".$Message."','".$Date."')";
-
-if (!mysql_query($sql,$bdd)) {
-	die('impossible d’ajouter cet enregistrement : ' . mysql_error());
-	}
-
+if(!$result = $bdd -> query($sql)){
+  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+}
 
 
 $bdd -> close();
 
-header("Location:../Ressources/Pages/connexion.php");
+header("Location:/");
 exit();
-
-
-function IdGenerator($taille){
-  // Liste des caractères possibles
-  $chars="0123456789";
-  $Id='';
-  $length=strlen($chars);
-
-  srand((double)microtime()*1000000);
-  //Initialise le générateur de nombres aléatoires
-
-  for($i=0;$i<$taille;$i++)$Id=$Id.substr($chars,rand(0,$length-1),1);
-
-  return $Id;
-}
 ?>

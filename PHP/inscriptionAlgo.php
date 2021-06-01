@@ -1,109 +1,92 @@
 <?php
-session_start();
+  require_once('algo.php');
+  session_start();
 
-unset($_SESSION['login']);
-unset($_SESSION['login_Admin']);
-unset($_SESSION['lastActivity']);
-unset($_SESSION['Prenom']);
-unset($_SESSION['Nom']);
-unset($_SESSION['Mail']);
+  unset($_SESSION['login']);
+  unset($_SESSION['login_Admin']);
+  unset($_SESSION['lastActivity']);
+  unset($_SESSION['Prenom']);
+  unset($_SESSION['Nom']);
+  unset($_SESSION['Mail']);
 
-function convertInput ($input) {
-  $input = trim ($input);
-  $input = Stripslashes ($input);
-  $input = Htmlspecialchars ($input); 
-  return $input;
-}
+  $Id     = IdGenerator(10); //Un Id est généré par une méthode
+  //On récupère les données rentrées par l'utilisateur
+  $Mdp    = convertInput($_POST['Mdp']);
+  $MdpBis = convertInput($_POST['MdpBis']);
+  $Nom    = convertInput($_POST['Nom']);
+  $Prenom = convertInput($_POST['Prenom']);
+  $Mail   = convertInput($_POST['Mail']);
+  $Date   = date('Y-m-d');
+  $IP = password_hash($_SERVER['REMOTE_ADDR'], PASSWORD_DEFAULT);
 
-$Id     = IdGenerator(10); //Un Id est généré par une méthode
-//On récupère les données rentrées par l'utilisateur
-$Mdp    = convertInput($_POST['Mdp']);
-$MdpBis = convertInput($_POST['MdpBis']);
-$Nom    = convertInput($_POST['Nom']);
-$Prenom = convertInput($_POST['Prenom']);
-$Mail   = convertInput($_POST['Mail']);
-$Date   = date('Y-m-d');
+  $_SESSION['Mail']  = $Mail;
+  $_SESSION['Nom']   = $Nom;
+  $_SESSION['Prenom']= $Prenom;
 
-$_SESSION['Mail']  = $Mail;
-$_SESSION['Nom']   = $Nom;
-$_SESSION['Prenom']= $Prenom;
+  // On vérifie si le mot de passe est le même que celui de confirmation,
+  // sinon on reviens vers la page d'inscription
 
-// On vérifie si le mot de passe est le même que celui de confirmation,
-// sinon on reviens vers la page d'inscription
+  if($MdpBis != $Mdp){
+    header('Location:../Ressources/Pages/inscription');
+    exit();
+  }
 
-if($MdpBis != $Mdp){
-  header('Location:../Ressources/Pages/inscription.php');
-  exit();
-}
+  //Le mot de passe est crypté
+  $CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
 
-//Le mot de passe est crypté
-$CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
+  $servername = 'localhost';
+  $bddname    = 'ttwawain_Psycaptr';
+  $username   = 'theophile';
+  $password   = 'psycaptrisep2023';
 
-$servername = 'localhost';
-$bddname    = 'ttwawain_Psycaptr';
-$username   = 'theophile';
-$password   = 'psycaptrisep2023';
+  //Message d'erreur en cas d'accès impossible à la database
+  $bdd = new mysqli($servername, $username, $password, $bddname);
+  if($bdd->connect_errno){
 
-//Message d'erreur en cas d'accès impossible à la database
-$bdd = new mysqli($servername, $username, $password, $bddname);
-if($bdd->connect_errno){
+  // Est-ce qu'on ne redirige pas l'utilisateur vers la page d'inscription ?
+    echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
+    exit();
+  }
 
-// Est-ce qu'on ne redirige pas l'utilisateur vers la page d'inscription ?
-  echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
-  exit();
-}
+  //On sélectionne la table Utilisateurs dans la database
+  $sql = 'SELECT * FROM Utilisateurs';
 
-//On sélectionne la table Utilisateurs dans la database
-$sql = 'SELECT * FROM Utilisateurs';
+  if(!$result = $bdd -> query($sql)){
+    echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+  }
 
-if(!$result = $bdd -> query($sql)){
-  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-}
-else {
-  while($row = $result -> fetch_row()) {
-    // On vérifie que le mail n'est pas déjà utilisé
-    if($Mail == $row[1]) {
-      header('Location:../Ressources/Pages/connexion.php');
-      exit();
-    }
+  else {
+    while($row = $result -> fetch_row()) {
+      // On vérifie que le mail n'est pas déjà utilisé
+      if($Mail == $row[1]) {
+        header('Location:../Ressources/Pages/connexion');
+        exit();
+      }
 
-    while($Id == $row[0]){
-      $Id = IdGenerator(10);
+      while($Id == $row[0]){
+        $Id = IdGenerator(10);
+      }
     }
   }
-}
 
-$result -> free_result();
+  $result -> free_result();
 
-$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+  $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`,`IP`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom','$IP')";
 
-if(!$bdd -> query($sql)){
-  echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-  echo " |".$Id;
-}
-else {
-  $_SESSION['login'] = 1;
-  $_SESSION['lastActivity'] = time();
-  $_SESSION["Nom"] = $Nom;
-  $_SESSION["Prenom"] = $Prenom;
+  if(!$bdd -> query($sql)){
+    echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+    echo " |".$Id;
+  }
 
-  header("Location:../Ressources/Pages/dashboard.php");
-  exit();
-}
+  else {
+    $_SESSION['login'] = 1;
+    $_SESSION['lastActivity'] = time();
+    $_SESSION["Nom"] = $Nom;
+    $_SESSION["Prenom"] = $Prenom;
 
-$bdd -> close();
+    header("Location:../Ressources/Pages/dashboard");
+    exit();
+  }
 
-function IdGenerator($taille){
-  // Liste des caractères possibles
-  $chars="0123456789";
-  $IdGen='';
-  $length=strlen($chars);
-
-  srand((double)microtime()*1000000);
-  //Initialise le générateur de nombres aléatoires
-
-  for($i=0;$i<$taille;$i++)$IdGen=$IdGen.substr($chars,rand(0,$length-1),1);
-
-  return $IdGen;
-}
+  $bdd -> close();
  ?>

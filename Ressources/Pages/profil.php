@@ -1,16 +1,6 @@
 <?php
-
-  //ON GARDE ÇA ?
-  
 	session_start();
-	unset($_SESSION['login']);
-  unset($_SESSION['login_Admin']);
-  unset($_SESSION['lastActivity']);
-  unset($_SESSION['Prenom']);
-  unset($_SESSION['Nom']);
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -22,26 +12,10 @@
   <link rel="stylesheet" href="../Style/profil.css"/>
 
   <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
-  <title>DashBoard • Psycaptr</title>
+  <title>Gestion de votre profil • Psycaptr</title>
 </head>
 
-<header>
-  <div class="home_logo">
-    <a href="../../index.php" draggable="false">
-      <img src="../Images/Logo_simple.png" draggable="false" alt="logo">
-    </a>
-  </div>
-  <div class="welcome-text">
-    <?php
-      //session_start();
-      echo "<p>";
-      echo "Bonjour, Theo".$_SESSION["Prenom"];
-      echo "</p>";
-     ?>
-  </div>
-</header>
-
-<nav></nav>
+<?php require_once('dashboardHeaderNav.php');?>
 
 <body>
   <section class="content-container">

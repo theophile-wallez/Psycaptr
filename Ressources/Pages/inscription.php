@@ -23,7 +23,7 @@
 </head>
 
 <nav id="navi" class="nav_absolute" >
-      <?php 
+      <?php
         require_once('../../PHP/navBar.php');
         displayNavBar("../../");
       ?>
@@ -66,6 +66,13 @@
 		<a href="Ressources/Pages/CGU.php"> CGU </a> 
 	  </div>
 
+
+			<label class="CGU">
+				<input type="checkbox" id="cgu" name="cgu" required>
+				<span class="checkmark"></span>
+				Accepter les <a href="CGU">Conditions d'utilisations ? </a>
+			</label>
+
       <div class="envoyer_button">
         <button type="submit">Valider</button>
       </div>
@@ -75,3 +82,7 @@
   <!-- <footer class="bottom" id="footer"></footer> -->
 </body>
 </html>
+
+<!-- Ces balises de script fixent un bug de Chrome qui déclanche les
+animations des :hover au lancement de la page -->
+<script> </script>

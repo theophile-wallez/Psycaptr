@@ -5,39 +5,14 @@
   <link rel="stylesheet" href="../Style/style.css"/>
   <link rel="stylesheet" href="../Style/admin.css"/>
   <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
-  <title>DashBoard • Psycaptr</title>
+
+  <title>Administrateur • Psycaptr</title>
 </head>
 
-<header>
-  <div class="home_logo">
-    <a href="../../index.php#" draggable="false">
-      <img src="../Images/Logo_simple.png" draggable="false" alt="logo">
-    </a>
+<?php require_once('dashboardHeaderNav.php');?>
 
-  </div>
-
-  <div class="welcome-text">
-    <?php
-      session_start();
-      echo "<p>";
-      echo "Bonjour ".$_SESSION["Prenom"];
-      echo "</p>";
-     ?>
-  </div>
-</header>
-
-<nav class="slide-menu">
-  <div class="buttons">
-    <a><img src="../Images/User_icons/utilisateur.png"></a>
-    <a><img src="../Images/liste-de-controle.png"></a>
-    <a><img src="../Images/liste-de-taches.png"></a>
-  </div>
-  <div class="text">
-    <a><p>Profil</p></a>
-    <a><p>Liste Utilisateurs</p></a>
-    <a><p>Validations</p></a>
-  </div>
-</nav>
+<!-- Il faudrait pour check le type d'user connecté, 
+si c'est l'admin alors afficher d'autre logo dans la nav bar -->
 
 <body>
   <div class="dashboard_container">
@@ -91,14 +66,14 @@
 </html>
 
 <?php
+  // Vérification que l'utilisateur est bien connecté, et qu'il est bien un admin
 	session_start();
-	if($_SESSION['login_Admin'] != 1 | !isset($_SESSION['login_Admin'])) {
+	if($_SESSION['login'] != 1 | $_SESSION['userType'] != 'admin') {
 		if(!isset($_SESSION['lastActivity']) && (time()-$_SESSION['lastActivity'])>1800){
 			unset($_SESSION['login']);
-			header('Location:../../index.php#');
+			header('Location:../../index');
 			exit();
 		}
 	}
 	$_SESSION['lastActivity']= time();
-
 ?>
