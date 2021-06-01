@@ -87,7 +87,7 @@ function doughnutChart() {
   degrade3.addColorStop(1, '#62a9fe');
 
 
-  
+
 
   new Chart(document.getElementById("doughnut-chart"), {
   type: 'doughnut',
@@ -144,7 +144,7 @@ function doughnutChart() {
 
 }
 
-function barChart() {
+function barChart(Data) {
   var ctr = document.getElementById("bar-chart").getContext("2d");
 
   var degrade1 = ctr.createLinearGradient(0, 100, 0, 0);
@@ -162,10 +162,10 @@ function barChart() {
   new Chart(document.getElementById("bar-chart"), {
   type: 'bar',
   data: {
-    labels: ["test1", 2, 3, 4,5,6,7,8],
+    labels: ["test 1", "Test 2", "Test 3", "Test 4", "Test 5"],
     datasets: [
       {
-        data: [25, 16, 15, 20, 30, 40, 10, 13],
+        data: Data,
         backgroundColor: "#FFDFF0",
         borderColor: "#FF6CBD",
         borderWidth: 1,
