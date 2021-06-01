@@ -85,7 +85,7 @@ if($_SESSION['userType']=='admin'){
   if ($num_row == 0){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
-    echo '<h2>Liste des validations en attente</h2>';
+    echo '<h2>Liste des médecins en attente de validation</h2>';
 
     echo '<div class="form_all">';
     echo '<div class="void"></div>';
