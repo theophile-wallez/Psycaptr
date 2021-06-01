@@ -180,20 +180,10 @@ if($_SESSION['userType'] == 'admin'){
 	echo '<section class="content-container">';
 	echo '<section class="fixed-container">';
 
-	if($_SESSION['userType']=='admin'){
-	  echo '<h2>Liste des utilisateurs</h2>';
-	  if ($num_row==0) {
-	      echo '<p>Aucun utilisateur ne correspond à la recherche effectuée.</p>';
-	  }
-	} else if($_SESSION['userType']=='medecin'){
-	  echo '<h2>Liste de vos patients</h2>';
+	  echo '<h2>Liste des validations en attente</h2>';
 	  if ($num_row==0) {
 	      echo '<p>Aucun patient ne correspond à la recherche effectuée.</p>';
 	  }
-	}
-	else {
-
-	}
 	?>
 
 	<!-- Barre de recherche -->
