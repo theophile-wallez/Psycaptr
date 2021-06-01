@@ -19,17 +19,6 @@
 
 <?php require_once('dashboardHeaderNav.php');
 
-	require('../../PHP/connectDatabase.php');
-
-	$sql = "SELECT * FROM Utilisateurs WHERE Id='$IdMedecin'";
-
-	if(!$result = $bdd -> query($sql)){
-			echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-			echo " |".$Id;
-	}
-
-	$row = $result -> fetch_row();
-
 ?>
 
 <body>
