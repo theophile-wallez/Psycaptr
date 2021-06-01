@@ -298,8 +298,8 @@ if($_SESSION['userType']=='admin'){
       echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
       echo   '</div>';
       echo '</form>';
-      echo '</section>';
     }
+    echo '</section>';
   }
 }
 
