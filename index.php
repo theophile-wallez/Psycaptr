@@ -241,12 +241,13 @@
   </div>
 
   <footer id="footer" class="centered" >
-    <div class="CGU">
-      <a href="Ressources/Pages/CGU.php"> Conditions d'utilisation et mentions légales </a>
-    </div>
+    
     <?php 
     displayFooter();
     ?>
+    <div class="CGU">
+      <a href="Ressources/Pages/CGU.php"> Conditions d'utilisation et mentions légales </a>
+    </div>
   </footer>
 
   <!-- Ajout de la barre de navigation et du footer -->
