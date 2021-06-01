@@ -27,7 +27,7 @@ body .content-container{
 .content-container .form-container{
     margin: 1em;
     margin-left: 1.5em;
-    width: 68%;
+    width: 100%;
     position: relative;
 }
 
@@ -52,7 +52,7 @@ body .content-container{
 .modif_button{
     position: absolute;
     top: 1.5em;
-    right: 4em;
+    left: 15em;
     padding-left: 2em;
     padding-right: 2em;
     padding-top: 0.5em;
