@@ -86,7 +86,7 @@ if($_SESSION['userType']=='admin'){
   if ($num_row != 0){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
-    echo '<h2>Liste des médecins en attente de validation</h2>';
+    echo '<h2>Liste des validations en attente</h2>';
 
     echo '<div class="form_all">';
     echo '<div class="void"></div>';
@@ -131,20 +131,6 @@ if($_SESSION['userType']=='admin'){
 
 
   if ($num_row != 0){
-    echo '<section class="fixed-container">';
-    echo '<h2>Liste des Patients en attente de validation</h2>';
-
-    echo '<div class="form_all">';
-    echo '<div class="void"></div>';
-    echo '<div class="user-container user-description">';
-    echo '<div class="nom-container">Nom</div>';
-    echo '<div class="prenom-container">Prénom</div>';
-    echo '<div class="mail-container">Adresse mail</div>';
-    echo '<div class="id-container">Identifiant</div>';
-    echo '<div class="date-container">Date d\'inscription</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</section>';
 
     while($row = $result -> fetch_row()){
       $Id=$row[0];
