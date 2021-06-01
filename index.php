@@ -104,7 +104,7 @@
     <div class="inner test-container">
       <div class="nos-tests-presentation-text">
         <h2 class="presentation-title" draggable="false">En quoi consistent nos tests ?</h2>
-        <p class="presentation-sub-title">Nos tests psychotechnique servent à vérifier les capacités psychotechnique d'un individu pour la conduite automobile, moto... <br> Ces tests peuvent s'avérer utiles pour les pilotes d'avion, autocar, course..., qui veulent vérifier leurs aptitudes au pilotage d'appareils transportant des vies.</p>
+        <p class="presentation-sub-title">Nos tests psychotechniques servent à vérifier les capacités psychotechniques d'un individu pour la conduite automobile, moto... <br> Ces tests peuvent s'avérer utiles pour les pilotes d'avion, d'autocar et de course qui veulent vérifier leurs aptitudes au pilotage d'appareils transportant des vies.</p>
       </div>
 
       <div class="tests-item-container">
