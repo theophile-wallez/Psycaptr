@@ -263,7 +263,7 @@ $_SESSION['search'] = $search;
 
 
 if($_SESSION['userType']=='admin'){
-	$sql = "SELECT * FROM ValidationMedecin";
+	$sql = "SELECT * FROM BannedUsers";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
