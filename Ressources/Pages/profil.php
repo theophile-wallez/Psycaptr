@@ -1,5 +1,17 @@
 <?php
 	session_start();
+		$IdMedecin     = $_SESSION['IdMedecin'];
+		$IdPatient     = $_SESSION['IdPatient'];
+		$NomPatient    = $_SESSION['NomPatient'];
+		$PrenomPatient = $_SESSION['PrenomPatient'];
+		$MailPatient   = $_SESSION['MailPatient'];
+
+		if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u','é','y'])) {
+			$de = 'd\'';
+		 }
+		 else {
+			 $de = 'de ';
+		 }
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +49,12 @@
         <h2>Mes informations</h2>
         <div class="item prénom-container">
           <h4>Prénom</h4>
-          <input name="Prenom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Théophile"/>
+          <input name="Prenom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php $PrenomPatient ?>"/>
         </div>
 
         <div class="item nom-container">
             <h4>Nom</h4>
-            <input name="Nom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Wallez"/>
+            <input name="Nom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php $NomPatient ?>"/>
         </div>
 
       </section>
@@ -52,12 +64,12 @@
         <h2>Mes coordonnées</h2>
         <div class="item mail-container">
           <h4>Votre adresse mail</h4>
-          <input name="Mail" type="mail" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Théophile"/>
+          <input name="Mail" type="mail" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php $MailPatient ?>"/>
         </div>
 
         <div class="item tel-container">
             <h4>Votre numéro de téléphone</h4>
-            <input name="Tel" type="tel" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="<?php echo $_SESSION["modifyProfile"]; ?>"/>
+            <input name="Tel" type="tel" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> value="<?php echo $_SESSION["modifyProfile"]; ?>"/>
         </div>
 
 				<?php
