@@ -45,36 +45,13 @@ require('../../PHP/connectDatabase.php'); //Connexion à la database
 if($_SESSION['userType']=='medecin'){
     $IdMedecin = $_SESSION['IdMedecin'];
 }
-unset($search);
-$search = convertInput($_POST['search']);
+
 $type = convertInput($_POST['Type']);
-// if (contains_at_least_one_word($search)){
-//     echo '<h5>Voici les résultats de votre recherche pour "'.$search.'"</h5>';
-// }
 
-if(isset($search)) {
-  if($_SESSION['userType']=='admin'){
-			if($type == 'Patient'){
-				$sql = "SELECT * FROM Patient WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
-			}
-			else {
-				$sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
-			}
-    }
-  else if($_SESSION['userType']=='medecin'){
-      $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and (Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%') order by Date_inscription desc";
-  }
-}
-
-if(!$result = $bdd -> query($sql)){
-  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-}
-//echo 'Les résultats sont : '.$result;
-
-$num_row = mysqli_num_rows($result);
-
+/* -------------------------------------------------------------------------------- */
+// Script qui permet d'ajouter un utilisateur
 echo '<section class="content-container">';
-// Script qui permet d'afficher les utilisateurs
+
 if($_SESSION['userType']=='admin'){
   echo '<h2>Ajout d\'un utilisateur</h2>';
 } else if($_SESSION['userType']=='medecin'){
@@ -96,7 +73,7 @@ if($_SESSION['userType']=='admin'){
   </form>
 </section>
 
-<?php
+<?php 
 
 if($_SESSION['userType']=='admin'){
   $sql = "SELECT * FROM ValidationMedecin order by Date_inscription desc";
@@ -148,6 +125,29 @@ if($_SESSION['userType']=='admin'){
   $result -> free_result();
 }
 
+unset($search);
+$search = convertInput($_POST['search']);
+
+if(isset($search)) {
+  if($_SESSION['userType']=='admin'){
+			if($type == 'Patient'){
+				$sql = "SELECT * FROM Patient WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+			else {
+				$sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+    }
+  else if($_SESSION['userType']=='medecin'){
+      $sql = "SELECT * FROM Patient WHERE Id_Medecin = '$IdMedecin' and (Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%') order by Date_inscription desc";
+  }
+}
+
+if(!$result = $bdd -> query($sql)){
+  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+}
+
+$num_row = mysqli_num_rows($result);
+
 echo '<section class="content-container">';
 echo '<section class="fixed-container">';
 
@@ -195,7 +195,6 @@ if ($num_row!=0) {
   echo '</div>';
   echo '</section>';
 }
-
 
 // Recuperation des resultats
 while($row = $result -> fetch_row()){
