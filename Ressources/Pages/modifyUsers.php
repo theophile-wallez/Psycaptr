@@ -185,6 +185,8 @@ if($_SESSION['userType'] == 'admin'){
 	  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 	}
 
+	$num_row = mysqli_num_rows($result);
+
 	echo '<section class="content-container">';
 	echo '<section class="fixed-container">';
 
