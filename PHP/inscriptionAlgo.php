@@ -79,10 +79,6 @@
   }
 
   else {
-    $_SESSION['login'] = 1;
-    $_SESSION['lastActivity'] = time();
-    $_SESSION["Nom"] = $Nom;
-    $_SESSION["Prenom"] = $Prenom;
 
     header("Location:../");
     exit();
