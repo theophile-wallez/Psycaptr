@@ -18,7 +18,8 @@
 </head>
 
 <?php require_once('dashboardHeaderNav.php');
-
+  $canModify = $_SESSION["modifyProfile"];
+  $_SESSION["modifyProfile"]=0;
 ?>
 
 <body>
@@ -30,12 +31,12 @@
         <h2>Mes informations</h2>
         <div class="item prenom-container">
           <h4>Prénom</h4>
-          <input name="Prenom" type="text" <?php if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Prenom']; ?>"/>
+          <input name="Prenom" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Prenom']; ?>"/>
         </div>
        
         <div class="item nom-container">
             <h4>Nom</h4>
-            <input name="Nom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Nom']; ?>"/>
+            <input name="Nom" type="text" <?php  if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Nom']; ?>"/>
         </div>
 
       </section>
@@ -45,12 +46,12 @@
         <h2>Mes coordonnées</h2>
         <div class="item mail-container">
           <h4>Votre adresse mail</h4>
-          <input name="Mail" type="mail" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Mail']; ?>"/>
+          <input name="Mail" type="mail" <?php  if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Mail']; ?>"/>
         </div>
 
         <div class="item tel-container">
             <h4>Votre Mot de passe</h4>
-            <input name="Mdp" type="text" <?php if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly' class='noModify'";}?>"/>
+            <input name="Mdp" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?>"/>
         </div>
 
 				<?php

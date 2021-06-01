@@ -71,6 +71,14 @@ body .content-container{
 
 .form-container .noModify{
     box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+.form-container .noModify:hover{
+    transform: scale(0);
+}
+.form-container .noModify:active{
+    transform: scale(0);
 }
 
 
