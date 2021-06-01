@@ -208,7 +208,7 @@ else {
     echo '<input type="text" name="search" placeholder="Rechercher parmis les utilisateurs">';
 		echo "<select name='Type' value='Medecin' required> <option>Medecin</option><option>Patient</option></select>";
 	}
-	 else if($_SESSION['userType']=='medecin'){
+	  else if($_SESSION['userType']=='medecin'){
     echo '<input type="text" name="search" placeholder="Rechercher parmis vos patients">';
   }
   ?>
@@ -224,7 +224,7 @@ if ($num_row!=0) {
   echo '<div class="prenom-container">Prénom</div>';
   echo '<div class="mail-container">Adresse mail</div>';
   echo '<div class="id-container">Identifiant</div>';
-  echo '<div class="date-container">Date d',"'inscription</div>";
+  echo '<div class="date-container">Date d\'inscription</div>';
   echo '</div>';
   echo '</div>';
   echo '</section>';
@@ -272,7 +272,7 @@ if($_SESSION['userType']=='admin'){
   if ($num_row != 0){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
-    echo '<h2>Liste des validations en attente</h2>';
+    echo '<h2>Liste utilisateurs bannis</h2>';
     echo '<div class="form_all">';
     echo '<div class="void"></div>';
     echo '<div class="user-container user-description">';
