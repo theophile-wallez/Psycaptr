@@ -1,5 +1,17 @@
 <?php
   session_start();
+    $IdMedecin     = $_SESSION['IdMedecin'];
+    $IdPatient     = $_SESSION['IdPatient'];
+    $NomPatient    = $_SESSION['NomPatient'];
+    $PrenomPatient = $_SESSION['PrenomPatient'];
+    $MailPatient   = $_SESSION['MailPatient'];
+
+    if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u','é','y'])) {
+      $de = 'd\'';
+     }
+     else {
+       $de = 'de ';
+     }
 ?>
 
 <!DOCTYPE html>
@@ -61,8 +73,7 @@
 </body>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
 <script src="../../node_modules/chart.js/dist/chart.js"></script>
-<script src="../../node_modules/chart.js/dist/chartjs-plugin-colorschemes.js"></script>
-
+<!--<script src="../../node_modules/chart.js/dist/chartjs-plugin-colorschemes.js"></script>-->
 <script src="../../javascripts/Graph/graph.js"></script>
 <script>
 
