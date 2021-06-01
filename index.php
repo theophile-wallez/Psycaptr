@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,7 @@
 
 <body>
     <nav id="header">
-      <?php 
+      <?php
         require_once('PHP/navBar.php');
         displayNavBar();
       ?>
@@ -87,10 +88,12 @@
             </div>
         </div>
 
-        
+
     </div>
 
-    <section class="pourquoi-utiliser-container"></section>
+    <section class="pourquoi-utiliser-container">
+
+    </section>
 
     <section id="test-section">
     <!-- Vague d'ouverture de section -->
@@ -118,7 +121,7 @@
 
           <h3>Niveau de stress</h3>
           <div class="test-description"> Nous allons évaluer le stress d'un patient par une mesure de la fréquence cardiaque et de la température de la peau. </div>
-          <a href="Ressources/Pages/voir-plus.php">Voir plus</a>
+          <a href="Ressources/Pages/voir-plus">Voir plus</a>
           <div class="line"></div>
         </div>
 
@@ -128,7 +131,7 @@
           </div>
           <h3>Acuité visuelle</h3>
           <div class="test-description"> Nous allons étudier la réaction d'un sujet à une lumière. Pour ce faire, nous allons mesurer le temps de réaction à un stimulus visuel.</div>
-          <a href="Ressources/Pages/voir-plus.php">Voir plus</a>
+          <a href="Ressources/Pages/voir-plus">Voir plus</a>
           <div class="line"></div>
         </div>
 
@@ -145,7 +148,7 @@
 
           <h3>Acuité sonore</h3>
           <div class="test-description">Nous allons mesurer la qualité de reconnaissance de tonalité, le temps de récation à un stimulus sonore et l'étendue de la perception auditive d'un patient. </div>
-          <a href="Ressources/Pages/voir-plus.php">Voir plus</a>
+          <a href="Ressources/Pages/voir-plus">Voir plus</a>
           <div class="line"></div>
         </div>
       </div>
@@ -162,81 +165,38 @@
   <section id="FAQ-section">
     <script src="Javascripts/faq.js"></script>
     <h1 class="FAQ-une-question-title">Une question ?</h1>
-
     <div class="FAQ-container">
       <ul class="FAQ-questions-reponses-container">
-        <li class="FAQ-question-reponses question-first" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Faut-il se préparer avant de réaliser un test ?</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Non, le but est d'effectuer un test dans des conditions normales.</p>
-            </div>
-          </div>
-        </li>
+        <?php
+        require('PHP/connectDatabase.php');
+        $sql = 'SELECT * FROM FAQ';
 
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Comment m'inscrire pour effectuer un test ?</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Pour s'inscrire afin d'effectuer un test psychotechnique, vous devez passer par votre médecin traitant.
-              </p>
-              <p>Celui-ci devra créer un compte à son nom en tant que médecin, si cela n'est pas déjà fait et ensuite, créer votre compte patient. Il fera ensuite une demande sur la plateforme pour faire votre test.
-              </p>
-            </div>
-          </div>
-        </li>
+        if(!$result = $bdd -> query($sql)){
+            echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+        }
 
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Combien de temps dure un test ?</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Un test  réaliser correctement dure entre 45 min à 1 heure.
-              </p>
-            </div>
-          </div>
-        </li>
+        // Recuperation des resultats
+        while($row = $result -> fetch_row()){
+            $Question=$row[1];
+            $Reponse = $row[2];
 
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>ipsum dolor sit amet</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-              </p>
-            </div>
-          </div>
-        </li>
+            //On génère une ligne qui correpond pour chaque question / réponses
+            echo '<li class="FAQ-question-reponses question-first" onclick="toggleAccordion(this)">';
+            echo '<div class="FAQ-question">';
+            echo '<h4>'.$Question.'</h4><span class="icon"></span>';
+            echo '</div>';
+            echo '<div class="FAQ-reponse">';
+            echo '<div class="wrapper">';
+            echo '<p>'.$Reponse.'</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</li>';
+        }
 
-        <li class="FAQ-question-reponses" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>ipsum dolor sit amet</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-              </p>
-            </div>
-          </div>
-        </li>
+        $result -> free_result();
 
-        <li class="FAQ-question-reponses question-fin" onclick="toggleAccordion(this)">
-          <div class="FAQ-question">
-            <h4>Lorem ipsum</h4><span class="icon"></span>
-          </div>
-          <div class="FAQ-reponse">
-            <div class="wrapper">
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-          </div>
-        </li>
+        $bdd -> close();
+        ?>
       </ul>
     </div>
 
@@ -255,22 +215,23 @@
 
   <div id="contact-container" class="centered">
     <div class="inner">
-      <form class="contact_form_container" action="contact.php" method="POST">
+
+      <form class="contact_form_container" action="PHP/contactAlgo.php" method="POST">
         <div class="abstract_container" id="contact_link"></div>
         <div class="title_container">
           <h3 draggable="false">Une autre question ?    Contactez-nous !</h3>
         </div>
         <div class="input_container input_container_1">
-          <input name="Prenom" type="text" placeholder="Prénom"/>
-          <input name="Nom" type="text" placeholder="Nom"/>
+          <input name="Prenom" type="text" placeholder="Prénom" required/>
+          <input name="Nom" type="text" placeholder="Nom" required/>
         </div>
 
         <div class="input_container input_container_2">
-          <input name="Mail" type="email" placeholder="Votre mail"/>
+          <input name="Mail" type="email" placeholder="Votre mail" required/>
         </div>
 
         <div class="input_container input_container_3">
-          <textarea name="Message" placeholder="Votre message"></textarea>
+          <textarea name="Message" placeholder="Votre message" required></textarea>
         </div>
         <div class="envoyer_button">
           <button type="submit">Envoyer le message</button>
@@ -280,8 +241,9 @@
   </div>
 
   <footer id="footer" class="centered" >
-	<div class="CGU"> 
-		<a href="Ressources/Pages/CGU.html"> CGU </a>
+
+	<div class="CGU">
+		<a href="Ressources/Pages/CGU.php"> Conditions D'utilisations </a>
 	</div>
   </footer>
 
