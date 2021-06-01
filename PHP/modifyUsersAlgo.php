@@ -217,7 +217,9 @@ if(isset($_POST['validationUserP'])){
 	 exit();
 }
 
-if(isset($_POSt['validationUserM'])){
+if(isset($_POST['validationUserM'])){
+
+
 	$Id = convertInput($_POST['Id']);
 
 	$sql = "SELECT * FROM ValidationMedecin WHERE Id='$Id'";
