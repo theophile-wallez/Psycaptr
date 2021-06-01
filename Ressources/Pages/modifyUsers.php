@@ -87,9 +87,7 @@ if($_SESSION['userType']=='admin'){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
     echo '<h2>Liste des validations en attente</h2>';
-
     echo '<div class="form_all">';
-    echo '<div class="void"></div>';
     echo '<div class="user-container user-description">';
     echo '<div class="nom-container">Nom</div>';
     echo '<div class="prenom-container">Prénom</div>';
