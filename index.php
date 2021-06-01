@@ -240,10 +240,10 @@
     </div>
   </div>
 
+  
   <footer id="footer" class="centered" >
-    
     <?php 
-    displayFooter();
+      displayFooter();
     ?>
     <div class="CGU">
       <a href="Ressources/Pages/CGU.php"> Conditions d'utilisation et mentions légales </a>
