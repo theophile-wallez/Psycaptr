@@ -15,7 +15,7 @@ $Message = str_replace("'","''",$Message);
 
 $Date = date('Y-m-d H:i:s');
 $IdUser = 0;
-$MailTo = 'support@psycaptr.tk'
+$MailTo = 'theophile@psycaptr.tk'
 
 $header="MIME-Version: 1.0\r\n";
 $header.='From:"Psycaptr"support@psycaptr.tk<>'."\n";
