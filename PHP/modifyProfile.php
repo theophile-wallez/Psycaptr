@@ -6,11 +6,12 @@ if(isset($_POST['modifyProfile'])){
   header("Location:../Ressources/Pages/profil.php");
   exit;
 
-}else {
+}
+
   $_SESSION["modifyProfile"] = 1;
   header("Location:../Ressources/Pages/profil.php");
   exit;
-}
+
 
 
 ?>
