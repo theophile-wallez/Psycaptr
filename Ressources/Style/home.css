@@ -802,10 +802,11 @@
 }
 .pourquoi-utiliser-container img {
   width: 80%;
-
 }
 
 .sub-title-pk{
   color: #645483;
   margin-bottom: 2em;
+  font-size: 1.2em;
+  width: 80%;
 }
