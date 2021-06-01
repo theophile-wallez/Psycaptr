@@ -36,7 +36,6 @@
 		}
 	}
 
-	$result -> free_result();
 
 	$sql = 'SELECT * FROM Utilisateurs';
 
