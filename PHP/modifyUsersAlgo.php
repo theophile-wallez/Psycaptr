@@ -216,8 +216,11 @@ if(isset($_POST['validationUserP'])){
 	 header("Location:../Ressources/Pages/modifyUsers");
 	 exit();
 }
-else if(isset($_POSt['validationUserM'])){
+
+if(isset($_POSt['validationUserM'])){
 	$id = convertInput($_POST['Id']);
+
+	echo $id;
 
 	$sql = "SELECT * FROM ValidationMedecin WHERE Id='$id'";
 

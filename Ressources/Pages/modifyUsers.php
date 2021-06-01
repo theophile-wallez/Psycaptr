@@ -121,6 +121,7 @@ if($_SESSION['userType']=='admin'){
   }
 
 
+
 	$sql = "SELECT * FROM ValidationPatient";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
@@ -152,6 +153,9 @@ if($_SESSION['userType']=='admin'){
     }
     echo  '</section>';
   }
+	else {
+		echo echo '</section>';
+	}
 
 }
 
