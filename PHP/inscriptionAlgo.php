@@ -20,10 +20,6 @@
   $Date   = date('Y-m-d H:i:s');
   $IP = password_hash($_SERVER['REMOTE_ADDR'], PASSWORD_DEFAULT);
 
-  $_SESSION['Mail']  = $Mail;
-  $_SESSION['Nom']   = $Nom;
-  $_SESSION['Prenom']= $Prenom;
-
   // On vérifie que l'utilisateur n'est pas bannit
   $sql = 'SELECT * FROM BannedUsers';
 
@@ -40,6 +36,10 @@
     }
   }
 
+  $_SESSION['Mail']  = $Mail;
+  $_SESSION['Nom']   = $Nom;
+  $_SESSION['Prenom']= $Prenom;
+  
   // On vérifie si le mot de passe est le même que celui de confirmation,
   // sinon on reviens vers la page d'inscription
 
