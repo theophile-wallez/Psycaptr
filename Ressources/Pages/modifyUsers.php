@@ -108,9 +108,9 @@ if($_SESSION['userType']=='admin'){
       //On génère une ligne qui correpond à chaque utilisateurs
       echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
       echo  '<div class="line-container user-container">';
-      echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
-      echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
-      echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
+      echo    '<input type="text" readonly="readonly" name="Nom" value="'.$Nom.'" required>';
+      echo    '<input type="text" readonly="readonly" name="Prenom" value="'.$Prenom.'" required>';
+      echo    '<input input type="email" readonly="readonly" name="Mail" value="'.$Mail.'" required>';
       echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
       echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
       echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
