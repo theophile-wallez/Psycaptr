@@ -41,7 +41,7 @@ $header="MIME-Version: 1.0\r\n";
 $header.='From:"Psycaptr"support@psycaptr.tk<>'."\n";
 $header.='Content-Type:text/html; charset="utf-8"'."\n";
 $header.='Content-Transfer-Encoding: 8bit';
-mail($MailTo, "Message de ".$Prenom." ".$Nom, $message, $header);
+mail($MailTo, "Message de ".$Prenom." ".$Nom, $Message, $header);
 header("Location:/");
 exit();
 ?>
