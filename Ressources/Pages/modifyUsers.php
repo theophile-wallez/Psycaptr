@@ -202,7 +202,7 @@ else {
   <?php
   if($_SESSION['userType']=='admin'){
     echo '<input type="text" name="search" placeholder="Rechercher parmis les utilisateurs">';
-		echo "<select name='Type' value='Medecin' required> <option>Medecin</option><option>Patient</option></select>";
+		echo "<select class='searchSelect' name='Type' value='Medecin' required> <option>Medecin</option><option>Patient</option></select>";
 	}
 	  else if($_SESSION['userType']=='medecin'){
     echo '<input type="text" name="search" placeholder="Rechercher parmis vos patients">';
