@@ -1,12 +1,12 @@
 <?php
   session_start();
     $IdMedecin     = $_SESSION['IdMedecin'];
-    $IdPatient     = $_SESSION['IdPatient'];    
+    $IdPatient     = $_SESSION['IdPatient'];
     $NomPatient    = $_SESSION['NomPatient'];
     $PrenomPatient = $_SESSION['PrenomPatient'];
     $MailPatient   = $_SESSION['MailPatient'];
 
-    if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u','é','y'])) { 
+    if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u','é','y'])) {
       $de = 'd\'';
      }
      else {
@@ -70,7 +70,7 @@
 
   <?php
     require('../../PHP/connectDatabase.php');
-    
+
     $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Id_Patient = '' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
@@ -82,6 +82,7 @@
     }
   ?>
 
+  console.log(<?php$IdMedecin?>);
   console.log(Data);
   graph(Data);
 
