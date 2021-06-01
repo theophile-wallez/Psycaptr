@@ -100,7 +100,7 @@
   Data = [];
 
   <?php
-    $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Medecin='$IdMedecin' GROUP BY Type"
+    $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Medecin='$IdMedecin' GROUP BY Type";
 
     $result = $bdd -> query($sql);
 
