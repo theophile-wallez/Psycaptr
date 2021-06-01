@@ -23,43 +23,8 @@ body .content-container{
     background-color: white;
 }
 
-.content-container .profil-container{
-    position: absolute;
-    width: 30%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background: #f7f7f7;
-    display: flex;
-    justify-content: center;
-}
-
-.profil-container .img-container{
-    margin-top: 2em;
-    width: 12em;
-    height: 12em;
-    background: var(--light_gradient);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-}
-.img-container .img2-container{
-    background: #f7f7f7;
-    border-radius: 50%;
-    position: absolute;
-    --border:0.2em;
-    top: var(--border);
-    left: var(--border);
-    right: var(--border);
-    bottom: var(--border);
-}
-
 .content-container .form-container{
     margin: 1em;
-    margin-left: 35%;
     width: 68%;
     position: relative;
 }
@@ -71,9 +36,14 @@ body .content-container{
 }
 
 .categorie h2{
-    margin-bottom: 1em;
-    font-size: 1.6em;
+    font-size: 1.5em;
+    color: #807488;
+    font-weight: bold;
+    user-select: none;
+    margin: 0;
+    margin-bottom: 0.6em;
 }
+
 .categorie .item h4{
     margin-bottom: 0.8em;
     font-size: 1.3em;
@@ -81,7 +51,7 @@ body .content-container{
 
 .modif_button{
     position: absolute;
-    top: 2;
+    top: 1.5em;
     right: 4em;
     padding-left: 2em;
     padding-right: 2em;
@@ -91,10 +61,17 @@ body .content-container{
     border-radius:1em;
     color: #FF589E;
     transition:all 0.4s;
+    z-index: 0;
 }
 
 .modif_button:hover{
     background: #FF589E;
     color: white;
 }
+
+.form-container .noModify{
+    box-shadow: none;
+}
+
+
 
