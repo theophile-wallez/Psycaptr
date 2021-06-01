@@ -262,7 +262,7 @@ if(isset($_POST['banUser'])){
 
 	$row = $result -> fetch_row();
 
-	$sql = "INSERT INTO BannedUsers (`Id`, `Mail`, `Nom`, `Prenom`, `IP`) VALUES ('$row[0]', '$row[1]', '$row[4]', '$row[5]', '$row[6]')";
+	$sql = "INSERT INTO `BannedUsers` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`, `IP`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]', '$row[6]')";
 
 	 if(!$bdd -> query($sql)){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -280,6 +280,38 @@ if(isset($_POST['banUser'])){
 	 exit();
 }
 
-	$bdd -> close();
-  exit();
+/*------------------------------------------------------------------------*/
+
+if(isset($_POST['unbanUser'])){
+	$Id = convertInput($_POST['Id']);
+
+	$sql = "SELECT * FROM BannedUsers WHERE Id='$Id'";
+
+    if(!$result = $bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+    }
+
+	$row = $result -> fetch_row();
+
+	$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`, `IP`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]', '$row[6]')";
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 $sql = "DELETE FROM Utilisateurs WHERE Id='$Id'" ;
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 header("Location:../Ressources/Pages/modifyUsers");
+	 exit();
+}
+
+$bdd -> close();
+exit();
 ?>
