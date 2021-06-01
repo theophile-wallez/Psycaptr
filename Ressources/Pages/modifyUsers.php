@@ -76,7 +76,7 @@ if($_SESSION['userType']=='admin'){
 <?php
 
 if($_SESSION['userType']=='admin'){
-  $sql = "SELECT * FROM ValidationPatient";
+	$sql = "SELECT * FROM ValidationMedecin";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
@@ -110,7 +110,54 @@ if($_SESSION['userType']=='admin'){
 
       //On génère une ligne qui correpond à chaque utilisateurs
       echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
-      echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
+      echo  '<div class="line-container user-container">';
+      echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
+      echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
+      echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
+      echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
+      echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
+      echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+      echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
+      echo   '</div>';
+      echo '</form>';
+    }
+    echo  '</section>';
+  }
+
+
+	$sql = "SELECT * FROM ValidationPatient";
+  if(!$result = $bdd -> query($sql)){
+    echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+  }
+  $num_row = mysqli_num_rows($result);
+
+
+  if ($num_row != 0){
+    echo '<section class="content-container">';
+    echo '<section class="fixed-container">';
+    echo '<h2>Liste des médecins en attente de validation</h2>';
+
+    echo '<div class="form_all">';
+    echo '<div class="void"></div>';
+    echo '<div class="user-container user-description">';
+    echo '<div class="nom-container">Nom</div>';
+    echo '<div class="prenom-container">Prénom</div>';
+    echo '<div class="mail-container">Adresse mail</div>';
+    echo '<div class="id-container">Identifiant</div>';
+    echo '<div class="date-container">Date d\'inscription</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
+
+    while($row = $result -> fetch_row()){
+      $Id=$row[0];
+      $Mail=$row[1];
+      $Date_Inscription = date("d-m-Y",strtotime($row[3]));
+      $Nom = $row[4];
+      $Prenom = $row[5];
+
+      //On génère une ligne qui correpond à chaque utilisateurs
+      echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
       echo  '<div class="line-container user-container">';
       echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
       echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
