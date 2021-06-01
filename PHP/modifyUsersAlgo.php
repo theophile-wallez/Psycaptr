@@ -67,7 +67,7 @@
             $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
         }
         else if($_SESSION['userType']=='medecin'){
-            $sql = "INSERT INTO `Patient` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$IdMedecin','$Date','$Nom','$Prenom')";
+            $sql = "INSERT INTO `ValidationPatient` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$IdMedecin','$Date','$Nom','$Prenom')";
         }
         if(!$bdd -> query($sql)){
             echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;

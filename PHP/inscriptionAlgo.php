@@ -84,7 +84,7 @@
     $_SESSION["Nom"] = $Nom;
     $_SESSION["Prenom"] = $Prenom;
 
-    header("Location:../Ressources/Pages/dashboard");
+    header("Location:../");
     exit();
   }
 
