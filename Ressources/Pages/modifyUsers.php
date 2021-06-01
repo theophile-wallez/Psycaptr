@@ -76,7 +76,7 @@ if($_SESSION['userType']=='admin'){
 <?php
 
 if($_SESSION['userType']=='admin'){
-  $sql = "SELECT * FROM ValidationMedecin, ValidationPatient";
+  $sql = "SELECT * FROM ValidationPatient";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
