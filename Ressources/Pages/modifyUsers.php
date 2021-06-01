@@ -175,86 +175,93 @@ $_SESSION['search'] = $search;
 
 $result -> free_result();
 
-
-if($_SESSION['userType'] == 'admin'){
-
-	$sql = "SELECT * FROM ValidationMedecin, ValidationPatient WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
-
-
-	if(!$result = $bdd -> query($sql)){
-	  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
-	}
-
-	$num_row = mysqli_num_rows($result);
-
-	echo '<section class="content-container">';
-	echo '<section class="fixed-container">';
-
-	  echo '<h2>Liste des validations en attente</h2>';
-	  if ($num_row==0) {
-	      echo '<p>Aucun patient ne correspond à la recherche effectuée.</p>';
-	  }
-	?>
-
-	<!-- Barre de recherche -->
-	<form class="search_bar-container" action="modifyUsers" method="POST">
-	  <?php
-	  if($_SESSION['userType']=='admin'){
-	    echo '<input type="text" name="search" placeholder="Rechercher parmis les utilisateurs">';
-			echo "<select name='Type' value='Medecin' required> <option>Medecin</option><option>Patient</option></select>";
-		}
-		 else if($_SESSION['userType']=='medecin'){
-	    echo '<input type="text" name="search" placeholder="Rechercher parmis vos patients">';
-	  }
-	  ?>
-	  <div class="button-container"><button type="submit">Recherche</button></div>
-	</form>
-	<?php
-
-	if ($num_row!=0) {
-	  echo '<div class="form_all">';
-	  echo '<div class="void"></div>';
-	  echo '<div class="user-container user-description">';
-	  echo '<div class="nom-container">Nom</div>';
-	  echo '<div class="prenom-container">Prénom</div>';
-	  echo '<div class="mail-container">Adresse mail</div>';
-	  echo '<div class="id-container">Identifiant</div>';
-	  echo '<div class="date-container">Date d',"'inscription</div>";
-	  echo '</div>';
-	  echo '</div>';
-	  echo '</section>';
-	}
-
-
-	// Recuperation des resultats
-	while($row = $result -> fetch_row()){
-	  $Id=$row[0];
-	  $Mail=$row[1];
-	  $Date_Inscription = date("d-m-Y",strtotime($row[3]));
-	  $Nom = $row[4];
-	  $Prenom = $row[5];
-
-	  //On génère une ligne qui correpond à chaque utilisateurs
-	  echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
-	  echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
-	  echo  '<div class="line-container user-container">';
-	  echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
-	  echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
-	  echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
-	  echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
-	  echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
-	  echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
-	  echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
-	  echo   '</div>';
-	  echo '</form>';
-	}
-	echo  '</section>';
-
-
-	$_SESSION['search'] = $search;
-
-	$result -> free_result();
+if(isset($search)) {
+  if($_SESSION['userType']=='admin'){
+			if($type == 'Patient'){
+				$sql = "SELECT * FROM Patient WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+			else {
+				$sql = "SELECT * FROM Utilisateurs WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+			}
+    }
 }
+
+if(!$result = $bdd -> query($sql)){
+  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+}
+//echo 'Les résultats sont : '.$result;
+
+$num_row = mysqli_num_rows($result);
+
+
+
+echo '<section class="content-container">';
+echo '<section class="fixed-container">';
+
+if($_SESSION['userType']=='admin'){
+  echo '<h2>Liste des validations en attente</h2>';
+  if ($num_row==0) {
+      echo '<p>Aucun utilisateur ne correspond à la recherche effectuée.</p>';
+  }
+}
+
+?>
+
+<!-- Barre de recherche -->
+<form class="search_bar-container" action="modifyUsers" method="POST">
+  <?php
+  if($_SESSION['userType']=='admin'){
+    echo '<input type="text" name="search" placeholder="Rechercher parmis les utilisateurs">';
+		echo "<select name='Type' value='Medecin' required> <option>Medecin</option><option>Patient</option></select>";
+	}
+  ?>
+  <div class="button-container"><button type="submit">Recherche</button></div>
+</form>
+<?php
+
+if ($num_row!=0) {
+  echo '<div class="form_all">';
+  echo '<div class="void"></div>';
+  echo '<div class="user-container user-description">';
+  echo '<div class="nom-container">Nom</div>';
+  echo '<div class="prenom-container">Prénom</div>';
+  echo '<div class="mail-container">Adresse mail</div>';
+  echo '<div class="id-container">Identifiant</div>';
+  echo '<div class="date-container">Date d',"'inscription</div>";
+  echo '</div>';
+  echo '</div>';
+  echo '</section>';
+}
+
+
+// Recuperation des resultats
+while($row = $result -> fetch_row()){
+  $Id=$row[0];
+  $Mail=$row[1];
+  $Date_Inscription = date("d-m-Y",strtotime($row[3]));
+  $Nom = $row[4];
+  $Prenom = $row[5];
+
+  //On génère une ligne qui correpond à chaque utilisateurs
+  echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
+  echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
+  echo  '<div class="line-container user-container">';
+  echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
+  echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
+  echo    '<input input type="email" name="Mail" value="'.$Mail.'" required>';
+  echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
+  echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
+  echo    '<div class="valider_changement modify"><button type="submit" name="modifyUser"><i class="fa fa-check"></i></button></div>';
+  echo    '<div class="valider_changement remove"><button type="submit" name="removeUser"><i class="fa fa-trash"></i></button></div>';
+  echo   '</div>';
+  echo '</form>';
+}
+echo  '</section>';
+
+
+$_SESSION['search'] = $search;
+
+$result -> free_result();
 
 
 $bdd -> close();
