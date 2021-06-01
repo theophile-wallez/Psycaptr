@@ -177,6 +177,14 @@ $result -> free_result();
 
 
 if($_SESSION['userType'] == 'admin'){
+
+	$sql = "SELECT * FROM ValidationMedecin, ValidationPatient WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+
+
+	if(!$result = $bdd -> query($sql)){
+	  echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+	}
+
 	echo '<section class="content-container">';
 	echo '<section class="fixed-container">';
 
