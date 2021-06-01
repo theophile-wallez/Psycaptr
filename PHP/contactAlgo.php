@@ -15,6 +15,13 @@ $Message = str_replace("'","''",$Message);
 
 $Date = date('Y-m-d H:i:s');
 $IdUser = 0;
+$MailTo = 'support@psycaptr.tk'
+
+$header="MIME-Version: 1.0\r\n";
+$header.='From:"Psycaptr"support@psycaptr.tk<>'."\n";
+$header.='Content-Type:text/html; charset="utf-8"'."\n";
+$header.='Content-Transfer-Encoding: 8bit';
+mail($MailTo, "Message de ".$Prenom." ".$Nom, $message, $header);
 
 $sql = 'SELECT * FROM Message';
 
@@ -31,6 +38,7 @@ $sql = "INSERT INTO `Message-Utilisateur` (`Id`, `IdUser`, `Nom`, `Prenom`, `Mai
 if(!$result = $bdd -> query($sql)){
   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
+
 
 
 $bdd -> close();
