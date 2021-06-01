@@ -112,7 +112,7 @@ if($_SESSION['userType']=='admin'){
   }
 }
 else {
-  
+
 }
 ?>
 
@@ -145,7 +145,7 @@ if ($num_row!=0) {
   echo '</section>';
 }
 
-  
+
 // Recuperation des resultats
 while($row = $result -> fetch_row()){
   $Id=$row[0];
@@ -174,6 +174,9 @@ echo  '</section>';
 $_SESSION['search'] = $search;
 
 $result -> free_result();
+
+
+
 
 $bdd -> close();
 exit();
