@@ -23,7 +23,7 @@
 
 <body>
     <nav id="header">
-      <?php 
+      <?php
         require_once('PHP/navBar.php');
         displayNavBar();
       ?>
@@ -88,11 +88,11 @@
             </div>
         </div>
 
-        
+
     </div>
 
     <section class="pourquoi-utiliser-container">
-      
+
     </section>
 
     <section id="test-section">
@@ -167,14 +167,14 @@
     <h1 class="FAQ-une-question-title">Une question ?</h1>
     <div class="FAQ-container">
       <ul class="FAQ-questions-reponses-container">
-        <?php 
-        require('PHP/connectDatabase.php'); 
+        <?php
+        require('PHP/connectDatabase.php');
         $sql = 'SELECT * FROM FAQ';
 
         if(!$result = $bdd -> query($sql)){
             echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
         }
-        
+
         // Recuperation des resultats
         while($row = $result -> fetch_row()){
             $Question=$row[1];
@@ -241,8 +241,8 @@
   </div>
 
   <footer id="footer" class="centered" >
-	<div class="CGU"> 
-		<a href="Ressources/Pages/CGU.html"> CGU </a>
+	<div class="CGU">
+		<a href="Ressources/Pages/CGU.php"> CGU </a>
   </footer>
 
   <!-- Ajout de la barre de navigation et du footer -->
