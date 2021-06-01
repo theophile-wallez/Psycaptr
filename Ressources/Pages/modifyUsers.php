@@ -82,6 +82,8 @@ if($_SESSION['userType']=='admin'){
   }
   $num_row = mysqli_num_rows($result);
 
+	echo $num_row;
+
   if ($num_row != 0){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
