@@ -185,35 +185,33 @@ if(isset($_POST['removeUser'])){
 /*------------------------------------------------------------------------*/
 
 if(isset($_POST['validationUserP'])){
-
 	$Id = convertInput($_POST['Id']);
 
 	$sql = "SELECT * FROM ValidationPatient WHERE Id='$Id'";
 
-	 if(!$result = $bdd -> query($sql)){
-			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-			 echo " |".$Id;
-	 }
+    if(!$result = $bdd -> query($sql)){
+        echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+        echo " |".$Id;
+    }
 
-	 $row = $result -> fetch_row();
-
+    $row = $result -> fetch_row();
 
 	$sql = "INSERT INTO `Patient` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]')" ;
 
-	 if(!$bdd -> query($sql)){
-			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-			 echo " |".$Id;
-	 }
+    if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+    }
 
-	 $sql = "DELETE FROM ValidationPatient WHERE Id='$Id'" ;
+    $sql = "DELETE FROM ValidationPatient WHERE Id='$Id'" ;
 
-	 if(!$bdd -> query($sql)){
-			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-			 echo " |".$Id;
-	 }
+    if(!$bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+    }
 
-	 header("Location:../Ressources/Pages/modifyUsers");
-	 exit();
+    header("Location:../Ressources/Pages/modifyUsers");
+    exit();
 }
 
 /*------------------------------------------------------------------------*/
