@@ -23,6 +23,8 @@ body{
 .fixed-container{
     align-self: center;
     width:101%;
+    user-select: none;
+       
     position: sticky;
     top: 5em;
     background:linear-gradient(180deg, white 95%, rgba(255,255,255,0) 100%);
