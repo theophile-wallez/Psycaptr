@@ -33,7 +33,7 @@ body{
 .form_all{
     display:flex;
     height:3em;
-    margin-bottom: 0.8em;
+    margin-bottom: 0.5em;
     transition: all 0.3s;
 }
 
