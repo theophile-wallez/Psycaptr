@@ -120,17 +120,13 @@ if($_SESSION['userType']=='admin'){
     }
   }
 
-
-
 	$sql = "SELECT * FROM ValidationPatient";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
+
   $num_row = mysqli_num_rows($result);
-
-
   if ($num_row != 0){
-
     while($row = $result -> fetch_row()){
       $Id=$row[0];
       $Mail=$row[1];
