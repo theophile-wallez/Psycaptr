@@ -82,7 +82,7 @@
     }
   ?>
 
-  console.log(<?php$IdMedecin?>);
+  console.log("<?php echo $IdMedecin;?>");
   console.log(Data);
   graph(Data);
 
