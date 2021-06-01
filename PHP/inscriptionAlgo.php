@@ -16,7 +16,7 @@
   $Nom    = convertInput($_POST['Nom']);
   $Prenom = convertInput($_POST['Prenom']);
   $Mail   = convertInput($_POST['Mail']);
-  $Date   = date('Y-m-d');
+  $Date   = date('Y-m-d H:i:s');
   $IP = password_hash($_SERVER['REMOTE_ADDR'], PASSWORD_DEFAULT);
 
   $_SESSION['Mail']  = $Mail;
@@ -71,7 +71,7 @@
 
   $result -> free_result();
 
-  $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`,`IP`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom','$IP')";
+  $sql = "INSERT INTO `ValidationMedecin` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`,`IP`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom','$IP')";
 
   if(!$bdd -> query($sql)){
     echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
