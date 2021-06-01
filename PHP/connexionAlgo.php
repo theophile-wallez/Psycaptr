@@ -28,6 +28,7 @@
 				$_SESSION['login'] = 1;
 				$_SESSION['userType'] = 'admin';
 				$_SESSION['lastActivity'] = time();
+				$_SESSION['Mail'] = $row[0];
 				$_SESSION['Nom'] = $row[2];
 			    $_SESSION['Prenom'] = $row[3];
 				header('Location:../Ressources/Pages/dashboard');
@@ -36,13 +37,13 @@
 		}
 	}
 
-
 	$sql = 'SELECT * FROM Utilisateurs';
 
 	if($result = $bdd -> query($sql)) {
 		while($row = $result -> fetch_row())  {
 			if($Mail == $row[1] && password_verify($Mdp, $row[2])) {
 				$_SESSION['IdMedecin'] = $row[0];
+				$_Session['Mail'] = $row[1];
 				$_SESSION['Nom'] = $row[4];
 			    $_SESSION['Prenom'] = $row[5];
 

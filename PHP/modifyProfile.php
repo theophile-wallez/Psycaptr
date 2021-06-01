@@ -6,7 +6,6 @@ if(isset($_POST['modifyProfile'])){
 
   require('connectDatabase.php');
 
-  
   if($_SESSION['userType']=='admin'){
       $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom' WHERE Id='$Id'";
   }
@@ -32,7 +31,4 @@ if(isset($_POST['modifyProfile'])){
   //echo $_SESSION["modifyProfile"];
   header("Location:../Ressources/Pages/profil.php");
   exit;
-
-
-
 ?>
