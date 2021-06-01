@@ -1,5 +1,6 @@
 <?php
   require_once('algo.php');
+  require('connectDatabase.php'); //Connexion à la database
   session_start();
 
   unset($_SESSION['login']);
@@ -23,6 +24,22 @@
   $_SESSION['Nom']   = $Nom;
   $_SESSION['Prenom']= $Prenom;
 
+  // On vérifie que l'utilisateur n'est pas bannit
+  $sql = 'SELECT * FROM BannedUsers';
+
+  if(!$result = $bdd -> query($sql)){
+    echo "Impossible d'accéder à cette table : (" . $bdd->errno . ") " . $bdd->error;
+  }
+  else {
+    while($row = $result -> fetch_row()) {
+      if($Mail == $row[1] || $IP = $row[4]) {
+        header('Location:../');
+        $bdd -> close();
+        exit();
+      }
+    }
+  }
+
   // On vérifie si le mot de passe est le même que celui de confirmation,
   // sinon on reviens vers la page d'inscription
 
@@ -32,22 +49,9 @@
   }
 
   //Le mot de passe est crypté
-  $CryptedMdp= password_hash($Mdp, PASSWORD_DEFAULT);
+  $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
 
-  $servername = 'localhost';
-  $bddname    = 'ttwawain_Psycaptr';
-  $username   = 'theophile';
-  $password   = 'psycaptrisep2023';
-
-  //Message d'erreur en cas d'accès impossible à la database
-  $bdd = new mysqli($servername, $username, $password, $bddname);
-  if($bdd->connect_errno){
-
-  // Est-ce qu'on ne redirige pas l'utilisateur vers la page d'inscription ?
-    echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
-    exit();
-  }
-
+  
   //On sélectionne la table Utilisateurs dans la database
   $sql = 'SELECT * FROM Utilisateurs';
 
@@ -62,7 +66,6 @@
         header('Location:../Ressources/Pages/connexion');
         exit();
       }
-
       while($Id == $row[0]){
         $Id = IdGenerator(10);
       }
