@@ -218,11 +218,9 @@ if(isset($_POST['validationUserP'])){
 }
 
 if(isset($_POSt['validationUserM'])){
-	$id = convertInput($_POST['Id']);
+	$Id = convertInput($_POST['Id']);
 
-
-
-	$sql = "SELECT * FROM ValidationMedecin WHERE Id='$id'";
+	$sql = "SELECT * FROM ValidationMedecin WHERE Id='$Id'";
 
 	 if(!$result = $bdd -> query($sql)){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -239,7 +237,7 @@ if(isset($_POSt['validationUserM'])){
 			 echo " |".$Id;
 	 }
 
-	 $sql = "DELETE FROM ValidationMedecin WHERE Id='$id'" ;
+	 $sql = "DELETE FROM ValidationMedecin WHERE Id='$Id'" ;
 
 	 if(!$bdd -> query($sql)){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
