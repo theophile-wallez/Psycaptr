@@ -28,7 +28,7 @@
   }
   else {
     while($row = $result -> fetch_row()) {
-      if($Mail == $row[1] || $IP = $row[4]) {
+      if($Mail == $row[1] || $IP = $row[6]) {
         header('Location:../');
         $bdd -> close();
         exit();
