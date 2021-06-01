@@ -73,6 +73,7 @@ body .content-container{
     box-shadow: none;
     margin: 0;
     padding: 0;
+    height:1.2em;
 }
 .form-container .noModify:hover{
     transform: scale(1);
