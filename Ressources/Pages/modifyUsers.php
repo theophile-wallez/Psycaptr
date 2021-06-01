@@ -259,8 +259,50 @@ while($row = $result -> fetch_row()){
 }
 echo  '</section>';
 
-
 $_SESSION['search'] = $search;
+
+
+if($_SESSION['userType']=='admin'){
+	$sql = "SELECT * FROM ValidationMedecin";
+  if(!$result = $bdd -> query($sql)){
+    echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
+  }
+  $num_row = mysqli_num_rows($result);
+
+  if ($num_row != 0){
+    echo '<section class="content-container">';
+    echo '<section class="fixed-container">';
+    echo '<h2>Liste des validations en attente</h2>';
+    echo '<div class="form_all">';
+    echo '<div class="user-container user-description">';
+    echo '<div class="nom-container">Nom</div>';
+    echo '<div class="prenom-container">Prénom</div>';
+    echo '<div class="mail-container">Adresse mail</div>';
+    echo '<div class="id-container">Identifiant</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</section>';
+
+    while($row = $result -> fetch_row()){
+      $Id=$row[0];
+      $Mail=$row[1];
+      $Nom = $row[2];
+      $Prenom = $row[3];
+
+      //On génère une ligne qui correpond à chaque utilisateurs
+      echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
+      echo  '<div class="line-container user-container">';
+      echo    '<input type="text" readonly="readonly" name="Nom" value="'.$Nom.'" required>';
+      echo    '<input type="text" readonly="readonly" name="Prenom" value="'.$Prenom.'" required>';
+      echo    '<input input type="email" readonly="readonly" name="Mail" value="'.$Mail.'" required>';
+      echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
+      echo   '</div>';
+      echo '</form>';
+      echo '</section>';
+    }
+  }
+}
+
 $result -> free_result();
 $bdd -> close();
 exit();
