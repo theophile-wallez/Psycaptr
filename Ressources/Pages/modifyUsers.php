@@ -286,8 +286,8 @@ if($_SESSION['userType']=='admin'){
     while($row = $result -> fetch_row()){
       $Id=$row[0];
       $Mail=$row[1];
-      $Nom = $row[2];
-      $Prenom = $row[3];
+      $Nom = $row[4];
+      $Prenom = $row[5];
 
       //On génère une ligne qui correpond à chaque utilisateurs
       echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';

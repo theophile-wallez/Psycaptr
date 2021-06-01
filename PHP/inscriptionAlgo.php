@@ -39,7 +39,7 @@
   $_SESSION['Mail']  = $Mail;
   $_SESSION['Nom']   = $Nom;
   $_SESSION['Prenom']= $Prenom;
-  
+
   // On vérifie si le mot de passe est le même que celui de confirmation,
   // sinon on reviens vers la page d'inscription
 
@@ -51,7 +51,6 @@
   //Le mot de passe est crypté
   $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
 
-  
   //On sélectionne la table Utilisateurs dans la database
   $sql = 'SELECT * FROM Utilisateurs';
 
