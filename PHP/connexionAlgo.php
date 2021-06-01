@@ -30,7 +30,7 @@
 				$_SESSION['lastActivity'] = time();
 				$_SESSION['Nom'] = $row[2];
 			    $_SESSION['Prenom'] = $row[3];
-				header('Location:../Ressources/Pages/admin');
+				header('Location:../Ressources/Pages/dashboard');
 				exit();
 			}
 		}
