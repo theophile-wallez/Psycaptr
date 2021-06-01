@@ -30,7 +30,7 @@
     </div>
 
     <form class="form-container" method="post" action="../../PHP/modifyProfile.php">
-      <a class="modif_button" href="../../modifyProfile.php">Modifier votre profil</a>
+      <a class="modif_button" href="../../PHP/modifyProfile.php">Modifier votre profil</a>
 
       <section class="categorie information-container">
 
