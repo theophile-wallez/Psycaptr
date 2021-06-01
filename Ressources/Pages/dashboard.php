@@ -96,8 +96,26 @@
   console.log(Data);
 
   lineChart(Data);
+
+  Data = [];
+
+  <?php
+    $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Medecin='$IdMedecin' GROUP BY Type"
+
+    $result = $bdd -> query($sql);
+
+    $i = 0;
+    while($row = $result -> fetch_row()){
+      echo "Data[".$i."] = ".$row[1].";\n";
+      $i++;
+    }
+
+  ?>
+
+  barChart(Data);
+
   doughnutChart();
-  barChart();
+
   radarChart();
 </script>
 </html>
