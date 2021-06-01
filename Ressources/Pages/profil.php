@@ -29,20 +29,20 @@
       <div class="nom-container"></div>
     </div>
 
-    <form class="form-container">
-      <a class="modif_button" href="">Modifier votre profil</a>
+    <form class="form-container" method="post" action="../../PHP/modifyProfile.php">
+      <a class="modif_button" href="../../PHP/modifyProfile.php">Modifier votre profil</a>
 
       <section class="categorie information-container">
 
         <h2>Mes informations</h2>
         <div class="item prénom-container">
           <h4>Prénom</h4>
-          <input name="Prenom" type="text" readonly="readonly" placeholder="Théophile"/>
+          <input name="Prenom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Théophile"/>
         </div>
 
         <div class="item nom-container">
             <h4>Nom</h4>
-            <input name="Nom" type="text" readonly="readonly" placeholder="Wallez"/>
+            <input name="Nom" type="text" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Wallez"/>
         </div>
 
       </section>
@@ -52,18 +52,25 @@
         <h2>Mes coordonnées</h2>
         <div class="item mail-container">
           <h4>Votre adresse mail</h4>
-          <input name="Mail" type="mail" readonly="readonly" placeholder="Théophile"/>
+          <input name="Mail" type="mail" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Théophile"/>
         </div>
 
         <div class="item tel-container">
             <h4>Votre numéro de téléphone</h4>
-            <input name="Tel" type="tel" readonly="readonly" placeholder="Wallez"/>
+            <input name="Tel" type="tel" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Wallez"/>
         </div>
+
+				<?php
+					if($_SESSION["modifyProfile"] == 1){
+						echo "<button type='submit' name='modifyProfile'>Valider</button>";
+					}
+				?>
+
       </section>
-      
+
     </form>
   </section>
-  
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="../../javascripts/Graph/graph.js"></script>

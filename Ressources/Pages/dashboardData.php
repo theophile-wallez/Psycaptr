@@ -62,7 +62,7 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="../../../javascripts/Graph/test_Graph.js"></script>
+<script src="../../../javascripts/Graph/graph.js"></script>
 
 <script>
 
@@ -71,7 +71,7 @@
   <?php
     require('../../PHP/connectDatabase.php');
 
-    $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Id_Patient = '$IdPatient' ORDER BY Date_Test ASC";
+    $sql = "SELECT Resultats FROM Test WHERE Id_Patient = '$IdPatient' AND Type='3' ORDER BY Date_Test ASC";
 
   	$result = $bdd -> query($sql);
 
@@ -83,7 +83,28 @@
   ?>
 
   console.log(Data);
-  graph(Data);
 
+  lineChart(Data);
+
+  Data = [];
+
+  <?php
+    $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Patient='$IdPatient' GROUP BY Type";
+
+    $result = $bdd -> query($sql);
+
+    $i = 0;
+    while($row = $result -> fetch_row()){
+      echo "Data[".$i."] = ".$row[1].";\n";
+      $i++;
+    }
+
+  ?>
+
+  barChart(Data);
+
+  doughnutChart();
+
+  radarChart();
 </script>
 </html>
