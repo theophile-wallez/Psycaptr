@@ -61,6 +61,9 @@
         </div>
 
 				<?php
+
+					echo $_SESSION["modifyProfile"];
+
 					if($_SESSION["modifyProfile"] == 1){
 						echo "<button type='submit' name='modifyProfile'>Valider</button>";
 					}
