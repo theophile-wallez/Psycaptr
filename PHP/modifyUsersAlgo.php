@@ -187,9 +187,9 @@ if(isset($_POST['modifyUser'])){
 
 if(isset($_POST['validationUserP'])){
 
-	$id = convertInput($_POST['Id']);
+	$Id = convertInput($_POST['Id']);
 
-	$sql = "SELECT * FROM ValidationPatient WHERE Id='$id'";
+	$sql = "SELECT * FROM ValidationPatient WHERE Id='$Id'";
 
 	 if(!$result = $bdd -> query($sql)){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -206,7 +206,7 @@ if(isset($_POST['validationUserP'])){
 			 echo " |".$Id;
 	 }
 
-	 $sql = "DELETE FROM ValidationPatient WHERE Id='$id'" ;
+	 $sql = "DELETE FROM ValidationPatient WHERE Id='$Id'" ;
 
 	 if(!$bdd -> query($sql)){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -218,19 +218,16 @@ if(isset($_POST['validationUserP'])){
 }
 
 if(isset($_POST['validationUserM'])){
-
-
 	$Id = convertInput($_POST['Id']);
 
 	$sql = "SELECT * FROM ValidationMedecin WHERE Id='$Id'";
 
-	 if(!$result = $bdd -> query($sql)){
-			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-			 echo " |".$Id;
-	 }
+    if(!$result = $bdd -> query($sql)){
+            echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+            echo " |".$Id;
+    }
 
-	 $row = $result -> fetch_row();
-
+	$row = $result -> fetch_row();
 
 	$sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`, `IP`) VALUES ('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]', '$row[6]')";
 
