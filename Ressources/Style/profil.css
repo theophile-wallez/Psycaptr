@@ -76,10 +76,10 @@ body .content-container{
     height:1.2em;
 }
 .form-container .noModify:hover{
-    transform: scale(1);
+    transform: none;
 }
 .form-container .noModify:active{
-    transform: scale(1);
+    transform: none;
 }
 
 
