@@ -156,7 +156,9 @@ while($row = $result -> fetch_row()){
 
   //On génère une ligne qui correpond à chaque utilisateurs
   echo '<form class="form_all" action="../../PHP/modifyUsersAlgo" method="POST">';
-  echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
+	if($_SESSION['userType']=='medecin'){
+		echo    '<div class="user"><button type="submit" name="accessUser"><i class="fas fa-chart-area"></i>      </button></div>';
+	}
   echo  '<div class="line-container user-container">';
   echo    '<input type="text" name="Nom" value="'.$Nom.'" required>';
   echo    '<input type="text" name="Prenom" value="'.$Prenom.'" required>';
