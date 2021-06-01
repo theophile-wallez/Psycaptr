@@ -178,13 +178,13 @@ $_SESSION['search'] = $search;
 $result -> free_result();
 
 if($_SESSION['userType']=='admin'){
-  $sql = "SELECT * FROM ValidationMedecin WHERE Nom like '$search%' or Prenom like '$search%' or Mail like '$search%' or Id like '$search%' order by Date_inscription desc";
+  $sql = "SELECT * FROM ValidationMedecin order by Date_inscription desc";
   if(!$result = $bdd -> query($sql)){
     echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
   }
   $num_row = mysqli_num_rows($result);
 
-  if ($num_row==0){
+  if ($num_row == 0){
     echo '<section class="content-container">';
     echo '<section class="fixed-container">';
     echo '<h2>Liste des validations en attente</h2>';
