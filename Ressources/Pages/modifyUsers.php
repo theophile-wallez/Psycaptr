@@ -147,8 +147,6 @@ if($_SESSION['userType']=='admin'){
   }
 }
 
-$result -> free_result();
-
 echo '<section class="content-container">';
 echo '<section class="fixed-container">';
 
