@@ -103,7 +103,7 @@ body{
     transition: all 0.2s ease;
 }
 
-.user-container > * {
+.user-container * {
     display: flex;
     justify-content:center;
     align-items:center;
