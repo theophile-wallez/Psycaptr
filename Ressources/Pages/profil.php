@@ -57,13 +57,10 @@
 
         <div class="item tel-container">
             <h4>Votre numéro de téléphone</h4>
-            <input name="Tel" type="tel" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="Wallez"/>
+            <input name="Tel" type="tel" <?php  if($_SESSION["modifyProfile"] != 1){ echo "readonly='readonly'";}?> placeholder="<?php echo $_SESSION["modifyProfile"]; ?>"/>
         </div>
 
 				<?php
-
-					echo $_SESSION["modifyProfile"];
-
 					if($_SESSION["modifyProfile"] == 1){
 						echo "<button type='submit' name='modifyProfile'>Valider</button>";
 					}
