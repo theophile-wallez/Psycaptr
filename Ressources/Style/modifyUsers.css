@@ -90,7 +90,6 @@ body{
     flex-direction: column;
 }
  
-
 .user-container {
     width: 100%;
     height: 3em;
@@ -157,7 +156,6 @@ body{
 .line-container:focus-within .valider_changement button>*{
     opacity: 1;
 }
-
 
 
 .line-container input{
