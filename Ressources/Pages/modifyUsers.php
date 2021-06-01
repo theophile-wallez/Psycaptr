@@ -94,7 +94,7 @@ if($_SESSION['userType']=='admin'){
     echo '<div class="prenom-container">Prénom</div>';
     echo '<div class="mail-container">Adresse mail</div>';
     echo '<div class="id-container">Identifiant</div>';
-    echo '<div class="date-container">Date d',"'inscription</div>";
+    echo '<div class="date-container">Date d\'inscription</div>';
     echo '</div>';
     echo '</div>';
     echo '</section>';
