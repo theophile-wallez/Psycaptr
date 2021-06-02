@@ -92,9 +92,9 @@ function doughnutChart() {
   new Chart(document.getElementById("doughnut-chart"), {
   type: 'doughnut',
   data: {
-    labels: [65, 35],
+    labels: [85, 15],
     datasets: [{
-        data: [25, 15],
+        data: ["Votre score moyen", ""],
         backgroundColor: [degrade1, "#f1f3f9"],
       }
     ]
