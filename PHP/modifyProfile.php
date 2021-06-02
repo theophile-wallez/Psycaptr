@@ -88,7 +88,8 @@ if(isset($_POST['modifyProfile'])){
   // exit;
 }
 
+  echo $_SESSION['userType'];
   $_SESSION["modifyProfile"] = 1;
-  header("Location:../Ressources/Pages/profil");
+  // header("Location:../Ressources/Pages/profil");
   exit;
 ?>
