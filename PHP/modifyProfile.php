@@ -15,7 +15,7 @@ if(isset($_POST['modifyProfile'])){
   $newMdpBis = convertInput($_POST['newMdpBis']);
   $MailOrigin = $_SESSION['Mail'];
 
-  if(!empty($newMdp) && !empty($newMdp)) {
+  if(!empty($newMdp) && !empty($newMdpBis)) {
     if($newMdpBis == $newMdp){
       $CryptedMdp = password_hash($newMdp, PASSWORD_DEFAULT);
     }
@@ -36,25 +36,24 @@ if(isset($_POST['modifyProfile'])){
     }
     $row = $result -> fetch_row();
 
-    $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', CryptedMdp='$CryptedMdp' WHERE Id='$IdMedecin'";
-    if(!$bdd -> query($sql)){
-      echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
-    }
+    if($CryptedMdp == $row[2]){
+      $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', CryptedMdp='$CryptedMdp' WHERE Id='$IdMedecin'";
+      if(!$bdd -> query($sql)){
+        echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+      }
+      else {
+        $_Session['Mail'] = $Mail;
+				$_SESSION['Nom'] = $Nom;
+			  $_SESSION['Prenom'] = $Prenom;
+        $_SESSION["modifyProfile"] = 0;
+        header("Location:../Ressources/Pages/profil");
+        exit();
+      }
+    } 
     else {
-      $_Session['Mail'] = $Mail;
-      $_SESSION['Nom'] = $Nom;
-      $_SESSION['Prenom'] = $Prenom;
-      $_SESSION["modifyProfile"] = 0;
       header("Location:../Ressources/Pages/profil");
       exit();
     }
-    // if($CryptedMdp == $row[2]){
-      
-    // } 
-    // else {
-    //   header("Location:../Ressources/Pages/profil");
-    //   exit();
-    // }
   }
 
   if($_SESSION['userType']=='admin'){
