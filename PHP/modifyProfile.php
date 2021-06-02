@@ -56,7 +56,7 @@ if(isset($_POST['modifyProfile'])){
     }
   }
 
-  if($_SESSION['userType']=='admin'){
+  if($_SESSION['userType'] = 'admin'){
     $sql = "SELECT * FROM `Admin` WHERE Mail='$MailOrigin'";
     if(!$result = $bdd -> query($sql)){
       echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
