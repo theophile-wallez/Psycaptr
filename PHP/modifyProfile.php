@@ -25,6 +25,7 @@ if(isset($_POST['modifyProfile'])){
     }
   }
   else {
+    $newMdp = $Mdp;
     $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
   }
 
