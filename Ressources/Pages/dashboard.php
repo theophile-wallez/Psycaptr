@@ -87,6 +87,7 @@
       $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Type='3' ORDER BY Date_Test ASC";
 
     	$result = $bdd -> query($sql);
+      $num_row = mysqli_num_rows($result);
 
       $i = 0;
       while($row = $result -> fetch_row()){
@@ -97,12 +98,19 @@
 
       echo "console.log(Data);\n";
 
-      echo "lineChart(Data);\n";
+      if($num_row != 0){
+        echo "lineChart(Data);\n";
+      }
+      else {
+        echo "lineChart([1, 4, 8, 5, 6, 9]);\n";
+      }
+
 
 
       $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Medecin='$IdMedecin' GROUP BY Type";
 
       $result = $bdd -> query($sql);
+      $num_row = mysqli_num_rows($result);
 
       $i = 0;
       while($row = $result -> fetch_row()){
@@ -110,11 +118,18 @@
         $i++;
       }
 
-      echo "barChart(Data);\n";
+
+      if($num_row != 0){
+        echo "barChart(Data);\n";
+      }
+      else {
+        echo "barChart([2, 4, 8, 3, 5]);\n";
+      }
 
     }
     else {
       echo "lineChart([1, 4, 8, 5, 6, 9]);\n";
+      echo "barChart([2, 4, 8, 3, 5]);\n";
     }
 
   ?>
