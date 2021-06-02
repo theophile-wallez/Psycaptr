@@ -51,8 +51,8 @@ if(isset($_POST['modifyProfile'])){
       }
     } 
     else {
-      // header("Location:../Ressources/Pages/profil");
-      // exit();
+      header("Location:../Ressources/Pages/profil");
+      exit();
     }
   }
 
