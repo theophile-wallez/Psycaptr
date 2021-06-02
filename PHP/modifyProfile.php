@@ -65,7 +65,7 @@ if(isset($_POST['modifyProfile'])){
     }
     $row = $result -> fetch_row();
     if($Mdp == $row[1]){
-      $sql = "UPDATE `Admin` SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', Mdp='$Mdp' WHERE Mail='$MailOrigin'";
+      $sql = "UPDATE `Admin` SET Mail='$Mail', Nom='$Nom', Prénom='$Prenom', Mdp='$Mdp' WHERE Mail='$MailOrigin'";
       if(!$bdd -> query($sql)){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }
@@ -84,12 +84,12 @@ if(isset($_POST['modifyProfile'])){
     }
   }
 
-  // header("Location:../Ressources/Pages/profil?marchepas");
-  // exit;
+  header("Location:../Ressources/Pages/profil?marchepas");
+  exit;
 }
 
   echo $_SESSION['userType'];
   $_SESSION["modifyProfile"] = 1;
-  // header("Location:../Ressources/Pages/profil");
+  header("Location:../Ressources/Pages/profil");
   exit;
 ?>
