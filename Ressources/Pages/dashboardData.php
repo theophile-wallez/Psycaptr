@@ -34,7 +34,7 @@
     <div class="main_part_container">
         <div class="part_1_container ">
           <div class="graph graph-1">
-            <h4 class="canvas_title">Évolution de votre score</h4>
+            <h4 class="canvas_title">Évolution du score <?php echo $de.$PrenomPatient;?></h4>
             <div class="canvas_container">
              <canvas id="line-chart"></canvas>
             </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="part_2_container">
           <div class="graph graph-2">
-            <h4 class="canvas_title">Score Moyen</h4>
+            <h4 class="canvas_title">Score Moyen <?php echo $de.$PrenomPatient;?></h4>
             <div class="canvas_container">
              <canvas id="doughnut-chart"></canvas>
             </div>
@@ -52,7 +52,7 @@
     <div class="main_part_container">
       <div class="part_1_container">
           <div class="graph graph-double graph-3">
-            <h4 class="canvas_title">Votre dernier Test</h4>
+            <h4 class="canvas_title">Dernier Test <?php echo $de.$PrenomPatient;?></h4>
             <div class="canvas_container">
              <canvas id="radar-chart"></canvas>
             </div>
