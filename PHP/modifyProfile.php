@@ -20,7 +20,7 @@ if(isset($_POST['modifyProfile'])){
       $CryptedMdp = password_hash($newMdp, PASSWORD_DEFAULT);
     }
     else {
-      header('Location:../Ressources/Pages/profil?newMdpDiff=1');
+      header('Location:../Ressources/Pages/profil');
       exit();
     }
   }
@@ -46,33 +46,33 @@ if(isset($_POST['modifyProfile'])){
 				$_SESSION['Nom'] = $Nom;
 			  $_SESSION['Prenom'] = $Prenom;
         $_SESSION["modifyProfile"] = 0;
-        header("Location:../Ressources/Pages/profil?camarche=1");
+        header("Location:../Ressources/Pages/profil");
         exit();
       }
     } 
     else {
-      header("Location:../Ressources/Pages/profil?pbMdp=1");
+      header("Location:../Ressources/Pages/profil");
       exit();
     }
   }
 
   if($_SESSION['userType']=='admin'){
-    $sql = "SELECT * FROM Admin WHERE Mail='$MailOrigin'";
+    $sql = "SELECT * FROM `Admin` WHERE Mail='$MailOrigin'";
     if(!$result = $bdd -> query($sql)){
       echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
     }
     $row = $result -> fetch_row();
     if($Mdp == $row[1]){
-      $sql = "UPDATE Admin SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', Mdp='$Mdp' WHERE Mail='$MailOrigin'";
+      $sql = "UPDATE `Admin` SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', Mdp='$Mdp' WHERE Mail='$MailOrigin'";
       if(!$bdd -> query($sql)){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }
       else {
-        $_Session['Mail'] = $Mail;
+        $_SESSION['Mail'] = $Mail;
 				$_SESSION['Nom'] = $Nom;
 			  $_SESSION['Prenom'] = $Prenom;
         $_SESSION["modifyProfile"] = 0;
-        header("Location:../Ressources/Pages/profil");
+        header("Location:../Ressources/Pages/profil?oui");
         exit();
       }
     } 
