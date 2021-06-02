@@ -32,7 +32,7 @@
 <?php require_once('dashboardHeaderNav.php');?>
 
 <body>
-<h1>Votre gestionnaire des utilisateurs</h1>
+
 
     <!-- Affichage de la liste des utilisateurs -->
 <?php
@@ -47,6 +47,10 @@ require('../../PHP/connectDatabase.php'); //Connexion à la database
 
 if($_SESSION['userType']=='medecin'){
     $IdMedecin = $_SESSION['IdMedecin'];
+    echo '<h1>Gestionnaire de vos patients</h1>';
+}
+else{
+  echo '<h1>Gestionnaire des utilisateurs</h1>';
 }
 
 $type = convertInput($_POST['Type']);
