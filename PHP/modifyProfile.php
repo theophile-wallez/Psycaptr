@@ -20,7 +20,7 @@ if(isset($_POST['modifyProfile'])){
       $CryptedMdp = password_hash($newMdp, PASSWORD_DEFAULT);
     }
     else {
-      header('Location:../Ressources/Pages/profil?pb=1');
+      header('Location:../Ressources/Pages/profil?newMdpDiff=1');
       exit();
     }
   }
@@ -36,7 +36,7 @@ if(isset($_POST['modifyProfile'])){
     }
     $row = $result -> fetch_row();
 
-    if($CryptedMdp == $row[2]){
+    if(password_verify($Mdp, $row[2])){
       $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', CryptedMdp='$CryptedMdp' WHERE Id='$IdMedecin'";
       if(!$bdd -> query($sql)){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -46,12 +46,12 @@ if(isset($_POST['modifyProfile'])){
 				$_SESSION['Nom'] = $Nom;
 			  $_SESSION['Prenom'] = $Prenom;
         $_SESSION["modifyProfile"] = 0;
-        header("Location:../Ressources/Pages/profil");
+        header("Location:../Ressources/Pages/profil?camarche=1");
         exit();
       }
     } 
     else {
-      header("Location:../Ressources/Pages/profil");
+      header("Location:../Ressources/Pages/profil?pbMdp=1");
       exit();
     }
   }
