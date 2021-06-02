@@ -259,6 +259,9 @@ if(isset($_POST["declineUserM"])){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
 			 echo " |".$Id;
 	 }
+
+	 header("Location:../Ressources/Pages/modifyUsers");
+	 exit();
 }
 
 if(isset($_POST["declineUserP"])){
@@ -272,6 +275,9 @@ if(isset($_POST["declineUserP"])){
 			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
 			 echo " |".$Id;
 	 }
+
+	 header("Location:../Ressources/Pages/modifyUsers");
+	 exit();
 }
 
 	$bdd -> close();
