@@ -42,7 +42,7 @@
         </div>
         <div class="part_2_container">
           <div class="graph graph-2">
-            <h4 class="canvas_title">Tests par catégorie</h4>
+            <h4 class="canvas_title">Score Moyen</h4>
             <div class="canvas_container">
              <canvas id="doughnut-chart"></canvas>
             </div>
@@ -52,7 +52,7 @@
     <div class="main_part_container">
       <div class="part_1_container">
           <div class="graph graph-double graph-3">
-            <h4 class="canvas_title">Tests par catégorie</h4>
+            <h4 class="canvas_title">Votre dernier Test</h4>
             <div class="canvas_container">
              <canvas id="radar-chart"></canvas>
             </div>
