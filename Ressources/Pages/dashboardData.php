@@ -30,11 +30,11 @@
 <body>
 
   <div class="dashboard_container">
-    <h1 class="dashboard_title">Voici les données <?php echo $de.$PrenomPatient?></h1>
+    <h1 class="dashboard_title">Votre tableau de bord</h1>
     <div class="main_part_container">
         <div class="part_1_container ">
           <div class="graph graph-1">
-            <h4 class="canvas_title">Évolution du score <?php echo $de.$PrenomPatient?></h4>
+            <h4 class="canvas_title">Évolution de votre score</h4>
             <div class="canvas_container">
              <canvas id="line-chart"></canvas>
             </div>
@@ -51,8 +51,18 @@
     </div>
     <div class="main_part_container">
       <div class="part_1_container">
-          <div class="graph graph-double graph-3"></div>
-          <div class="graph graph-double graph-4"></div>
+          <div class="graph graph-double graph-3">
+            <h4 class="canvas_title">Tests par catégorie</h4>
+            <div class="canvas_container">
+             <canvas id="radar-chart"></canvas>
+            </div>
+          </div>
+          <div class="graph graph-double graph-4">
+            <h4 class="canvas_title">Tests par catégorie</h4>
+            <div class="canvas_container">
+             <canvas id="bar-chart"></canvas>
+            </div>
+          </div>
       </div>
       <div class="part_2_container">
         <div class="graph graph-5"></div>
@@ -114,7 +124,7 @@
         echo "barChart([2, 4, 8, 3, 5]);\n";
       }
 
-    
+
 
 
   ?>
