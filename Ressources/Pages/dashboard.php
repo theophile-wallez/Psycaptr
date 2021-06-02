@@ -95,9 +95,9 @@
       }
 
 
-      echo "console.log(Data);";
+      echo "console.log(Data);\n";
 
-      echo "lineChart(Data);";
+      echo "lineChart(Data);\n";
 
 
       $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Medecin='$IdMedecin' GROUP BY Type";
@@ -110,11 +110,11 @@
         $i++;
       }
 
-      echo "barChart(Data);";
+      echo "barChart(Data);\n";
 
     }
     else {
-      echo "lineChart([1, 4, 8, 5, 6, 9]);";
+      echo "lineChart([1, 4, 8, 5, 6, 9]);\n";
     }
 
   ?>
