@@ -17,6 +17,17 @@
   <title>Gestion de votre profil • Psycaptr</title>
 </head>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var scrollpos = localStorage.getItem('scrollpos');
+      if (scrollpos) window.scrollTo(0, scrollpos);
+  });
+
+  window.onbeforeunload = function(e) {
+      localStorage.setItem('scrollpos', window.scrollY);
+  };
+</script>
+
 <?php require_once('dashboardHeaderNav.php');
   $canModify = $_SESSION["modifyProfile"];
   $_SESSION["modifyProfile"]=0;
