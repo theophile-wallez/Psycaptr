@@ -94,7 +94,7 @@ function doughnutChart() {
   data: {
     labels: [85, 15],
     datasets: [{
-        data: [25, 15],
+        data: [85, 15],
         backgroundColor: [degrade1, "#f1f3f9"],
       }
     ]
