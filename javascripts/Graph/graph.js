@@ -239,7 +239,7 @@ function radarChart(){
     datasets: [
       {
         data: [8, 6, 9, 4, 5],
-        backgroundColor: "#FFDFF0",
+        backgroundColor: "rgba(255, 223, 240,0.9)",
         borderColor: "#FF6CBD",
         borderWidth: 1,
         borderRadius: 20,
