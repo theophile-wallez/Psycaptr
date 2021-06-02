@@ -1,10 +1,10 @@
 <?php
 
 session_start();
-require('connectDatabase.php');
 
 if(isset($_POST['modifyProfile'])){
-
+  require('connectDatabase.php');
+  require('algo.php');
   //On récupère les données rentrées par l'utilisateur
   
   $Nom    = convertInput($_POST['Nom']);
