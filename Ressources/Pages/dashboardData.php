@@ -102,7 +102,7 @@
         echo "lineChart(Data);\n";
       }
       else {
-        echo "lineChart([1, 4, 8, 5, 6, 9]);\n";
+        echo "lineChart([7, 4, 1, 5, 2, 9]);\n";
       }
 
 
