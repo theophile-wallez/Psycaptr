@@ -10,8 +10,9 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="../Style/style.css"/>
   <link rel="stylesheet" href="../Style/input.css"/>
-
   <link rel="stylesheet" href="../Style/profil.css"/>
+  <link rel="stylesheet" href="../Style/title.css"/>
+
 
   <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
   <title>Gestion de votre profil • Psycaptr</title>
