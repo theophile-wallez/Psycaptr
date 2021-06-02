@@ -34,13 +34,13 @@
 ?>
 
 <body>
-  <h1>Votre Profil</h1>
+  <h1>Votre profil</h1>
   <section class="content-container flex">
     <form class="form-container" method="post" action="../../PHP/modifyProfile.php">
       <a class="modif_button" href="../../PHP/modifyProfile.php">Modifier votre profil</a>
 
       <section class="categorie information-container">
-        <h2>Mes informations</h2>
+        <h2>Vos informations</h2>
         <div class="item prenom-container">
           <h4>Prénom</h4>
           <input name="Prenom" type="text" required="required" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Prenom']; ?>"/>
