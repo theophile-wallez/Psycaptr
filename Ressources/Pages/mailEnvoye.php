@@ -28,7 +28,7 @@
   <div class="backup_container" >
      <div><i class="fas fa-info-circle"></i>  Un e-mail vous a été envoyé !</div>
      <a href="MdpOublie.php">Vous n'avez rien reçu ?</a> 
-     <a href="index.php">Revenir à l'acceuil</a>
+     <a href="../../index">Revenir à l'acceuil</a>
   </div>
   
 </body>

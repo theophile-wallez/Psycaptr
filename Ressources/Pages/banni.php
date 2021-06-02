@@ -27,7 +27,7 @@
 
   <div class="backup_container" >
      <div><i class="fas fa-info-circle"></i>  Vous êtes Banni</div>
-     <a href="index.php">Revenir à l'acceuil</a>
+     <a href="../../index">Revenir à l'acceuil</a>
   </div>
   
 </body>
