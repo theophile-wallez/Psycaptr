@@ -42,6 +42,9 @@ if(isset($_POST['modifyProfile'])){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }
       else {
+        $_Session['Mail'] = $Mail;
+				$_SESSION['Nom'] = $Nom;
+			  $_SESSION['Prenom'] = $Prenom;
         $_SESSION["modifyProfile"] = 0;
         header("Location:../Ressources/Pages/profil");
         exit();
@@ -65,6 +68,9 @@ if(isset($_POST['modifyProfile'])){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }
       else {
+        $_Session['Mail'] = $Mail;
+				$_SESSION['Nom'] = $Nom;
+			  $_SESSION['Prenom'] = $Prenom;
         $_SESSION["modifyProfile"] = 0;
         header("Location:../Ressources/Pages/profil");
         exit();
