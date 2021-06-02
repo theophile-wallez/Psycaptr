@@ -92,9 +92,9 @@ function doughnutChart() {
   new Chart(document.getElementById("doughnut-chart"), {
   type: 'doughnut',
   data: {
-    labels: [25, 15, 35, 10],
+    labels: [65, 35],
     datasets: [{
-        data: [25, 15, 15,20 ],
+        data: [25, 15],
         backgroundColor: [degrade1, degrade2,degrade3,"#f1f3f9"],
       }
     ]
