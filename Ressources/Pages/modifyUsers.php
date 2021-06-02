@@ -114,7 +114,7 @@ if($_SESSION['userType']=='admin'){
       echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
       echo    '<input input type="text" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
       echo    '<div class="valider_changement modify"><button type="submit" name="validationUserM"><i class="fa fa-check"></i></button></div>';
-      echo    '<div class="valider_changement remove"><button type="submit" name="declineUser"><i class="fa fa-trash"></i></button></div>';
+      echo    '<div class="valider_changement remove"><button type="submit" name="declineUserM"><i class="fa fa-trash"></i></button></div>';
       echo   '</div>';
       echo '</form>';
     }
@@ -147,7 +147,7 @@ if($_SESSION['userType']=='admin'){
       echo    '<input input type="text" name="Id" readonly="readonly" value="'.$Id.'" required>';
       echo    '<input input type="text" readonly="readonly" name="Date" readonly="readonly" value="'.$Date_Inscription.'" required>';
       echo    '<div class="valider_changement modify"><button type="submit" name="validationUserP"><i class="fa fa-check"></i></button></div>';
-      echo    '<div class="valider_changement remove"><button type="submit" name="declineUser"><i class="fa fa-trash"></i></button></div>';
+      echo    '<div class="valider_changement remove"><button type="submit" name="declineUserP"><i class="fa fa-trash"></i></button></div>';
       echo   '</div>';
       echo '</form>';
     }

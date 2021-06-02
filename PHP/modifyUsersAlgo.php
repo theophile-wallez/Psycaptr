@@ -248,6 +248,32 @@ if(isset($_POST['validationUserM'])){
 }
 
 
+if(isset($_POST["declineUserM"])){
+	$Id = convertInput($_POST['Id']);
+
+
+
+	$sql = "DELETE FROM `ValidationMedecin` WHERE Id='$Id'";
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+}
+
+if(isset($_POST["declineUserP"])){
+	$Id = convertInput($_POST['Id']);
+
+
+
+	$sql = "DELETE FROM `ValidationPatient` WHERE Id='$Id'";
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+}
+
 	$bdd -> close();
   exit();
 ?>
