@@ -3,7 +3,6 @@ session_start();
 require('algo.php'); //Connexion à la database
 require('connectDatabase.php'); //Connexion à la database
 
-
 $Id = IdGenerator(11); //Un Id est généré par une méthode
 
 //On récupère les données rentrées par l'utilisateur
