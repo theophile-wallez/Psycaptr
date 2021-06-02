@@ -77,12 +77,12 @@ if(isset($_POST['modifyProfile'])){
       }
     } 
     else {
-      header("Location:../Ressources/Pages/profil");
+      header("Location:../Ressources/Pages/profil?non");
       exit();
     }
   }
 
-  header("Location:../Ressources/Pages/profil");
+  header("Location:../Ressources/Pages/profil?marchepas");
   exit;
 }
 
