@@ -65,7 +65,7 @@ if(isset($_POST['modifyProfile'])){
     }
     $row = $result -> fetch_row();
     if($Mdp == $row[1]){
-      $sql = "UPDATE `Admin` SET Mail='$Mail', Nom='$Nom', Prénom='$Prenom', Mdp='$Mdp' WHERE Mail='$MailOrigin'";
+      $sql = "UPDATE `Admin` SET Mail='$Mail', Nom='$Nom', Prénom='$Prenom', Mdp='$newMdp' WHERE Mail='$MailOrigin'";
       if(!$bdd -> query($sql)){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }
