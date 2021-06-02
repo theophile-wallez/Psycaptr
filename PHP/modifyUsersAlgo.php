@@ -68,7 +68,7 @@ if(isset($_POST['addUser'])){
             $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
         }
         else if($Type == "Administrateur"){
-          $sql = "INSERT INTO `Admin` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+          $sql = "INSERT INTO `Admin` (`Mail`, `Mdp`, `Nom`, `Prénom`) VALUES ('$Mail','$Mdp', '$Nom','$Prenom')";
         }
     }
     else if($_SESSION['userType']=='medecin'){
