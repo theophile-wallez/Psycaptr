@@ -56,7 +56,9 @@ if(isset($_POST['modifyProfile'])){
     }
   }
 
-  if($_SESSION['userType'] = 'admin'){
+  /*----------------------------------------------------------------*/
+
+  if($_SESSION['userType'] == 'admin'){
     $sql = "SELECT * FROM `Admin` WHERE Mail='$MailOrigin'";
     if(!$result = $bdd -> query($sql)){
       echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
@@ -72,12 +74,12 @@ if(isset($_POST['modifyProfile'])){
 				$_SESSION['Nom'] = $Nom;
 			  $_SESSION['Prenom'] = $Prenom;
         $_SESSION["modifyProfile"] = 0;
-        header("Location:../Ressources/Pages/profil?oui");
+        header("Location:../Ressources/Pages/profil?camarche");
         exit();
       }
     } 
     else {
-      header("Location:../Ressources/Pages/profil?non");
+      header("Location:../Ressources/Pages/profil?paslebonmdp");
       exit();
     }
   }
