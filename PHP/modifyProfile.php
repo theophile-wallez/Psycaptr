@@ -30,11 +30,12 @@ if(isset($_POST['modifyProfile'])){
 
   if($_SESSION['userType']=='medecin'){
     $IdMedecin  = $_SESSION['IdMedecin'];
-    $sql = "SELECT * FROM Utilisateurs WHERE Id='$IdMedecin";
+    $sql = "SELECT * FROM Utilisateurs WHERE Id='$IdMedecin'";
     if(!$result = $bdd -> query($sql)){
       echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
     }
     $row = $result -> fetch_row();
+
     if(password_verify($Mdp, $row[2])){
       $sql = "UPDATE Utilisateur SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', CryptedMdp='$CryptedMdp' WHERE Id='$IdMedecin'";
       if(!$bdd -> query($sql)){
@@ -53,7 +54,7 @@ if(isset($_POST['modifyProfile'])){
   }
 
   if($_SESSION['userType']=='admin'){
-    $sql = "SELECT * FROM Admin WHERE Mail='$MailOrigin";
+    $sql = "SELECT * FROM Admin WHERE Mail='$MailOrigin'";
     if(!$result = $bdd -> query($sql)){
       echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
     }
