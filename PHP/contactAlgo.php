@@ -15,7 +15,7 @@ $Message = str_replace("'","''",$Message);
 
 $Date = date('Y-m-d H:i:s');
 $IdUser = 0;
-$MailTo = 'theophile@psycaptr.tk';
+$MailTo = 'demo.psycaptr@gmail.com';
 
 $sql = "SELECT * FROM `Message-Utilisateur`";
 
@@ -32,7 +32,6 @@ $sql = "INSERT INTO `Message-Utilisateur` (`Id`, `IdUser`, `Nom`, `Prenom`, `Mai
 if(!$result = $bdd -> query($sql)){
   echo "Échec de la requête SQL : (" . $bdd->errno . ") " . $bdd->error;
 }
-
 
 
 $bdd -> close();
