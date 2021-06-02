@@ -6,7 +6,7 @@ if(isset($_POST['modifyProfile'])){
   require('connectDatabase.php');
   require('algo.php');
   //On récupère les données rentrées par l'utilisateur
-  
+
   $Nom    = convertInput($_POST['Nom']);
   $Prenom = convertInput($_POST['Prenom']);
   $Mail   = convertInput($_POST['Mail']);
@@ -50,7 +50,7 @@ if(isset($_POST['modifyProfile'])){
         header("Location:../Ressources/Pages/profil");
         exit();
       }
-    } 
+    }
     else {
       header("Location:../Ressources/Pages/profil");
       exit();
@@ -79,7 +79,7 @@ if(isset($_POST['modifyProfile'])){
         header("Location:../Ressources/Pages/profil?camarche");
         exit();
       }
-    } 
+    }
     else {
       header("Location:../Ressources/Pages/profil?paslebonmdp");
       exit();

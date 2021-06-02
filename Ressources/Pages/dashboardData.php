@@ -69,39 +69,62 @@
   var Data = [];
 
   <?php
-    require('../../PHP/connectDatabase.php');
 
-    $sql = "SELECT Resultats FROM Test WHERE Id_Patient = '$IdPatient' AND Type='3' ORDER BY Date_Test ASC";
+    if($_SESSION['userType'] == 'medecin'){
+      require('../../PHP/connectDatabase.php');
 
-  	$result = $bdd -> query($sql);
+      $sql = "SELECT Resultats FROM Test WHERE Id_Patient = '$IdPatient' AND Type='3' ORDER BY Date_Test ASC";
 
-    $i = 0;
-    while($row = $result -> fetch_row()){
-      echo "Data[".$i."] = ".$row[0].";\n";
-      $i++;
+    	$result = $bdd -> query($sql);
+      $num_row = mysqli_num_rows($result);
+
+      $i = 0;
+      while($row = $result -> fetch_row()){
+        echo "Data[".$i."] = ".$row[0].";\n";
+        $i++;
+      }
+
+
+      echo "console.log(Data);\n";
+
+      if($num_row != 0){
+        echo "lineChart(Data);\n";
+      }
+      else {
+        echo "lineChart([1, 4, 8, 5, 6, 9]);\n";
+      }
+
+
+
+      $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Patient='$IdPatient' GROUP BY Type";
+
+      $result = $bdd -> query($sql);
+      $num_row = mysqli_num_rows($result);
+
+      $i = 0;
+      while($row = $result -> fetch_row()){
+        echo "Data[".$i."] = ".$row[1].";\n";
+        $i++;
+      }
+
+
+      if($num_row != 0){
+        echo "barChart(Data);\n";
+      }
+      else {
+        echo "barChart([2, 4, 8, 3, 5]);\n";
+      }
+
     }
+    else {
+      echo "lineChart([1, 4, 8, 5, 6, 9]);\n";
+      echo "barChart([2, 4, 8, 3, 5]);\n";
+    }
+
   ?>
 
-  console.log(Data);
-
-  lineChart(Data);
 
   Data = [];
-
-  <?php
-    $sql = "SELECT Type, COUNT(*) as type FROM `Test` WHERE Id_Patient='$IdPatient' GROUP BY Type";
-
-    $result = $bdd -> query($sql);
-
-    $i = 0;
-    while($row = $result -> fetch_row()){
-      echo "Data[".$i."] = ".$row[1].";\n";
-      $i++;
-    }
-
-  ?>
-
-  barChart(Data);
 
   doughnutChart();
 
