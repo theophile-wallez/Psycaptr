@@ -42,7 +42,7 @@ if(isset($_POST['modifyProfile'])){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }
       else {
-        $_Session['Mail'] = $Mail;
+        $_SESSION['Mail'] = $Mail;
 				$_SESSION['Nom'] = $Nom;
 			  $_SESSION['Prenom'] = $Prenom;
         $_SESSION["modifyProfile"] = 0;
