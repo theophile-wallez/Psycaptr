@@ -84,11 +84,11 @@ if(isset($_POST['modifyProfile'])){
     }
   }
 
-  header("Location:../Ressources/Pages/profil?marchepas");
-  exit;
+  // header("Location:../Ressources/Pages/profil?marchepas");
+  // exit;
 }
 
   $_SESSION["modifyProfile"] = 1;
-  header("Location:../Ressources/Pages/profil");
-  exit;
+  // header("Location:../Ressources/Pages/profil");
+  // exit;
 ?>
