@@ -319,6 +319,38 @@ if(isset($_POST['unbanUser'])){
     exit();
 }
 
-$bdd -> close();
-exit();
+if(isset($_POST["declineUserM"])){
+	$Id = convertInput($_POST['Id']);
+
+
+
+	$sql = "DELETE FROM `ValidationMedecin` WHERE Id='$Id'";
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 header("Location:../Ressources/Pages/modifyUsers");
+	 exit();
+}
+
+if(isset($_POST["declineUserP"])){
+	$Id = convertInput($_POST['Id']);
+
+
+
+	$sql = "DELETE FROM `ValidationPatient` WHERE Id='$Id'";
+
+	 if(!$bdd -> query($sql)){
+			 echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
+			 echo " |".$Id;
+	 }
+
+	 header("Location:../Ressources/Pages/modifyUsers");
+	 exit();
+}
+
+	$bdd -> close();
+  exit();
 ?>
