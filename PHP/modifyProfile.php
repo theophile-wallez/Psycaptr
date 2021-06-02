@@ -58,7 +58,7 @@ if(isset($_POST['modifyProfile'])){
 
   /*----------------------------------------------------------------*/
   //Ne rentre pas dans le if pour les admins ??
-  if($_SESSION['userType']=='admin'){
+  else if($_SESSION['userType']=='admin'){
     $sql = "SELECT * FROM `Admin` WHERE Mail='$MailOrigin'";
     if(!$result = $bdd -> query($sql)){
       echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
