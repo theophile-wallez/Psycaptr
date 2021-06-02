@@ -30,7 +30,7 @@
 <body>
 
   <div class="dashboard_container">
-    <h1 class="dashboard_title">Votre tableau de bord</h1>
+    <h1 class="dashboard_title">Tableau de bord <?php echo $de.$PrenomPatient.' '.$NomPatient;?></h1>
     <div class="main_part_container">
         <div class="part_1_container ">
           <div class="graph graph-1">
