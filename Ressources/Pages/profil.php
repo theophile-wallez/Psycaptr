@@ -31,6 +31,7 @@
 <?php require_once('dashboardHeaderNav.php');
   $canModify = $_SESSION["modifyProfile"];
   $_SESSION["modifyProfile"]=0;
+  echo $_SESSION['userType'];
 ?>
 
 <body>
