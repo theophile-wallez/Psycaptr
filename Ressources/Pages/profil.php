@@ -23,7 +23,7 @@
 ?>
 
 <body>
-  <section class="content-container">
+  <section class="content-container flex">
     <form class="form-container" method="post" action="../../PHP/modifyProfile.php">
       <a class="modif_button" href="../../PHP/modifyProfile.php">Modifier votre profil</a>
 
@@ -70,6 +70,9 @@
         }?>
       </section>
     </form>
+    <div class="img_container">
+      <img src="../Images/modifyUser.jpg" alt="modifyUser" draggable="false">
+    </div>
   </section>
 
 </body>
