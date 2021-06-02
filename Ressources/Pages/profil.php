@@ -31,12 +31,12 @@
         <h2>Mes informations</h2>
         <div class="item prenom-container">
           <h4>Prénom</h4>
-          <input name="Prenom" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Prenom']; ?>"/>
+          <input name="Prenom" type="text" required="required" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Prenom']; ?>"/>
         </div>
        
         <div class="item nom-container">
             <h4>Nom</h4>
-            <input name="Nom" type="text" <?php  if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Nom']; ?>"/>
+            <input name="Nom" type="text" required="required" <?php  if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Nom']; ?>"/>
         </div>
 
       </section>
@@ -46,24 +46,24 @@
         <h2>Mes coordonnées</h2>
         <div class="item mail-container">
           <h4>Votre adresse mail</h4>
-          <input name="Mail" type="mail" <?php  if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Mail']; ?>"/>
+          <input name="Mail" type="email" required="required" <?php  if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Mail']; ?>"/>
         </div>
 
         <?php if($canModify == 1){ ?>
         <div class="item tel-container">
           <h4>Votre mot de passe actuel <span class="obligatoire">*</span></h4>
-          <input name="Mdp" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?>/>
+          <input name="Mdp" type="text" required="required" >
         </div>
         <div class="item tel-container">
           <h4>Votre nouveau mot de passe</h4>
-          <input name="Mdp" type="text"/>
+          <input name="newMdp" type="text"/>
         </div>
         <div class="item tel-container">
           <h4>Confirmation du nouveau mot de passe</h4>
-          <input name="Mdp" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?>/>
+          <input name="newMdpBis" type="text"/>
         </div>
-        <div class="item tel-container">
-          <button type='submit' name='modifyProfile'>Valider les modifications</button>
+        <div class="item tel-container button-profil">
+          <button class="validerBoutton" type='submit' name='modifyProfile'>Valider les modifications</button>
         </div>
 
 				<?php
