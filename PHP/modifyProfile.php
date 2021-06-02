@@ -20,7 +20,7 @@ if(isset($_POST['modifyProfile'])){
       $CryptedMdp = password_hash($newMdp, PASSWORD_DEFAULT);
     }
     else {
-      header('Location:../Ressources/Pages/profil');
+      header('Location:../Ressources/Pages/profil?pb=1');
       exit();
     }
   }
