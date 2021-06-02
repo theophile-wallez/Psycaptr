@@ -73,7 +73,7 @@ if($_SESSION['userType']=='admin'){
   <?php if($_SESSION['userType']=='admin'){ ?>
   <input input type="text" name="Mdp" placeholder="Mot de passe" required>
   <input input type="text" name="MdpBis" placeholder="Confirmer le mdp" required>
-	<select name='Type' value='Medecin' required><option>Administrateur</option><option>Medecin</option></select>
+	<select name='Type' value='Medecin' required><option>Medecin</option><option>Administrateur</option></select>
   <?php } ?>
 
   <div class="valider_changement remove"><button type="submit" name="addUser"><i class="fas fa-plus"></i></button></div>

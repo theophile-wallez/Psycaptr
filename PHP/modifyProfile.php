@@ -25,6 +25,7 @@ if(isset($_POST['modifyProfile'])){
     }
   }
   else {
+    $newMdp = $Mdp;
     $CryptedMdp = password_hash($Mdp, PASSWORD_DEFAULT);
   }
 
@@ -55,6 +56,7 @@ if(isset($_POST['modifyProfile'])){
       exit();
     }
   }
+  
 
   /*----------------------------------------------------------------*/
   //Ne rentre pas dans le if pour les admins ??
@@ -65,7 +67,7 @@ if(isset($_POST['modifyProfile'])){
     }
     $row = $result -> fetch_row();
     if($Mdp == $row[1]){
-      $sql = "UPDATE `Admin` SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', Mdp='$Mdp' WHERE Mail='$MailOrigin'";
+      $sql = "UPDATE `Admin` SET Mail='$Mail', Nom='$Nom', Prénom='$Prenom', Mdp='$newMdp' WHERE Mail='$MailOrigin'";
       if(!$bdd -> query($sql)){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }

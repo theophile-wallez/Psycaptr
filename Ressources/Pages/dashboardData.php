@@ -73,6 +73,8 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="../../../javascripts/Graph/graph.js"></script>
+<script src="../../node_modules/chart.js/dist/chart.js"></script>
+
 
 <script>
 
