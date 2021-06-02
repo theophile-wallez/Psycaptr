@@ -49,17 +49,25 @@
           <input name="Mail" type="mail" <?php  if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?> value="<?php echo $_SESSION['Mail']; ?>"/>
         </div>
 
+        <?php if($canModify == 1){ ?>
         <div class="item tel-container">
-            <h4>Votre Mot de passe</h4>
-            <input name="Mdp" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?>"/>
+          <h4>Votre mot de passe actuel <span class="obligatoire">*</span></h4>
+          <input name="Mdp" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?>/>
+        </div>
+        <div class="item tel-container">
+          <h4>Votre nouveau mot de passe</h4>
+          <input name="Mdp" type="text"/>
+        </div>
+        <div class="item tel-container">
+          <h4>Confirmation du nouveau mot de passe</h4>
+          <input name="Mdp" type="text" <?php if($canModify != 1){ echo "readonly='readonly' class='noModify'";}?>/>
+        </div>
+        <div class="item tel-container">
+          <button type='submit' name='modifyProfile'>Valider les modifications</button>
         </div>
 
 				<?php
-					if($_SESSION["modifyProfile"] == 1){
-						echo "<button type='submit' name='modifyProfile'>Valider les modifications</button>";
-					}
-				?>
-
+        }?>
       </section>
     </form>
   </section>

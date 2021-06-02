@@ -85,5 +85,9 @@ body .content-container{
     width:30%;
 }
 
+.obligatoire{
+    color: var(--pink);
+}
+
 
 
