@@ -81,7 +81,7 @@
 
   <?php
 
-    if($_SESSION['userType'] == 'admin'){
+    if($_SESSION['userType'] == 'medecin'){
       require('../../PHP/connectDatabase.php');
 
       $sql = "SELECT Resultats FROM Test WHERE Id_Medecin = '$IdMedecin' AND Type='3' ORDER BY Date_Test ASC";
