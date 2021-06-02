@@ -29,7 +29,7 @@
   else {
     while($row = $result -> fetch_row()) {
       if($Mail == $row[1] || $IP = $row[6]) {
-        header('Location:../');
+        header('Location:../Ressources/Pages/banni.php');
         $bdd -> close();
         exit();
       }
