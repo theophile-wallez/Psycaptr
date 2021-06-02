@@ -56,6 +56,7 @@ if(isset($_POST['modifyProfile'])){
       exit();
     }
   }
+  
 
   /*----------------------------------------------------------------*/
   //Ne rentre pas dans le if pour les admins ??
