@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../Style/style.css"/>
   <link rel="stylesheet" href="../Style/profil.css"/>
   <link rel="stylesheet" href="../Style/modifyFAQ.css"/>
+  <link rel="stylesheet" href="../Style/title.css"/>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -30,6 +31,7 @@
 <?php require_once('dashboardHeaderNav.php');?>
 
 <body>
+  <h1>Gestionnaire de la FAQ</h1>
   <section class="content-container">
     <h2>Ajout d'une question à la FAQ</h2>
 

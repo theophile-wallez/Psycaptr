@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../Style/style.css"/>
   <link rel="stylesheet" href="../Style/profil.css"/>
   <link rel="stylesheet" href="../Style/modifyUsers.css"/>
+  <link rel="stylesheet" href="../Style/title.css"/>
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -30,6 +32,7 @@
 <?php require_once('dashboardHeaderNav.php');?>
 
 <body>
+<h1>Votre gestionnaire des utilisateurs</h1>
 
     <!-- Affichage de la liste des utilisateurs -->
 <?php

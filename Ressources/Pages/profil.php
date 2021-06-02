@@ -31,10 +31,10 @@
 <?php require_once('dashboardHeaderNav.php');
   $canModify = $_SESSION["modifyProfile"];
   $_SESSION["modifyProfile"]=0;
-  echo $_SESSION['userType'];
 ?>
 
 <body>
+  <h1>Votre Profil</h1>
   <section class="content-container flex">
     <form class="form-container" method="post" action="../../PHP/modifyProfile.php">
       <a class="modif_button" href="../../PHP/modifyProfile.php">Modifier votre profil</a>
