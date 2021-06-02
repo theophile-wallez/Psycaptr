@@ -70,7 +70,6 @@
 
   <?php
 
-    if($_SESSION['userType'] == 'medecin'){
       require('../../PHP/connectDatabase.php');
 
       $sql = "SELECT Resultats FROM Test WHERE Id_Patient = '$IdPatient' AND Type='3' ORDER BY Date_Test ASC";
@@ -115,11 +114,8 @@
         echo "barChart([2, 4, 8, 3, 5]);\n";
       }
 
-    }
-    else {
-      echo "lineChart([1, 4, 8, 5, 6, 9]);\n";
-      echo "barChart([2, 4, 8, 3, 5]);\n";
-    }
+    
+
 
   ?>
 
