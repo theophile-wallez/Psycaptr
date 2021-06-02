@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$IdMedecin  = $_SESSION["IdMedecin"];
+	// $IdMedecin  = $_SESSION["IdMedecin"];
 
 ?>
 
