@@ -59,7 +59,7 @@ if(isset($_POST['modifyProfile'])){
   
 
   /*----------------------------------------------------------------*/
-  //Ne rentre pas dans le if pour les admins ??
+
   else if($_SESSION['userType']=='admin'){
     $sql = "SELECT * FROM `Admin` WHERE Mail='$MailOrigin'";
     if(!$result = $bdd -> query($sql)){
