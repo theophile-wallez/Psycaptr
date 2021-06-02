@@ -37,7 +37,7 @@ if(isset($_POST['modifyProfile'])){
     $row = $result -> fetch_row();
 
     if($CryptedMdp == $row[2]){
-      $sql = "UPDATE Utilisateur SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', CryptedMdp='$CryptedMdp' WHERE Id='$IdMedecin'";
+      $sql = "UPDATE Utilisateurs SET Mail='$Mail', Nom='$Nom', Prenom='$Prenom', CryptedMdp='$CryptedMdp' WHERE Id='$IdMedecin'";
       if(!$bdd -> query($sql)){
         echo "Échec lors de la création du compte : (" . $bdd->errno . ") " . $bdd->error;
       }
