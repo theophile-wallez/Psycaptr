@@ -32,6 +32,7 @@ if(isset($_POST['addUser'])){
     $Prenom = convertInput($_POST['Prenom']);
     $Mail   = convertInput($_POST['Mail']);
     $Date   = date('Y-m-d');
+    $Type = convertInput($_POST['Type']);
 
 
     if($_SESSION['userType']=='admin'){
@@ -63,7 +64,12 @@ if(isset($_POST['addUser'])){
 
 
     if($_SESSION['userType']=='admin'){
-        $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        if($Type == "Medecin"){
+            $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        }
+        else if($Type == "Administrateur"){
+          $sql = "INSERT INTO `Utilisateurs` (`Id`, `Mail`, `CryptedMdp`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$CryptedMdp','$Date','$Nom','$Prenom')";
+        }
     }
     else if($_SESSION['userType']=='medecin'){
         $sql = "INSERT INTO `ValidationPatient` (`Id`, `Mail`, `Id_Medecin`, `Date_Inscription`, `Nom`, `Prenom`) VALUES ('$Id','$Mail','$IdMedecin','$Date','$Nom','$Prenom')";
