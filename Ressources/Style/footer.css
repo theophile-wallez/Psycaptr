@@ -1,9 +1,12 @@
 footer{
     width: 100vw;
     height: 20vh;
-    background: #cabafe;    
+    background: #dad6e7;    
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   footer .bottom{
