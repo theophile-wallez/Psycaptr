@@ -69,18 +69,6 @@ body .content-container{
     color: white;
 }
 
-.form-container .noModify{
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    height:1.2em;
-}
-.form-container .noModify:hover{
-    transform: none;
-}
-.form-container .noModify:active{
-    transform: none;
-}
 .form-container input{
     width:30%;
 }
