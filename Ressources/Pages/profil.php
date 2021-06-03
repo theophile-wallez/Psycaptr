@@ -65,15 +65,15 @@
         <?php if($canModify == 1){ ?>
         <div class="item tel-container">
           <h4>Votre mot de passe actuel <span class="obligatoire">*</span></h4>
-          <input name="Mdp" type="password" required="required" >
+          <input name="Mdp" type="password" minlength="8" inputmode="numeric" required="required">
         </div>
         <div class="item tel-container">
           <h4>Votre nouveau mot de passe</h4>
-          <input name="newMdp" type="password"/>
+          <input name="newMdp" type="password" minlength="8" inputmode="numeric"/>
         </div>
         <div class="item tel-container">
           <h4>Confirmation du nouveau mot de passe</h4>
-          <input name="newMdpBis" type="password"/>
+          <input name="newMdpBis" type="password" minlength="8" inputmode="numeric"/>
         </div>
         <div class="item tel-container button-profil">
           <button class="validerBoutton" type='submit' name='modifyProfile'>Valider les modifications</button>
