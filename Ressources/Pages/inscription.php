@@ -58,8 +58,8 @@
       </div>
 
       <div class="input_container input_container_3">
-        <input name="Mdp" type="password" placeholder="Mot de passe" required/>
-        <input name="MdpBis" type="password" placeholder="Confirmation" required/>
+        <input name="Mdp" type="password" placeholder="Mot de passe" minlength="8" required/>
+        <input name="MdpBis" type="password" placeholder="Confirmation" minlength="8" required/>
       </div>
 			<label class="CGU">
 				<input type="checkbox" id="cgu" name="cgu" required>
