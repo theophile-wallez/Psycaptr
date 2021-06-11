@@ -10,7 +10,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $data = curl_exec($ch);
 curl_close($ch);
 echo "Raw Data:<br />";
-echo("$data<br />");
+echo("$data<br /><br />");
 
 $data_tab = substr($data, 91);
 $data_tab = str_split($data_tab,33);
