@@ -72,8 +72,14 @@ $sql = 'SELECT * FROM `Trames`';
 
 if($result = $bdd -> query($sql)){
     while($row = $result -> fetch_row()) {
-        echo $row[6];
-        echo $a;
+        if("$row[6]"!="$a") {
+            $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec)";
+            if ($bdd -> query($sqlAjout)) {
+                echo "Ajout OK";
+              } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+              }
+        }
     }
 }
 
