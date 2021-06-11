@@ -11,4 +11,5 @@
         echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
         exit();
     }
+	
 ?>
