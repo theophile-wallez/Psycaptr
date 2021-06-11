@@ -73,6 +73,7 @@ $sql = 'SELECT * FROM `Trames`';
 if($result = $bdd -> query($sql)){
     while($row = $result -> fetch_row()) {
         echo $row[6];
+        echo $a;
     }
 }
 
