@@ -17,7 +17,7 @@ $data_tab = str_split($data_tab,33);
 echo "Tabular Data:<br />";
 for($i=0, $size=count($data_tab); $i<$size; $i++){
     echo "Trame $i:<br />";
-    echo "TypeTrame: ",substr($data_tab[$i],0,1)," | NumObjet: ",$substr($data_tab[$i],1,4);
+    echo "TypeTrame: ",substr($data_tab[$i],0,1)," | NumObjet: ",substr($data_tab[$i],1,4);
 }
 
 
