@@ -1,5 +1,12 @@
 <?php
 
+
+session_start();
+
+
+
+// Lecture, analyse et affichage des trames :
+
 $ch = curl_init();
 curl_setopt(
     $ch,
@@ -29,6 +36,48 @@ for($i=0, $size=count($data_tab); $i<$size-1; $i++){
     echo "Trame $i: $data_tab[$i]<br />";
     echo "TypeTrame: ",substr($data_tab[$i],0,1)," | NumObjet: ",substr($data_tab[$i],1,4)," | TypeRequete: ",substr($data_tab[$i],5,1)," | TypeCapteur: ",substr($data_tab[$i],6,1)," | NumCapteur: ",substr($data_tab[$i],7,2)," | ValeurLue: ",substr($data_tab[$i],9,4)," | NumTrame: ",substr($data_tab[$i],13,4)," | Checksum: ",substr($data_tab[$i],17,2)," | Annee: ",substr($data_tab[$i],19,4)," | Mois: ",substr($data_tab[$i],23,2)," | Jour: ",substr($data_tab[$i],25,2)," | Heure: ",substr($data_tab[$i],27,2)," | Minutes: ",substr($data_tab[$i],29,2)," | Secondes: ",substr($data_tab[$i],31,2);
     echo "<br /><br />";
+}
+
+
+
+// Checking et ajout si besoin de trames à la DB :
+
+
+
+// Connexion à la database
+$servername = 'localhost';
+$bddname = 'ttwawain_Psycaptr';
+$username = 'theophile';
+$password = 'psycaptrisep2023';
+
+// Message d'erreur en cas d'accès impossible à la database
+$bdd = new mysqli($servername, $username, $password, $bddname);
+if($bdd->connect_errno){
+    echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
+    exit();
+}
+
+
+// Ajout ou non de la dernière trame à la DB :
+
+
+// Dernière trame reçue :
+$trame = $data_tab[count($data_tab)-2];
+echo "Dernière trame reçue : ";
+list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
+    sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+echo("$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br /><br />");
+
+$sql = 'SELECT * FROM `Trames`';
+
+if($result = $bdd -> query($sql)){
+    while($row = $result -> fetch_row()) {
+        if($row[6]!=$a) {
+            $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) 
+            VALUES ($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec)";
+            query($sqlAjout);
+        }
+    }
 }
 
 ?>
