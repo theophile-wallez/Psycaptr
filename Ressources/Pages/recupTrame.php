@@ -16,12 +16,12 @@ $data = substr($data, 91);
 $data_tab = str_split($data,33);
 
 // Dernière trame reçue :
-$trame = $data_tab[-1];
+$trame = end($data_tab);
 
-echo "Dernière trame reçue :";
+echo "Dernière trame reçue : ";
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br /><br />");
+echo("$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
 // Listing de toutes les trames
 echo "Tabular Data: La Database de l'ISEP contient ",count($data_tab)," trames.<br /><br />";
