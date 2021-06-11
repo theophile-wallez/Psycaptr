@@ -18,9 +18,10 @@ $data_tab = str_split($data,33);
 // Dernière trame reçue :
 $trame = $data_tab[-1];
 
+echo "Dernière trame reçue :";
 list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
 // Listing de toutes les trames
 echo "Tabular Data:<br /><br />";
