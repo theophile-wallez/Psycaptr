@@ -74,11 +74,12 @@ if($result = $bdd -> query($sql)){
     while($row = $result -> fetch_row()) {
         if("$row[6]"!="$a") {
             $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec)";
+            // $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('1', 'G9Dy', '1', '3', '01', '1234', '0002', '15', '2021', '06', '11', '09', '19', '13')";
             if ($bdd -> query($sqlAjout)) {
                 echo "Ajout OK";
             } 
             else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error: " . $sqlAjout . "<br>" . $conn->error;
             }
         }
     }
