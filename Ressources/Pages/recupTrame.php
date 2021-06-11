@@ -15,7 +15,7 @@ echo("$data");
 
 $data_tab = str_split($data,33);
 echo "Tabular Data:<br />";
-for($i=2, $size=count($data_tab); $i<$size; $i++){
+for($i=0, $size=count($data_tab); $i<$size; $i++){
     echo "Trame $i: $data_tab[$i]<br />";
 }
 
