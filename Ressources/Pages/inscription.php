@@ -64,7 +64,7 @@
 			<label class="CGU">
 				<input type="checkbox" id="cgu" name="cgu" required>
 				<span class="checkmark"></span>
-				J'accepte les <a href="CGU"> Conditions d'utilisation</a>
+				J'accepte les   <a href="CGU"> Conditions d'utilisation</a>
 			</label>
 
       <div class="envoyer_button">
