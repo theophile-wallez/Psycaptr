@@ -70,7 +70,7 @@ foreach ($data_tab as $trameISEP) {
         }
         echo "</br></br>";
     }
-    if($isEqual==0 || $num_row=0) {
+    if($isEqual==0 || $num_row==0) {
         $Id=IdGenerator(11);    
 
         $sqlId = "SELECT * FROM Trames"; 
