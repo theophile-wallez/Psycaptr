@@ -48,16 +48,15 @@ $sql = 'SELECT * FROM `Trames`';
 
 if($result = $bdd -> query($sql)){
     while($row = $result -> fetch_row()) {
-        if("$row[6]"!="$numTrame") {
-            $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('$typeTrame','$numObjet','$typeRequest','$typeCapteur','$numCapteur','$valeurLue','$numTrame','$checkSum','$year','$month','$day','$hour','$min','$sec')";
-            // $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('1', 'G9Dy', '1', '3', '01', '1234', '0004', '15', '2021', '06', '11', '09', '19', '13')";
-            if ($bdd -> query($sqlAjout)) {
-                echo "Ajout OK";
-            } 
-            else {
-                echo "Error: " . $sqlAjout . "<br>" . $conn->error;
-            }
+        if(""=="$row") {
+            break;
         }
+    }
+    if ($bdd -> query($sqlAjout)) {
+        echo "Ajout OK";
+    } 
+    else {
+        echo "Error: " . $sqlAjout . "<br>" . $conn->error;
     }
 }
 ?>
