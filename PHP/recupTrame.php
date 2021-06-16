@@ -22,10 +22,10 @@ $data_tab = str_split($data,33);
 // Dernière trame reçue :
 $trame = $data_tab[count($data_tab)-2];
 
-echo "Dernière trame reçue : ";
-list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
-    sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
+// echo "Dernière trame reçue : ";
+// list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
+//     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+// echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
 // // Listing de toutes les trames
 // echo "Tabular Data: La Database de l'ISEP contient ",count($data_tab)-1," trames.<br /><br />";
