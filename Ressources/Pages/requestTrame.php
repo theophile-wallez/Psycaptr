@@ -36,6 +36,13 @@
 
     <!-- Affichage de la liste des utilisateurs -->
 
+	<a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=".<?php
+
+	$trame = "13011234FFFF1520210611094457";
+	echo $trame;
+
+	?>.""></a>
+
 
 </body>
 </html>
