@@ -22,9 +22,9 @@ $data_tab = str_split($data,33);
 $trame = $data_tab[count($data_tab)-2];
 
 echo "Dernière trame reçue : ";
-list($TypeTrame, $NumObjet, $TypeRequest, $TypeCapteur, $NumCapteur, $ValeurLue, $NumTrame, $CheckSum, $year, $month, $day, $hour, $min, $sec) =
+list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-echo("$TypeTrame,$NumObjet,$TypeRequest,$TypeCapteur,$NumCapteur,$ValeurLue,$NumTrame,$CheckSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
+echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
 // Listing de toutes les trames
 echo "Tabular Data: La Database de l'ISEP contient ",count($data_tab)-1," trames.<br /><br />";
@@ -40,15 +40,15 @@ require('connectDatabase.php'); //Connexion à la database
 // Dernière trame reçue :
 $trame = $data_tab[count($data_tab)-2];
 echo "Dernière trame reçue : ";
-list($TypeTrame, $NumObjet, $TypeRequest, $TypeCapteur, $NumCapteur, $ValeurLue, $NumTrame, $CheckSum, $year, $month, $day, $hour, $min, $sec) =
+list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-echo("$TypeTrame,$NumObjet,$TypeRequest,$TypeCapteur,$NumCapteur,$ValeurLue,$NumTrame,$CheckSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
+echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
 $sql = 'SELECT * FROM `Trames`';
 
 if($result = $bdd -> query($sql)){
     while($row = $result -> fetch_row()) {
-        if("$row[6]"!="$NumTrame") {
+        if("$row[6]"!="$numTrame") {
             $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('$t','$o','$r','$c','$n','$v','$a','$x','$year','$month','$day','$hour','$min','$sec')";
             // $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('1', 'G9Dy', '1', '3', '01', '1234', '0004', '15', '2021', '06', '11', '09', '19', '13')";
             if ($bdd -> query($sqlAjout)) {
