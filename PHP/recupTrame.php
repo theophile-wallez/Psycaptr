@@ -18,6 +18,7 @@ echo("$data<br /><br />");
 
 $data = substr($data, 91);
 $data_tab = str_split($data,33);
+$data_tab = array_splice($data_tab, -1);
 
 // Dernière trame reçue :
 $trame = $data_tab[count($data_tab)-2];
@@ -55,7 +56,7 @@ if($result = $bdd -> query($sql)) {
             $trameDB=$trameDB.$row[$i];
         }
         array_push($tramesTableau, $trameDB);
-    }  
+    }
 }
 
 foreach ($data_tab as $trameISEP) {
@@ -70,7 +71,7 @@ foreach ($data_tab as $trameISEP) {
         echo "</br></br>";
     }
     if($isEqual==0) {
-        $Id=IdGenerator(11);
+        $Id=IdGenerator(11);    
 
         $sqlId = "SELECT * FROM Trames"; 
 
