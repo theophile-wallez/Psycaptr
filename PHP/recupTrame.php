@@ -44,7 +44,7 @@ list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue,
     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
-$sql = 'SELECT * FROM `Trames`';
+$sql = 'SELECT * FROM Trames';
 
 if($result = $bdd -> query($sql)){
     foreach ($data_tab as $data) {
@@ -67,12 +67,8 @@ if($result = $bdd -> query($sql)){
             }
         }
     }
-    if ($bdd -> query($sqlAjout)) {
-        echo "Ajout OK";
-    } 
-    else {
-        echo "Error: " . $sqlAjout . "<br>" . $conn->error;
-    }
 }
+
+
 
 ?>
