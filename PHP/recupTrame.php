@@ -18,7 +18,6 @@ echo("$data<br /><br />");
 
 $data = substr($data, 91);
 $data_tab = str_split($data,33);
-$data_tab = array_splice($data_tab, -1);
 
 // Dernière trame reçue :
 $trame = $data_tab[count($data_tab)-2];
