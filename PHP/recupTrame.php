@@ -75,5 +75,4 @@ if($result = $bdd -> query($sql)){
     }
 }
 
-
 ?>
