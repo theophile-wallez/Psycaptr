@@ -59,4 +59,7 @@ if($result = $bdd -> query($sql)){
         echo "Error: " . $sqlAjout . "<br>" . $conn->error;
     }
 }
+$result -> free_result();
+$bdd -> close();
+exit();
 ?>
