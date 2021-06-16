@@ -67,6 +67,7 @@ foreach ($data_tab as $trameISEP) {
             $isEqual=1;
             echo "C egal";
         }
+        echo "<br /><br />";
     }
     // if($isEqual==1) {
     //     $Id=IdGenerator(11);
