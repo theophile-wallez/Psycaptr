@@ -47,9 +47,24 @@ echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$num
 $sql = 'SELECT * FROM `Trames`';
 
 if($result = $bdd -> query($sql)){
-    while($row = $result -> fetch_row()) {
-        if(""=="$row") {
-            break;
+    foreach ($data_tab as $data) {
+        $verif=0;
+        while($row = $result -> fetch_row()) {
+            if("$data"=="$row") {
+                break;
+                $verif=1;
+            }
+        }
+        if($verif==1) {
+            list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
+                sscanf($data,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+            $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('$typeTrame','$numObjet','$typeRequest','$typeCapteur','$numCapteur','$valeurLue','$numTrame','$checkSum','$year','$month','$day','$hour','$min','$sec')";
+            if ($bdd -> query($sqlAjout)) {
+                echo "Ajout OK";
+            } 
+            else {
+                echo "Error: " . $sqlAjout . "<br>" . $conn->error;
+            }
         }
     }
     if ($bdd -> query($sqlAjout)) {
@@ -59,4 +74,6 @@ if($result = $bdd -> query($sql)){
         echo "Error: " . $sqlAjout . "<br>" . $conn->error;
     }
 }
+
+
 ?>
