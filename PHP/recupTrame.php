@@ -45,15 +45,50 @@ list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue,
 echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
 $sql = 'SELECT * FROM Trames';
-if($result = $bdd -> query($sql)){
+
+if($result = $bdd -> query($sql)) {
+    $tramesTableau=array();
     while($row = $result -> fetch_row()) {
         $trameDB="";
         for($i=0; $i<14; $i++) {
             $trameDB=$trameDB.$row[$i];
-        }  
-        echo $trameDB;
+        }
+        array_push($tramesTableau, $trameDB);
     }  
 }
+
+foreach ($data_tab as $trameISEP) {
+    $isEqual=false;
+    foreach ($tramesTableau as $trameDB) {
+        if($trameISEP==$trameDB) {
+            $isEqual=true;
+        }
+        if(!$isEqual) {
+            list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
+            sscanf($trameISEP,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+            $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('$typeTrame','$numObjet','$typeRequest','$typeCapteur','$numCapteur','$valeurLue','$numTrame','$checkSum','$year','$month','$day','$hour','$min','$sec')";
+            if ($bdd -> query($sqlAjout)) {
+                echo "Ajout OK";
+            } 
+            else {
+                echo "Error: " . $sqlAjout . "<br>" . $conn->error;
+            }
+        }
+    }
+}
+
+
+
+// $isEqual=false;
+// foreach ($data_tab as $data) {
+//     if($data==$trameDB) {
+//         $isEqual=true;
+//         break;
+//     }
+// }  
+// if($isTrue) { //Pour quitter le while
+//     break;
+// }
 
     // foreach ($data_tab as $data) {
     //     $verif=0;
