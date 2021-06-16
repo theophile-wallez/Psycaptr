@@ -18,18 +18,7 @@
   <title>Gestion des utilisateurs • Psycaptr</title>
 </head>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-      var scrollpos = localStorage.getItem('scrollpos');
-      if (scrollpos) window.scrollTo(0, scrollpos);
-  });
 
-  window.onbeforeunload = function(e) {
-      localStorage.setItem('scrollpos', window.scrollY);
-  };
-</script>
-
-<?php require_once('dashboardHeaderNav.php');?>
 
 <body>
 
@@ -41,7 +30,7 @@
 	$trame = "13011234FFFF1520210611094457";
 	echo $trame;
 
-	?>.""></a>
+	?>.""> Test d'envoi d'une trame Site-Objet</a>
 
 
 </body>
