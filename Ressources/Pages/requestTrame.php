@@ -34,10 +34,8 @@
 <body>
 
 
-    <!-- Affichage de la liste des utilisateurs -->
-
-
 </body>
+
 </html>
 
 <!-- Ces balises de script fixent un bug de Chrome qui déclanche les
