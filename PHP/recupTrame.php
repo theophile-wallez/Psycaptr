@@ -72,7 +72,7 @@ foreach ($data_tab as $trameISEP) {
     if($isEqual==1) {
         $Id=IdGenerator(11);
 
-        $sqlId = "SELECT * FROM Trames";
+        $sqlId = "SELECT * FROM Trames"; 
 
         if($result = $bdd -> query($sqlId)){
             while($row = $result -> fetch_row()) {
