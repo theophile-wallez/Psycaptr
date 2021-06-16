@@ -51,7 +51,7 @@ if($result = $bdd -> query($sql)) {
     $tramesTableau=array();
     while($row = $result -> fetch_row()) {
         $trameDB="";
-        for($i=0; $i<14; $i++) {
+        for($i=1; $i<15; $i++) {
             $trameDB=$trameDB.$row[$i];
         }
         array_push($tramesTableau, $trameDB);
@@ -67,9 +67,20 @@ foreach ($data_tab as $trameISEP) {
     }
     if(!$isEqual) {
         $Id=IdGenerator(11);
+
+        $sqlId = "SELECT * FROM Trames";
+
+        if($result = $bdd -> query($sqlId)){
+            while($row = $result -> fetch_row()) {
+                if($Id == $row[0]){
+                    $Id = IdGenerator(11);
+                }
+            }
+        }
+
         list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
         sscanf($trameISEP,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-        $sqlAjout = "INSERT INTO `Trames` (`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`,`Id`) VALUES ('$typeTrame','$numObjet','$typeRequest','$typeCapteur','$numCapteur','$valeurLue','$numTrame','$checkSum','$year','$month','$day','$hour','$min','$sec','$Id')";
+        $sqlAjout = "INSERT INTO `Trames` (`Id`,`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('$Id','$typeTrame','$numObjet','$typeRequest','$typeCapteur','$numCapteur','$valeurLue','$numTrame','$checkSum','$year','$month','$day','$hour','$min','$sec')";
         if ($bdd -> query($sqlAjout)) {
             echo "Ajout OK";
         } 
