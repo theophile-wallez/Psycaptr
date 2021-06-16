@@ -17,18 +17,7 @@
   <title>Gestion de la FAQ • Psycaptr</title>
 </head>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) { 
-      var scrollpos = localStorage.getItem('scrollpos');
-      if (scrollpos) window.scrollTo(0, scrollpos);
-  });
 
-  window.onbeforeunload = function(e) {
-      localStorage.setItem('scrollpos', window.scrollY);
-  };
-</script>
-
-<?php require_once('dashboardHeaderNav.php');?>
 
 <body>
   <h1>Gestionnaire de la FAQ</h1>
@@ -53,19 +42,19 @@
 	$trame = "13011234FFFF1520210611094457";
 	echo $trame;
 
-	?>.""></a>
+	?>.""> Test d'envoi d'une trame Site-Objet</a>
 
 
     <!-- Affichage de la liste des utilisateurs -->
     <?php require('../../PHP/modifyFAQAlgo.php');?>
-    
+
   </section>
 </body>
 </html>
 
-<!-- Ces balises de script fixent un bug de Chrome qui déclanche les  
+<!-- Ces balises de script fixent un bug de Chrome qui déclanche les
 animations des :hover au lancement de la page -->
-<script> 
+<script>
   function adjustHeight(el){
       el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "60px";
   }
