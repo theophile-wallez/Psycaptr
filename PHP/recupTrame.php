@@ -62,12 +62,12 @@ foreach ($data_tab as $trameISEP) {
     $isEqual=0;
     foreach ($tramesTableau as $trameDB) {
 
-        echo "Trame site ISEP : ".$trameISEP." | Trame Database : ".$trameDB;
+        echo "Trame site ISEP : ".$trameISEP." | Trame Database : ".$trameDB."\n";
         if($trameISEP==$trameDB) {
             $isEqual=1;
             echo "C egal";
         }
-        echo "<br /><br />";
+        echo "</br></br>";
     }
     // if($isEqual==1) {
     //     $Id=IdGenerator(11);
