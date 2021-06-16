@@ -1,9 +1,5 @@
 <?php
-
-
 session_start();
-
-
 
 // Lecture, analyse et affichage des trames :
 
@@ -38,28 +34,8 @@ for($i=0, $size=count($data_tab); $i<$size-1; $i++){
     echo "<br /><br />";
 }
 
-
-
-// Checking et ajout si besoin de trames à la DB :
-
-
-
 // Connexion à la database
-$servername = 'localhost';
-$bddname = 'ttwawain_Psycaptr';
-$username = 'theophile';
-$password = 'psycaptrisep2023';
-
-// Message d'erreur en cas d'accès impossible à la database
-$bdd = new mysqli($servername, $username, $password, $bddname);
-if($bdd->connect_errno){
-    echo 'Error connexion : impossible to access the data base' . $bdd -> connect_error;
-    exit();
-}
-
-
-// Ajout ou non de la dernière trame à la DB :
-
+require('connectDatabase.php'); //Connexion à la database
 
 // Dernière trame reçue :
 $trame = $data_tab[count($data_tab)-2];
