@@ -59,35 +59,36 @@ if($result = $bdd -> query($sql)) {
 }
 
 foreach ($data_tab as $trameISEP) {
-    $isEqual=false;
+    $isEqual=0;
     foreach ($tramesTableau as $trameDB) {
         if($trameISEP==$trameDB) {
-            $isEqual=true;
+            $isEqual=1;
+            echo "C egal";
         }
     }
-    if(!$isEqual) {
-        $Id=IdGenerator(11);
+    // if($isEqual==1) {
+    //     $Id=IdGenerator(11);
 
-        $sqlId = "SELECT * FROM Trames";
+    //     $sqlId = "SELECT * FROM Trames";
 
-        if($result = $bdd -> query($sqlId)){
-            while($row = $result -> fetch_row()) {
-                if($Id == $row[0]){
-                    $Id = IdGenerator(11);
-                }
-            }
-        }
+    //     if($result = $bdd -> query($sqlId)){
+    //         while($row = $result -> fetch_row()) {
+    //             if($Id == $row[0]){
+    //                 $Id = IdGenerator(11);
+    //             }
+    //         }
+    //     }
 
-        list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
-        sscanf($trameISEP,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-        $sqlAjout = "INSERT INTO `Trames` (`Id`,`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('$Id','$typeTrame','$numObjet','$typeRequest','$typeCapteur','$numCapteur','$valeurLue','$numTrame','$checkSum','$year','$month','$day','$hour','$min','$sec')";
-        if ($bdd -> query($sqlAjout)) {
-            echo "Ajout OK";
-        } 
-        else {
-            echo "Error: " . $sqlAjout . "<br>" . $conn->error;
-        }
-    }
+    //     list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
+    //     sscanf($trameISEP,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+    //     $sqlAjout = "INSERT INTO `Trames` (`Id`,`TypeTrame`, `NumObjet`, `TypeRequete`, `TypeCapteur`, `NumCapteur`, `ValeurLue`, `NumTrame`, `Checksum`, `Annee`, `Mois`, `Jour`, `Heure`, `Minutes`, `Secondes`) VALUES ('$Id','$typeTrame','$numObjet','$typeRequest','$typeCapteur','$numCapteur','$valeurLue','$numTrame','$checkSum','$year','$month','$day','$hour','$min','$sec')";
+    //     if ($bdd -> query($sqlAjout)) {
+    //         echo "Ajout OK";
+    //     } 
+    //     else {
+    //         echo "Error: " . $sqlAjout . "<br>" . $conn->error;
+    //     }
+    // }
 }
 
 
