@@ -18,7 +18,7 @@
 
 <body>
 	
-  <label for="pet-select">Choose a pet:</label>
+  <label for="capteur-select">Choose a capteur mon bro:</label>
 
   <form action="" method="post">
     <select name="Capteur">
