@@ -38,7 +38,7 @@
   <div class="dashboard_container">
     <div class="plusContainer">
       <h1 class="dashboard_title">Votre tableau de bord</h1>
-      <a href="requestTrame" class="newTest">
+      <a href="lunchTest" class="newTest">
         <h3>Lancer un nouveau test</h3>
       </a>
 
