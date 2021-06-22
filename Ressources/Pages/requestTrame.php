@@ -17,10 +17,10 @@
 
 
 <body>
-
+	
   <label for="pet-select">Choose a pet:</label>
 
-  <form action="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME= <?php echo $trame; ?>" method="post">
+  <form action="sent" method="post">
     <select name="Capteur">
         <option value="" disabled selected>Choose option</option>
         <option value="1">1</option>
@@ -34,24 +34,24 @@
 
   <?php
 
-  $typeTrame="1";
-  $numObjet="G9Dy"; 
-  $typeRequest="2"; 
-
-  $typeCapteur=$selected;
-  $numCapteur="01";
-
-  $valeurLue="0000";
-
-  $numTrame="FEDC";
-  $checkSum="15";
-
-  $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
 
   if(isset($_POST['submit'])) { 
     if(!empty($_POST['Capteur'])) {
         $selected = $_POST['Capteur'];
         echo 'You have chosen: ' . $selected;
+        $typeTrame="1";
+        $numObjet="G9Dy"; 
+        $typeRequest="2"; 
+
+        $typeCapteur=$selected;
+        $numCapteur="01";
+
+        $valeurLue="0000";
+
+        $numTrame="FEDC";
+        $checkSum="15";
+
+        $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
     } else {
         echo 'Please select the value.';
     }
