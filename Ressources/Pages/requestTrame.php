@@ -17,7 +17,6 @@
 
 
 <body>
-	<a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME= <?php $trame = "1G9Dy23013585FFFF15"; echo $trame; ?>"> Test d'envoi d'une trame Site-Objet</a>
 
   <label for="pet-select">Choose a pet:</label>
 
