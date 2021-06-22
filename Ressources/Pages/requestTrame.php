@@ -41,7 +41,7 @@
 
 	// Exemple de trame : 1 G9Dy 13011234 FFFF 1520210611094457
 
-	$trame = "23033585FFFF15";
+	$trame = "1G9Dy23013585FFFF15";
 	echo $trame;
 
 	?>.""> Test d'envoi d'une trame Site-Objet</a>
