@@ -75,9 +75,9 @@
       </div>
       <div class="part_2_container">
         <div class="graph graph-5">
-          <h4 class="canvas_title">Votre dernier score</h4>
+          <h4 class="canvas_title">Dernière température mesurée</h4>
           <div class="canvas_container lastScore">
-            <h2><?php echo "5 / 10" ?></h2>
+            <h2><?php echo "21ºC" ?></h2>
           </div>
         </div>
       </div>
