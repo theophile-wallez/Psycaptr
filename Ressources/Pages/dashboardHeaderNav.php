@@ -38,6 +38,13 @@
     <i class="fas fa-users"></i>
     <p></p>
   </a>
+
+  <a href="requestTrame" class="icon-container">
+    <div class="line"></div>
+    <i class="fa-solid fa-play"></i>
+    <p></p>
+  </a>
+
 <?php 
   if($_SESSION['userType'] == 'admin'){
 ?>
