@@ -39,6 +39,24 @@
     if(!empty($_POST['Capteur'])) {
         $selected = $_POST['Capteur'];
         echo 'You have chosen: ' . $selected;
+        $typeTrame="1";
+        $numObjet="G9Dy"; 
+        $typeRequest="2"; 
+
+        $typeCapteur=$_POST['Capteur'];
+        $numCapteur="01";
+
+        $valeurLue="0000";
+
+        $numTrame="FEDC";
+        $checkSum="15";
+
+        $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
+
+        $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=.$trame";
+
+        header('Location : $monUrl');
+        Exit();
         
     } else {
         echo 'Please select the value.';
