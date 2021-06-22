@@ -15,7 +15,7 @@ $typeTrame="1";
 $numObjet="G9Dy"; 
 $typeRequest="2"; 
 
-$typeCapteur=$selected;
+$typeCapteur=$_POST['Capteur'];
 $numCapteur="01";
 
 $valeurLue="0000";
