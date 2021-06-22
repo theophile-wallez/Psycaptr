@@ -20,7 +20,7 @@
 	
   <label for="pet-select">Choose a pet:</label>
 
-  <form action="sent" method="post">
+  <form action="" method="post">
     <select name="Capteur">
         <option value="" disabled selected>Choose option</option>
         <option value="1">1</option>
