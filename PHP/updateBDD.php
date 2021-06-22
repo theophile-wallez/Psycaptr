@@ -33,6 +33,7 @@ list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue,
 $sqlDelete="DELETE FROM `Trames`";
 if ($bdd -> query($sqlDelete)) {
     // echo "Ajout OK";
+    
 } 
 else {
     echo "Error: " . $sqlDelete . "<br>" . $conn->error;
