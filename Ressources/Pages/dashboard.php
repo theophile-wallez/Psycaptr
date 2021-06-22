@@ -8,10 +8,10 @@
 
     if (in_array(strtolower($PrenomPatient{0}), ['a','e','i','o','u','é','y'])) {
       $de = 'd\'';
-     }
-     else {
+    }
+    else {
        $de = 'de ';
-     }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,13 @@
 <body>
 
   <div class="dashboard_container">
-    <h1 class="dashboard_title">Votre tableau de bord</h1>
+    <div class="plusContainer">
+      <h1 class="dashboard_title">Votre tableau de bord</h1>
+      <a href="requestTrame" class="newTest">
+        <h3>Lancer un nouveau test</h3>
+      </a>
+
+    </div>
     <div class="main_part_container">
         <div class="part_1_container ">
           <div class="graph graph-1">
@@ -65,7 +71,12 @@
           </div>
       </div>
       <div class="part_2_container">
-        <div class="graph graph-5"></div>
+        <div class="graph graph-5">
+          <h4 class="canvas_title">Votre dernier score</h4>
+          <div class="canvas_container lastScore">
+            <h2><?php echo "5 / 10" ?></h2>
+          </div>
+        </div>
       </div>
   </div>
   </div>

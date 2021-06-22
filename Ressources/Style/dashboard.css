@@ -19,11 +19,11 @@ body .dashboard_container{
 }
 
 .dashboard_container .dashboard_title{
-    width: 100%;
-    height: 5%;
+    width: 50%;
 
     display: flex;
     align-items:center;
+
 
     color: #695c73;
     font-size: 4vh;
@@ -100,8 +100,54 @@ canvas{
 .graph-double{
     width: 60%;
 }
-.graph-3{
+.graph-3 {
     width: 40%;
     margin-right: 1em;
 }
+
+.plusContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+}
+
+.newTest {
+    padding: 0;
+    margin: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 1em;
+    border: solid 2px #e6e7eb ;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: #695c73;
+    height:3em;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+
+.newTest:hover{
+    transform: scale(1.05);
+    background : #e6e7eb;
+    color: #727275;
+}
+
+.lastScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    user-select: none;
+
+    background: var(--light_gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;}
+
+
 

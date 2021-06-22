@@ -41,7 +41,8 @@
 
   <a href="requestTrame" class="icon-container">
     <div class="line"></div>
-    <i class="fa-solid fa-play"></i>
+    <i class="fas fa-plus"></i>
+
     <p></p>
   </a>
 
