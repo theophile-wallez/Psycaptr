@@ -57,13 +57,13 @@
         $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=$trame";
 
         header("Location: $monUrl");
-        exit;
-
-        
+        exit;     
     } else {
         echo 'Please select the value.';
     }
   }
+
+  
 
   ?>
 
