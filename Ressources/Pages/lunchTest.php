@@ -8,6 +8,8 @@
 <meta charset="utf-8" />
   <link rel="stylesheet" href="../Style/style.css"/>
   <link rel="stylesheet" href="../Style/dashboard.css"/>
+  <link rel="stylesheet" href="../Style/lunchTest.css"/>
+
   <link rel="icon" href="../Images/Logo_light.png" type="image/icon type">
 
   <title>Lancer un test • Psycaptr</title>
@@ -20,57 +22,63 @@
 
 <body>
   <div class="dashboard_container">
-    <h1>Choisissez le test que vous désirez effectuer</h1>
+    <h1 class="test_title">Choisissez le test que vous désirez effectuer</h1>
     <section class="content-container">
     <div class="line-container">
-        <a href="" class="test-container">
-          <div class="icon-container">
-              
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy21010000FEDC15" class="test-container">
+          <div class="testIcon-container">
+            <i class="fas fa-music"></i>
           </div>
           <div class="title-container">
-            <p></p>
+           <h3>Reconnaissance d'un son</h3>
+           <p>Mesure de votre capacité à reconnaitre une note</p>
           </div>
         </a>
-        <a href="" class="test-container">
-          <div class="icon-container">
-
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy22010000FEDC15" class="test-container">
+          <div class="testIcon-container">
+            <i class="fas fa-assistive-listening-systems"></i>
           </div>
           <div class="title-container">
-            <p></p>
+            <h3>Stimulus sonore</h3>
+            <p>Mesure de votre temps de réaction à un stimulus sonore</p>
           </div>
         </a>
-        <a href="" class="test-container">
-          <div class="icon-container">
-
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" class="test-container">
+          <div class="testIcon-container">
+            <i class="far fa-eye"></i>
           </div>
           <div class="title-container">
-            <p></p>
+            <h3>Stimulus visuel</h3>
+            <p>Mesure de votre temps de réaction à un stimulus visuel</p>
           </div>
         </a>
       </div>
       <div class="line-container">
-        <a href="" class="test-container">
-          <div class="icon-container">
-
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy24010000FEDC15" class="test-container">
+          <div class="testIcon-container">
+            <i class="fas fa-heartbeat"></i>
           </div>
           <div class="title-container">
-            <p></p>
+            <h3>Fréquence cardiaque</h3>
+            <p>Mesure de votre fréquence cardiaque</p>
           </div>
         </a>
-        <a href="" class="test-container">
-          <div class="icon-container">
-
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy25010000FEDC15" class="test-container">
+          <div class="testIcon-container">
+            <i class="fas fa-thermometer-half"></i>
           </div>
           <div class="title-container">
-            <p></p>
+            <h3>Température de la peau</h3>
+            <p>Mesure de la température de votre peau</p>
           </div>
         </a>
-        <a href="" class="test-container">
-          <div class="icon-container">
-
+        <a href="dashboard" class="test-container">
+          <div class="testIcon-container">
+            <i class="fas fa-home"></i>
           </div>
           <div class="title-container">
-            <p></p>
+            <h3>Retour au dashboard</h3>
+            <p>Revenez au dashboard si vous ne voulez pas faire de test</p>
           </div>
         </a>
       </div>
@@ -91,34 +99,52 @@
 
     <?php
 
+$typeTrame="1";
+          $numObjet="G9Dy"; 
+          $typeRequest="2"; 
 
-    // if(isset($_POST['submit'])) { 
-    //   if(!empty($_POST['Capteur'])) {
-    //       $selected = $_POST['Capteur'];
-    //       echo 'You have chosen: ' . $selected;
+          $typeCapteur=$_POST['Capteur'];
+          $numCapteur="01";
 
-    //       $typeTrame="1";
-    //       $numObjet="G9Dy"; 
-    //       $typeRequest="2"; 
+          $valeurLue="0000";
 
-    //       $typeCapteur=$_POST['Capteur'];
-    //       $numCapteur="01";
+          $numTrame="FEDC";
+          $checkSum="15";
+          1G9Dy 1 01 12349214A220210622121926
 
-    //       $valeurLue="0000";
+          $trame=1G9Dy201$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
 
-    //       $numTrame="FEDC";
-    //       $checkSum="15";
+          $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=$trame";
 
-    //       $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
+          header("Location: $monUrl");
 
-    //       $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=$trame";
+    if(isset($_POST['submit'])) { 
+      if(!empty($_POST['Capteur'])) {
+          $selected = $_POST['Capteur'];
+          echo 'You have chosen: ' . $selected;
 
-    //       header("Location: $monUrl");
-    //       exit;
-    //   } else {
-    //       echo 'Please select the value.';
-    //   }
-    // }
+          $typeTrame="1";
+          $numObjet="G9Dy"; 
+          $typeRequest="2"; 
+
+          $typeCapteur=$_POST['Capteur'];
+          $numCapteur="01";
+
+          $valeurLue="0000";
+
+          $numTrame="FEDC";
+          $checkSum="15";
+
+          $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
+
+          $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=$trame";
+
+          header("Location: $monUrl");
+          exit;
+      } else {
+          echo 'Please select the value.';
+      }
+    }
     ?>
   </div> -->
   
