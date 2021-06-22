@@ -70,7 +70,7 @@
 
     // Dernière trame reçue :
     $trame = $data_tab[count($data_tab)-2];
-    echo $trame;
+    // echo $trame;
     return substr($trame,10,2);
   }
 ?>
