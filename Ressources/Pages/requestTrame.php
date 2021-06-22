@@ -29,7 +29,7 @@
         <option value="4">4</option>
     </select>
 
-    <input type="submit" name="submit" vlaue="Choose options">
+    <input type="submit" name="submit" value="Choose options">
   </form>
 
   <?php
@@ -39,19 +39,7 @@
     if(!empty($_POST['Capteur'])) {
         $selected = $_POST['Capteur'];
         echo 'You have chosen: ' . $selected;
-        $typeTrame="1";
-        $numObjet="G9Dy"; 
-        $typeRequest="2"; 
-
-        $typeCapteur=$selected;
-        $numCapteur="01";
-
-        $valeurLue="0000";
-
-        $numTrame="FEDC";
-        $checkSum="15";
-
-        $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
+        
     } else {
         echo 'Please select the value.';
     }

@@ -8,7 +8,24 @@
 </head>
 <body>
 
-<?php echo $trame;?>
+
+
+<?php 
+$typeTrame="1";
+$numObjet="G9Dy"; 
+$typeRequest="2"; 
+
+$typeCapteur=$selected;
+$numCapteur="01";
+
+$valeurLue="0000";
+
+$numTrame="FEDC";
+$checkSum="15";
+
+$trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
+
+echo $trame;?>
 
 <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME= <?php echo $trame; ?>"> Test d'envoi d'une trame Site-Objet</a>
     
