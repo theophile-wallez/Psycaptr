@@ -27,7 +27,7 @@ $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$nu
 
 echo $trame;?>
 
-<a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME= <?php echo str_replace('%20', ' ', $trame); ?>"> Test d'envoi d'une trame Site-Objet</a>
+<a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME= <?php echo str_replace('%20', '', $trame); ?>"> Test d'envoi d'une trame Site-Objet</a>
     
 </body>
 </html>
