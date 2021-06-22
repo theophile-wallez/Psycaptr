@@ -37,14 +37,14 @@
       </div>
     </form>
 
-	<a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME="<?php
+	<a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=<?php
 
 	// Exemple de trame : 1 G9Dy 13011234 FFFF 1520210611094457
 
 	$trame = "1G9Dy23013585FFFF15";
 	echo $trame;
 
-	?>""> Test d'envoi d'une trame Site-Objet</a>
+	?>"> Test d'envoi d'une trame Site-Objet</a>
 
 
     <!-- Affichage de la liste des utilisateurs -->
