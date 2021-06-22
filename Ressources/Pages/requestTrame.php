@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<?php require_once('dashboardHeaderNav.php');?>
+<?php require_once('dashboardHeaderNav.php');
+    require_once('../../PHP/updateBDD.php');
+?>
 
 <body>
   <div class="dashboard_container">
@@ -59,13 +61,10 @@
 
           header("Location: $monUrl");
           exit;
-
-          
       } else {
           echo 'Please select the value.';
       }
     }
-
     ?>
   </div>
   
