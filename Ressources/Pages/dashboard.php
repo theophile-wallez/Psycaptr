@@ -1,4 +1,5 @@
 <?php
+
   session_start();
     $IdMedecin     = $_SESSION['IdMedecin'];
     $IdPatient     = $_SESSION['IdPatient'];
@@ -28,6 +29,8 @@
 <?php 
   require_once('dashboardHeaderNav.php');
   require_once('../../PHP/updateBDD.php');
+  require_once('../../PHP/algo.php');
+
 ?>
 
 <body>
@@ -77,7 +80,7 @@
         <div class="graph graph-5">
           <h4 class="canvas_title">Dernière température mesurée</h4>
           <div class="canvas_container lastScore">
-            <h2><?php echo "21ºC" ?></h2>
+            <h2><?php echo lastScore()."ºC" ?></h2>
           </div>
         </div>
       </div>
@@ -85,6 +88,7 @@
   </div>
 
 </body>
+
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
 <script src="../../node_modules/chart.js/dist/chart.js"></script>
 <!--<script src="../../node_modules/chart.js/dist/chartjs-plugin-colorschemes.js"></script>-->
