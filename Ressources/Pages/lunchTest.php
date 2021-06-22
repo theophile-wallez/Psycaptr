@@ -99,52 +99,33 @@
 
     <?php
 
-$typeTrame="1";
-          $numObjet="G9Dy"; 
-          $typeRequest="2"; 
+    // if(isset($_POST['submit'])) { 
+    //   if(!empty($_POST['Capteur'])) {
+    //       $selected = $_POST['Capteur'];
+    //       echo 'You have chosen: ' . $selected;
 
-          $typeCapteur=$_POST['Capteur'];
-          $numCapteur="01";
+    //       $typeTrame="1";
+    //       $numObjet="G9Dy"; 
+    //       $typeRequest="2"; 
 
-          $valeurLue="0000";
+    //       $typeCapteur=$_POST['Capteur'];
+    //       $numCapteur="01";
 
-          $numTrame="FEDC";
-          $checkSum="15";
-          1G9Dy 1 01 12349214A220210622121926
+    //       $valeurLue="0000";
 
-          $trame=1G9Dy201$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
+    //       $numTrame="FEDC";
+    //       $checkSum="15";
 
-          $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=$trame";
+    //       $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
 
-          header("Location: $monUrl");
+    //       $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=$trame";
 
-    if(isset($_POST['submit'])) { 
-      if(!empty($_POST['Capteur'])) {
-          $selected = $_POST['Capteur'];
-          echo 'You have chosen: ' . $selected;
-
-          $typeTrame="1";
-          $numObjet="G9Dy"; 
-          $typeRequest="2"; 
-
-          $typeCapteur=$_POST['Capteur'];
-          $numCapteur="01";
-
-          $valeurLue="0000";
-
-          $numTrame="FEDC";
-          $checkSum="15";
-
-          $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
-
-          $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=$trame";
-
-          header("Location: $monUrl");
-          exit;
-      } else {
-          echo 'Please select the value.';
-      }
-    }
+    //       header("Location: $monUrl");
+    //       exit;
+    //   } else {
+    //       echo 'Please select the value.';
+    //   }
+    // }
     ?>
   </div> -->
   
