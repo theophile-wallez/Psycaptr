@@ -1,4 +1,4 @@
-<?php  
+<?php
 	session_start();
 ?>
 
@@ -44,7 +44,7 @@
 	$trame = "1G9Dy23013585FFFF15";
 	echo $trame;
 
-	?>.""> Test d'envoi d'une trame Site-Objet</a>
+	?>""> Test d'envoi d'une trame Site-Objet</a>
 
 
     <!-- Affichage de la liste des utilisateurs -->
