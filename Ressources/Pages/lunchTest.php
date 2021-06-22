@@ -25,7 +25,7 @@
     <h1 class="test_title">Choisissez le test que vous désirez effectuer</h1>
     <section class="content-container">
     <div class="line-container">
-        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy21010000FEDC15" class="test-container">
+        <a class="test-container" href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy21010000FEDC15" target="theframe" onclick="window.open('attenteTest')" >
           <div class="testIcon-container">
             <i class="fas fa-music"></i>
           </div>
@@ -34,7 +34,7 @@
            <p>Mesure de votre capacité à reconnaitre une note</p>
           </div>
         </a>
-        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy22010000FEDC15" class="test-container">
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy22010000FEDC15" target="theframe" onclick="window.open('attenteTest')" class="test-container">
           <div class="testIcon-container">
             <i class="fas fa-assistive-listening-systems"></i>
           </div>
@@ -43,7 +43,7 @@
             <p>Mesure de votre temps de réaction à un stimulus sonore</p>
           </div>
         </a>
-        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" class="test-container">
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" target="theframe" onclick="window.open('attenteTest')" class="test-container">
           <div class="testIcon-container">
             <i class="far fa-eye"></i>
           </div>
@@ -54,7 +54,7 @@
         </a>
       </div>
       <div class="line-container">
-        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy24010000FEDC15" class="test-container">
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy24010000FEDC15" target="theframe" onclick="window.open('attenteTest')" class="test-container">
           <div class="testIcon-container">
             <i class="fas fa-heartbeat"></i>
           </div>
@@ -63,7 +63,7 @@
             <p>Mesure de votre fréquence cardiaque</p>
           </div>
         </a>
-        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy25010000FEDC15" class="test-container">
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy25010000FEDC15" target="theframe" onclick="window.open('attenteTest')" class="test-container">
           <div class="testIcon-container">
             <i class="fas fa-thermometer-half"></i>
           </div>
@@ -128,7 +128,7 @@
     // }
     ?>
   </div> -->
-  
+  <iframe width=0 height=0 marginwidth=0 marginheight=0 frameborder=0 name="theframe" src="https://psycaptr.tk"></iframe>
 </body>
 </html>
 
@@ -139,3 +139,9 @@ animations des :hover au lancement de la page -->
       el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "60px";
   }
 </script>
+<script language="JavaScript">
+function changeiframe(urlFrame){
+  theframe.location = "https://psycaptr.tk/Ressources/Pages/modifyUsers";
+}
+</script>
+
