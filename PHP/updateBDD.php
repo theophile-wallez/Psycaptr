@@ -22,9 +22,11 @@ require('connectDatabase.php'); //Connexion à la database
 
 // Dernière trame reçue :
 $trame = $data_tab[count($data_tab)-2];
+
 echo "Dernière trame reçue : ";
+echo $trame;
+
 list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue, $numTrame, $checkSum, $year, $month, $day, $hour, $min, $sec) =
     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
 ?>
