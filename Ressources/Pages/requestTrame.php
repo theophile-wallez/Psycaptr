@@ -54,9 +54,7 @@
 
         $trame=$typeTrame.$numObjet.$typeRequest.$typeCapteur.$numCapteur.$valeurLue.$numTrame.$checkSum;
 
-        $monUrl="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=.$trame";
-
-        header('Location : $monUrl');
+        echo $trame;
         
     } else {
         echo 'Please select the value.';
