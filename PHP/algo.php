@@ -71,10 +71,6 @@
     // Dernière trame reçue :
     $trame = $data_tab[count($data_tab)-2];
     // echo $trame;
-
-    for (var i = arr.length - 1; i >= 0; i--) {
-      console.log(arr[i]);
-    }
     return hexdec(substr($trame,9,4));
   }
 ?>
