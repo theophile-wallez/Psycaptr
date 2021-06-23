@@ -63,7 +63,7 @@
             <p>Mesure de votre fréquence cardiaque</p>
           </div>
         </a>
-        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" target="theframe" onclick="window.open('attenteTest')" class="test-container" draggable="false">
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" target="theframe"  class="test-container" draggable="false">
           <div class="testIcon-container">
             <i class="fas fa-thermometer-half"></i>
           </div>
