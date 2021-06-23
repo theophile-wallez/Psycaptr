@@ -67,8 +67,8 @@
     curl_close($ch);
     $data = substr($data, 91);
 
+
     
-    
-    return hexdec(substr($data_tab[count(str_split($data,33))-2],9,4));
+    return substr($data_tab[count(str_split($data,33))-2],9,4);
   }
 ?>
