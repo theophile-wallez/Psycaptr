@@ -80,7 +80,7 @@
         <div class="graph graph-5">
           <h4 class="canvas_title">Dernière température mesurée</h4>
           <div class="canvas_container lastScore">
-            <h2><?php echo lastScore()."ºC" ?></h2>
+            <h2><?php echo lastTemp()."ºC" ?></h2>
           </div>
         </div>
       </div>

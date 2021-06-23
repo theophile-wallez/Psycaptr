@@ -54,7 +54,7 @@
     return $IdGen;
   }
 
-  function lastScore(){
+  function lastTemp(){
     $ch = curl_init();
     curl_setopt(
       $ch,
@@ -71,6 +71,42 @@
     // Dernière trame reçue :
     $trame = $data_tab[count($data_tab)-2];
     // echo $trame;
-    return hexdec(substr($trame,9,4));
+
+    for ($i = count($data_tab)-2; $i==0; $i--) {
+      if (substr($data_tab[i],6,1)=='3') {
+        return hexdec(substr($trame,9,4));
+      }
+    }
+
+    return 333;
   }
+
+  function lastFreq() {
+    $ch = curl_init();
+    curl_setopt(
+      $ch,
+      CURLOPT_URL,
+      "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G9Dy");
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+
+    $data = substr($data, 91);
+    $data_tab = str_split($data,33);
+
+    // Dernière trame reçue :
+    $trame = $data_tab[count($data_tab)-2];
+    // echo $trame;
+
+    for ($i = count($data_tab)-2; $i==0; $i--) {
+      if (substr($data_tab[i],6,1)=='5') {
+        return hexdec(substr($trame,9,4));
+      }
+    }
+
+    return 333;
+  }
+
+
 ?>
