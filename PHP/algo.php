@@ -73,7 +73,6 @@
     // echo $trame;
 
     for ($i = count($data_tab)-2; $i==0; $i--) {
-      echo substr($data_tab[i],6,1);
       if (substr($data_tab[i],6,1)=="3") {
         return hexdec(substr($trame,9,4));
       }
