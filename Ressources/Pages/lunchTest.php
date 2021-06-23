@@ -128,7 +128,7 @@
     // }
     ?>
   </div> -->
-  <iframe width=1000 height=1000 marginwidth=0 marginheight=0 frameborder=0 name="theframe" src="https://psycaptr.tk"></iframe>
+  <iframe width=1000 height=1000 marginwidth=0 marginheight=0 frameborder=0 name="theframe" src="about:blank" ></iframe>
 </body>
 </html>
 
@@ -139,9 +139,10 @@ animations des :hover au lancement de la page -->
       el.style.height = (el.scrollHeight > el.clientHeight) ? (el.scrollHeight)+"px" : "60px";
   }
 </script>
-<script language="JavaScript">
+
+<!-- <script language="JavaScript">
 function changeiframe(urlFrame){
   theframe.location = "https://psycaptr.tk/Ressources/Pages/modifyUsers";
 }
-</script>
+</script> -->
 
