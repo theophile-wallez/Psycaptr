@@ -1,4 +1,4 @@
-<?php
+<?php 
 
   //Cette méthode permet d'empêcher les injections SQL dans nos inputs
   function convertInput ($input) {
@@ -59,16 +59,18 @@
     curl_setopt(
       $ch,
       CURLOPT_URL,
-      "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G9Dy"
-    );
+      "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=G9Dy");
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     $data = curl_exec($ch);
     curl_close($ch);
+
     $data = substr($data, 91);
+    $data_tab = str_split($data,33);
 
-
-    
-    return substr($data_tab[count(str_split($data,33))-2],9,4);
+    // Dernière trame reçue :
+    $trame = $data_tab[count($data_tab)-2];
+    // echo $trame;
+    return hexdec(substr($trame,9,4));
   }
 ?>
