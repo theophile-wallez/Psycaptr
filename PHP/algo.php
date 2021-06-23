@@ -72,9 +72,9 @@
     $trame = $data_tab[count($data_tab)-2];
     // echo $trame;
 
-    for ($i = count($data_tab)-2; $i==0; $i--) {
+    for ($i = count($data_tab)-2; $i>=0; $i--) {
       if (substr($data_tab[$i],6,1)=="3") {
-        return hexdec(substr($trame,9,4));
+        return hexdec(substr($data_tab[$i],9,4));
       }
     }
 
@@ -99,9 +99,9 @@
     $trame = $data_tab[count($data_tab)-2];
     // echo $trame;
 
-    for ($i = count($data_tab)-2; $i==0; $i--) {
+    for ($i = count($data_tab)-2; $i>=0; $i--) {
       if (substr($data_tab[$i],6,1)=="5") {
-        return hexdec(substr($trame,9,4));
+        return hexdec(substr($data_tab[$i],9,4));
       }
     }
 
