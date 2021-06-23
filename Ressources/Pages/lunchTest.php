@@ -21,6 +21,8 @@
 ?>
 
 <body>
+<iframe width=1000 height=1000 marginwidth=0 marginheight=0 frameborder=0 name="theframe" src="about:blank" ></iframe>
+
   <div class="dashboard_container">
     <h1 class="test_title">Choisissez le test que vous désirez effectuer</h1>
     <section class="content-container">
@@ -128,7 +130,6 @@
     // }
     ?>
   </div> -->
-  <iframe width=1000 height=1000 marginwidth=0 marginheight=0 frameborder=0 name="theframe" src="about:blank" ></iframe>
 </body>
 </html>
 
