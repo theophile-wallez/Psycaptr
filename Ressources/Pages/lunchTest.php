@@ -27,7 +27,7 @@
     <h1 class="test_title">Choisissez le test que vous désirez effectuer</h1>
     <section class="content-container">
     <div class="line-container">
-        <a class="test-container" href="https://bing.com" target="theframe" >
+        <a class="test-container" href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" target="theframe" >
           <div class="testIcon-container">
             <i class="fas fa-music"></i>
           </div>
@@ -36,7 +36,7 @@
            <p>Mesure de votre capacité à reconnaitre une note</p>
           </div>
         </a>
-        <a href="https://google.com" target="theframe" onclick="window.open('attenteTest')" class="test-container" draggable="false">
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" target="theframe" onclick="window.open('attenteTest')" class="test-container" draggable="false">
           <div class="testIcon-container">
             <i class="fas fa-assistive-listening-systems"></i>
           </div>
