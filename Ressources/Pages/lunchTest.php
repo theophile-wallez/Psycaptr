@@ -36,7 +36,7 @@
            <p>Mesure de votre capacité à reconnaitre une note</p>
           </div>
         </a>
-        <a href="https//projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" target="theframe" onclick="window.open('attenteTest')" class="test-container" draggable="false">
+        <a href="https://google.com" target="theframe" onclick="window.open('attenteTest')" class="test-container" draggable="false">
           <div class="testIcon-container">
             <i class="fas fa-assistive-listening-systems"></i>
           </div>
