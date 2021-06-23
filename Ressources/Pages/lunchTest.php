@@ -56,7 +56,7 @@
         </a>
       </div>
       <div class="line-container">
-        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy23010000FEDC15" onclick="window.open('attenteTest')" class="test-container" draggable="false">
+        <a href="http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=G9Dy&TRAME=1G9Dy25010000FEDC15" onclick="window.open('attenteTest')" class="test-container" draggable="false">
           <div class="testIcon-container">
             <i class="fas fa-heartbeat"></i>
           </div>
