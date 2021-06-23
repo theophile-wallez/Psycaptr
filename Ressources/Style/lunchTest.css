@@ -17,6 +17,7 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: saturate(110%) brightness(0.98);
+    user-select: none;
 }
 
 .line-container {
@@ -67,6 +68,12 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: saturate(110%) brightness(0.98);
+    transition: all .2s ease-out;
+
+}
+
+.test-container:hover .testIcon-container i {
+    
 }
 
 .title-container {

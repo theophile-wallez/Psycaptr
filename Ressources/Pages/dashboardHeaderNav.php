@@ -27,19 +27,19 @@
 </header>
 
 <nav>
-  <a href="profil" class="icon-container">
+  <a href="profil" class="icon-container" draggable="false">
     <div class="line"></div>
     <i class="fas fa-user"></i>
     <!-- <p>Profil</p> -->
   </a>
 
-  <a href="modifyUsers" class="icon-container">
+  <a href="modifyUsers" class="icon-container" draggable="false">
     <div class="line"></div>
     <i class="fas fa-users"></i>
     <p></p>
   </a>
 
-  <a href="lunchTest" class="icon-container">
+  <a href="lunchTest" class="icon-container" draggable="false">
     <div class="line"></div>
     <i class="fas fa-plus"></i>
 
@@ -49,7 +49,7 @@
 <?php 
   if($_SESSION['userType'] == 'admin'){
 ?>
-  <a href="modifyFAQ" class="icon-container">
+  <a href="modifyFAQ" class="icon-container" draggable="false">
     <div class="line"></div>
     <i class="fas fa-info-circle"></i>
     <p></p>
@@ -59,7 +59,7 @@
 ?>
   
   <!-- Icon de déconnexion -->
-  <a href="/PHP/disconnect.php" class="icon-container">
+  <a href="/PHP/disconnect.php" class="icon-container" draggable="false">
     <div class="line"></div>
     <i class="fas fa-sign-out-alt"></i>
   </a>
