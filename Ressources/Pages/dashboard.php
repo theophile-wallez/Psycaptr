@@ -82,6 +82,10 @@
           <div class="canvas_container lastScore">
             <h2><?php echo lastTemp()."ºC" ?></h2>
           </div>
+          <h4 class="canvas_title">Dernière fréquence mesurée</h4>
+          <div class="canvas_container lastScore">
+            <h2><?php echo lastFreq()." BPM" ?></h2>
+          </div>
         </div>
       </div>
   </div>
