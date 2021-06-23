@@ -27,7 +27,7 @@
     <h1 class="test_title">Choisissez le test que vous désirez effectuer</h1>
     <section class="content-container">
     <div class="line-container">
-        <a class="test-container" href="http://bing.com" target="theframe" onclick="window.open('attenteTest')" >
+        <a class="test-container" href="https://psycaptr.tk" target="theframe" onclick="window.open('attenteTest')" >
           <div class="testIcon-container">
             <i class="fas fa-music"></i>
           </div>
