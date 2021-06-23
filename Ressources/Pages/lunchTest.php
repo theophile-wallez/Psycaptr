@@ -128,7 +128,7 @@
     // }
     ?>
   </div> -->
-  <iframe width=0 height=0 marginwidth=0 marginheight=0 frameborder=0 name="theframe" src="https://psycaptr.tk"></iframe>
+  <iframe width=1000 height=1000 marginwidth=0 marginheight=0 frameborder=0 name="theframe" src="https://psycaptr.tk"></iframe>
 </body>
 </html>
 
