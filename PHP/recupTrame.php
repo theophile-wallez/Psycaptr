@@ -45,12 +45,6 @@ list($typeTrame, $numObjet, $typeRequest, $typeCapteur, $numCapteur, $valeurLue,
     sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
 echo("$typeTrame,$numObjet,$typeRequest,$typeCapteur,$numCapteur,$valeurLue,$numTrame,$checkSum,$year,$month,$day,$hour,$min,$sec<br /><br />");
 
-for ($i = count($data_tab)-2; $i==0; $i--) {
-    echo substr($data_tab[i],6,1);
-}
-
-
-
 $sql = 'SELECT * FROM Trames';
 
 if($result = $bdd -> query($sql)) {

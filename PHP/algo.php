@@ -73,7 +73,7 @@
     // echo $trame;
 
     for ($i = count($data_tab)-2; $i==0; $i--) {
-      if (substr($data_tab[i],6,1)=="3") {
+      if (substr($data_tab[$i],6,1)=="3") {
         return hexdec(substr($trame,9,4));
       }
     }
@@ -100,7 +100,7 @@
     // echo $trame;
 
     for ($i = count($data_tab)-2; $i==0; $i--) {
-      if (substr($data_tab[i],6,1)=="5") {
+      if (substr($data_tab[$i],6,1)=="5") {
         return hexdec(substr($trame,9,4));
       }
     }
