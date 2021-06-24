@@ -16,7 +16,7 @@ curl_close($ch);
 
 $data = substr($data, 91);
 $data_tab = str_split($data,33);
-$data_tab = array_slice($data_tab, 2041, count($data_tab)-2043);
+$data_tab = array_slice($data_tab, 2041, count($data_tab)-2042);
 
 // Connexion à la database
 require('connectDatabase.php'); //Connexion à la database
