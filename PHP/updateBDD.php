@@ -16,7 +16,7 @@ curl_close($ch);
 
 $data = substr($data, 91);
 $data_tab = str_split($data,33);
-$data_tab = array_slice($data_tab, -50,49);
+$data_tab = array_slice($data_tab, 2041);
 
 // Connexion à la database
 require('connectDatabase.php'); //Connexion à la database
